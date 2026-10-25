@@ -13,7 +13,7 @@ Good interfaces come from a small number of deliberate decisions applied with di
 - **Content first.** Design with real or realistic content. Lorem ipsum and "Feature One" hide every real problem: long names, empty lists, three-line titles, seven-digit numbers.
 - **Restraint is the default; emphasis is earned.** If everything is bold, nothing is. Every extra color, weight, border, shadow, or animation must justify itself by communicating something.
 - **Build what was asked, in as few words as do the job.** Unrequested sections, features, and paragraphs are the most common way generated interfaces go wrong. Invented facts (prices, policies, statistics, testimonials, customer logos) are worse than gaps, because they look finished and get shipped. Offer extras in your reply instead of building them.
-- **Quiet almost everywhere, memorable somewhere.** Restraint alone produces competent, forgettable work. Spend boldness deliberately in one or two places (a confident headline, an ownable color, a beautifully made empty state, a delightful core interaction), and keep everything around it disciplined so it lands. "Clean and modern" is not a direction.
+- **Quiet almost everywhere, memorable somewhere.** Restraint alone produces competent, forgettable work. Every piece of work gets one signature element tied to the brief (an illustration or product visual made for it, a confident typographic gesture, an ownable color, a beautifully made empty state, a delightful core interaction), and everything around it stays disciplined so it lands. "Clean and modern" is not a direction.
 - **Systems over one-offs.** Choose scales (type, space, color, radius, motion) and use only values from them. Consistency is what makes plain things look designed.
 - **Specific beats generic.** The generic version of anything (gradient hero, three emoji feature cards, "Unlock your potential") is invisible. Make choices particular to this product and audience.
 - **The existing system wins.** Inside a product with an established design language (tokens, component library, Tailwind config, brand guide), follow it even where you'd choose differently; coherence beats personal taste. Point out problems; don't silently "fix" the system.
@@ -40,7 +40,7 @@ Decide the personality in one sentence ("a calm, precise tool for accountants"; 
 5. Density and base text size.
 6. Motion character: none, snappy, or soft.
 
-**Name your default, then leave it.** Before deciding, name the look you'd produce on autopilot for this brief. For today's models that is usually a cream or off-white page, a forest-green or violet accent, a geometric sans with one italic-serif word in every headline, a small uppercase eyebrow label over every heading, rounded cards in threes, and a tilted sticker badge. Then change at least two of the decisions above, for reasons that come from this brief (its audience, its content, its name), not from novelty.
+**Find the direction in the brief, not in a list of things to avoid.** Write down three concrete things from the product's world (its materials, places, objects, era, the people who use it, the name itself) and let them choose the palette, the type, and one signature element. A tea importer might take oxidized green, rice paper, and brushy lettering; a payroll tool for restaurants might take kitchen-ticket monospace and tomato red. Swapping one default for another is not a direction: generic blue-and-white SaaS is a default too, and so is whatever palette you reach for first on every brief. Warmth and character are good when they come from the brief. For calibration, `assets/examples/` has two finished pages in deliberately different directions.
 
 `references/aesthetic-directions.md` has eight worked directions with these filled in. Start from one rather than the no-decision default (Inter everywhere, indigo accent, 12px radius, soft shadows, everything centered), which reads as "template" instantly. For substantial new work, tell the user the direction in a line or two so they can redirect early.
 
@@ -114,6 +114,8 @@ If you can render (browser tools, Playwright, screenshots), do it at ~375px, ~76
 - **Sentence case** for all UI text. Specific over grand: "3 files uploaded", not "Your upload was successful!"
 - **Errors** say what happened and how to fix it, next to the problem, without blame.
 
+- **Discipline cuts words, claims, sections, and features, not identity.** Imagery, illustration, and typographic character that are about the product stay. Cut the slogan, keep the illustration. A headline with a point of view ("Bookkeeping for people who'd rather be making things") isn't filler; a line that could sit on any site ("Everything you need, all in one place") is.
+
 `references/content-design.md` has the full method and a worked example of a cluttered page versus a considered one.
 
 ## Generic tells to avoid
@@ -124,7 +126,7 @@ These signal that nothing was decided. Each needs a real reason to appear:
 - A pill badge above every hero headline; "Unlock / Supercharge / Seamless / Revolutionize" copy; triplet slogans.
 - The same large radius and soft shadow on everything; cards that scale up on hover; everything fading in on scroll.
 - Low-contrast gray text, everything centered, uniform sizes with no hierarchy.
-- Today's generated-page house style: an italic-serif accent word in every headline, an uppercase eyebrow label above every heading, "Less X. More Y." headlines, tilted sticker badges, floating notification cards over hero images, cream backgrounds with forest green.
+- Today's generated-page tics: an uppercase eyebrow label above every heading, the same italic-serif accent word trick in every headline, "Less X. More Y." headlines, tilted sticker badges, notification cards floating over hero images. Used once, deliberately, any of these can be a signature; repeated everywhere, they're a template.
 - Inside apps: upsell cards, motivational lines, decorative illustrations in the sidebar, a slogan under the page title.
 
 The fix is never more style. It's a specific choice: a typeface with character, a real product screenshot, a layout that follows the content, copy that says something only this product could say. `references/critique.md` has the full list, a symptom → cause table, and two worked before → after redesigns that show this judgment in action. Read them when you want calibration.
@@ -150,8 +152,9 @@ The fix is never more style. It's a specific choice: a typeface with character, 
 - [ ] Nothing unrequested: no extra sections, features, or promo cards. Extras are offered in the reply instead.
 - [ ] No invented facts anywhere, including fine print: prices, fees, policies, guarantees, trust badges, statistics, testimonials, real brands as sample data.
 - [ ] Every sentence carries information. Copy is specific, sentence case, with verb buttons; no filler slogans or taglines.
-- [ ] Tables and other wide content scroll inside their own container, or reflow, on a phone.
-- [ ] No generic tells left without a reason, including the house style above.
+- [ ] Tables and other wide content scroll inside their own container (`overflow-x: auto; position: relative`, so hidden labels inside can't widen the page), or reflow, on a phone.
+- [ ] No generic tells left without a reason, including the tics above.
+- [ ] One signature element tied to the brief, so the page couldn't be mistaken for a template with the logo swapped.
 - [ ] Logos: a version for dark backgrounds, no tagline in the primary mark, a mark redrawn to be legible at 16px.
 - [ ] Animation: one idea, small but visible movement, and a complete still frame under reduced motion.
 

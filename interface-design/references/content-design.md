@@ -56,6 +56,10 @@ Before adding anything, ask what it does for the person using the page. Before s
   The test: delete the sentence. If no information is lost, leave it deleted.
 - **Count.** If a single-purpose page has more than about 150 words of copy outside the form, look hard at every sentence.
 
+### Restraint is not blandness
+
+Everything above cuts words, claims, sections, and features. None of it is a reason to strip a page's identity. An illustration made for the product, a typeface with character, an ownable color, a real product screenshot: these are content too, and they're what make a page feel designed for someone rather than generated. A considered single-purpose page can be both short and beautiful. If cutting leaves something that could be any company's page with the logo swapped, you cut the wrong things.
+
 ## 4. Writing interface text
 
 - **Specific beats grand.** "Book a class in two taps" beats "Revolutionize your fitness journey". A specific sentence could only be about this product; a grand one could be about anything.

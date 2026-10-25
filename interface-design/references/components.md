@@ -107,7 +107,7 @@ Tables are for comparing values across rows. Design for scanning.
 - **Empty values:** use an em dash (—) or "None", not blank cells that look broken.
 - **Numbers:** consistent decimals, units in the header ("Revenue (USD)") rather than every cell, negative values with a minus sign (and color as secondary signal).
 - **Pagination vs infinite scroll:** paginate when users need to find their place or reference positions; load more/infinite for feeds. Show the total count.
-- **Mobile:** horizontal scroll with sticky first column, or transform rows into stacked cards for object-like data.
+- **Mobile:** horizontal scroll with a sticky first column, or rows transformed into stacked cards for object-like data. The scroll wrapper needs `overflow-x: auto` *and* `position: relative`: without a positioned wrapper, absolutely positioned descendants (including `.sr-only` labels in header cells) escape it and widen the whole page on phones.
 
 ## 8. Navigation
 

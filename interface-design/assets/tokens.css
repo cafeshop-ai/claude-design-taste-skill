@@ -439,7 +439,9 @@ hr { border: 0; border-top: 1px solid var(--color-border); }
   }
 }
 
-/* Screen-reader-only text: still announced, not shown. */
+/* Screen-reader-only text: still announced, not shown. Inside a horizontal
+   scroll container, give the container position: relative, or this element
+   escapes it and widens the page on phones. */
 .sr-only {
   position: absolute !important;
   width: 1px; height: 1px;
