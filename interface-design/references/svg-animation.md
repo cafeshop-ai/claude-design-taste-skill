@@ -19,13 +19,15 @@ Small animated illustrations (empty states, loaders, success moments, onboarding
 
 - **State the job in a phrase:** "confirm the sync finished", "show we're still searching", "make an empty list feel calm rather than broken". If you can't, the illustration may not need to move at all.
 - **Ambient vs. event motion.** Event motion plays once in response to something (a check draws when the upload finishes). Ambient motion loops while the state persists (a gentle bob in an empty state). Many good pieces are both: a short entrance, then a very quiet idle.
+- **Loaders and progress indicators are a third kind: the motion is the message.** They must read as "working" at a glance: continuous, clearly perceptible movement (a sweep, a travelling dot, elements rising and falling in sequence), cycles of 0.8–1.6s, no rest phase, running only while the wait lasts. The calm, mostly still loops described below are for ambient art, not loaders. Pair a loader with text ("Loading messages…") for anyone who can't see the motion, and under reduced motion keep a slow opacity pulse or the text rather than freezing into something that looks finished.
 - **Near text, less.** Anything that moves in peripheral vision pulls the eye away from reading. Empty states and success screens can move a little; anything beside a form or a table should barely move, or not at all.
 
 ## 2. Illustration style for UI
 
 - **Match the product's icon language:** the same stroke width (scaled), corner radius, and line caps as the interface's icons. An illustration in a different style looks pasted in.
 - **Few shapes, one idea.** An envelope with a check, a cloud with an arrow, a magnifier over a page. Add a second element only if it carries meaning (a small sparkle for "done" is the most you need).
-- **Limited palette:** neutrals from the UI plus the accent, perhaps one tint of it. No gradients, glows, or drop shadows unless the product uses them. Use `currentColor` or CSS variables so it adapts to dark mode.
+- **Limited palette:** neutrals from the UI plus the accent, perhaps one tint of it. Use `currentColor` or CSS variables so it adapts to dark mode.
+- **Finish comes from soft, flat tints:** a pale fill inside the outline, a backdrop disc behind the subject, a flat ground-shadow ellipse that seats the object. Bare outlines on white look unfinished; gradients, glows, and drop shadows that fake 3D look dated. Keep strokes no heavier than the product's icons.
 - **Size it to its context:** empty-state art is usually 96–200px wide. Design at that size; details that need a 400px canvas will be noise.
 - **Compose a good still frame first.** The resting pose is what most people will see (and what reduced-motion users always see). Animate only once it works static.
 
@@ -52,8 +54,8 @@ Default to CSS keyframes in the file: it's portable, small, and easy to switch o
 ## 5. Loops that don't nag
 
 - **Seamless:** keyframes end exactly where they start (or use `alternate`), so there's no jump at the loop point.
-- **Rest in the cycle:** hold still for part of each loop (`0%, 60% { transform: none } 80% { … } 100% { transform: none }`), so the motion is an occasional gesture rather than constant fidgeting.
-- **Consider stopping:** an entrance plus 2–3 idle cycles, then rest (`animation-iteration-count: 3`), is often better than infinite. Infinite loops suit loaders, because the state itself is ongoing.
+- **Rest in the cycle (ambient art):** hold still for part of each loop (`0%, 60% { transform: none } 80% { … } 100% { transform: none }`), so the motion is an occasional gesture rather than constant fidgeting.
+- **Consider stopping (ambient art):** an entrance plus 2–3 idle cycles, then rest (`animation-iteration-count: 3`), is often better than infinite. Loaders are the opposite: they loop continuously until the wait ends.
 - **No flashing:** nothing should flash more than three times per second, and avoid large high-contrast blinking anywhere.
 
 ## 6. Transform origins and other SVG gotchas
@@ -83,9 +85,10 @@ A "sync complete" spot illustration: a cloud outline, a check that draws once, t
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="t">
   <title id="t">Everything is synced</title>
   <style>
-    :root { --ink: #5b6472; --accent: #1f7a5a; }
-    @media (prefers-color-scheme: dark) { :root { --ink: #a3abb8; --accent: #5cc49a; } }
-    .cloud { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linejoin: round;
+    :root { --ink: #5b6472; --accent: #1f7a5a; --tint: #eef1f4; }
+    @media (prefers-color-scheme: dark) { :root { --ink: #a3abb8; --accent: #5cc49a; --tint: #262b31; } }
+    .ground { fill: var(--ink); opacity: 0.12; }
+    .cloud { fill: var(--tint); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round;
              transform-box: fill-box; transform-origin: 50% 100%;
              animation: breathe 6s ease-in-out 1s infinite; }
     .check { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round;
@@ -95,9 +98,10 @@ A "sync complete" spot illustration: a cloud outline, a check that draws once, t
     @keyframes breathe { 0%, 55%, 100% { transform: none; } 75% { transform: scale(1.04); } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
+  <ellipse class="ground" cx="49" cy="76" rx="22" ry="2.5"/>
   <path class="cloud" d="M30 68H68A14 14 0 1 0 67.6 40A18 18 0 0 0 32 44.2A12 12 0 1 0 30 68Z"/>
   <path class="check" pathLength="1" d="M38 52l7 7 13-14"/>
 </svg>
 ```
 
-Why it works: one idea (the cloud means sync; the check means done); the check's motion is the event, and the breathing is so slow and small it reads as calm rather than busy; the composition is complete when nothing moves; colors adapt to dark mode; it's under 1KB.
+Why it works: one idea (the cloud means sync; the check means done), finished with a pale fill and a ground shadow rather than effects; the check's motion is the event, and the breathing is so slow and small it reads as calm rather than busy; the composition is complete when nothing moves; colors adapt to dark mode; it's under 1KB.

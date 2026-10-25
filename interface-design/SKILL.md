@@ -157,7 +157,7 @@ The fix is never more style. It's a specific choice: a typeface with character, 
 - [ ] No generic tells left without a reason, including the tics above.
 - [ ] One signature element tied to the brief, so the page couldn't be mistaken for a template with the logo swapped.
 - [ ] Logos: a version for dark backgrounds, no tagline in the primary mark, a mark redrawn to be legible at 16px.
-- [ ] Animation: one idea, small but visible movement, and a complete still frame under reduced motion.
+- [ ] Animation: one idea, finished with soft flat tints. Ambient art moves small but visibly and rests; a loader's motion reads as "working" at a glance and never rests. Under reduced motion, a complete still frame (or a text label).
 
 ## Reference files
 
