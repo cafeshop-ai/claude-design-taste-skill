@@ -1,0 +1,72 @@
+{
+  "url": "../iteration-holdout/holdout-water-app/baseline/run-2",
+  "consoleErrors": [],
+  "axeDesktopLight": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 19
+    }
+  ],
+  "content": {
+    "words": 76,
+    "headings": 3,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+  },
+  "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/0",
+    "titleCaseLabels": "0/3",
+    "dominantHue": 251,
+    "violetDominant": false
+  },
+  "system": {
+    "fontSizes": 10,
+    "fontFamilies": [
+      "Manrope",
+      "DM Sans"
+    ],
+    "chromaticHueBuckets": 2,
+    "radii": 7,
+    "elementsWithShadow": 4
+  },
+  "numbers": {
+    "numericCells": 4,
+    "tabular": 0
+  },
+  "forms": {
+    "fields": 1,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+  },
+  "motion": {
+    "motionRules": 4,
+    "reducedMotionHandled": false
+  },
+  "luminanceLight": 0.919,
+  "focus": {
+    "stops": 10,
+    "visible": 10
+  },
+  "luminanceDark": 0.919,
+  "axeDesktopDark": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 19
+    }
+  ],
+  "darkMode": "light only",
+  "overflow390": 0,
+  "axeMobile": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 19
+    }
+  ]
+}

@@ -139,24 +139,24 @@
  },
  {
   "pair": "logo-run-1",
-  "preference": "Y",
+  "preference": "X",
   "scores": {
    "X": {
     "concept": 3,
     "simplicity": 4,
     "small-size legibility": 4,
-    "craft": 3,
-    "versatility": 2
+    "craft": 4,
+    "versatility": 3
    },
    "Y": {
     "concept": 4,
-    "simplicity": 4,
+    "simplicity": 3,
     "small-size legibility": 3,
     "craft": 4,
     "versatility": 2
    }
   },
-  "notes": "Y\u2019s open-book base growing into leaves connects the bookshop and Fernway name more specifically than X\u2019s generic sprig. Its balanced geometry and refined serif wordmark give it a more distinctive identity, though the narrow internal gaps crowd at 16px and the tagline is barely readable. X\u2019s simpler silhouette survives reduction better. Both lose substantial contrast on the dark backgrounds shown."
+  "notes": "Y\u2019s plant growing from an open book gives it the more specific bookshop concept, but its central channels and page details become crowded at favicon size. X\u2019s simpler sprig and sturdier serif wordmark retain clarity better, and its cream reversed lockup works well on dark. Both candidates\u2019 green icons have poor contrast in the dark panels; Y also leaves its full dark-background logo difficult to read."
  },
  {
   "pair": "logo-run-2",
@@ -166,18 +166,18 @@
     "concept": 4,
     "simplicity": 3,
     "small-size legibility": 3,
-    "craft": 4,
+    "craft": 3,
     "versatility": 2
    },
    "Y": {
     "concept": 3,
-    "simplicity": 4,
+    "simplicity": 5,
     "small-size legibility": 4,
     "craft": 4,
-    "versatility": 2
+    "versatility": 4
    }
   },
-  "notes": "Y\u2019s leaf-shaped F has a simpler, more memorable silhouette and retains clearer internal space at favicon sizes. X\u2019s sprout emerging from an open book communicates the business more specifically, but its narrow stem and page divisions become crowded at 16px. Both have polished serif wordmarks and work in one color, but the dark green nearly disappears against the dark backgrounds shown."
+  "notes": "X\u2019s sprout emerging from an open book connects more explicitly to the name and bookshop, but its narrow page divisions lose definition at favicon size. Y\u2019s leafy F is simpler and more recognizable at 16px, with confident curves and a refined serif wordmark. Y\u2019s cream reversed version also maintains clear contrast, while X\u2019s unchanged dark green nearly disappears on the dark panels."
  },
  {
   "pair": "pricing-restyle-run-1",

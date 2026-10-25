@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="weather-loader-title">
+  <title id="weather-loader-title">Loading forecast</title>
+  <style>
+    svg {
+      --sun: #b87316;
+      --sun-fill: #fce2a2;
+      --cloud: #486d85;
+      --cloud-fill: #f1f6fa;
+    }
+    .rays {
+      transform-box: view-box;
+      transform-origin: 23px 23px;
+      animation: weather-turn 16s linear infinite;
+    }
+    @keyframes weather-turn {
+      to { transform: rotate(360deg); }
+    }
+    @media (prefers-color-scheme: dark) {
+      svg {
+        --sun: #f2bd58;
+        --sun-fill: #59441f;
+        --cloud: #a2c4db;
+        --cloud-fill: #243b4b;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+  <g fill="none" stroke="var(--sun)" stroke-width="2.5" stroke-linecap="round">
+    <path class="rays" d="M23 6v4m0 26v4M6 23h4m26 0h4M11 11l3 3m18 18 3 3M11 35l3-3m18-18 3-3"/>
+    <circle cx="23" cy="23" r="8" fill="var(--sun-fill)"/>
+  </g>
+  <path d="M20 49h25a10 10 0 0 0 0-20h-1a14 14 0 0 0-27 4 8.1 8.1 0 0 0 3 16Z"
+        fill="var(--cloud-fill)" stroke="var(--cloud)" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>

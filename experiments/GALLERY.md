@@ -1,6 +1,6 @@
 # Gallery
 
-Every case, side by side: vanilla Codex (baseline) and Codex with each version of the skill. Run 1 is shown; run 2 is linked. Desktop screenshots at 1440px, full page; click through for phone (390px) and dark-mode shots, the agent's files, and its final message. Logos show a presentation sheet; animations a 10-frame filmstrip. See [README.md](README.md) for method and results.
+Every case, side by side: vanilla Codex (baseline) and Codex with each version of the skill. Run 1 is shown; run 2 is linked. Desktop screenshots at 1440px, full page; click through for phone (390px) and dark-mode shots, the agent's files, and its final message. Logos show a presentation sheet; animations a 10-frame filmstrip. Cases named `holdout-*` were written after skill v4 was frozen, to test generalization. See [README.md](README.md) for method and results.
 
 ## booking-flow
 
@@ -9,6 +9,46 @@ Every case, side by side: vanilla Codex (baseline) and Codex with each version o
 | baseline (iteration 1) | skill v1 | baseline (iteration 2) | skill v2 | skill v3 | skill v4 |
 |---|---|---|---|---|---|
 | <a href="iteration-1/booking-flow/baseline/run-1/shots/desktop-light.jpg"><img src="iteration-1/booking-flow/baseline/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-1/booking-flow/baseline/run-1/shots/mobile-light.jpg) · [files](iteration-1/booking-flow/baseline/run-1/output/) · [run 2](iteration-1/booking-flow/baseline/run-2/shots/desktop-light.jpg) | <a href="iteration-1/booking-flow/with-skill/run-1/shots/desktop-light.jpg"><img src="iteration-1/booking-flow/with-skill/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-1/booking-flow/with-skill/run-1/shots/mobile-light.jpg) · [files](iteration-1/booking-flow/with-skill/run-1/output/) · [run 2](iteration-1/booking-flow/with-skill/run-2/shots/desktop-light.jpg) | <a href="iteration-2/booking-flow/baseline/run-1/shots/desktop-light.jpg"><img src="iteration-2/booking-flow/baseline/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-2/booking-flow/baseline/run-1/shots/mobile-light.jpg) · [files](iteration-2/booking-flow/baseline/run-1/output/) · [run 2](iteration-2/booking-flow/baseline/run-2/shots/desktop-light.jpg) | <a href="iteration-2/booking-flow/with-skill/run-1/shots/desktop-light.jpg"><img src="iteration-2/booking-flow/with-skill/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-2/booking-flow/with-skill/run-1/shots/mobile-light.jpg) · [files](iteration-2/booking-flow/with-skill/run-1/output/) · [run 2](iteration-2/booking-flow/with-skill/run-2/shots/desktop-light.jpg) | <a href="iteration-3/booking-flow/with-skill/run-1/shots/desktop-light.jpg"><img src="iteration-3/booking-flow/with-skill/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-3/booking-flow/with-skill/run-1/shots/mobile-light.jpg) · [files](iteration-3/booking-flow/with-skill/run-1/output/) · [run 2](iteration-3/booking-flow/with-skill/run-2/shots/desktop-light.jpg) | <a href="iteration-4/booking-flow/with-skill/run-1/shots/desktop-light.jpg"><img src="iteration-4/booking-flow/with-skill/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-4/booking-flow/with-skill/run-1/shots/mobile-light.jpg) · [files](iteration-4/booking-flow/with-skill/run-1/output/) · [run 2](iteration-4/booking-flow/with-skill/run-2/shots/desktop-light.jpg) |
+
+## holdout-closed-notice
+
+> Make a simple page for our bakery, Crumb & Co.: we're closed for renovations from July 1 to July 21, 2027, and reopen on July 22. Catering orders can still be placed by phone at 503-555-0142. Single file: index.html.
+
+| baseline (holdout) | skill v4 (holdout) |
+|---|---|
+| <a href="iteration-holdout/holdout-closed-notice/baseline/run-1/shots/desktop-light.jpg"><img src="iteration-holdout/holdout-closed-notice/baseline/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-holdout/holdout-closed-notice/baseline/run-1/shots/mobile-light.jpg) · [files](iteration-holdout/holdout-closed-notice/baseline/run-1/output/) · [run 2](iteration-holdout/holdout-closed-notice/baseline/run-2/shots/desktop-light.jpg) | <a href="iteration-holdout/holdout-closed-notice/with-skill/run-1/shots/desktop-light.jpg"><img src="iteration-holdout/holdout-closed-notice/with-skill/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-holdout/holdout-closed-notice/with-skill/run-1/shots/mobile-light.jpg) · [files](iteration-holdout/holdout-closed-notice/with-skill/run-1/output/) · [run 2](iteration-holdout/holdout-closed-notice/with-skill/run-2/shots/desktop-light.jpg) |
+
+## holdout-loader
+
+> Create a small animated SVG loading indicator for a weather app, shown while the forecast loads. Save it as loader.svg.
+
+| baseline (holdout) | skill v4 (holdout) |
+|---|---|
+| <a href="iteration-holdout/holdout-loader/baseline/run-1/shots/filmstrip.jpg"><img src="iteration-holdout/holdout-loader/baseline/run-1/shots/filmstrip.jpg" width="260"></a><br>[files](iteration-holdout/holdout-loader/baseline/run-1/output/) · [run 2](iteration-holdout/holdout-loader/baseline/run-2/shots/filmstrip.jpg) | <a href="iteration-holdout/holdout-loader/with-skill/run-1/shots/filmstrip.jpg"><img src="iteration-holdout/holdout-loader/with-skill/run-1/shots/filmstrip.jpg" width="260"></a><br>[files](iteration-holdout/holdout-loader/with-skill/run-1/output/) · [run 2](iteration-holdout/holdout-loader/with-skill/run-2/shots/filmstrip.jpg) |
+
+## holdout-logo
+
+> Design a logo for Halyard, a small sailing school on the coast of Maine. Save the full logo as logo.svg and an icon-only version as mark.svg that still works as a 16px favicon.
+
+| baseline (holdout) | skill v4 (holdout) |
+|---|---|
+| <a href="iteration-holdout/holdout-logo/baseline/run-1/shots/sheet.jpg"><img src="iteration-holdout/holdout-logo/baseline/run-1/shots/sheet.jpg" width="260"></a><br>[files](iteration-holdout/holdout-logo/baseline/run-1/output/) · [run 2](iteration-holdout/holdout-logo/baseline/run-2/shots/sheet.jpg) | <a href="iteration-holdout/holdout-logo/with-skill/run-1/shots/sheet.jpg"><img src="iteration-holdout/holdout-logo/with-skill/run-1/shots/sheet.jpg" width="260"></a><br>[files](iteration-holdout/holdout-logo/with-skill/run-1/output/) · [run 2](iteration-holdout/holdout-logo/with-skill/run-2/shots/sheet.jpg) |
+
+## holdout-recipe-page
+
+> Make a recipe page for my food blog: lemon ricotta pancakes. Serves 4, takes 25 minutes. Ingredients: 1 cup ricotta, 3/4 cup milk, 2 eggs, zest of 1 lemon, 1 cup flour, 2 tablespoons sugar, 1 teaspoon baking powder, a pinch of salt, butter for the pan. Steps: whisk the ricotta, milk, eggs, and zest; fold in the dry ingredients; rest the batter 5 minutes; cook on medium heat until bubbles form, then flip once. Single file: index.html.
+
+| baseline (holdout) | skill v4 (holdout) |
+|---|---|
+| <a href="iteration-holdout/holdout-recipe-page/baseline/run-1/shots/desktop-light.jpg"><img src="iteration-holdout/holdout-recipe-page/baseline/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-holdout/holdout-recipe-page/baseline/run-1/shots/mobile-light.jpg) · [files](iteration-holdout/holdout-recipe-page/baseline/run-1/output/) · [run 2](iteration-holdout/holdout-recipe-page/baseline/run-2/shots/desktop-light.jpg) | <a href="iteration-holdout/holdout-recipe-page/with-skill/run-1/shots/desktop-light.jpg"><img src="iteration-holdout/holdout-recipe-page/with-skill/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-holdout/holdout-recipe-page/with-skill/run-1/shots/mobile-light.jpg) · [files](iteration-holdout/holdout-recipe-page/with-skill/run-1/output/) · [run 2](iteration-holdout/holdout-recipe-page/with-skill/run-2/shots/desktop-light.jpg) |
+
+## holdout-water-app
+
+> Design the main screen of a phone app for tracking how much water you drink each day, as a web page that works at phone width. It should be quick to log a glass and easy to see progress toward the daily goal. Single file: index.html.
+
+| baseline (holdout) | skill v4 (holdout) |
+|---|---|
+| <a href="iteration-holdout/holdout-water-app/baseline/run-1/shots/desktop-light.jpg"><img src="iteration-holdout/holdout-water-app/baseline/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-holdout/holdout-water-app/baseline/run-1/shots/mobile-light.jpg) · [files](iteration-holdout/holdout-water-app/baseline/run-1/output/) · [run 2](iteration-holdout/holdout-water-app/baseline/run-2/shots/desktop-light.jpg) | <a href="iteration-holdout/holdout-water-app/with-skill/run-1/shots/desktop-light.jpg"><img src="iteration-holdout/holdout-water-app/with-skill/run-1/shots/desktop-light.jpg" width="260"></a><br>[phone](iteration-holdout/holdout-water-app/with-skill/run-1/shots/mobile-light.jpg) · [files](iteration-holdout/holdout-water-app/with-skill/run-1/output/) · [run 2](iteration-holdout/holdout-water-app/with-skill/run-2/shots/desktop-light.jpg) |
 
 ## invoice-dashboard
 

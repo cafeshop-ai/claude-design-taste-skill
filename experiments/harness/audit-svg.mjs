@@ -1,6 +1,6 @@
 // Present and audit SVG deliverables the same way for every run.
 //   node audit-svg.mjs <run-dir> logo            (expects output/logo.svg, output/mark.svg)
-//   node audit-svg.mjs <run-dir> svg-animation   (expects output/caught-up.svg)
+//   node audit-svg.mjs <run-dir> svg-animation   (expects output/caught-up.svg, loader.svg, or one .svg)
 // Writes <run-dir>/audit.json, <run-dir>/preview.html, and <run-dir>/shots/*.jpg
 import { chromium } from "playwright";
 import fs from "node:fs";
@@ -8,6 +8,7 @@ import path from "node:path";
 
 const runDir = path.resolve(process.argv[2]);
 const kind = process.argv[3];
+const tabLabel = process.argv[4] || "Fernway Books"; // brand name shown in the browser-tab mockup
 const out = path.join(runDir, "output");
 const shots = path.join(runDir, "shots");
 fs.mkdirSync(shots, { recursive: true });
@@ -57,17 +58,28 @@ try {
   if (kind === "logo") {
     const logo = find("logo.svg", /logo|lockup|full/i);
     const mark = find("mark.svg", /mark|icon|favicon|symbol/i);
+    // Dark panels show the designer's own dark-background version when they made one.
+    const variant = (main, re) => {
+      if (!main) return null;
+      const dir = path.dirname(main), base = path.basename(main, ".svg");
+      const hit = fs.readdirSync(dir).find(f => f.endsWith(".svg") && f !== path.basename(main) && f.startsWith(base) && re.test(f));
+      return hit ? path.join(dir, hit) : null;
+    };
+    const DARK = /reversed|dark|inverse|negative|white|light|knockout/i;
+    const logoDark = variant(logo, DARK) || logo, markDark = variant(mark, DARK) || mark;
+    result.darkVariants = { logo: logoDark !== logo ? path.basename(logoDark) : null, mark: markDark !== mark ? path.basename(markDark) : null };
     result.logo = logo && svgFacts(logo);
     result.mark = mark && svgFacts(mark);
     const rel = f => path.relative(runDir, f);
-    const sizes = (dark) => [128, 64, 32, 16].map(s => `<figure><img src="${rel(mark)}" width="${s}" height="${s}" alt=""><figcaption>${s}px</figcaption></figure>`).join("");
+    const sizes = (dark) => [128, 64, 32, 16].map(s => `<figure><img src="${rel(dark ? markDark : mark)}" width="${s}" height="${s}" alt=""><figcaption>${s}px</figcaption></figure>`).join("");
+    const cap = f => `<figcaption style="font-size:11px;opacity:.7">${path.basename(f)}</figcaption>`;
     fs.writeFileSync(path.join(runDir, "preview.html"), page(`
       <div class="row"><div class="panel">${logo ? `<img src="${rel(logo)}" style="width:440px;max-height:220px;object-fit:contain" alt="">` : "logo.svg missing"}</div>
-      <div class="panel dark">${logo ? `<img src="${rel(logo)}" style="width:440px;max-height:220px;object-fit:contain" alt="">` : ""}</div></div>
+      <div class="panel dark">${logo ? `<img src="${rel(logoDark)}" style="width:440px;max-height:220px;object-fit:contain" alt="">${cap(logoDark)}` : ""}</div></div>
       <div class="row"><div class="panel">${mark ? `<div class="sizes">${sizes()}</div>` : "mark.svg missing"}</div>
       <div class="panel dark">${mark ? `<div class="sizes">${sizes(true)}</div>` : ""}</div></div>
-      <div class="row"><div class="panel">${mark ? `<div class="tab"><img src="${rel(mark)}" width="16" height="16" alt="">Fernway Books</div>` : ""}</div>
-      <div class="panel dark">${mark ? `<div class="tab d"><img src="${rel(mark)}" width="16" height="16" alt="">Fernway Books</div>` : ""}</div></div>`));
+      <div class="row"><div class="panel">${mark ? `<div class="tab"><img src="${rel(mark)}" width="16" height="16" alt="">${tabLabel}</div>` : ""}</div>
+      <div class="panel dark">${mark ? `<div class="tab d"><img src="${rel(markDark)}" width="16" height="16" alt="">${tabLabel}</div>` : ""}</div></div>`));
     const p = await browser.newPage({ viewport: { width: 1164, height: 800 } });
     await p.goto("file://" + path.join(runDir, "preview.html"), { waitUntil: "networkidle" });
     await p.screenshot({ path: path.join(shots, "sheet.jpg"), type: "jpeg", quality: 85, fullPage: true });
@@ -75,7 +87,7 @@ try {
   }
 
   if (kind === "svg-animation") {
-    const anim = find("caught-up.svg", /caught|empty|inbox|done/i);
+    const anim = find("caught-up.svg", /caught|empty|inbox|done|loader|loading|spinner|\.svg$/i);
     result.animation = anim && svgFacts(anim);
     if (anim) {
       // Inline the SVG so CSS, SMIL, and scripted animation all run.

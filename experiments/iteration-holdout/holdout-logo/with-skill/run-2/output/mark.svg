@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-labelledby="title desc">
+  <title id="title">Halyard</title>
+  <desc id="desc">An H formed by a mast, raised sail, and halyard.</desc>
+  <style>path { fill: #173F3B; } @media (prefers-color-scheme: dark) { path { fill: #F5F1E8; } }</style>
+  <path d="M2 1 L4 1 L4 3 Q7 5 11 9 L12 9 L12 1 L14 1 L14 15 L12 15 L12 11 L4 11 L4 15 L2 15 Z"/>
+</svg>

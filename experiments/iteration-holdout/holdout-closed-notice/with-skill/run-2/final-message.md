@@ -1,0 +1,1 @@
+Created [index.html](index.html) with a warm bakery design, closure and reopening dates, and a tap-to-call catering link. Fully self-contained and responsive. Verified dates, phone number, and text contrast.

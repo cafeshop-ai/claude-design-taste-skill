@@ -1,0 +1,43 @@
+{
+  "kind": "logo",
+  "darkVariants": {
+    "logo": null,
+    "mark": null
+  },
+  "logo": {
+    "file": "logo.svg",
+    "bytes": 19090,
+    "elements": 9,
+    "distinctColors": 2,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+      "keyframes": 0,
+      "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+  },
+  "mark": {
+    "file": "mark.svg",
+    "bytes": 523,
+    "elements": 3,
+    "distinctColors": 2,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+      "keyframes": 0,
+      "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+  }
+}

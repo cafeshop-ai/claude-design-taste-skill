@@ -4,7 +4,28 @@
 
 **Scope.** Web UI design, interaction design, logo design, SVG animation, and content design. Content design gets particular attention because a common failure of coding agents is clutter: unrequested sections, filler copy, invented facts and testimonials, and decoration that adds noise.
 
-**Status.** Running. Results and every skill change are logged below, iteration by iteration.
+**Status.** Four skill versions, five rounds (104 Codex design runs, about 150 blind judge calls), two judges. Results and every skill change are logged below, iteration by iteration; every blind comparison is in [`SCOREBOARD.md`](SCOREBOARD.md), and every output side by side in [`GALLERY.md`](GALLERY.md).
+
+## Answer so far
+
+**Partly, yes.** With the final skill (v4), an independent blind judge preferred Codex's work **12–2** on the cases the skill was refined against and **8–2 on five unseen cases**.
+
+What transfers reliably, on tuned and unseen briefs alike:
+- **Content discipline.** No invented facts (unsupplied claims went from 8 to 0), about half the words, specific copy, and single-purpose pages that put the task first. This was the largest gain: 2.7 → 3.9 tuned, 3.0 → 4.5 held-out.
+- **Hierarchy, typography, and color restraint:** +0.3 to +1.1 points.
+- **Accessibility and craft.** axe violations fell from about 26 to 2 per page (0 on the held-out set). Visible focus and reduced motion became the norm, and phone layouts keep the key information visible.
+- **Logos:** concepts built from the name's letterform instead of the category cliché (a sail-shaped H, not a sailboat), legible at 16px, with dark-background versions.
+
+What doesn't, yet:
+- **Visual personality.** The independent judge rated baseline Codex more distinctive in every round (v4: 3.3 vs 3.8; held-out: 3.0 vs 4.0). Part of this is a real cost of restraint. Part is likely the judge, which is Codex, preferring its own house style; Claude's blind judgment in round 1 went the other way.
+- **Illustration and animation.** Animations didn't improve, and the held-out loaders were worse than baseline.
+
+**What we learned about teaching taste:**
+- **Bans backfire.** v2 told the agent to avoid its default palette, and it picked the next default, blue SaaS; v3 replaced the ban with "derive the palette from the product's world".
+- **"Build only what was asked" gets read as "build the minimum".** v4 had to say depth within scope is good.
+- **Agents that can't render need the rules spelled out.** Bugs only rendering reveals, like a hidden label widening a page on phones, must be written down as rules.
+- **The examples in a skill must stay away from the test briefs.** We caught ourselves leaking test content three times.
+
 
 ## Setup
 
@@ -30,6 +51,18 @@ The runner is [`harness/run.sh`](harness/run.sh) (one trial) and [`harness/run-i
 | `logo` | Logo design | Logo for Fernway, a bookshop and café, plus an icon that works as a 16px favicon | A concept, simple geometry, legibility at 16px, works on dark |
 | `svg-animation` | SVG animation | A gently looping "you're all caught up" empty-state animation | Restraint, easing and timing, a seamless loop, honoring reduced motion |
 | `rsvp-page` | Content design | Wedding RSVP page; the prompt supplies every fact | Building only what was asked; no invented schedule, dress code, hotels, or countdowns |
+
+### Held-out cases
+
+Written after skill v4 was frozen, to test whether the gains generalize to briefs the skill was never tuned on. They run once, with the baseline and v4, and are never used to change the skill.
+
+| Case | Area | Prompt (abridged) |
+|---|---|---|
+| `holdout-recipe-page` | Web UI, content | A recipe page for a food blog; the prompt supplies every ingredient and step |
+| `holdout-water-app` | Interaction, mobile UI | The main screen of a phone app for tracking daily water intake |
+| `holdout-closed-notice` | Content design | A bakery's "closed for renovations" page; the prompt supplies dates and a phone number |
+| `holdout-logo` | Logo design | Logo and 16px icon for Halyard, a sailing school in Maine |
+| `holdout-loader` | SVG animation | An animated loading indicator for a weather app |
 
 ## Measurements
 
@@ -155,7 +188,7 @@ With-skill runs on v2, compared against **14 fresh baseline runs**, plus a direc
 | Distinct font sizes per page | 15.0 | 10.4 |
 | Horizontal overflow on a phone | 1/10 | 2/10 |
 
-**v1 vs v2, head to head:** v1 **10**, v2 **3** (13 pairs). Content rose (3.33 → 3.89), but distinctiveness fell from 4.00 to 2.67.
+**v1 vs v2, head to head:** v1 **9**, v2 **4** (13 pairs; 10–3 before the logo-sheet fix described under "Held-out test"). Content rose (3.33 → 3.89), but distinctiveness fell from 4.00 to 2.67.
 
 **What happened.** The content rules worked: pages got shorter (−35% words), stopped inventing prices, policies, and statistics, and got more focused on phones. But v2 also told the agent to name its default look (cream, forest green, an italic serif) and leave it. The agent dutifully avoided those and landed on the *next* default, generic blue SaaS. The judge's notes say it repeatedly: "blue accents and card treatment feel generic", "navy card and blue CTA … feel conventional". The pricing restyle even reverted the brand's headline to "Simple, transparent pricing." A ban without a positive source of direction just selects the runner-up default. And the house-style list penalized warmth that the judge read as coherent identity.
 
@@ -176,9 +209,9 @@ With-skill runs on v3, judged by the independent judge against the iteration-2 f
 
 | Independent judge | result |
 |---|---|
-| v3 vs fresh baseline | v3 **10**, baseline 4. The best result against baseline so far (v1 9–5, v2 8–6) |
+| v3 vs fresh baseline | v3 **11**, baseline 3. The best result against baseline so far (v1 9–5, v2 8–6); 10–4 before the logo-sheet fix |
 | v3 vs v2 | v3 **8**, v2 6. Distinctiveness recovers from 3.3 to 3.7 |
-| v3 vs v1 | v1 **10**, v3 4. v1 still leads on identity (4.0 vs 2.8); v3 leads on content (3.8 vs 3.3) |
+| v3 vs v1 | v1 **9**, v3 5. v1 still leads on identity (4.0 vs 2.8); v3 leads on content (3.8 vs 3.3); 10–4 before the logo-sheet fix |
 
 | v3 vs baseline, mean (1–5) | baseline | v3 |
 |---|---|---|
@@ -229,3 +262,36 @@ The dashboards' phone layouts now show stacked invoice cards with client, amount
 **Remaining gaps.** The independent judge still rates baseline identity higher. v1 keeps winning on identity in the pricing restyles and on illustration finish in both animations: v1's soft fills and grounding shadow beat v4's bolder, plainer line art, which follows the skill's "few shapes, no shadows unless the product uses them" too literally. Some of the identity gap may be the judge's preference for its own house style (see iteration 3). The judge shows no position bias: across 83 judgments it picked X 46% of the time.
 
 **Next: generalization.** Rather than keep tuning against the same 7 cases and one judge's taste, the next step tests v4 on **5 held-out cases** it was never tuned on, one per scope area.
+
+### Held-out test: skill v4 on 5 unseen cases
+
+Five new briefs, written after v4 was frozen, run with the baseline and v4 (2 runs each), and judged blind by the independent judge. Data: [`iteration-holdout/results-auto.md`](iteration-holdout/results-auto.md), [`iteration-holdout/judgments-codex.md`](iteration-holdout/judgments-codex.md).
+
+**v4 vs baseline on unseen briefs:** v4 **8**, baseline 2.
+
+| Independent judge, mean (1–5) | baseline | v4 |
+|---|---|---|
+| Content | 3.0 | **4.5** |
+| Hierarchy | 3.2 | **4.3** |
+| Typography / color / craft | 3.3 / 3.7 / 3.4 | 4.0 / 4.0 / 4.0 |
+| Distinctiveness | **4.0** | 3.0 |
+| Logo concept / versatility | 3.5 / 2.0 | 4.0 / 3.0 |
+| Loader motion quality | **4.0** | 3.0 |
+
+| Automated (6 web runs each) | baseline | v4 |
+|---|---|---|
+| axe violations, mean affected elements | 14.8 | **0** (6/6 clean) |
+| Motion that respects reduced motion | 3/5 | 6/6 |
+| Visible words per page | 166 | 82 |
+| Emoji | 6 | 0 |
+| Distinct font sizes per page | 11.8 | 7.5 |
+
+The judge's notes follow one pattern on every web pair: v4 makes the essential thing clear and usable, while the baseline "has more personality":
+- The bakery notice "makes *Closed for renovations*, the dates, and the phone action immediately clear", whereas the baseline's storefront illustration "pushes the essentials" down.
+- The water tracker makes intake, goal, and "Add 250 ml" immediately legible, against the baseline's "large motivational headline and tiny, faint supporting text".
+- The recipe pages get larger step text and "Jump to recipe" navigation.
+- Both v4 logos built the H into a sail and shipped a reversed version; both baselines drew a sailboat.
+
+**Where the baseline won: both loaders.** v4's loaders were "exceptionally restrained", with motion confined to sun rays, while the baselines' bobbing clouds and dots read clearly as "loading". The skill's animation reference was written around ambient empty-state art ("rest in the cycle", "consider stopping"); a loader is different, because its motion is the message. This is a finding for the next version, not something to tune against the held-out set.
+
+**Correction: logo sheets.** Every with-skill logo from v2 on shipped a dark-background version (`logo-reversed.svg`); no baseline did. The presentation sheet, though, always showed the main `logo.svg` on the dark panel, so the judge scored "versatility" against artwork never meant for dark backgrounds. The sheet now uses the designer's dark version when one exists (captioned with its file name). All logo pairs in iterations 2–4 were re-judged in place under their original blind mappings, and the tallies above are corrected; the original judgments are in git history. Versatility for with-skill logos rose from 2.0–2.5 to 3–4, against 2 for baseline.

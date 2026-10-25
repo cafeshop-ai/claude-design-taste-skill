@@ -1,0 +1,1 @@
+Design the main screen of a phone app for tracking how much water you drink each day, as a web page that works at phone width. It should be quick to log a glass and easy to see progress toward the daily goal. Single file: index.html.

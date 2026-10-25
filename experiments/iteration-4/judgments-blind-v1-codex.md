@@ -12,7 +12,7 @@ Judged from screenshots with conditions hidden behind random X/Y labels; the map
 | condition | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | iteration-1/with-skill | 4.00 | 3.50 | 3.10 | 3.67 | 4.00 | 4.50 | 3.80 | 4.00 | 3.00 | 4.50 | 4.00 | 3.00 | 4.00 | 2.00 |
-| iteration-4/with-skill | 4.00 | 4.00 | 4.00 | 4.00 | 3.10 | 4.00 | 4.00 | 3.50 | 3.00 | 4.50 | 4.00 | 3.50 | 3.90 | 2.00 |
+| iteration-4/with-skill | 4.00 | 4.00 | 4.00 | 4.00 | 3.10 | 4.00 | 4.00 | 3.50 | 3.00 | 4.50 | 4.00 | 3.50 | 3.90 | 3.50 |
 
 ## Pairs
 
@@ -89,9 +89,9 @@ X = `iteration-1/with-skill`, Y = `iteration-4/with-skill`. Preferred: **Y** (it
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | X (iteration-1/with-skill) |  | 4 |  | 3 |  |  |  |  |  |  | 4 | 3 |  | 2 |
-| Y (iteration-4/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 2 |
+| Y (iteration-4/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 3 |
 
-Y’s bolder serif wordmark and more open spacing between the fern’s leaves create a more cohesive, confident logo. X’s “BOOKSHOP & CAFÉ” descriptor adds useful context but becomes too small to read comfortably. Both botanical F marks remain recognizable as small silhouettes, but the dark green loses substantial contrast on the dark backgrounds.
+Both combine an F with a leafy stem, creating a simple, memorable connection to Fernway. Y’s heavier serif wordmark has stronger presence, and its cream reverse stays readable where X’s green-on-black logo nearly disappears. X’s tiny “BOOKSHOP & CAFÉ” descriptor adds context but scales poorly; both candidates’ green icons lose contrast on dark backgrounds, especially at favicon sizes.
 
 ### logo-run-2
 
@@ -99,10 +99,10 @@ X = `iteration-4/with-skill`, Y = `iteration-1/with-skill`. Preferred: **X** (it
 
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| X (iteration-4/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 2 |
+| X (iteration-4/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 4 |
 | Y (iteration-1/with-skill) |  | 3 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 2 |
 
-X’s upright stem and two horizontal leaves form a clearer F, giving Fernway a more distinctive silhouette that holds together better at favicon sizes. Y’s organic sprout and fine serif wordmark feel graceful, but the mark reads more generically as a plant and the tiny “BOOKSHOP & CAFÉ” descriptor loses readability. Both work in one color on white, but their dark green nearly disappears against the dark backgrounds shown.
+X’s upright stem and two broad leaves form a clearer F, giving the botanical idea a stronger connection to Fernway and preserving more identity at favicon sizes. Y’s angled stem and prominent left leaf feel organic but read more like a generic sprout; its elegant serif wordmark also carries a descriptor too small to read here. X supplies an effective cream reversed lockup, while Y’s full logo loses contrast on dark; both candidates’ green standalone marks struggle on the dark panels.
 
 ### pricing-restyle-run-1
 

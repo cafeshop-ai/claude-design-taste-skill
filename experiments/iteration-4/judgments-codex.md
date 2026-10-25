@@ -11,8 +11,8 @@ Judged from screenshots with conditions hidden behind random X/Y labels; the map
 
 | condition | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| iteration-2/baseline | 3.40 | 4.00 | 2.70 | 3.50 | 3.80 | 4.00 | 3.70 | 4.00 | 3.00 | 4.00 | 3.00 | 3.00 | 3.40 | 2.50 |
-| iteration-4/with-skill | 4.00 | 4.00 | 3.90 | 4.00 | 3.30 | 4.00 | 4.00 | 3.50 | 2.50 | 5.00 | 4.00 | 4.00 | 4.00 | 2.50 |
+| iteration-2/baseline | 3.40 | 4.00 | 2.70 | 3.33 | 3.80 | 4.00 | 3.70 | 4.00 | 3.00 | 4.00 | 3.00 | 3.00 | 3.40 | 2.00 |
+| iteration-4/with-skill | 4.00 | 4.00 | 3.90 | 4.00 | 3.30 | 4.00 | 4.00 | 3.50 | 2.50 | 5.00 | 4.00 | 4.00 | 4.00 | 3.00 |
 
 ## Pairs
 
@@ -88,10 +88,10 @@ X = `iteration-4/with-skill`, Y = `iteration-2/baseline`. Preferred: **X** (iter
 
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| X (iteration-4/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 2 |
-| Y (iteration-2/baseline) |  | 4 |  | 4 |  |  |  |  |  |  | 3 | 3 |  | 2 |
+| X (iteration-4/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 3 |
+| Y (iteration-2/baseline) |  | 4 |  | 3 |  |  |  |  |  |  | 3 | 3 |  | 2 |
 
-X’s leafy F is more memorable and retains a clearer silhouette at favicon size, supported by a sturdy serif wordmark. Y’s open-book base and sprouting leaves communicate the business more explicitly, but its narrow internal gaps lose definition at 16px, and the tiny descriptor adds little at the displayed size. Both use dark green against near-black without sufficient contrast, substantially weakening their demonstrated versatility.
+X’s leafy F connects directly to Fernway, with a compact silhouette and sturdy serif wordmark that hold up better at small sizes. Y’s book-and-sprout concept communicates the business more explicitly, but its narrow internal gaps and tiny subtitle lose clarity as it shrinks. X also supplies a successful cream reversed lockup; both green favicon treatments lack contrast on dark backgrounds, while Y’s full dark-background logo is particularly difficult to read.
 
 ### logo-run-2
 
@@ -100,9 +100,9 @@ X = `iteration-4/with-skill`, Y = `iteration-2/baseline`. Preferred: **X** (iter
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | X (iteration-4/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 3 |
-| Y (iteration-2/baseline) |  | 4 |  | 4 |  |  |  |  |  |  | 3 | 3 |  | 3 |
+| Y (iteration-2/baseline) |  | 4 |  | 3 |  |  |  |  |  |  | 3 | 3 |  | 2 |
 
-X’s leaf-built F combines the initial and botanical reference in a compact silhouette that holds up better at favicon size. Y’s open book and sprouting stem communicate the bookshop more directly, but the narrow page divisions and clustered leaves become harder to distinguish at 16px. Both have polished serif wordmarks, but both lose substantial contrast on dark backgrounds; Y’s tiny descriptor compounds that weakness.
+X’s leaf-built F combines the name and botanical theme in a memorable silhouette that holds together better at favicon sizes. Y’s open book and sprout communicate the business more explicitly, but its narrow stem gaps and separate leaves lose definition at 16px, while the tiny tagline adds little at this scale. X supplies a successful cream reversed wordmark, although its green standalone icons remain low contrast on dark; Y’s dark presentation has poor contrast throughout.
 
 ### pricing-restyle-run-1
 

@@ -6,11 +6,12 @@ Every blind pairwise comparison in the experiment. "Wins" counts preferred outpu
 |---|---|---|---|---|---|
 | iteration-1 | Claude | baseline (it. 1) | skill v1 | 0–12, 2 ties | 3.7→4.0 / 3.4→4.0 / 3.5→4.0 / 2.3→3.2 / 3.7→3.8 / 2.9→3.4 |
 | iteration-1 | Codex | baseline (it. 1) | skill v1 | 5–9 | 3.9→3.9 / 3.5→4.0 / 3.4→4.0 / 3.3→3.6 / 3.6→3.7 / 3.6→3.6 |
-| iteration-2 | Codex | baseline (it. 2) | skill v2 | 6–8 | 3.7→4.0 / 3.5→3.7 / 3.5→4.0 / 2.8→4.0 / 3.4→3.7 / 3.9→2.8 |
-| iteration-2 | Codex | skill v1 | skill v2 | 10–3 | 3.9→4.0 / 4.0→3.6 / 4.0→4.0 / 3.3→3.9 / 3.9→3.6 / 4.0→2.7 |
-| iteration-3 | Codex | baseline (it. 2) | skill v3 | 4–10 | 3.6→4.0 / 3.2→4.0 / 3.5→4.0 / 2.7→3.8 / 3.4→3.4 / 4.0→3.2 |
-| iteration-3 | Codex | skill v1 | skill v3 | 10–4 | 3.8→3.9 / 4.0→3.7 / 4.0→4.0 / 3.3→3.8 / 3.8→3.4 / 4.0→2.8 |
-| iteration-3 | Codex | skill v2 | skill v3 | 6–8 | 4.0→3.8 / 3.6→3.9 / 4.0→4.0 / 3.9→3.6 / 3.7→3.5 / 3.3→3.7 |
-| iteration-4 | Codex | baseline (it. 2) | skill v4 | 2–12 | 3.7→4.0 / 3.4→4.0 / 3.4→4.0 / 2.7→3.9 / 3.5→4.0 / 3.8→3.3 |
+| iteration-2 | Codex | baseline (it. 2) | skill v2 | 6–8 | 3.7→4.0 / 3.5→3.7 / 3.5→4.0 / 2.8→4.0 / 3.5→3.7 / 3.9→2.8 |
+| iteration-2 | Codex | skill v1 | skill v2 | 9–4 | 3.9→4.0 / 4.0→3.6 / 4.0→4.0 / 3.3→3.9 / 3.8→3.7 / 4.0→2.7 |
+| iteration-3 | Codex | baseline (it. 2) | skill v3 | 3–11 | 3.6→4.0 / 3.2→4.0 / 3.5→4.0 / 2.7→3.8 / 3.3→3.5 / 4.0→3.2 |
+| iteration-3 | Codex | skill v1 | skill v3 | 9–5 | 3.8→3.9 / 4.0→3.7 / 4.0→4.0 / 3.3→3.8 / 3.7→3.4 / 4.0→2.8 |
+| iteration-3 | Codex | skill v2 | skill v3 | 6–8 | 4.0→3.8 / 3.6→3.9 / 4.0→4.0 / 3.9→3.6 / 3.7→3.6 / 3.3→3.7 |
+| iteration-4 | Codex | baseline (it. 2) | skill v4 | 2–12 | 3.7→4.0 / 3.4→4.0 / 3.4→4.0 / 2.7→3.9 / 3.3→4.0 / 3.8→3.3 |
 | iteration-4 | Codex | skill v1 | skill v4 | 7–7 | 3.8→4.0 / 4.0→3.9 / 4.0→4.0 / 3.1→4.0 / 3.7→4.0 / 4.0→3.1 |
 | iteration-4 | Codex | skill v3 | skill v4 | 5–9 | 3.9→3.9 / 3.7→3.8 / 4.0→4.0 / 3.7→3.9 / 3.2→3.9 / 3.3→3.5 |
+| iteration-holdout | Codex | baseline (holdout) | skill v4 (holdout) | 2–8 | 3.2→4.3 / 3.3→4.0 / 3.7→4.0 / 3.0→4.5 / 3.4→4.0 / 4.0→3.0 |

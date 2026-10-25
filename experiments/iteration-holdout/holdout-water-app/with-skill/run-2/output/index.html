@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f9f6">
+  <meta name="color-scheme" content="light">
+  <title>Well — Daily water tracker</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%232575a4'/%3E%3Cpath d='M20 7C16 14 10 19 10 25a10 10 0 0020 0c0-6-6-11-10-18' fill='%23fff'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --canvas: #e9efee; --surface: #f8f9f6; --white: #fff;
+      --ink: #203c45; --muted: #64757a; --line: #e3e8e4;
+      --blue: #26749d; --blue-dark: #1c6085; --blue-light: #e8f2f6;
+      --water: #83c5e5; --water-back: #b1dbed; --water-bed: #edf3f2;
+      --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px;
+      --radius: 20px; --radius-sm: 12px; --ease: 220ms ease-out;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--canvas); font-family: 'Avenir Next', 'Segoe UI', sans-serif; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    button, input { font: inherit; }
+    button { color: inherit; cursor: pointer; border: 0; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+    button:active { filter: brightness(.94); }
+    button, input { transition: background var(--ease), border-color var(--ease); }
+    svg { display: block; flex-shrink: 0; }
+    h1, h2, p { margin: 0; }
+    ::selection { background: var(--water-back); color: var(--ink); }
+    .app { width: 100%; max-width: 440px; min-height: 100dvh; margin: 0 auto; padding: max(28px, env(safe-area-inset-top)) 28px max(28px, env(safe-area-inset-bottom)); background: var(--surface); }
+    .topbar { display: flex; justify-content: space-between; align-items: center; }
+    .brand { display: flex; gap: 8px; align-items: center; font-size: 29px; font-weight: 650; letter-spacing: -1.5px; }
+    .brand svg { color: var(--blue); width: 25px; height: 31px; }
+    .icon-button { display: inline-flex; justify-content: center; align-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: transparent; }
+    .icon-button svg { width: 20px; height: 20px; }
+    .heading { display: flex; align-items: center; justify-content: space-between; margin-top: 32px; }
+    h1 { font-size: 30px; font-weight: 600; letter-spacing: -1px; }
+    .date { font-size: 13px; color: var(--muted); }
+    .progress { text-align: center; padding-top: 20px; }
+    .water-wrap { position: relative; width: 280px; height: 280px; margin: 0 auto; }
+    .water-visual { width: 100%; height: 100%; overflow: visible; }
+    .water-front { fill: var(--water); }
+    .water-back { fill: var(--water-back); }
+    #water-level { transition: transform 650ms cubic-bezier(.22,1,.36,1); }
+    .progress-copy { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: none; padding-top: 32px; }
+    .total { font-size: 60px; line-height: 1.05; font-weight: 500; letter-spacing: -3px; font-variant-numeric: tabular-nums; }
+    .goal-caption { font-size: 14px; margin-top: 8px; color: var(--ink); }
+    .percentage { position: absolute; top: 30px; right: 0; padding: 9px 13px; border-radius: 24px; background: var(--white); color: var(--blue-dark); font-size: 13px; font-weight: 600; border: 4px solid var(--surface); font-variant-numeric: tabular-nums; }
+    .remaining { display: flex; gap: 8px; justify-content: center; align-items: center; margin-top: 16px; font-size: 14px; color: var(--muted); }
+    .remaining svg { color: var(--blue); width: 16px; height: 16px; }
+    .remaining strong { font-weight: 600; color: var(--ink); }
+    .log-section { margin-top: 32px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    h2 { font-size: 17px; font-weight: 600; letter-spacing: -.3px; }
+    .section-note { color: var(--muted); font-size: 12px; }
+    .sizes { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; margin-top: 16px; }
+    .size { min-height: 84px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: transparent; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; font-size: 12px; font-weight: 500; position: relative; }
+    .size svg { width: 24px; height: 28px; color: var(--muted); }
+    .size[aria-pressed="true"] { border: 1.5px solid var(--blue); background: var(--blue-light); color: var(--blue-dark); }
+    .size[aria-pressed="true"] svg { color: var(--blue); }
+    .size[aria-pressed="true"]::after { content: ''; position: absolute; width: 5px; height: 5px; border-radius: 50%; background: var(--blue); right: 8px; top: 8px; }
+    .size .custom-icon { width: 22px; height: 28px; }
+    .add-button { width: 100%; min-height: 56px; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 12px; border-radius: 16px; background: var(--blue); color: var(--white); font-weight: 600; font-size: 16px; }
+    .add-button svg { width: 20px; height: 20px; }
+    .button-amount { opacity: 1; font-size: 14px; font-weight: 400; margin-left: 2px; }
+    .history { margin-top: 32px; }
+    .history-count { font-size: 12px; color: var(--muted); }
+    .entries { list-style: none; margin: 8px 0 0; padding: 0; }
+    .entry { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .entry:last-child { border: 0; padding-bottom: 0; }
+    .entry-icon { width: 38px; height: 38px; display: grid; place-items: center; background: var(--blue-light); border-radius: 12px; color: var(--blue); }
+    .entry-icon svg { width: 18px; height: 22px; }
+    .entry-details { flex: 1; }
+    .entry-title { font-size: 14px; font-weight: 500; }
+    .entry-time { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .entry-amount { font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums; }
+    .show-all { background: transparent; color: var(--blue-dark); min-height: 44px; padding: 0 0 0 12px; font-size: 12px; }
+    .empty { padding: 24px 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .toast { position: fixed; z-index: 5; bottom: max(24px, env(safe-area-inset-bottom)); left: 50%; width: calc(100% - 40px); max-width: 384px; transform: translate(-50%, 16px); background: var(--ink); color: var(--white); border-radius: 16px; padding: 8px 8px 8px 20px; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 14px; opacity: 0; visibility: hidden; transition: opacity var(--ease), transform var(--ease), visibility var(--ease); box-shadow: 0 8px 32px #203c4520; }
+    .toast.visible { opacity: 1; visibility: visible; transform: translate(-50%,0); }
+    .toast button { background: transparent; color: var(--water-back); min-height: 44px; padding: 0 16px; font-weight: 600; }
+    dialog { width: calc(100% - 40px); max-width: 384px; border: 0; padding: 28px; border-radius: 24px; color: var(--ink); background: var(--surface); }
+    dialog::backdrop { background: #203c4566; backdrop-filter: blur(4px); }
+    .dialog-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .dialog-top h2 { font-size: 22px; }
+    .dialog-top .icon-button { margin: -8px -8px -8px 0; border: 0; }
+    .form-label { display: block; color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+    .input-wrap { display: flex; align-items: center; background: var(--white); border: 1px solid var(--muted); border-radius: 12px; padding-right: 16px; }
+    input { min-width: 0; width: 100%; padding: 16px; background: transparent; color: var(--ink); border: 0; border-radius: 12px; font-size: 20px; font-variant-numeric: tabular-nums; }
+    .input-wrap span { font-size: 14px; color: var(--muted); }
+    .form-hint { color: var(--muted); font-size: 12px; margin-top: 8px; line-height: 1.5; }
+    .dialog-save { margin-top: 24px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; clip: rect(0,0,0,0); overflow: hidden; white-space: nowrap; }
+    @media (min-width: 600px) { body { padding: 32px 0; } .app { min-height: calc(100dvh - 64px); border-radius: 32px; box-shadow: 0 12px 64px #203c4509; } }
+    @media (max-width: 359px) { .app { padding-left: 20px; padding-right: 20px; } .water-wrap { width: 252px; height: 252px; } .total { font-size: 52px; } .date { font-size: 12px; } }
+    @media (hover: hover) { .icon-button:hover, .size:hover { background: var(--blue-light); } .add-button:hover { background: var(--blue-dark); } .show-all:hover { text-decoration: underline; } .toast button:hover { background: #ffffff10; border-radius: 8px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="drop" viewBox="0 0 24 28"><path d="M12 2C9.7 6.4 3.5 12.5 3.5 18a8.5 8.5 0 0 0 17 0C20.5 12.5 14.3 6.4 12 2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.5 18a4.5 4.5 0 0 0 4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="glass" viewBox="0 0 24 28"><path d="m4 3 2 22h12l2-22H4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M5 13c3-2 6 2 9 0s4-1 5-1l-1 13H6L5 13Z" fill="currentColor" opacity=".18"/><path d="M5 13c3-2 6 2 9 0s4-1 5-1" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  </defs></svg>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand" aria-label="Well"><svg aria-hidden="true"><use href="#drop"/></svg><span>well.</span></div>
+      <button class="icon-button" id="edit-goal" aria-label="Edit daily water goal" title="Edit daily goal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h9m4 0h3M4 17h3m4 0h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+    </header>
+    <div class="heading"><h1>Today</h1><p class="date" id="today-date"></p></div>
+    <section class="progress" aria-label="Daily water progress">
+      <div class="water-wrap" role="progressbar" aria-label="Water consumed toward daily goal" aria-valuemin="0" aria-valuemax="2000" aria-valuenow="1250" id="progress-meter">
+        <svg class="water-visual" viewBox="0 0 280 280" aria-hidden="true">
+          <defs><clipPath id="water-clip"><circle cx="140" cy="140" r="132"/></clipPath></defs>
+          <circle cx="140" cy="140" r="139" fill="none" stroke="#dce8e8" stroke-width="1"/>
+          <circle cx="140" cy="140" r="132" fill="var(--water-bed)"/>
+          <g clip-path="url(#water-clip)"><g id="water-level" style="transform:translateY(106px)">
+            <path class="water-back" d="M-30 1C30-19 68 19 131 1S227-15 310 1V300H-30Z"/>
+            <path class="water-front" d="M-30 10C28 29 77-10 141 10S235 28 310 8V300H-30Z"/>
+          </g></g>
+          <path d="M32 91a118 118 0 0 1 55-55" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+        </svg>
+        <div class="progress-copy"><span class="total" id="total">1,250</span><span class="goal-caption">of <span id="goal-text">2,000</span> ml</span></div>
+        <span class="percentage" id="percentage">63%</span>
+      </div>
+      <p class="remaining"><svg aria-hidden="true"><use href="#drop"/></svg><span id="remaining"><strong>750 ml</strong> to reach your goal</span></p>
+    </section>
+    <section class="log-section" aria-labelledby="add-heading">
+      <div class="section-title"><h2 id="add-heading">Add water</h2><span class="section-note">Choose your glass</span></div>
+      <div class="sizes" role="group" aria-label="Glass size">
+        <button class="size" data-amount="150" aria-pressed="false"><svg aria-hidden="true" style="width:20px;height:24px"><use href="#glass"/></svg><span>150 ml</span></button>
+        <button class="size" data-amount="250" aria-pressed="true"><svg aria-hidden="true"><use href="#glass"/></svg><span>250 ml</span></button>
+        <button class="size" data-amount="500" aria-pressed="false"><svg viewBox="0 0 24 28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 2h6v5l3 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V11l3-4V2Z" stroke-linejoin="round"/><path d="M9 5h6M6 15h12M6 21h12"/><path d="M7 15h10v10H7Z" fill="currentColor" opacity=".15" stroke="none"/></svg><span>500 ml</span></button>
+        <button class="size" id="custom-size" aria-pressed="false"><svg class="custom-icon" aria-hidden="true"><use href="#plus"/></svg><span id="custom-label">Custom</span></button>
+      </div>
+      <button class="add-button" id="add-water"><svg aria-hidden="true"><use href="#plus"/></svg><span>Add water</span><span class="button-amount" id="button-amount">250 ml</span></button>
+    </section>
+    <section class="history" aria-labelledby="history-heading">
+      <div class="section-title"><h2 id="history-heading">Today's water</h2><span class="history-count" id="history-count">3 drinks</span><button class="show-all" id="show-all" hidden>View all</button></div>
+      <ul class="entries" id="entries"></ul>
+    </section>
+  </main>
+  <div class="toast" id="toast"><span id="toast-message" role="status"></span><button id="undo">Undo</button></div>
+  <p class="sr-only" id="announcement" aria-live="polite"></p>
+  <dialog id="amount-dialog" aria-labelledby="dialog-title">
+    <form id="amount-form">
+      <div class="dialog-top"><h2 id="dialog-title">Daily goal</h2><button type="button" class="icon-button" id="close-dialog" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+      <label class="form-label" id="amount-label" for="amount-input">Your daily water goal</label>
+      <div class="input-wrap"><input type="number" inputmode="numeric" id="amount-input" min="100" max="10000" step="50" required><span>ml</span></div>
+      <p class="form-hint" id="form-hint">Set the amount that works for you.</p>
+      <button class="add-button dialog-save" type="submit" id="save-amount">Save goal</button>
+    </form>
+  </dialog>
+  <script>
+    (() => {
+      const $ = id => document.getElementById(id);
+      const dateKey = () => { const d = new Date(); return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`; };
+      const storageKey = 'well-water-v1';
+      let selected = 250, custom = 300, expanded = false, dialogMode = 'goal', undoId = null, toastTimer;
+      let state = { date: dateKey(), goal: 2000, entries: [] };
+      // A first-visit example makes the main-screen design visible; logging persists locally.
+      const now = new Date();
+      const dayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+      state.entries = [500, 500, 250].map((amount, i) => ({ id: `sample-${i}`, amount, time: Math.max(dayStart, now.getTime() - [120, 60, 15][i]*60000) }));
+      try { const saved = JSON.parse(localStorage.getItem(storageKey)); if (saved && Number.isFinite(saved.goal) && saved.goal >= 100 && saved.goal <= 10000 && Array.isArray(saved.entries)) { state = { date: dateKey(), goal: saved.goal, entries: saved.date === dateKey() ? saved.entries.filter(e => Number.isFinite(e.amount) && e.amount > 0 && Number.isFinite(e.time)) : [] }; } } catch (_) {}
+      function save() { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch (_) { $('announcement').textContent = 'Water logged for this session. Browser storage is unavailable.'; } }
+      function checkDate() { if (state.date !== dateKey()) { state.date = dateKey(); state.entries = []; expanded = false; save(); } }
+      function render() {
+        checkDate();
+        $('today-date').textContent = new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+        const total = state.entries.reduce((sum, entry) => sum + entry.amount, 0);
+        const ratio = Math.min(total / state.goal, 1);
+        $('total').textContent = total.toLocaleString('en-US');
+        $('goal-text').textContent = state.goal.toLocaleString('en-US');
+        $('percentage').textContent = `${Math.round(total/state.goal*100)}%`;
+        $('water-level').style.transform = `translateY(${272 - ratio*264}px)`;
+        $('remaining').replaceChildren();
+        if (total >= state.goal) { $('remaining').textContent = total === state.goal ? 'Daily goal reached' : `${(total-state.goal).toLocaleString('en-US')} ml beyond your goal`; }
+        else { const strong = document.createElement('strong'); strong.textContent = `${(state.goal-total).toLocaleString('en-US')} ml`; $('remaining').append(strong, ' to reach your goal'); }
+        $('progress-meter').setAttribute('aria-valuemax', state.goal);
+        $('progress-meter').setAttribute('aria-valuenow', Math.min(total, state.goal));
+        $('progress-meter').setAttribute('aria-valuetext', `${total} of ${state.goal} milliliters, ${Math.round(total/state.goal*100)} percent`);
+        $('history-count').textContent = `${state.entries.length} ${state.entries.length === 1 ? 'drink' : 'drinks'}`;
+        $('show-all').hidden = state.entries.length <= 3;
+        $('show-all').textContent = expanded ? 'Show less' : 'View all';
+        $('history-count').hidden = state.entries.length > 3;
+        const entries = [...state.entries].sort((a,b) => b.time-a.time);
+        $('entries').replaceChildren();
+        if (!entries.length) { const li = document.createElement('li'); li.className = 'empty'; li.textContent = 'Your first glass starts here. Choose a size and add water.'; $('entries').append(li); }
+        (expanded ? entries : entries.slice(0,3)).forEach(entry => {
+          const li = document.createElement('li'); li.className = 'entry';
+          li.innerHTML = '<span class="entry-icon"><svg aria-hidden="true"><use href="#glass"/></svg></span><div class="entry-details"><p class="entry-title">Water</p><p class="entry-time"></p></div><span class="entry-amount"></span>';
+          li.querySelector('.entry-time').textContent = new Date(entry.time).toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit'});
+          li.querySelector('.entry-amount').textContent = `+${entry.amount.toLocaleString('en-US')} ml`;
+          $('entries').append(li);
+        });
+      }
+      function selectAmount(amount, button) {
+        selected = amount;
+        document.querySelectorAll('.size').forEach(el => el.setAttribute('aria-pressed', String(el === button)));
+        $('button-amount').textContent = `${amount.toLocaleString('en-US')} ml`;
+      }
+      document.querySelectorAll('[data-amount]').forEach(button => button.addEventListener('click', () => selectAmount(Number(button.dataset.amount), button)));
+      $('add-water').addEventListener('click', () => {
+        checkDate();
+        const entry = { id: `${Date.now()}-${Math.random()}`, amount: selected, time: Date.now() };
+        state.entries.push(entry); undoId = entry.id; save(); render();
+        $('toast-message').textContent = `${selected.toLocaleString('en-US')} ml added`;
+        $('toast').classList.add('visible'); clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => $('toast').classList.remove('visible'), 6500);
+      });
+      $('undo').addEventListener('click', () => { state.entries = state.entries.filter(e => e.id !== undoId); save(); render(); $('toast').classList.remove('visible'); clearTimeout(toastTimer); $('announcement').textContent = 'Last drink removed.'; $('add-water').focus(); });
+      $('show-all').addEventListener('click', () => { expanded = !expanded; render(); });
+      function openDialog(mode) {
+        dialogMode = mode;
+        const goal = mode === 'goal';
+        $('dialog-title').textContent = goal ? 'Daily goal' : 'Custom glass';
+        $('amount-label').textContent = goal ? 'Your daily water goal' : 'How much water?';
+        $('amount-input').min = goal ? 100 : 10; $('amount-input').max = goal ? 10000 : 3000; $('amount-input').step = 1;
+        $('amount-input').value = goal ? state.goal : custom;
+        $('form-hint').textContent = goal ? 'Set the amount that works for you.' : 'Choose an amount from 10 to 3,000 ml.';
+        $('save-amount').textContent = goal ? 'Save goal' : 'Use this glass';
+        $('amount-dialog').showModal(); $('amount-input').focus(); $('amount-input').select();
+      }
+      $('edit-goal').addEventListener('click', () => openDialog('goal'));
+      $('custom-size').addEventListener('click', () => openDialog('custom'));
+      $('close-dialog').addEventListener('click', () => $('amount-dialog').close());
+      $('amount-dialog').addEventListener('click', event => { if (event.target === $('amount-dialog')) { const rect = event.target.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) event.target.close(); } });
+      $('amount-form').addEventListener('submit', event => { event.preventDefault(); const amount = Number($('amount-input').value); if (!$('amount-input').checkValidity()) return; if (dialogMode === 'goal') { state.goal = amount; save(); render(); $('announcement').textContent = `Daily goal set to ${amount} milliliters.`; } else { custom = amount; $('custom-label').textContent = `${amount.toLocaleString('en-US')} ml`; selectAmount(amount, $('custom-size')); } $('amount-dialog').close(); });
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
+      render();
+    })();
+  </script>
+</body>
+</html>

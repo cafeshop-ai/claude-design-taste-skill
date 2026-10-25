@@ -1,0 +1,1 @@
+Created [loader.svg](loader.svg): a compact animated sun, floating cloud, and pulsing dots. Includes reduced-motion support and accessible text. SVG validation passed.

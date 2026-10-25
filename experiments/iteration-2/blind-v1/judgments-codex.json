@@ -116,24 +116,24 @@
  },
  {
   "pair": "logo-run-1",
-  "preference": "X",
+  "preference": "Y",
   "scores": {
    "X": {
-    "concept": 3,
-    "simplicity": 4,
-    "small-size legibility": 3,
-    "craft": 4,
-    "versatility": 2
-   },
-   "Y": {
-    "concept": 3,
+    "concept": 4,
     "simplicity": 4,
     "small-size legibility": 3,
     "craft": 3,
     "versatility": 2
+   },
+   "Y": {
+    "concept": 4,
+    "simplicity": 4,
+    "small-size legibility": 3,
+    "craft": 4,
+    "versatility": 3
    }
   },
-  "notes": "X\u2019s sturdier serif wordmark feels more approachable and holds together better than Y\u2019s extreme thick\u2013thin strokes and delicate terminals. Both leafy F marks are memorable and remain recognizable at small sizes, though the botanical concept is fairly generic. X\u2019s \u201cBOOKSHOP & CAF\u00c9\u201d descriptor clarifies the business, but both candidates lose substantial contrast on the dark backgrounds shown."
+  "notes": "Both leaf-built F marks connect clearly to Fernway and remain recognizable in silhouette at small sizes. Y\u2019s more expressive serif wordmark and cream reversed logo give it a more polished identity; X\u2019s tiny caf\u00e9 descriptor loses usefulness as it shrinks. X\u2019s green logo nearly disappears on dark backgrounds, while Y solves that for the full lockup but still leaves its dark-panel icons and favicon with weak contrast."
  },
  {
   "pair": "logo-run-2",
@@ -144,17 +144,17 @@
     "simplicity": 4,
     "small-size legibility": 4,
     "craft": 4,
-    "versatility": 2
+    "versatility": 3
    },
    "Y": {
-    "concept": 4,
+    "concept": 3,
     "simplicity": 4,
     "small-size legibility": 3,
     "craft": 4,
     "versatility": 2
    }
   },
-  "notes": "X\u2019s two leaf-shaped arms form a clearer F, preserving the monogram at favicon sizes and pairing well with the sturdy serif wordmark. Y\u2019s extra left leaf makes the silhouette read more as a generic sprout, while its tiny caf\u00e9 descriptor becomes unreadable at reduced sizes. Both lose substantial contrast on the dark backgrounds shown and need a lighter monochrome version."
+  "notes": "X\u2019s two leaf-shaped arms form a clearer F, paired with a sturdy serif wordmark that suits a bookshop. Y\u2019s extra left leaf makes the symbol read more like a generic sprout, and its fine wordmark and tiny descriptor are more fragile at reduced sizes. X supplies an effective cream reversed lockup, but both candidates\u2019 dark-panel icons lose contrast; Y\u2019s full dark-background logo also suffers."
  },
  {
   "pair": "pricing-restyle-run-1",

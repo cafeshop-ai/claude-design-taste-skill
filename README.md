@@ -38,4 +38,12 @@ Rules alone produce work that is correct but bland. So the skill pairs its princ
 
 ## The experiment
 
-Can Claude teach another agent its design taste? `experiments/` runs the same design tasks through OpenAI's Codex with and without this skill, across web UI, interaction design, logo design, SVG animation, and content design, then audits and blind-judges the results. Every prompt, output, screenshot, score, and skill change is committed there. See [`experiments/README.md`](experiments/README.md).
+Can Claude teach another agent its design taste? [`experiments/`](experiments/README.md) runs the same design tasks through OpenAI's Codex with and without this skill, across web UI, interaction design, logo design, SVG animation, and content design. It audits the results automatically and has them judged blind. Every prompt, output, screenshot, score, and skill change is committed.
+
+**Answer so far: partly, yes.** With the current skill, an independent blind judge (Codex itself) preferred the skill-guided work **12–2** on the cases the skill was refined against, and **8–2 on five unseen cases**:
+- **Content:** the largest gain. No invented facts, half the words, task first.
+- **Hierarchy, typography, color restraint:** clear gains.
+- **Accessibility:** about 26 violations per page down to 2 (0 on unseen cases).
+- **Logos:** better concepts, legible at 16px, with dark-background versions.
+
+What doesn't transfer yet is visual personality, where the judge still rates baseline Codex more distinctive, and animation finesse. Details: [results](experiments/README.md) · [scoreboard](experiments/SCOREBOARD.md) · [gallery](experiments/GALLERY.md).

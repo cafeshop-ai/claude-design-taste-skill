@@ -1,0 +1,1 @@
+Created [loader.svg](loader.svg): a 64×64 sun-and-cloud animation with dark mode, an accessible label, and reduced-motion support.

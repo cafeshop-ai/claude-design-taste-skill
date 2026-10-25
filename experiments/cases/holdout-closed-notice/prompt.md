@@ -1,0 +1,1 @@
+Make a simple page for our bakery, Crumb & Co.: we're closed for renovations from July 1 to July 21, 2027, and reopen on July 22. Catering orders can still be placed by phone at 503-555-0142. Single file: index.html.

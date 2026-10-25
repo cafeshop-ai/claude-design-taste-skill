@@ -1,0 +1,1 @@
+Created [loader.svg](loader.svg): a compact sun-and-cloud loader with rotating rays, dark-mode colors, and reduced-motion support.

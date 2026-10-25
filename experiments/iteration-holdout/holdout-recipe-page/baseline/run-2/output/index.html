@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f7f2">
+  <meta name="description" content="Fluffy lemon ricotta pancakes with golden edges and a little sunshine in every bite. An easy, 25-minute breakfast that serves four.">
+  <title>Lemon Ricotta Pancakes · Sunday Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f8f7f2;--ink:#303b30;--muted:#75786d;--line:#dedfd3;--orange:#b95235;--lemon:#f0db74;--serif:'Libre Caslon Display',Georgia,serif;--sans:'DM Sans',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;-webkit-font-smoothing:antialiased}button,a,input{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--orange);outline-offset:5px}svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.wrap{max-width:1328px;margin:auto;padding:0 56px}
+    .site-header{height:105px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font:32px var(--serif);letter-spacing:-1.2px}.brand svg{width:34px;height:34px;color:var(--orange);stroke-width:1.3}.nav{display:flex;gap:34px;align-items:center;font-size:13px}.nav a{padding:10px 0;position:relative}.nav a:hover{color:var(--orange)}.nav a.active:after{content:'';position:absolute;bottom:3px;left:0;right:0;height:1px;background:var(--orange)}.nav .saved-link{display:flex;align-items:center;gap:8px}.saved-link svg{width:16px;height:16px}.saved-count{font-size:10px;background:var(--lemon);border-radius:50%;width:17px;height:17px;display:none;align-items:center;justify-content:center}
+    .breadcrumb{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:11px;padding:29px 0 27px}.breadcrumb svg{width:10px;height:10px}.breadcrumb span:last-child{color:var(--ink)}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:62px;align-items:center;padding-bottom:57px}.hero-copy{padding:10px 0}.eyebrow{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:9px}.eyebrow .dot{width:6px;height:6px;background:var(--orange);border-radius:50%}h1{font:normal clamp(64px,6.7vw,96px)/.99 var(--serif);letter-spacing:-2.7px;margin:24px 0 23px}.intro{max-width:385px;color:#73766b;font-size:15px;line-height:1.85;margin:0 0 23px}.note{font-size:12px;display:flex;align-items:center;gap:10px;margin-bottom:28px}.note .sun{color:var(--orange);font-size:19px}.note span:last-child{color:var(--muted)}.recipe-facts{display:flex;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;max-width:430px;margin:28px 0}.fact{display:flex;gap:12px;align-items:center;flex:1}.fact+.fact{border-left:1px solid var(--line);padding-left:22px}.fact svg{width:23px;height:23px;color:#6c7564}.fact small{display:block;font-size:9px;letter-spacing:1.4px;color:var(--muted);margin-bottom:6px}.fact strong{font-weight:500;font-size:13px}.actions{display:flex;gap:12px}.btn{border:1px solid var(--ink);background:transparent;color:var(--ink);height:45px;padding:0 20px;font-size:11px;font-weight:500;display:inline-flex;justify-content:center;align-items:center;gap:9px;transition:background .2s,transform .2s}.btn:hover{background:#e9eadf}.btn.primary{background:var(--ink);color:#fff}.btn.primary:hover{background:#465342}.btn svg{width:16px;height:16px}.btn.saved svg{fill:currentColor}.hero-photo{height:591px;position:relative;background:#d1c2a3;overflow:hidden;border-radius:3px}.hero-photo>img{width:100%;height:100%;object-fit:cover;object-position:48% center;display:block}.photo-badge{position:absolute;right:20px;top:20px;background:var(--lemon);width:92px;height:92px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;transform:rotate(10deg);box-shadow:0 2px 12px #0000000d}.photo-badge svg{width:25px;height:25px;margin-bottom:5px}.photo-badge span{font-size:9px;text-align:center;line-height:1.45;letter-spacing:1px;text-transform:uppercase}.photo-caption{position:absolute;bottom:19px;left:19px;background:var(--paper);padding:11px 14px;font-size:9px;letter-spacing:1.6px;display:flex;align-items:center;gap:9px}.photo-caption span{color:var(--orange);font-size:15px}
+    .recipe-section{border-top:1px solid var(--line);padding:48px 0 65px;display:grid;grid-template-columns:360px 1fr;gap:88px}.section-kicker{font-size:9px;letter-spacing:1.8px;color:var(--orange);font-weight:600;margin:0 0 8px}h2{font:normal 43px/1.1 var(--serif);letter-spacing:-.7px;margin:0}h3{font-size:15px;font-weight:550;margin:0 0 8px}.ingredients-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:21px}.serving-control{display:flex;align-items:center;border:1px solid var(--line);height:30px;gap:7px}.serving-control button{width:25px;height:28px;background:transparent;border:0;color:var(--ink);font-size:17px}.serving-control button:hover{background:#e8e8dc}.serving-control button:disabled{opacity:.3;cursor:default}.serving-control span{font-size:10px;white-space:nowrap}.ingredients-help{color:var(--muted);font-size:11px;margin:0 0 12px}.ingredient-list{padding:0;margin:0;list-style:none}.ingredient-list li{border-bottom:1px solid var(--line)}.ingredient-list label{display:flex;gap:12px;align-items:center;padding:13px 0;cursor:pointer;font-size:13px;line-height:1.5}.ingredient-list input{appearance:none;width:15px;height:15px;border:1px solid #b9beb0;border-radius:2px;margin:0;flex-shrink:0;display:grid;place-content:center;background:transparent;cursor:pointer}.ingredient-list input:checked{background:var(--ink);border-color:var(--ink)}.ingredient-list input:checked:after{content:'';width:6px;height:3px;border-left:1px solid white;border-bottom:1px solid white;transform:rotate(-45deg);margin-top:-2px}.ingredient-list input:checked+span{color:#919488;text-decoration:line-through}.ingredient-list b{font-weight:550}.method-header{display:flex;align-items:end;justify-content:space-between;margin-bottom:29px}.method-header>span{color:var(--muted);font-size:11px;padding-bottom:4px}.steps{list-style:none;padding:0;margin:0}.steps li{display:flex;gap:20px;padding:0 0 25px;margin:0 0 23px;border-bottom:1px solid var(--line)}.step-number{display:flex;justify-content:center;align-items:center;width:30px;height:30px;flex-shrink:0;background:#eeeee4;border-radius:50%;font:18px var(--serif);margin-top:0}.steps p{font-size:13px;line-height:1.85;color:var(--muted);margin:0}.tip{background:#eeeee3;padding:20px 23px;display:flex;gap:15px;align-items:start}.tip>svg{color:var(--orange);flex-shrink:0;width:22px;height:22px}.tip h3{font-family:var(--serif);font-size:23px;margin:0 0 5px;font-weight:400}.tip p{color:var(--muted);font-size:12px;line-height:1.8;margin:0}.end-note{border-top:1px solid var(--line);padding:37px 0;display:flex;align-items:center;justify-content:space-between}.end-note h2{font-size:31px;margin-bottom:7px}.end-note p{color:var(--muted);font-size:12px;margin:0}.end-note .little-lemon{width:45px;height:45px;color:#a7a350;stroke-width:1.1}.site-footer{border-top:1px solid var(--line);padding:23px 0 28px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:10px}.site-footer a:hover{color:var(--orange)}.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,15px);background:var(--ink);color:var(--paper);padding:13px 22px;font-size:12px;box-shadow:0 5px 25px #0002;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:10;text-align:center;max-width:90vw}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(min-width:1500px){.wrap{max-width:1408px}.hero{gap:80px}.hero-photo{height:650px}h1{font-size:104px}.intro{font-size:16px;max-width:420px}.recipe-section{grid-template-columns:390px 1fr;gap:100px}}
+    @media(max-width:1050px){.wrap{padding:0 32px}.hero{gap:35px}.hero-photo{height:555px}h1{font-size:76px}.fact{gap:8px}.fact+.fact{padding-left:13px}.fact svg{width:19px}.recipe-section{grid-template-columns:300px 1fr;gap:45px}.photo-caption{font-size:8px;letter-spacing:1px}}
+    @media(max-width:760px){.wrap{padding:0 23px}.site-header{height:82px}.brand{font-size:28px;gap:7px}.brand svg{width:29px}.nav{gap:20px;font-size:12px}.nav .about-link{display:none}.nav .saved-link{font-size:0;gap:0}.nav .saved-link svg{width:20px;height:20px}.saved-count{margin-left:5px}.breadcrumb{padding:23px 0;font-size:10px;gap:7px}.hero{grid-template-columns:1fr;gap:29px;padding-bottom:36px}.hero-copy{padding:7px 0 0}.eyebrow{font-size:9px}h1{font-size:80px;letter-spacing:-2px;margin:21px 0}.intro{max-width:440px;font-size:14px;margin-bottom:18px}.note{margin-bottom:20px}.recipe-facts{max-width:none;margin:23px 0;padding:18px 0}.fact+.fact{padding-left:22px}.actions .btn{flex:1;max-width:220px}.hero-photo{height:auto;aspect-ratio:1.05;order:2}.photo-badge{width:80px;height:80px;right:16px;top:16px}.photo-badge span{font-size:8px}.photo-badge svg{width:22px}.photo-caption{font-size:8px}.recipe-section{grid-template-columns:1fr;gap:43px;padding:35px 0 40px}.ingredients-heading{margin-bottom:17px}h2{font-size:39px}.ingredient-list label{padding:13px 0;font-size:14px}.method-header{margin-bottom:25px}.steps li{gap:15px}.steps p{font-size:13px}.end-note{padding:27px 0}.end-note h2{font-size:29px}.end-note p{max-width:240px;line-height:1.7}.site-footer{font-size:9px;line-height:1.7}.site-footer span:last-child{text-align:right}}
+    @media(max-width:380px){h1{font-size:69px}.wrap{padding:0 18px}.nav{gap:15px}.fact+.fact{padding-left:12px}.fact{gap:7px}.fact strong{font-size:12px}.fact small{font-size:8px}.photo-caption{letter-spacing:.5px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+    @media print{body{background:white;color:#000;font-size:12px}.wrap{padding:0;max-width:none}.site-header{height:65px}.nav,.breadcrumb,.hero-photo,.actions,.note,.toast,.end-note,.site-footer,.serving-control,.ingredients-help{display:none!important}.hero{display:block;padding:20px 0}.hero-copy{padding:0}h1{font-size:52px;margin:10px 0}.intro{max-width:none;font-size:12px;margin:10px 0}.recipe-facts{margin:15px 0;padding:12px 0;max-width:450px}.recipe-section{padding-top:25px;grid-template-columns:1fr 1.7fr;gap:35px}h2{font-size:30px}.steps li{break-inside:avoid;padding-bottom:15px;margin-bottom:15px}.steps p{font-size:11px}.ingredient-list label{padding:9px 0;font-size:11px}.tip{break-inside:avoid;padding:12px}.section-kicker{color:#555}.ingredient-list input:checked+span{color:inherit;text-decoration:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Sunday Table home">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="7"/><path d="M20 2v5m0 26v5M2 20h5m26 0h5M7.3 7.3l3.5 3.5m18.4 18.4 3.5 3.5M7.3 32.7l3.5-3.5m18.4-18.4 3.5-3.5M12.5 2.8l2 4.6m11 25.2 2 4.6M2.8 27.5l4.6-2m25.2-11 4.6-2M2.8 12.5l4.6 2m25.2 11 4.6 2M12.5 37.2l2-4.6m11-25.2 2-4.6"/></svg>
+        Sunday Table<span style="font-family:var(--sans);font-size:10px;align-self:flex-start;margin-top:5px;letter-spacing:0">®</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation"><a class="active" href="#recipe">The recipe</a><a class="about-link" href="#our-table">Our table</a><a class="saved-link" href="#" id="saved-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4Z"/></svg> Recipe box<span class="saved-count" id="saved-count">1</span></a></nav>
+    </header>
+    <main>
+      <div class="breadcrumb" aria-label="Breadcrumb"><a href="#">Home</a><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m4 2 4 4-4 4"/></svg><a href="#recipe">Breakfast & brunch</a><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m4 2 4 4-4 4"/></svg><span>Lemon ricotta pancakes</span></div>
+      <section class="hero" aria-labelledby="recipe-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="dot"></span>A little sunshine for your morning</div>
+          <h1 id="recipe-title">Lemon ricotta<br>pancakes</h1>
+          <p class="intro">Fluffy middles, golden edges, and just the right hint of lemon. The kind of breakfast that makes you linger a little longer.</p>
+          <div class="note"><span class="sun" aria-hidden="true">✳</span><span>Simple ingredients. Slow-morning energy.</span></div>
+          <div class="recipe-facts">
+            <div class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v5l3 2M9 2h6m-3 0v3"/></svg><div><small>TOTAL TIME</small><strong>25 minutes</strong></div></div>
+            <div class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-3a6 6 0 0 1 12 0v3m1-16a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 4v3"/></svg><div><small>SERVES</small><strong><span id="hero-servings">4</span> people</strong></div></div>
+            <div class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20v-5h4v5m2 0V9h4v11m2 0V4h4v16"/></svg><div><small>DIFFICULTY</small><strong>Easy does it</strong></div></div>
+          </div>
+          <div class="actions"><button class="btn primary" id="save-recipe" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4Z"/></svg><span>Save recipe</span></button><button class="btn" id="print-recipe" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7Zm10-3h.01"/></svg>Print recipe</button></div>
+        </div>
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1400&q=85" alt="Golden, fluffy pancakes topped with fresh berries, ready for a slow morning breakfast" width="700" height="800" fetchpriority="high">
+          <div class="photo-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg><span>Made for<br>slow mornings</span></div>
+          <div class="photo-caption"><span aria-hidden="true">✳</span> YOUR NEW WEEKEND RITUAL</div>
+        </div>
+      </section>
+      <section class="recipe-section" id="recipe" aria-label="Ingredients and instructions">
+        <div class="ingredients">
+          <p class="section-kicker">GATHER ROUND</p>
+          <div class="ingredients-heading"><h2>The ingredients</h2><div class="serving-control" aria-label="Adjust servings"><button type="button" id="decrease" aria-label="Decrease servings">−</button><span><b id="servings">4</b> servings</span><button type="button" id="increase" aria-label="Increase servings">+</button></div></div>
+          <p class="ingredients-help">A little prep. A whole lot of good.</p>
+          <ul class="ingredient-list">
+            <li><label><input type="checkbox"><span><b data-amount="1" data-unit="cup">1 cup</b> ricotta</span></label></li>
+            <li><label><input type="checkbox"><span><b data-amount="0.75" data-unit="cup">¾ cup</b> milk</span></label></li>
+            <li><label><input type="checkbox"><span><b data-amount="2" data-unit="egg">2 eggs</b></span></label></li>
+            <li><label><input type="checkbox"><span>Zest of <b data-amount="1" data-unit="lemon">1 lemon</b></span></label></li>
+            <li><label><input type="checkbox"><span><b data-amount="1" data-unit="cup">1 cup</b> flour</span></label></li>
+            <li><label><input type="checkbox"><span><b data-amount="2" data-unit="tablespoon">2 tablespoons</b> sugar</span></label></li>
+            <li><label><input type="checkbox"><span><b data-amount="1" data-unit="teaspoon">1 teaspoon</b> baking powder</span></label></li>
+            <li><label><input type="checkbox"><span><b id="salt-amount">A pinch</b> of salt</span></label></li>
+            <li><label><input type="checkbox"><span>Butter, for the pan</span></label></li>
+          </ul>
+        </div>
+        <div class="method">
+          <div class="method-header"><div><p class="section-kicker">LET’S MAKE SOMETHING GOOD</p><h2>A stack of sunshine</h2></div><span>4 simple steps</span></div>
+          <ol class="steps">
+            <li><span class="step-number" aria-hidden="true">1</span><div><h3>Start with the good stuff</h3><p>In a large bowl, whisk together the ricotta, milk, eggs, and lemon zest until well combined.</p></div></li>
+            <li><span class="step-number" aria-hidden="true">2</span><div><h3>Keep it light</h3><p>Add the flour, sugar, baking powder, and salt. Gently fold the dry ingredients into the wet mixture until just combined. A few lumps are a good thing.</p></div></li>
+            <li><span class="step-number" aria-hidden="true">3</span><div><h3>A little moment of rest</h3><p>Let the batter rest for 5 minutes. Put the kettle on, find your favorite plates, and let the batter do its thing.</p></div></li>
+            <li><span class="step-number" aria-hidden="true">4</span><div><h3>Golden, then flip</h3><p>Warm a little butter in a pan over medium heat. Spoon in the batter and cook until bubbles form on the surface. Flip once and cook until golden and cooked through.</p></div></li>
+          </ol>
+          <aside class="tip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6m-5 3h4M8.5 15.5a7 7 0 1 1 7 0c-1 .6-1 1.5-1 2.5h-5c0-1 0-1.9-1-2.5Z"/></svg><div><h3>A little table wisdom</h3><p>Go easy on the mixing. A gentle fold keeps these pancakes beautifully fluffy. Serve warm, with whatever makes your morning sweeter.</p></div></aside>
+        </div>
+      </section>
+      <section class="end-note" id="our-table"><div><h2>Good food. Unhurried moments.</h2><p>Recipes for everyday joy, from our table to yours.</p></div><svg class="little-lemon" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 14c-4 0-2 4-5 8-4 7 0 17 8 20s17-2 19-9c1-4 5-4 3-7-2-3-1-8-7-12s-11-3-18 0Z" fill="#f0db74"/><path d="M31 14c-1-8 3-11 11-10-1 8-5 11-11 10Zm0 0 6-6M13 28h.1m5 8h.1m-8-4h.1"/></svg></section>
+    </main>
+    <footer class="site-footer"><span>© <span id="year">2026</span> Sunday Table</span><span>Made with a little love & a little lemon.</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    (() => {
+      const saveButton = document.getElementById('save-recipe');
+      const saveCount = document.getElementById('saved-count');
+      const toast = document.getElementById('toast');
+      const key = 'sunday-table-lemon-ricotta-saved';
+      let saved = false;
+      let toastTimeout;
+      try { saved = localStorage.getItem(key) === 'true'; } catch (_) {}
+      function updateSave() {
+        saveButton.setAttribute('aria-pressed', String(saved));
+        saveButton.classList.toggle('saved', saved);
+        saveButton.querySelector('span').textContent = saved ? 'Recipe saved' : 'Save recipe';
+        saveCount.style.display = saved ? 'inline-flex' : 'none';
+      }
+      function notify(message) {
+        clearTimeout(toastTimeout);
+        toast.textContent = message;
+        toast.classList.add('show');
+        toastTimeout = setTimeout(() => toast.classList.remove('show'), 3500);
+      }
+      saveButton.addEventListener('click', () => {
+        saved = !saved;
+        try { localStorage.setItem(key, String(saved)); } catch (_) {}
+        updateSave();
+        notify(saved ? 'A little sunshine, saved to your recipe box.' : 'Recipe removed from your recipe box.');
+      });
+      document.getElementById('saved-nav').addEventListener('click', (event) => {
+        event.preventDefault();
+        if (saved) {
+          document.getElementById('recipe-title').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+          notify('Your recipe box: Lemon ricotta pancakes');
+        } else {
+          notify('Your recipe box is empty. Save this recipe to keep it handy.');
+        }
+      });
+      document.getElementById('print-recipe').addEventListener('click', () => window.print());
+      let servings = 4;
+      const fractions = {1:'⅛',2:'¼',3:'⅜',4:'½',5:'⅝',6:'¾',7:'⅞'};
+      function formatAmount(amount) {
+        const eighths = Math.round(amount * 8);
+        const whole = Math.floor(eighths / 8);
+        const remainder = eighths % 8;
+        return (whole ? String(whole) : '') + (remainder ? (whole ? ' ' : '') + fractions[remainder] : '');
+      }
+      function updateServings(change) {
+        servings = Math.max(2, Math.min(12, servings + change));
+        document.getElementById('servings').textContent = servings;
+        document.getElementById('hero-servings').textContent = servings;
+        document.getElementById('decrease').disabled = servings === 2;
+        document.getElementById('increase').disabled = servings === 12;
+        document.querySelectorAll('[data-amount]').forEach(el => {
+          const amount = Number(el.dataset.amount) * servings / 4;
+          const unit = el.dataset.unit + (amount > 1 ? 's' : '');
+          el.textContent = formatAmount(amount) + ' ' + unit;
+        });
+        document.getElementById('salt-amount').textContent = servings <= 4 ? 'A pinch' : servings <= 8 ? '2 pinches' : '3 pinches';
+      }
+      document.getElementById('decrease').addEventListener('click', () => updateServings(-2));
+      document.getElementById('increase').addEventListener('click', () => updateServings(2));
+      document.getElementById('year').textContent = new Date().getFullYear();
+      updateSave();
+    })();
+  </script>
+</body>
+</html>

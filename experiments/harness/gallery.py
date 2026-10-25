@@ -13,31 +13,49 @@ EXP = Path(__file__).resolve().parent.parent
 SHOT = {"logo": "sheet.jpg", "svg-animation": "filmstrip.jpg"}
 
 
-def columns():
-    cols = []
-    for it in sorted(EXP.glob("iteration-*"), key=lambda p: int(p.name.split("-")[1])):
-        n = it.name.split("-")[1]
-        if (it / "landing-page" / "baseline").exists():
-            cols.append((f"baseline (iteration {n})", it.name, "baseline"))
-        if (it / "landing-page" / "with-skill").exists():
-            cols.append((f"skill v{n}", it.name, "with-skill"))
-    return cols
+# Skill commits tested, in order (see README "Log").
+VERSIONS = {"0b52da1": "v1", "008e1ca": "v2", "bdd290b": "v3", "6e3c38e": "v4"}
+
+
+def iterations():
+    its = [p for p in EXP.glob("iteration-*") if p.is_dir()]
+    return sorted(its, key=lambda p: (not p.name.split("-")[1].isdigit(), int(p.name.split("-")[1]) if p.name.split("-")[1].isdigit() else 0))
+
+
+def column_label(it, case, cond):
+    n = it.name.split("-", 1)[1]
+    where = f"iteration {n}" if n.isdigit() else n
+    if cond == "baseline":
+        return f"baseline ({where})"
+    import json
+    ref = json.loads((it / case / cond / "run-1" / "meta.json").read_text()).get("skill_ref", "")
+    return f"skill {VERSIONS.get(ref, ref)}" + ("" if n.isdigit() else f" ({where})")
+
+
+def columns(case):
+    return [(column_label(it, case, cond), it.name, cond) for it in iterations()
+            for cond in ("baseline", "with-skill") if (it / case / cond / "run-1" / "meta.json").exists()]
 
 
 def main():
-    cols = columns()
     cases = sorted(p.name for p in (EXP / "cases").iterdir())
     md = ["# Gallery",
           "",
           "Every case, side by side: vanilla Codex (baseline) and Codex with each version of the skill. "
           "Run 1 is shown; run 2 is linked. Desktop screenshots at 1440px, full page; click through for phone (390px) "
           "and dark-mode shots, the agent's files, and its final message. Logos show a presentation sheet; animations a "
-          "10-frame filmstrip. See [README.md](README.md) for method and results.",
+          "10-frame filmstrip. Cases named `holdout-*` were written after skill v4 was frozen, to test generalization. "
+          "See [README.md](README.md) for method and results.",
           ""]
     for case in cases:
         prompt = (EXP / "cases" / case / "prompt.md").read_text().strip()
         md += [f"## {case}", "", f"> {prompt}", ""]
-        shot = SHOT.get(case, "desktop-light.jpg")
+        shot = SHOT.get(case.replace("holdout-", ""), "desktop-light.jpg")
+        if case == "holdout-loader":
+            shot = "filmstrip.jpg"
+        cols = columns(case)
+        if not cols:
+            continue
         md.append("| " + " | ".join(c[0] for c in cols) + " |")
         md.append("|" + "---|" * len(cols))
         cells = []
@@ -54,7 +72,7 @@ def main():
                          + " · ".join(links))
         md += ["| " + " | ".join(cells) + " |", ""]
     (EXP / "GALLERY.md").write_text("\n".join(md))
-    print(f"GALLERY.md: {len(cases)} cases x {len(cols)} columns")
+    print(f"GALLERY.md: {len(cases)} cases")
 
 
 if __name__ == "__main__":

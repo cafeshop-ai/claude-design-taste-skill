@@ -42,12 +42,12 @@ ANIM_DIMS = {
     "restraint": "calm and appropriate for an empty state; not distracting or fussy",
     "motion quality": "timing, easing, a visible but gentle loop",
     "illustration craft": "clean drawing, consistent style and palette",
-    "fit for context": "suits a 'you're all caught up' moment in an email app",
+    "fit for context": "suits the moment and product described in the brief",
 }
 
 
 def kind(case):
-    return "logo" if case == "logo" else "anim" if case == "svg-animation" else "web"
+    return "logo" if case in ("logo", "holdout-logo") else "anim" if case in ("svg-animation", "holdout-loader") else "web"
 
 
 def build(pair_dir):
@@ -62,7 +62,8 @@ def build(pair_dir):
     elif k == "logo":
         names, dims = ["sheet"], LOGO_DIMS
         legend = ("Images, in order: 1) X's presentation sheet; 2) Y's. Each sheet shows the full logo on light and dark, "
-                  "the icon at 128, 64, 32 and 16 px on light and dark, and the icon in a browser tab.")
+                  "the icon at 128, 64, 32 and 16 px on light and dark, and the icon in a browser tab. Dark panels show the "
+                  "designer's own dark-background version when they supplied one (its file name is captioned).")
     else:
         names, dims = ["filmstrip"], ANIM_DIMS
         legend = ("Images, in order: 1) X's filmstrip; 2) Y's. Each filmstrip is 10 frames captured 650 ms apart from "
@@ -120,15 +121,21 @@ def judge(pair_dir):
 
 
 def main():
+    """--only <prefix> re-judges just the matching pairs and merges them into the existing file."""
     it = Path(sys.argv[1])
     out = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else "blind"
     par = int(sys.argv[sys.argv.index("--parallel") + 1]) if "--parallel" in sys.argv else 6
-    pairs = sorted(p for p in (it / out).iterdir() if p.is_dir())
+    only = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
+    pairs = sorted(p for p in (it / out).iterdir() if p.is_dir() and (not only or p.name.startswith(only + "-run-")))
     with ThreadPoolExecutor(par) as pool:
         results = list(pool.map(judge, pairs))
     for r in results:
         print(r["pair"], r.get("preference", r.get("error")))
-    (it / out / "judgments-codex.json").write_text(json.dumps(results, indent=1))
+    path = it / out / "judgments-codex.json"
+    if only and path.exists():
+        fresh = {r["pair"]: r for r in results}
+        results = [fresh.get(j["pair"], j) for j in json.loads(path.read_text())]
+    path.write_text(json.dumps(results, indent=1))
 
 
 if __name__ == "__main__":

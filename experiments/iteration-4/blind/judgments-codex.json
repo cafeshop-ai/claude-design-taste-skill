@@ -146,17 +146,17 @@
     "simplicity": 4,
     "small-size legibility": 4,
     "craft": 4,
-    "versatility": 2
+    "versatility": 3
    },
    "Y": {
     "concept": 4,
     "simplicity": 3,
     "small-size legibility": 3,
-    "craft": 4,
+    "craft": 3,
     "versatility": 2
    }
   },
-  "notes": "X\u2019s leafy F is more memorable and retains a clearer silhouette at favicon size, supported by a sturdy serif wordmark. Y\u2019s open-book base and sprouting leaves communicate the business more explicitly, but its narrow internal gaps lose definition at 16px, and the tiny descriptor adds little at the displayed size. Both use dark green against near-black without sufficient contrast, substantially weakening their demonstrated versatility."
+  "notes": "X\u2019s leafy F connects directly to Fernway, with a compact silhouette and sturdy serif wordmark that hold up better at small sizes. Y\u2019s book-and-sprout concept communicates the business more explicitly, but its narrow internal gaps and tiny subtitle lose clarity as it shrinks. X also supplies a successful cream reversed lockup; both green favicon treatments lack contrast on dark backgrounds, while Y\u2019s full dark-background logo is particularly difficult to read."
  },
  {
   "pair": "logo-run-2",
@@ -173,11 +173,11 @@
     "concept": 4,
     "simplicity": 3,
     "small-size legibility": 3,
-    "craft": 4,
-    "versatility": 3
+    "craft": 3,
+    "versatility": 2
    }
   },
-  "notes": "X\u2019s leaf-built F combines the initial and botanical reference in a compact silhouette that holds up better at favicon size. Y\u2019s open book and sprouting stem communicate the bookshop more directly, but the narrow page divisions and clustered leaves become harder to distinguish at 16px. Both have polished serif wordmarks, but both lose substantial contrast on dark backgrounds; Y\u2019s tiny descriptor compounds that weakness."
+  "notes": "X\u2019s leaf-built F combines the name and botanical theme in a memorable silhouette that holds together better at favicon sizes. Y\u2019s open book and sprout communicate the business more explicitly, but its narrow stem gaps and separate leaves lose definition at 16px, while the tiny tagline adds little at this scale. X supplies a successful cream reversed wordmark, although its green standalone icons remain low contrast on dark; Y\u2019s dark presentation has poor contrast throughout."
  },
  {
   "pair": "pricing-restyle-run-1",

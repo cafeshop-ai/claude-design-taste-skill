@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="weather-loader-title">
+  <title id="weather-loader-title">Loading forecast</title>
+  <style>
+    .weather-loader {
+      --sun: #b77912;
+      --sun-fill: #fce5a5;
+      --cloud: #49677c;
+      --cloud-fill: #f2f7fa;
+    }
+    .weather-loader .rays {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: weather-turn 16s linear infinite;
+    }
+    .weather-loader .cloud {
+      animation: weather-drift 4s ease-in-out infinite;
+    }
+    @keyframes weather-turn {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes weather-drift {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(3px); }
+    }
+    @media (prefers-color-scheme: dark) {
+      .weather-loader {
+        --sun: #efbd57;
+        --sun-fill: #61491d;
+        --cloud: #b2ccdd;
+        --cloud-fill: #243b4b;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .weather-loader * { animation: none !important; }
+    }
+  </style>
+  <g class="weather-loader" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="var(--sun, #b77912)">
+      <path class="rays" d="M25 7v4m0 28v4M7 25h4m28 0h4M12.3 12.3l2.8 2.8m19.8 19.8 2.8 2.8m-25.4 0 2.8-2.8m19.8-19.8 2.8-2.8"/>
+      <circle cx="25" cy="25" r="9" fill="var(--sun-fill, #fce5a5)"/>
+    </g>
+    <path class="cloud" fill="var(--cloud-fill, #f2f7fa)" stroke="var(--cloud, #49677c)" d="M23 51a9 9 0 0 1-1-17.9 12 12 0 0 1 23.3-3.7A11 11 0 0 1 45 51Z"/>
+  </g>
+</svg>

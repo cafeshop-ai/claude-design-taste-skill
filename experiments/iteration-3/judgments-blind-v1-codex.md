@@ -4,15 +4,15 @@ Judged from screenshots with conditions hidden behind random X/Y labels; the map
 
 ## Preferences
 
-- **iteration-1/with-skill**: 10
-- **iteration-3/with-skill**: 4
+- **iteration-1/with-skill**: 9
+- **iteration-3/with-skill**: 5
 
 ## Mean scores
 
 | condition | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| iteration-1/with-skill | 4.00 | 3.50 | 3.30 | 3.75 | 4.00 | 4.00 | 3.80 | 4.00 | 3.00 | 5.00 | 4.00 | 3.50 | 4.00 | 2.00 |
-| iteration-3/with-skill | 4.00 | 3.50 | 3.80 | 3.42 | 2.80 | 4.00 | 3.90 | 3.50 | 3.00 | 4.50 | 4.50 | 3.50 | 3.70 | 2.00 |
+| iteration-1/with-skill | 4.00 | 3.50 | 3.30 | 3.67 | 4.00 | 4.00 | 3.80 | 4.00 | 3.00 | 5.00 | 4.00 | 3.50 | 4.00 | 2.00 |
+| iteration-3/with-skill | 4.00 | 4.00 | 3.80 | 3.42 | 2.80 | 4.00 | 3.90 | 3.50 | 3.00 | 4.50 | 4.00 | 3.50 | 3.70 | 3.50 |
 
 ## Pairs
 
@@ -84,14 +84,14 @@ Y has the stronger identity: expressive serif headlines, concrete membership/cal
 
 ### logo-run-1
 
-X = `iteration-1/with-skill`, Y = `iteration-3/with-skill`. Preferred: **X** (iteration-1/with-skill).
+X = `iteration-1/with-skill`, Y = `iteration-3/with-skill`. Preferred: **Y** (iteration-3/with-skill).
 
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| X (iteration-1/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 2 |
-| Y (iteration-3/with-skill) |  | 3 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 2 |
+| X (iteration-1/with-skill) |  | 4 |  | 3 |  |  |  |  |  |  | 4 | 4 |  | 2 |
+| Y (iteration-3/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 3 |
 
-X’s upright stem and two right-facing leaves form a clearer F, giving the botanical idea a stronger connection to Fernway. Its heavier construction also holds together better at favicon size; Y’s curved stem feels graceful but becomes delicate and reads more like a generic sprout. Both use restrained serif typography, but both lose substantial contrast with dark green on near-black backgrounds.
+Both combine an F with leaves, connecting Fernway’s initial to its botanical name. X’s heavier, straighter stem holds up better at favicon size, but its tiny descriptor adds little and its green logo loses contrast on dark backgrounds. Y’s curved stem and larger serif wordmark feel more cohesive, and its cream reversed logo gives it the overall edge, although the dark-background icons still lack contrast.
 
 ### logo-run-2
 
@@ -100,9 +100,9 @@ X = `iteration-1/with-skill`, Y = `iteration-3/with-skill`. Preferred: **Y** (it
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | X (iteration-1/with-skill) |  | 3 |  | 3 |  |  |  |  |  |  | 4 | 3 |  | 2 |
-| Y (iteration-3/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 5 | 4 |  | 2 |
+| Y (iteration-3/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 4 |
 
-Y combines leaf-shaped arms with a clear F, giving Fernway a more specific identity than X’s sprout. Its upright stem and open gap retain clearer structure at 16–32 px, while its heavier wordmark feels more assured; X’s tiny descriptor becomes unreadable. Both marks work in one color, but the dark green loses substantial contrast on the dark backgrounds shown.
+Y combines leaf-shaped arms with a clear F, giving Fernway a more specific, memorable symbol than X’s sprout. Its sturdier stem and open gaps remain clearer at favicon sizes, while the heavier serif wordmark gives it an editorial character suited to a bookshop. Y’s cream reverse works convincingly on dark backgrounds; X’s unchanged dark green nearly disappears, and its tiny café descriptor is difficult to read.
 
 ### pricing-restyle-run-1
 

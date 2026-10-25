@@ -10,7 +10,8 @@ for d in "$ITER_DIR"/*/*/run-*; do
   echo "$d"
 done | xargs -P "$PAR" -I{} sh -c '
   d={}; case $d in
-    */logo/*) node "'"$HERE"'/audit-svg.mjs" "$d" logo ;;
-    */svg-animation/*) node "'"$HERE"'/audit-svg.mjs" "$d" svg-animation ;;
+    */holdout-logo/*) node "'"$HERE"'/audit-svg.mjs" "$d" logo "Halyard Sailing" ;;
+    */logo/*) node "'"$HERE"'/audit-svg.mjs" "$d" logo "Fernway Books" ;;
+    */svg-animation/*|*/holdout-loader/*) node "'"$HERE"'/audit-svg.mjs" "$d" svg-animation ;;
     *) node "'"$HERE"'/audit.mjs" "$d" ;;
   esac'

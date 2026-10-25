@@ -4,15 +4,15 @@ Judged from screenshots with conditions hidden behind random X/Y labels; the map
 
 ## Preferences
 
-- **iteration-1/with-skill**: 10
-- **iteration-2/with-skill**: 3
+- **iteration-1/with-skill**: 9
+- **iteration-2/with-skill**: 4
 
 ## Mean scores
 
 | condition | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| iteration-1/with-skill | 4.00 | 3.50 | 3.33 | 3.91 | 4.00 | 4.50 | 3.89 | 4.00 | 3.00 | 5.00 | 4.00 | 3.00 | 4.00 | 2.00 |
-| iteration-2/with-skill | 4.00 | 3.50 | 3.89 | 3.64 | 2.67 | 4.00 | 4.00 | 4.00 | 3.00 | 4.50 | 4.00 | 3.50 | 3.56 | 2.00 |
+| iteration-1/with-skill | 4.00 | 3.50 | 3.33 | 3.82 | 4.00 | 4.50 | 3.89 | 4.00 | 3.00 | 5.00 | 4.00 | 3.00 | 4.00 | 2.00 |
+| iteration-2/with-skill | 4.00 | 4.00 | 3.89 | 3.73 | 2.67 | 4.00 | 4.00 | 4.00 | 3.00 | 4.50 | 4.00 | 3.50 | 3.56 | 3.00 |
 
 ## Pairs
 
@@ -73,14 +73,14 @@ Y has a tighter, easier-to-scan page, with a clear “Book a demo” action and 
 
 ### logo-run-1
 
-X = `iteration-1/with-skill`, Y = `iteration-2/with-skill`. Preferred: **X** (iteration-1/with-skill).
+X = `iteration-1/with-skill`, Y = `iteration-2/with-skill`. Preferred: **Y** (iteration-2/with-skill).
 
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| X (iteration-1/with-skill) |  | 3 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 2 |
-| Y (iteration-2/with-skill) |  | 3 |  | 3 |  |  |  |  |  |  | 4 | 3 |  | 2 |
+| X (iteration-1/with-skill) |  | 4 |  | 3 |  |  |  |  |  |  | 4 | 3 |  | 2 |
+| Y (iteration-2/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 3 |
 
-X’s sturdier serif wordmark feels more approachable and holds together better than Y’s extreme thick–thin strokes and delicate terminals. Both leafy F marks are memorable and remain recognizable at small sizes, though the botanical concept is fairly generic. X’s “BOOKSHOP & CAFÉ” descriptor clarifies the business, but both candidates lose substantial contrast on the dark backgrounds shown.
+Both leaf-built F marks connect clearly to Fernway and remain recognizable in silhouette at small sizes. Y’s more expressive serif wordmark and cream reversed logo give it a more polished identity; X’s tiny café descriptor loses usefulness as it shrinks. X’s green logo nearly disappears on dark backgrounds, while Y solves that for the full lockup but still leaves its dark-panel icons and favicon with weak contrast.
 
 ### logo-run-2
 
@@ -88,10 +88,10 @@ X = `iteration-2/with-skill`, Y = `iteration-1/with-skill`. Preferred: **X** (it
 
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| X (iteration-2/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 2 |
-| Y (iteration-1/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 2 |
+| X (iteration-2/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 3 |
+| Y (iteration-1/with-skill) |  | 3 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 2 |
 
-X’s two leaf-shaped arms form a clearer F, preserving the monogram at favicon sizes and pairing well with the sturdy serif wordmark. Y’s extra left leaf makes the silhouette read more as a generic sprout, while its tiny café descriptor becomes unreadable at reduced sizes. Both lose substantial contrast on the dark backgrounds shown and need a lighter monochrome version.
+X’s two leaf-shaped arms form a clearer F, paired with a sturdy serif wordmark that suits a bookshop. Y’s extra left leaf makes the symbol read more like a generic sprout, and its fine wordmark and tiny descriptor are more fragile at reduced sizes. X supplies an effective cream reversed lockup, but both candidates’ dark-panel icons lose contrast; Y’s full dark-background logo also suffers.
 
 ### pricing-restyle-run-1
 

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-labelledby="title desc">
+  <title id="title">Halyard</title>
+  <desc id="desc">An H with a hoisted sail.</desc>
+  <style>
+    path { fill: #19483F; }
+    @media (prefers-color-scheme: dark) { path { fill: #F4F0E6; } }
+  </style>
+  <path d="M1 2H3V9C7 8.5 10.5 5.5 13 2V1H15V15H13V11H3V15H1Z"/>
+</svg>

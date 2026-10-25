@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ed">
+  <meta name="description" content="Crumb & Co. is closed for renovations July 1–21, 2027. We reopen July 22. Catering orders are still available by phone at 503-555-0142.">
+  <title>A little refresh · Crumb & Co.</title>
+  <style>
+    :root { color-scheme: light; --paper: #f7f5ed; --ink: #244b3c; --muted: #6a7468; --line: #d9ddcf; --butter: #efdfaa; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .page { max-width: 1200px; margin: auto; padding: 0 56px; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 32px 0 26px; border-bottom: 1px solid var(--line); }
+    .brand { font: 700 32px Georgia, 'Times New Roman', serif; letter-spacing: -1.6px; }
+    .brand span { font-weight: 400; font-style: italic; }
+    .tagline, .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+    .tagline { color: var(--muted); }
+    .hero { display: grid; grid-template-columns: 1.08fr 1fr; align-items: center; gap: 48px; padding: 64px 0 54px; }
+    .status { display: inline-flex; align-items: center; gap: 9px; border: 1px solid #cbd3c2; border-radius: 30px; padding: 9px 13px; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+    .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #b67944; }
+    h1 { font: 400 clamp(48px, 5.5vw, 72px)/1.03 Georgia, 'Times New Roman', serif; letter-spacing: -3px; margin: 25px 0 23px; }
+    h1 em { font-weight: 400; }
+    .intro { max-width: 390px; color: var(--muted); font-size: 15px; line-height: 1.8; margin: 0; }
+    .illustration { margin: 0; position: relative; }
+    .illustration svg { display: block; width: 100%; height: auto; }
+    figcaption { text-align: center; font: italic 16px Georgia, 'Times New Roman', serif; color: var(--muted); margin-top: 10px; }
+    .details { display: grid; grid-template-columns: 1fr 1fr 1.25fr; padding: 31px 34px; border: 1px solid #ded8bd; background: #eeeadb; border-radius: 3px; }
+    .detail { padding-right: 20px; }
+    .detail + .detail { border-left: 1px solid #d4d3bf; padding-left: 30px; }
+    .eyebrow { margin: 0 0 12px; color: #707660; font-size: 9px; letter-spacing: 1.6px; }
+    .date { margin: 0; font: 400 26px/1.2 Georgia, 'Times New Roman', serif; letter-spacing: -.5px; }
+    .small { font-size: 12px; color: var(--muted); margin: 7px 0 0; line-height: 1.5; }
+    .catering .eyebrow { margin-bottom: 8px; }
+    .phone { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; font-size: 16px; font-weight: 700; text-decoration: none; border-bottom: 1px solid #8a9a80; padding-bottom: 4px; }
+    .phone svg { width: 15px; height: 15px; }
+    .phone:hover { color: #91622f; border-color: currentColor; }
+    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; }
+    footer { display: flex; align-items: center; justify-content: space-between; padding: 28px 0 32px; color: var(--muted); font-size: 11px; }
+    .footer-note { display: flex; align-items: center; gap: 9px; }
+    .heart { font-size: 17px; color: #a16d48; }
+    @media (min-width: 1400px) { .page { padding-top: 24px; } .hero { padding-top: 80px; padding-bottom: 70px; } }
+    @media (max-width: 800px) {
+      .page { padding: 0 28px; }
+      .hero { gap: 20px; padding-top: 45px; }
+      h1 { font-size: 53px; }
+      .details { padding: 25px; grid-template-columns: 1fr 1fr; row-gap: 25px; }
+      .detail { padding-right: 12px; }
+      .detail + .detail { padding-left: 24px; }
+      .detail.catering { border-left: 0; border-top: 1px solid #d4d3bf; padding: 22px 0 0; grid-column: 1 / -1; }
+    }
+    @media (max-width: 560px) {
+      .page { padding: 0 23px; }
+      header { padding: 24px 0 21px; }
+      .brand { font-size: 29px; }
+      .tagline { max-width: 98px; text-align: right; line-height: 1.6; font-size: 8px; letter-spacing: 1.3px; }
+      .hero { grid-template-columns: 1fr; padding: 36px 0 30px; gap: 22px; }
+      h1 { font-size: clamp(48px, 12vw, 65px); letter-spacing: -2.5px; margin: 23px 0 18px; }
+      .intro { font-size: 14px; }
+      .illustration { width: 90%; max-width: 350px; margin: 0 auto; }
+      figcaption { font-size: 14px; margin-top: 0; }
+      .details { padding: 24px 20px; }
+      .detail + .detail { padding-left: 18px; }
+      .date { font-size: 22px; }
+      .eyebrow { font-size: 8px; letter-spacing: 1.2px; }
+      footer { align-items: flex-start; gap: 18px; font-size: 10px; line-height: 1.6; }
+      footer > span { text-align: right; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand" aria-label="Crumb and Co.">crumb <span>&</span> co.</div>
+      <div class="tagline">Your neighborhood bakery</div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="notice-title">
+        <div>
+          <div class="status">A little renovation break</div>
+          <h1 id="notice-title">Good things take<br><em>a little time.</em></h1>
+          <p class="intro">We’re freshening up our little corner of the neighborhood. The ovens will be off for a few weeks, but we’ll be back with a warm welcome and something delicious.</p>
+        </div>
+
+        <figure class="illustration">
+          <svg viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="shop-title">
+            <title id="shop-title">An illustrated Crumb & Co. bakery, getting ready for a fresh start</title>
+            <defs>
+              <pattern id="awning" width="48" height="64" patternUnits="userSpaceOnUse"><rect width="24" height="64" fill="#496852"/><rect x="24" width="24" height="64" fill="#f7f0d7"/></pattern>
+            </defs>
+            <path d="M39 295C10 241 29 151 78 101S212 40 291 65s144 74 140 153-66 123-158 122S76 357 39 295Z" fill="#ede8d6"/>
+            <g fill="none" stroke="#b78d4c" stroke-width="2" stroke-linecap="round">
+              <path d="M370 53v12m0 29v12m-26-26h12m29 0h12m-45-18 8 8m21 21 8 8m0-37-8 8m-21 21-8 8"/>
+              <circle cx="370" cy="80" r="8" fill="#eddaa1" stroke="none"/>
+              <path d="M56 123v16m-8-8h16M409 248v12m-6-6h12"/>
+            </g>
+            <path d="M50 338h360" stroke="#9ca98a" stroke-width="2" stroke-linecap="round"/>
+            <rect x="92" y="117" width="276" height="218" rx="3" fill="#e5ddbd" stroke="#49634b" stroke-width="2"/>
+            <rect x="108" y="88" width="244" height="54" rx="3" fill="#f7f0d7" stroke="#49634b" stroke-width="2"/>
+            <text x="230" y="123" font-family="Georgia, serif" font-size="26" text-anchor="middle" fill="#244b3c" letter-spacing="1">crumb &amp; co.</text>
+            <path d="M97 143h266l19 43H78Z" fill="url(#awning)" stroke="#49634b" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M78 186v8q12 16 24 0 12 16 24 0 12 16 24 0 12 16 24 0 12 16 24 0 12 16 24 0 12 16 24 0 12 16 24 0 12 16 24 0 12 16 24 0 12 16 24 0 12 16 24 0 8 12 16 0v-8Z" fill="url(#awning)" stroke="#49634b" stroke-width="2"/>
+            <rect x="112" y="216" width="131" height="88" rx="2" fill="#aebfa3" stroke="#49634b" stroke-width="2"/>
+            <path d="M118 221h119v77H118Z" fill="#d4ddbf"/>
+            <path d="m126 257 30-30m-19 46 43-43m17 61 32-32" stroke="#f7f5ed" stroke-width="5" opacity=".6"/>
+            <path d="M112 282h131m-65-66v66" stroke="#49634b" stroke-width="2"/>
+            <path d="M128 280c0-12 20-18 26-4 7-20 30-15 31 4m10 0c-1-14 23-19 29-1" fill="#c99b57" stroke="#a47b46" stroke-width="1.5"/>
+            <rect x="107" y="302" width="141" height="7" rx="2" fill="#71866a"/>
+            <rect x="264" y="213" width="82" height="122" rx="2" fill="#617d60" stroke="#49634b" stroke-width="2"/>
+            <rect x="273" y="222" width="64" height="73" rx="1" fill="#c7d3b5" stroke="#49634b" stroke-width="1.5"/>
+            <path d="m290 252 15-17 16 17" fill="none" stroke="#49634b" stroke-width="1.5"/>
+            <g transform="rotate(-6 306 264)"><rect x="280" y="250" width="51" height="28" rx="2" fill="#f7f0d7" stroke="#49634b" stroke-width="1.5"/><text x="305.5" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" letter-spacing="1" fill="#49634b">BACK SOON</text></g>
+            <circle cx="335" cy="308" r="3" fill="#ead69d"/>
+            <path d="M259 336h94" stroke="#49634b" stroke-width="4" stroke-linecap="round"/>
+            <g stroke="#49634b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M70 309c-2-18 0-36 4-52m-3 31c-21-2-25-20-21-24 16 1 24 13 21 24m2-9c17-1 24-17 20-23-15 1-21 12-20 23m-2 25c-14-1-22-12-20-17 13-2 21 8 20 17" fill="#8fa17b"/>
+              <path d="m53 308 5 27h26l5-27Z" fill="#bf8865"/>
+              <path d="M382 315v-30m0 17c-15-1-20-12-18-17 12-1 20 8 18 17m0-8c14-2 21-13 17-19-12 1-18 10-17 19" fill="#8fa17b"/>
+              <path d="m367 313 4 22h23l4-22Z" fill="#bf8865"/>
+            </g>
+          </svg>
+          <figcaption>A fresh space. The same familiar feeling.</figcaption>
+        </figure>
+      </section>
+
+      <section class="details" aria-label="Renovation dates and catering orders">
+        <div class="detail">
+          <h2 class="eyebrow">Closed for renovations</h2>
+          <p class="date">July 1–21, 2027</p>
+          <p class="small">A little dust, a lot of love.</p>
+        </div>
+        <div class="detail">
+          <h2 class="eyebrow">Back to baking</h2>
+          <p class="date"><time datetime="2027-07-22">July 22, 2027</time></p>
+          <p class="small">We can’t wait to see you.</p>
+        </div>
+        <div class="detail catering">
+          <h2 class="eyebrow">Still here for your celebrations</h2>
+          <p class="small">Catering orders are open. Give us a call!</p>
+          <a class="phone" href="tel:+15035550142" aria-label="Call Crumb and Co. for catering at 503-555-0142">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 3 3 5-3 3a15 15 0 0 0 6 6l3-3 5 3c-1 4-3 5-6 4C9 19 5 15 3 9 2 6 3 4 7 3Z"/></svg>
+            503-555-0142 <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-note"><span class="heart" aria-hidden="true">♡</span> Thanks for being part of our neighborhood.</div>
+      <span>Made with love. And a little flour.</span>
+    </footer>
+  </div>
+</body>
+</html>

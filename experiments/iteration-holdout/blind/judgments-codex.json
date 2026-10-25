@@ -1,0 +1,220 @@
+[
+ {
+  "pair": "holdout-closed-notice-run-1",
+  "preference": "X",
+  "scores": {
+   "X": {
+    "hierarchy": 5,
+    "typography": 4,
+    "color": 4,
+    "content": 5,
+    "craft": 4,
+    "distinctiveness": 3
+   },
+   "Y": {
+    "hierarchy": 3,
+    "typography": 4,
+    "color": 4,
+    "content": 3,
+    "craft": 4,
+    "distinctiveness": 4
+   }
+  },
+  "notes": "X makes \u201cClosed for renovations,\u201d the dates, and the phone action immediately clear, with a focused layout that works well on mobile. Y\u2019s storefront illustration and green palette give it more personality, but its generic headline and extra copy push the essential dates and catering contact much farther down the phone page. X better serves the brief\u2019s simple, practical purpose."
+ },
+ {
+  "pair": "holdout-closed-notice-run-2",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "hierarchy": 3,
+    "typography": 4,
+    "color": 4,
+    "content": 3,
+    "craft": 4,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 5,
+    "typography": 4,
+    "color": 4,
+    "content": 5,
+    "craft": 4,
+    "distinctiveness": 3
+   }
+  },
+  "notes": "Y makes \u201cClosed for renovations\u201d unmistakable, with the dates, reopening information, and catering phone action easy to scan. Its mobile layout keeps the complete notice within one screen, while X\u2019s large storefront illustration pushes catering further down. X has a warmer, more distinctive identity, but its poetic headline and extra copy dilute the simple announcement."
+ },
+ {
+  "pair": "holdout-loader-run-1",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "restraint": 5,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 4
+   },
+   "Y": {
+    "restraint": 4,
+    "motion quality": 4,
+    "illustration craft": 4,
+    "fit for context": 4
+   }
+  },
+  "notes": "Y\u2019s changing raindrop positions and opacity provide a clearer loading signal while keeping the illustration calm and compact. Its soft blue-gray outlines and warm yellow sun feel cohesive. X is exceptionally restrained, but the changing sun rays around an otherwise nearly static cloud make its activity less apparent."
+ },
+ {
+  "pair": "holdout-loader-run-2",
+  "preference": "X",
+  "scores": {
+   "X": {
+    "restraint": 4,
+    "motion quality": 4,
+    "illustration craft": 4,
+    "fit for context": 4
+   },
+   "Y": {
+    "restraint": 4,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 3
+   }
+  },
+  "notes": "X\u2019s subtle cloud bob and changing three-dot emphasis communicate loading gently and clearly. Y has clean curves and stronger contrast, but its heavier outlines and prominent sun feel more like a weather condition icon, with motion concentrated in the rays. X better suits the waiting moment, although its pale blue details could be more legible."
+ },
+ {
+  "pair": "holdout-logo-run-1",
+  "preference": "X",
+  "scores": {
+   "X": {
+    "concept": 4,
+    "simplicity": 5,
+    "small-size legibility": 4,
+    "craft": 4,
+    "versatility": 3
+   },
+   "Y": {
+    "concept": 3,
+    "simplicity": 4,
+    "small-size legibility": 3,
+    "craft": 4,
+    "versatility": 2
+   }
+  },
+  "notes": "X\u2019s curved H combines the initial with a sail-like form, giving Halyard a more distinctive identity than Y\u2019s familiar sailboat. Its single silhouette holds together better at favicon size, while Y\u2019s mast and gaps become fragile. Both have clean curves and confident serif typography, but X supplies a readable reversed full logo; Y\u2019s dark wordmark nearly disappears, and both candidates\u2019 dark-panel icons lack contrast."
+ },
+ {
+  "pair": "holdout-logo-run-2",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "concept": 4,
+    "simplicity": 4,
+    "small-size legibility": 4,
+    "craft": 3,
+    "versatility": 2
+   },
+   "Y": {
+    "concept": 4,
+    "simplicity": 4,
+    "small-size legibility": 3,
+    "craft": 4,
+    "versatility": 3
+   }
+  },
+  "notes": "Y\u2019s sail-like diagonal integrated into the H and refined serif wordmark make a more distinctive, cohesive identity. X\u2019s pennant contains a clearer H at favicon sizes, but its dark wordmark nearly disappears against black. Y supplies an effective reversed full logo, although its green standalone mark also loses contrast on dark backgrounds and can resemble an N when small."
+ },
+ {
+  "pair": "holdout-recipe-page-run-1",
+  "preference": "X",
+  "scores": {
+   "X": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 5,
+    "craft": 4,
+    "distinctiveness": 3
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 3,
+    "color": 4,
+    "content": 3,
+    "craft": 4,
+    "distinctiveness": 4
+   }
+  },
+  "notes": "X makes the recipe easier to use through larger instruction text, clear step dividers, and direct Ingredients/Method navigation. Y has a more distinctive identity through its green display typography and editorial details, but its small supporting text compromises phone readability. Repeated slogans, the decorative badge, and the kitchen attribution also add clutter beyond the brief."
+ },
+ {
+  "pair": "holdout-recipe-page-run-2",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "hierarchy": 3,
+    "typography": 3,
+    "color": 4,
+    "content": 3,
+    "craft": 3,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 4,
+    "craft": 4,
+    "distinctiveness": 3
+   }
+  },
+  "notes": "Y offers clearer recipe navigation through its \u201cJump to recipe\u201d action, shaded ingredients panel, and direct method headings, with more readable typography on mobile. X has more personality through its sun motifs and editorial details, but its oversized mobile title, small secondary text, and awkwardly wrapped difficulty label weaken usability. Y also stays closer to the brief, while X adds several slogans and conversational asides that compete with the cooking instructions."
+ },
+ {
+  "pair": "holdout-water-app-run-1",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "hierarchy": 3,
+    "typography": 3,
+    "color": 3,
+    "content": 3,
+    "craft": 3,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 4,
+    "craft": 4,
+    "distinctiveness": 3
+   }
+  },
+  "notes": "Y makes daily intake, the goal, and the \u201cAdd 250 ml\u201d action immediately legible, with a clear drink history below. X has more personality through its coral palette and wave-filled progress ring, but its large motivational headline and tiny, faint supporting text weaken scanning. Y also handles spacing more consistently; X\u2019s bottom navigation crowds and partially obscures the history on desktop."
+ },
+ {
+  "pair": "holdout-water-app-run-2",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "hierarchy": 3,
+    "typography": 3,
+    "color": 3,
+    "content": 3,
+    "craft": 2,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 4,
+    "craft": 4,
+    "distinctiveness": 3
+   }
+  },
+  "notes": "Y makes progress easier to read with a larger water vessel, stronger text contrast, and a clear sequence from amount selection to the Add water button and drink history. X has more personality through its ripple branding and illustrated progress ring, but small, faint labels and motivational copy dilute the hierarchy. X\u2019s navigation also interrupts the history section, especially on desktop, while Y presents three neatly aligned entries across both widths."
+ }
+]

@@ -1,0 +1,72 @@
+{
+  "url": "../iteration-holdout/holdout-recipe-page/baseline/run-1",
+  "consoleErrors": [],
+  "axeDesktopLight": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 22
+    }
+  ],
+  "content": {
+    "words": 321,
+    "headings": 4,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+  },
+  "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/8",
+    "titleCaseLabels": "1/11",
+    "dominantHue": 51,
+    "violetDominant": false
+  },
+  "system": {
+    "fontSizes": 16,
+    "fontFamilies": [
+      "DM Serif Display",
+      "DM Sans"
+    ],
+    "chromaticHueBuckets": 3,
+    "radii": 5,
+    "elementsWithShadow": 2
+  },
+  "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+  },
+  "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+  },
+  "motion": {
+    "motionRules": 3,
+    "reducedMotionHandled": true
+  },
+  "luminanceLight": 0.772,
+  "focus": {
+    "stops": 10,
+    "visible": 10
+  },
+  "luminanceDark": 0.772,
+  "axeDesktopDark": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 22
+    }
+  ],
+  "darkMode": "light only",
+  "overflow390": 0,
+  "axeMobile": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 19
+    }
+  ]
+}

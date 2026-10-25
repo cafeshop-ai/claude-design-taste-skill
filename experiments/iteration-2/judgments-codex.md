@@ -11,8 +11,8 @@ Judged from screenshots with conditions hidden behind random X/Y labels; the map
 
 | condition | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| baseline | 3.50 | 4.00 | 2.80 | 3.42 | 3.90 | 4.00 | 3.70 | 4.00 | 3.50 | 4.00 | 3.00 | 3.00 | 3.50 | 2.00 |
-| with-skill | 4.00 | 4.00 | 4.00 | 3.67 | 2.80 | 4.00 | 4.00 | 3.00 | 3.00 | 5.00 | 4.00 | 4.00 | 3.70 | 2.50 |
+| baseline | 3.50 | 4.00 | 2.80 | 3.50 | 3.90 | 4.00 | 3.70 | 4.00 | 3.50 | 4.00 | 3.00 | 3.00 | 3.50 | 2.00 |
+| with-skill | 4.00 | 4.00 | 4.00 | 3.67 | 2.80 | 4.00 | 4.00 | 3.00 | 3.00 | 5.00 | 4.00 | 4.00 | 3.70 | 3.00 |
 
 ## Pairs
 
@@ -91,7 +91,7 @@ X = `with-skill`, Y = `baseline`. Preferred: **X** (with-skill).
 | X (with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 3 |
 | Y (baseline) |  | 4 |  | 4 |  |  |  |  |  |  | 3 | 3 |  | 2 |
 
-X’s leafy F combines the initial and botanical reference in a compact silhouette that holds together better at favicon size. Y’s open-book base and growing plant communicate the bookshop more explicitly, but their narrow separations become harder to distinguish at 16px, and the tagline is very small. Both show controlled curves and elegant serif typography, but both lack contrast on dark backgrounds, especially Y’s deep green.
+X’s leaf-built F is memorable and keeps a clearer silhouette at 16–32 px. Y’s book-and-sprout concept communicates the business more explicitly, but its narrow internal gaps lose definition and its tiny tagline is fragile. X supplies a readable cream reversed lockup, while Y’s dark-green version nearly disappears on black; both candidates’ dark-background favicon marks lack contrast.
 
 ### logo-run-2
 
@@ -99,10 +99,10 @@ X = `with-skill`, Y = `baseline`. Preferred: **X** (with-skill).
 
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| X (with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 2 |
-| Y (baseline) |  | 4 |  | 3 |  |  |  |  |  |  | 3 | 3 |  | 2 |
+| X (with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 3 |
+| Y (baseline) |  | 4 |  | 4 |  |  |  |  |  |  | 3 | 3 |  | 2 |
 
-X’s leaf-shaped F is a compact, memorable connection to Fernway, with a sturdy silhouette that survives the favicon sizes better. Y’s open book and sprout communicate the business more explicitly, but the narrow central gaps become fragile at 16px and the tiny tagline adds little readable information. X’s bold serif wordmark also feels more cohesive with its mark. Both use one color effectively on white, but their dark-background presentations have severely insufficient contrast.
+X’s leaf-shaped F combines the name and botanical theme in a compact silhouette that remains clearer at favicon sizes. Y’s open book and sprout communicate the business more explicitly, but the leaves and narrow page separations become crowded at 16px. Both show controlled curves and suitable serif typography; X also supplies a successful reversed full logo, although its dark-panel icons lose contrast, while Y’s entire dark presentation is difficult to read.
 
 ### pricing-restyle-run-1
 

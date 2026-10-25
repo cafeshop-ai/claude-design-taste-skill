@@ -11,8 +11,8 @@ Judged from screenshots with conditions hidden behind random X/Y labels; the map
 
 | condition | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| iteration-2/with-skill | 4.00 | 4.00 | 3.90 | 3.67 | 3.30 | 3.50 | 4.00 | 4.00 | 3.00 | 4.50 | 4.00 | 3.50 | 3.60 | 2.00 |
-| iteration-3/with-skill | 4.00 | 3.50 | 3.60 | 3.50 | 3.70 | 4.00 | 3.80 | 3.50 | 3.00 | 4.00 | 4.00 | 3.50 | 3.90 | 2.00 |
+| iteration-2/with-skill | 4.00 | 4.00 | 3.90 | 3.67 | 3.30 | 3.50 | 4.00 | 4.00 | 3.00 | 4.50 | 4.00 | 3.50 | 3.60 | 2.50 |
+| iteration-3/with-skill | 4.00 | 4.00 | 3.60 | 3.58 | 3.70 | 4.00 | 3.80 | 3.50 | 3.00 | 4.00 | 4.00 | 3.50 | 3.90 | 3.50 |
 
 ## Pairs
 
@@ -88,10 +88,10 @@ X = `iteration-3/with-skill`, Y = `iteration-2/with-skill`. Preferred: **Y** (it
 
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| X (iteration-3/with-skill) |  | 3 |  | 3 |  |  |  |  |  |  | 4 | 3 |  | 2 |
-| Y (iteration-2/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 2 |
+| X (iteration-3/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 3 |
+| Y (iteration-2/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 3 |
 
-Y’s upright stem and two right-facing leaves form a clearer F, giving its botanical symbol a stronger connection to Fernway than X’s generic sprout. Its thicker stem retains more structure at favicon size, while X’s curved stalk becomes spindly. Y’s typography feels more distinctive, although its fine hairlines are delicate; both designs lose substantial contrast on dark backgrounds, especially X.
+Y’s upright stem and two right-facing leaves make the botanical F clearer and sturdier at favicon sizes; X’s curved stem reads more readily as a generic sprout. X’s heavier serif lettering feels more robust, while Y’s delicate hairlines give its wordmark elegance at some cost to resilience. Both reversed wordmarks work well, but the colored icons lose contrast on the dark panels and browser tabs.
 
 ### logo-run-2
 
@@ -99,10 +99,10 @@ X = `iteration-3/with-skill`, Y = `iteration-2/with-skill`. Preferred: **X** (it
 
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| X (iteration-3/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 2 |
+| X (iteration-3/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 4 |
 | Y (iteration-2/with-skill) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 2 |
 
-Both combine a leafy F with bookish serif typography, fitting the name and shop. X’s broader stem and more open gap between the leaves preserve a clearer F at small sizes; Y’s pointed interior notch becomes cramped. Y’s heavier wordmark is sturdier, while X’s fine serifs feel more delicate. Both lose substantial contrast on the demonstrated dark backgrounds, especially in the browser tabs.
+Both combine an F with leaflike fronds, a clear connection to Fernway’s name. X’s green mark and finer serif wordmark feel more botanical and literary; Y’s heavier serif feels sturdy and welcoming. X wins on practical execution: its cream icon stays clear on dark backgrounds, while Y’s brown icons nearly disappear in the dark size tests and browser tab.
 
 ### pricing-restyle-run-1
 

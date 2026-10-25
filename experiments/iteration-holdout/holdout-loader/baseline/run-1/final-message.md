@@ -1,0 +1,1 @@
+Created [loader.svg](loader.svg) with a rotating sun, floating cloud, and falling rain. Includes reduced-motion support.

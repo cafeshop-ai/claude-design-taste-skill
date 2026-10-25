@@ -1,0 +1,1503 @@
+[
+ {
+  "case": "holdout-closed-notice",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout-closed-notice",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 93
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-closed-notice/baseline/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 11
+    }
+   ],
+   "content": {
+    "words": 112,
+    "headings": 4,
+    "sections": 2,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 2,
+    "buzzwords": [],
+    "centeredParagraphs": "0/2",
+    "titleCaseLabels": "3/4",
+    "dominantHue": 56,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 11,
+    "fontFamilies": [
+     "Georgia",
+     "Arial"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 2,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 0,
+    "reducedMotionHandled": false
+   },
+   "luminanceLight": 0.928,
+   "focus": {
+    "stops": 5,
+    "visible": 5
+   },
+   "luminanceDark": 0.928,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 11
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 11
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 72477,
+  "tokens_out": 5237,
+  "commands": 3
+ },
+ {
+  "case": "holdout-closed-notice",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout-closed-notice",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 118
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-closed-notice/baseline/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 1
+    }
+   ],
+   "content": {
+    "words": 102,
+    "headings": 2,
+    "sections": 2,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/2",
+    "titleCaseLabels": "0/2",
+    "dominantHue": 41,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 11,
+    "fontFamilies": [
+     "Georgia",
+     "Arial"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 3,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 1,
+    "reducedMotionHandled": false
+   },
+   "luminanceLight": 0.918,
+   "focus": {
+    "stops": 5,
+    "visible": 5
+   },
+   "luminanceDark": 0.918,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 1
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 1
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 88453,
+  "tokens_out": 6525,
+  "commands": 4
+ },
+ {
+  "case": "holdout-closed-notice",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout-closed-notice",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "6e3c38e",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 97
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-closed-notice/with-skill/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 29,
+    "headings": 1,
+    "sections": 1,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "1/1",
+    "titleCaseLabels": "0/1",
+    "dominantHue": 38,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 4,
+    "fontFamilies": [
+     "Georgia",
+     "Helvetica Neue"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 1,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 1,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.935,
+   "focus": {
+    "stops": 5,
+    "visible": 5
+   },
+   "luminanceDark": 0.935,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/content-design.md",
+   "references/aesthetic-directions.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 210836,
+  "tokens_out": 4351,
+  "commands": 11
+ },
+ {
+  "case": "holdout-closed-notice",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout-closed-notice",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "6e3c38e",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 77
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-closed-notice/with-skill/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 25,
+    "headings": 1,
+    "sections": 1,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "1/1",
+    "titleCaseLabels": "0/1",
+    "dominantHue": 32,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 4,
+    "fontFamilies": [
+     "Georgia",
+     "Helvetica Neue"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 1,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 1,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.939,
+   "focus": {
+    "stops": 5,
+    "visible": 5
+   },
+   "luminanceDark": 0.939,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/content-design.md",
+   "references/aesthetic-directions.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 108919,
+  "tokens_out": 3705,
+  "commands": 7
+ },
+ {
+  "case": "holdout-loader",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout-loader",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 40
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "loader.svg",
+    "bytes": 1828,
+    "elements": 10,
+    "distinctColors": 4,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 3,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "16s",
+     "2.8s",
+     "1.5s",
+     ".5s",
+     "1s"
+    ]
+   },
+   "changedPixels": 0.04,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 48833,
+  "tokens_out": 1570,
+  "commands": 3
+ },
+ {
+  "case": "holdout-loader",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout-loader",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 27
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "loader.svg",
+    "bytes": 1612,
+    "elements": 10,
+    "distinctColors": 6,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 3,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "12s",
+     "3s",
+     "1.5s",
+     ".2s",
+     ".4s"
+    ]
+   },
+   "changedPixels": 0.0262,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 48034,
+  "tokens_out": 1173,
+  "commands": 3
+ },
+ {
+  "case": "holdout-loader",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout-loader",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "6e3c38e",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 48
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "loader.svg",
+    "bytes": 1244,
+    "elements": 4,
+    "distinctColors": 8,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 1,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "16s"
+    ]
+   },
+   "changedPixels": 0.0129,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/svg-animation.md"
+  ],
+  "tokens_in": 113212,
+  "tokens_out": 1614,
+  "commands": 7
+ },
+ {
+  "case": "holdout-loader",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout-loader",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "6e3c38e",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 41
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "loader.svg",
+    "bytes": 1596,
+    "elements": 5,
+    "distinctColors": 8,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 2,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "16s",
+     "4s"
+    ]
+   },
+   "changedPixels": 0.0238,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/svg-animation.md"
+  ],
+  "tokens_in": 91841,
+  "tokens_out": 1666,
+  "commands": 6
+ },
+ {
+  "case": "holdout-logo",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout-logo",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 213
+  },
+  "audit": {
+   "kind": "logo",
+   "darkVariants": {
+    "logo": null,
+    "mark": null
+   },
+   "logo": {
+    "file": "logo.svg",
+    "bytes": 19090,
+    "elements": 9,
+    "distinctColors": 2,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   },
+   "mark": {
+    "file": "mark.svg",
+    "bytes": 523,
+    "elements": 3,
+    "distinctColors": 2,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   }
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 368523,
+  "tokens_out": 6453,
+  "commands": 20
+ },
+ {
+  "case": "holdout-logo",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout-logo",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 239
+  },
+  "audit": {
+   "kind": "logo",
+   "darkVariants": {
+    "logo": null,
+    "mark": null
+   },
+   "logo": {
+    "file": "logo.svg",
+    "bytes": 18580,
+    "elements": 4,
+    "distinctColors": 2,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   },
+   "mark": {
+    "file": "mark.svg",
+    "bytes": 363,
+    "elements": 1,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   }
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 346648,
+  "tokens_out": 10319,
+  "commands": 18
+ },
+ {
+  "case": "holdout-logo",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout-logo",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "6e3c38e",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 187
+  },
+  "audit": {
+   "kind": "logo",
+   "darkVariants": {
+    "logo": "logo-reversed.svg",
+    "mark": null
+   },
+   "logo": {
+    "file": "logo.svg",
+    "bytes": 7697,
+    "elements": 3,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   },
+   "mark": {
+    "file": "mark.svg",
+    "bytes": 400,
+    "elements": 1,
+    "distinctColors": 2,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   }
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/logo-design.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 305756,
+  "tokens_out": 6620,
+  "commands": 14
+ },
+ {
+  "case": "holdout-logo",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout-logo",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "6e3c38e",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 174
+  },
+  "audit": {
+   "kind": "logo",
+   "darkVariants": {
+    "logo": "logo-reversed.svg",
+    "mark": null
+   },
+   "logo": {
+    "file": "logo.svg",
+    "bytes": 5672,
+    "elements": 3,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   },
+   "mark": {
+    "file": "mark.svg",
+    "bytes": 444,
+    "elements": 1,
+    "distinctColors": 2,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   }
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/logo-design.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 289352,
+  "tokens_out": 6255,
+  "commands": 13
+ },
+ {
+  "case": "holdout-recipe-page",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout-recipe-page",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 227
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-recipe-page/baseline/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 22
+    }
+   ],
+   "content": {
+    "words": 321,
+    "headings": 4,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/8",
+    "titleCaseLabels": "1/11",
+    "dominantHue": 51,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 16,
+    "fontFamilies": [
+     "DM Serif Display",
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 3,
+    "radii": 5,
+    "elementsWithShadow": 2
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 3,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.772,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.772,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 22
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 19
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 316911,
+  "tokens_out": 10821,
+  "commands": 16
+ },
+ {
+  "case": "holdout-recipe-page",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout-recipe-page",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 174
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-recipe-page/baseline/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 18
+    }
+   ],
+   "content": {
+    "words": 300,
+    "headings": 9,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 4,
+    "buzzwords": [],
+    "centeredParagraphs": "0/7",
+    "titleCaseLabels": "1/10",
+    "dominantHue": 37,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 14,
+    "fontFamilies": [
+     "Libre Caslon Display",
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 2,
+    "radii": 3,
+    "elementsWithShadow": 1
+   },
+   "numbers": {
+    "numericCells": 1,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 2,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.808,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.808,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 18
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 18
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 99440,
+  "tokens_out": 9679,
+  "commands": 7
+ },
+ {
+  "case": "holdout-recipe-page",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout-recipe-page",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "6e3c38e",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 172
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-recipe-page/with-skill/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 162,
+    "headings": 7,
+    "sections": 2,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/4",
+    "titleCaseLabels": "0/9",
+    "dominantHue": 40,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 11,
+    "fontFamilies": [
+     "Arial",
+     "Georgia"
+    ],
+    "chromaticHueBuckets": 2,
+    "radii": 3,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 1,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.793,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.793,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 293826,
+  "tokens_out": 9039,
+  "commands": 14
+ },
+ {
+  "case": "holdout-recipe-page",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout-recipe-page",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "6e3c38e",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 274
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-recipe-page/with-skill/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 168,
+    "headings": 4,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/4",
+    "titleCaseLabels": "0/4",
+    "dominantHue": null,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 10,
+    "fontFamilies": [
+     "DM Sans",
+     "DM Serif Display"
+    ],
+    "chromaticHueBuckets": 0,
+    "radii": 3,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 1,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.766,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.766,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/aesthetic-directions.md",
+   "references/implementation.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 929490,
+  "tokens_out": 11417,
+  "commands": 29
+ },
+ {
+  "case": "holdout-water-app",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout-water-app",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 282
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-water-app/baseline/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 18
+    }
+   ],
+   "content": {
+    "words": 84,
+    "headings": 4,
+    "sections": 4,
+    "claims": [
+     "63% of"
+    ],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/1",
+    "titleCaseLabels": "0/5",
+    "dominantHue": 38,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 9,
+    "fontFamilies": [
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 2,
+    "radii": 6,
+    "elementsWithShadow": 3
+   },
+   "numbers": {
+    "numericCells": 3,
+    "tabular": 1
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 10,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.916,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.916,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 18
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 17
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 151445,
+  "tokens_out": 13732,
+  "commands": 8
+ },
+ {
+  "case": "holdout-water-app",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout-water-app",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 205
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-water-app/baseline/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 19
+    }
+   ],
+   "content": {
+    "words": 76,
+    "headings": 3,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/0",
+    "titleCaseLabels": "0/3",
+    "dominantHue": 251,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 10,
+    "fontFamilies": [
+     "Manrope",
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 2,
+    "radii": 7,
+    "elementsWithShadow": 4
+   },
+   "numbers": {
+    "numericCells": 4,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 1,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 4,
+    "reducedMotionHandled": false
+   },
+   "luminanceLight": 0.919,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.919,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 19
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 19
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 107691,
+  "tokens_out": 10210,
+  "commands": 8
+ },
+ {
+  "case": "holdout-water-app",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout-water-app",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "6e3c38e",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 572
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-water-app/with-skill/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 55,
+    "headings": 3,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/0",
+    "titleCaseLabels": "0/3",
+    "dominantHue": 263,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 8,
+    "fontFamilies": [
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 7,
+    "elementsWithShadow": 1
+   },
+   "numbers": {
+    "numericCells": 2,
+    "tabular": 1
+   },
+   "forms": {
+    "fields": 1,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 1,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.927,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.927,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/aesthetic-directions.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 452338,
+  "tokens_out": 14527,
+  "commands": 16
+ },
+ {
+  "case": "holdout-water-app",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout-water-app",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "6e3c38e",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 266
+  },
+  "audit": {
+   "url": "../iteration-holdout/holdout-water-app/with-skill/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 51,
+    "headings": 3,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/0",
+    "titleCaseLabels": "0/1",
+    "dominantHue": 237,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 8,
+    "fontFamilies": [
+     "Avenir Next"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 5,
+    "elementsWithShadow": 1
+   },
+   "numbers": {
+    "numericCells": 2,
+    "tabular": 1
+   },
+   "forms": {
+    "fields": 1,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 1,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.921,
+   "focus": {
+    "stops": 9,
+    "visible": 9
+   },
+   "luminanceDark": 0.921,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/craft-details.md",
+   "references/platforms.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 404507,
+  "tokens_out": 13449,
+  "commands": 15
+ }
+]

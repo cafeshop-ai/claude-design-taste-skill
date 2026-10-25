@@ -1,0 +1,1 @@
+Created [index.html](index.html) with a responsive bakery design, renovation dates, July 22 reopening notice, and tap-to-call catering number. Fully self-contained; markup and details verified.

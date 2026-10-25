@@ -1,0 +1,57 @@
+<!doctype html><meta charset="utf-8"><style>
+  body{margin:0;font:13px/1.4 system-ui,sans-serif;color:#555;background:#fff}
+  .sheet{display:grid;gap:24px;padding:32px;width:1100px}
+  .row{display:flex;gap:24px;align-items:stretch}
+  .panel{flex:1;display:grid;place-items:center;gap:12px;padding:40px;border:1px solid #e5e5e5;border-radius:8px;min-height:180px}
+  .dark{background:#151515;border-color:#151515;color:#aaa}
+  .sizes{display:flex;gap:28px;align-items:end}
+  .sizes figure{margin:0;display:grid;justify-items:center;gap:6px}
+  .tab{display:flex;align-items:center;gap:8px;width:220px;padding:8px 12px;border-radius:8px 8px 0 0;background:#f1f1f1;color:#222}
+  .tab.d{background:#2a2a2a;color:#eee}
+  img{display:block}
+#art svg{width:100%;height:auto;max-height:240px}</style><div class="sheet"><div class="row">
+        <div class="panel" id="stage" style="flex:none;width:420px;height:320px"><div id="art" style="width:240px"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="weather-loader-title">
+  <title id="weather-loader-title">Loading forecast</title>
+  <style>
+    .weather-loader {
+      --sun: #b77912;
+      --sun-fill: #fce5a5;
+      --cloud: #49677c;
+      --cloud-fill: #f2f7fa;
+    }
+    .weather-loader .rays {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: weather-turn 16s linear infinite;
+    }
+    .weather-loader .cloud {
+      animation: weather-drift 4s ease-in-out infinite;
+    }
+    @keyframes weather-turn {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes weather-drift {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(3px); }
+    }
+    @media (prefers-color-scheme: dark) {
+      .weather-loader {
+        --sun: #efbd57;
+        --sun-fill: #61491d;
+        --cloud: #b2ccdd;
+        --cloud-fill: #243b4b;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .weather-loader * { animation: none !important; }
+    }
+  </style>
+  <g class="weather-loader" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="var(--sun, #b77912)">
+      <path class="rays" d="M25 7v4m0 28v4M7 25h4m28 0h4M12.3 12.3l2.8 2.8m19.8 19.8 2.8 2.8m-25.4 0 2.8-2.8m19.8-19.8 2.8-2.8"/>
+      <circle cx="25" cy="25" r="9" fill="var(--sun-fill, #fce5a5)"/>
+    </g>
+    <path class="cloud" fill="var(--cloud-fill, #f2f7fa)" stroke="var(--cloud, #49677c)" d="M23 51a9 9 0 0 1-1-17.9 12 12 0 0 1 23.3-3.7A11 11 0 0 1 45 51Z"/>
+  </g>
+</svg>
+</div></div></div></div>

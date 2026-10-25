@@ -4,15 +4,15 @@ Judged from screenshots with conditions hidden behind random X/Y labels; the map
 
 ## Preferences
 
-- **iteration-2/baseline**: 4
-- **iteration-3/with-skill**: 10
+- **iteration-2/baseline**: 3
+- **iteration-3/with-skill**: 11
 
 ## Mean scores
 
 | condition | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| iteration-2/baseline | 3.50 | 4.00 | 2.70 | 3.42 | 4.00 | 4.00 | 3.60 | 4.00 | 3.00 | 4.00 | 3.50 | 3.00 | 3.20 | 2.00 |
-| iteration-3/with-skill | 4.00 | 3.00 | 3.80 | 3.42 | 3.20 | 4.50 | 4.00 | 3.50 | 3.00 | 5.00 | 4.00 | 4.00 | 4.00 | 2.00 |
+| iteration-2/baseline | 3.50 | 4.00 | 2.70 | 3.33 | 4.00 | 4.00 | 3.60 | 4.00 | 3.00 | 4.00 | 3.00 | 3.00 | 3.20 | 2.00 |
+| iteration-3/with-skill | 4.00 | 3.00 | 3.80 | 3.50 | 3.20 | 4.50 | 4.00 | 3.50 | 3.00 | 5.00 | 4.50 | 4.00 | 4.00 | 3.50 |
 
 ## Pairs
 
@@ -84,14 +84,14 @@ X connects the promise directly to a useful dashboard and three clearly explaine
 
 ### logo-run-1
 
-X = `iteration-3/with-skill`, Y = `iteration-2/baseline`. Preferred: **Y** (iteration-2/baseline).
+X = `iteration-3/with-skill`, Y = `iteration-2/baseline`. Preferred: **X** (iteration-3/with-skill).
 
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| X (iteration-3/with-skill) |  | 3 |  | 3 |  |  |  |  |  |  | 4 | 4 |  | 2 |
-| Y (iteration-2/baseline) |  | 4 |  | 4 |  |  |  |  |  |  | 4 | 3 |  | 2 |
+| X (iteration-3/with-skill) |  | 3 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 3 |
+| Y (iteration-2/baseline) |  | 4 |  | 4 |  |  |  |  |  |  | 3 | 3 |  | 2 |
 
-Y’s open-book base growing into leaves connects the bookshop and Fernway name more specifically than X’s generic sprig. Its balanced geometry and refined serif wordmark give it a more distinctive identity, though the narrow internal gaps crowd at 16px and the tagline is barely readable. X’s simpler silhouette survives reduction better. Both lose substantial contrast on the dark backgrounds shown.
+Y’s plant growing from an open book gives it the more specific bookshop concept, but its central channels and page details become crowded at favicon size. X’s simpler sprig and sturdier serif wordmark retain clarity better, and its cream reversed lockup works well on dark. Both candidates’ green icons have poor contrast in the dark panels; Y also leaves its full dark-background logo difficult to read.
 
 ### logo-run-2
 
@@ -99,10 +99,10 @@ X = `iteration-2/baseline`, Y = `iteration-3/with-skill`. Preferred: **Y** (iter
 
 | | color | concept | content | craft | distinctiveness | fit for context | hierarchy | illustration craft | motion quality | restraint | simplicity | small-size legibility | typography | versatility |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| X (iteration-2/baseline) |  | 4 |  | 4 |  |  |  |  |  |  | 3 | 3 |  | 2 |
-| Y (iteration-3/with-skill) |  | 3 |  | 4 |  |  |  |  |  |  | 4 | 4 |  | 2 |
+| X (iteration-2/baseline) |  | 4 |  | 3 |  |  |  |  |  |  | 3 | 3 |  | 2 |
+| Y (iteration-3/with-skill) |  | 3 |  | 4 |  |  |  |  |  |  | 5 | 4 |  | 4 |
 
-Y’s leaf-shaped F has a simpler, more memorable silhouette and retains clearer internal space at favicon sizes. X’s sprout emerging from an open book communicates the business more specifically, but its narrow stem and page divisions become crowded at 16px. Both have polished serif wordmarks and work in one color, but the dark green nearly disappears against the dark backgrounds shown.
+X’s sprout emerging from an open book connects more explicitly to the name and bookshop, but its narrow page divisions lose definition at favicon size. Y’s leafy F is simpler and more recognizable at 16px, with confident curves and a refined serif wordmark. Y’s cream reversed version also maintains clear contrast, while X’s unchanged dark green nearly disappears on the dark panels.
 
 ### pricing-restyle-run-1
 

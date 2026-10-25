@@ -1,0 +1,53 @@
+{
+  "url": "../iteration-holdout/holdout-water-app/with-skill/run-2",
+  "consoleErrors": [],
+  "axeDesktopLight": [],
+  "content": {
+    "words": 51,
+    "headings": 3,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+  },
+  "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/0",
+    "titleCaseLabels": "0/1",
+    "dominantHue": 237,
+    "violetDominant": false
+  },
+  "system": {
+    "fontSizes": 8,
+    "fontFamilies": [
+      "Avenir Next"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 5,
+    "elementsWithShadow": 1
+  },
+  "numbers": {
+    "numericCells": 2,
+    "tabular": 1
+  },
+  "forms": {
+    "fields": 1,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+  },
+  "motion": {
+    "motionRules": 1,
+    "reducedMotionHandled": true
+  },
+  "luminanceLight": 0.921,
+  "focus": {
+    "stops": 9,
+    "visible": 9
+  },
+  "luminanceDark": 0.921,
+  "axeDesktopDark": [],
+  "darkMode": "light only",
+  "overflow390": 0,
+  "axeMobile": []
+}

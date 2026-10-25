@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Halyard</title>
+  <desc id="desc">Two wind-filled sails and a curved hull. Icon for Halyard sailing school.</desc>
+  <path fill="#153F48" d="M 60 8 C 38 29 20 54 12 82 C 29 77 45 77 60 82 Z"/>
+  <path fill="#D56540" d="M 72 28 C 87 44 100 62 108 82 C 96 78 84 78 72 82 Z"/>
+  <path fill="#153F48" d="M 12 94 L 116 88 C 104 105 88 116 62 116 C 38 116 22 109 12 94 Z"/>
+</svg>

@@ -13,7 +13,9 @@ import sys
 from pathlib import Path
 from statistics import mean
 
-WEB = ["landing-page", "invoice-dashboard", "booking-flow", "pricing-restyle", "rsvp-page"]
+WEB = ["landing-page", "invoice-dashboard", "booking-flow", "pricing-restyle", "rsvp-page",
+       "holdout-recipe-page", "holdout-water-app", "holdout-closed-notice"]
+SVG = ("logo", "svg-animation", "holdout-logo", "holdout-loader")
 
 
 def load(path, default=None):
@@ -94,7 +96,7 @@ def svg_cells(r):
     a = r["audit"]
     if not a:
         return None
-    if r["case"] == "logo":
+    if r["case"] in ("logo", "holdout-logo"):
         out = {}
         for k in ("logo", "mark"):
             x = a.get(k) or {}
@@ -174,7 +176,7 @@ def main():
           "## Aggregate\n", aggregate(rows)]
     for case in sorted({r["case"] for r in rows}):
         md += [f"\n## {case}\n", table([r for r in rows if r["case"] == case],
-                                         svg_cells if case in ("logo", "svg-animation") else web_cells)]
+                                         svg_cells if case in SVG else web_cells)]
     triggered = [r for r in rows if r["condition"] != "baseline"]
     if triggered:
         hit = sum(1 for r in triggered if "SKILL.md" in " ".join(r["skill_files"]))

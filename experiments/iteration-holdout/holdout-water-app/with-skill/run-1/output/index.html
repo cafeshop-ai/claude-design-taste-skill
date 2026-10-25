@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f9faf8">
+  <title>Well — Daily water tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --canvas: #edf0ed; --surface: #f9faf8; --white: #fff;
+      --ink: #202b36; --muted: #6c747c; --line: #e5e8e5;
+      --blue: #285ee5; --blue-dark: #174abf; --blue-soft: #eaf1fd;
+      --blue-line: #b4ccf6; --blue-text: #315dab;
+      --radius: 24px; --small-radius: 16px;
+      --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+      --space-5: 24px; --space-6: 32px; --space-7: 48px;
+      --fast: 180ms;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--ink); background: var(--canvas);
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 280px; }
+    button, input { font: inherit; }
+    button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    button, input { outline-offset: 4px; }
+    :focus-visible { outline: 3px solid var(--blue); }
+    button { color: inherit; }
+    button:disabled { opacity: .5; cursor: default; }
+    svg { display: block; }
+    .icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .app { max-width: 440px; margin: 32px auto; padding: 28px 24px 24px; background: var(--surface); min-height: 880px; border-radius: 36px; box-shadow: 0 16px 64px #26354b0b; }
+    .topbar, .brand, .heading, .section-title, .goal-footer, .log-row, .log-info, .modal-heading { display: flex; align-items: center; }
+    .topbar, .heading, .section-title, .goal-footer, .modal-heading { justify-content: space-between; }
+    .brand { gap: 8px; font-size: 27px; font-weight: 700; letter-spacing: -1.4px; }
+    .brand-mark { width: 25px; height: 32px; color: var(--blue); }
+    .icon-button { border: none; background: transparent; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; transition: background var(--fast); }
+    .icon-button:hover { background: var(--line); }
+    .topbar > .icon-button { background: var(--white); border: 1px solid var(--line); }
+    .heading { margin: 24px 0 20px; align-items: baseline; }
+    h1 { font-size: 32px; line-height: 1.15; letter-spacing: -1.2px; font-weight: 600; margin: 0; }
+    .date { font-size: 13px; color: var(--muted); font-weight: 500; }
+    .progress-card { background: var(--blue-soft); border-radius: var(--radius); overflow: hidden; position: relative; }
+    .progress-main { height: 244px; position: relative; padding: 28px 24px; }
+    .intake-label { color: var(--blue-text); font-size: 14px; font-weight: 500; margin: 0 0 20px; }
+    .total { font-size: 48px; font-weight: 600; line-height: 1; letter-spacing: -2.5px; font-variant-numeric: tabular-nums; position: relative; z-index: 1; }
+    .goal-label { color: var(--blue-text); font-size: 14px; margin: 8px 0 20px; }
+    .percent { display: inline-flex; align-items: center; gap: 6px; color: var(--blue-dark); background: #d7e5ff; border-radius: 32px; padding: 6px 10px; font-size: 13px; font-weight: 600; }
+    .percent svg { width: 15px; height: 15px; }
+    .glass-art { position: absolute; width: 164px; height: 224px; right: 10px; top: 8px; overflow: visible; }
+    #water-level { transition: transform 700ms cubic-bezier(.2,.7,.2,1); }
+    .goal-footer { margin: 0 24px; border-top: 1px solid #ccdbf0; min-height: 60px; gap: 8px; }
+    .remaining { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--blue-text); }
+    .remaining .icon { width: 16px; height: 18px; }
+    .text-button { border: 0; background: transparent; padding: 0; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 4px; font-size: 13px; color: var(--blue); font-weight: 500; border-radius: 8px; }
+    .text-button:hover { color: var(--blue-dark); text-decoration: underline; text-underline-offset: 3px; }
+    .text-button .icon { width: 15px; height: 15px; }
+    .add-section { margin-top: 24px; }
+    .section-title { min-height: 44px; margin-bottom: 8px; gap: 12px; }
+    h2 { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -.4px; }
+    .drink-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .drink-option { height: 84px; border: 1px solid var(--line); background: var(--white); border-radius: var(--small-radius); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; transition: background var(--fast), border-color var(--fast); }
+    .drink-option:hover { border-color: var(--blue); }
+    .drink-option[aria-pressed="true"] { background: var(--blue-soft); border: 1.5px solid var(--blue); color: var(--blue); }
+    .drink-option .icon { width: 26px; height: 29px; }
+    .drink-option span { font-size: 13px; font-weight: 500; }
+    .check { display: none; }
+    .primary { border: none; border-radius: var(--small-radius); width: 100%; min-height: 56px; background: var(--blue); color: var(--white); font-size: 16px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background var(--fast), transform var(--fast); }
+    .primary:hover { background: var(--blue-dark); }
+    .primary:active { transform: translateY(1px); }
+    #add-water { margin-top: 16px; }
+    .history { margin-top: 24px; }
+    .count { font-size: 12px; color: var(--muted); }
+    .log-list { margin: 0; padding: 0; list-style: none; }
+    .log-row { gap: 12px; padding: 12px 0; min-height: 68px; border-bottom: 1px solid var(--line); }
+    .log-row:last-child { border-bottom: none; }
+    .log-icon { width: 40px; height: 40px; background: #edf2f9; color: #6286bb; border-radius: 12px; display: grid; place-items: center; flex-shrink: 0; }
+    .log-icon .icon { width: 21px; height: 24px; }
+    .log-info { justify-content: space-between; flex: 1; gap: 8px; }
+    .log-name { font-size: 14px; font-weight: 500; }
+    .log-time { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; font-weight: 400; }
+    .log-amount { font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .remove { width: 44px; min-width: 44px; height: 44px; padding: 0; color: var(--muted); margin-right: -8px; }
+    .remove .icon { width: 16px; height: 16px; }
+    .show-all { display: flex; margin: 0 auto; font-size: 12px; color: var(--muted); gap: 6px; }
+    .empty { padding: 24px 0; color: var(--muted); font-size: 14px; line-height: 1.6; text-align: center; }
+    .empty strong { color: var(--ink); display: block; font-weight: 500; }
+    dialog { width: calc(100% - 40px); max-width: 380px; border: none; border-radius: var(--radius); padding: 24px; color: var(--ink); background: var(--surface); box-shadow: 0 16px 64px #202b3620; }
+    dialog::backdrop { background: #15233a66; backdrop-filter: blur(4px); }
+    .modal-heading { margin-bottom: 20px; }
+    .modal-heading h2 { font-size: 21px; }
+    .modal-heading .icon-button { margin: -8px; }
+    .input-label { display: block; font-size: 14px; margin-bottom: 8px; }
+    .input-wrap { display: flex; align-items: center; border: 1px solid #8c96a1; border-radius: 12px; padding-right: 16px; background: var(--white); }
+    .input-wrap:focus-within { outline: 2px solid var(--blue); outline-offset: 2px; }
+    .input-wrap input { width: 100%; min-width: 0; padding: 16px; border: none; outline: none; background: transparent; color: var(--ink); font-size: 24px; }
+    .input-wrap span { font-size: 14px; color: var(--muted); }
+    .form-hint { font-size: 12px; color: var(--muted); line-height: 1.5; margin: 12px 0 24px; }
+    .form-error { color: #a32a2a; font-size: 13px; margin: 12px 0; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translate(-50%, 16px); width: calc(100% - 40px); max-width: 392px; background: var(--ink); border-radius: var(--small-radius); padding: 12px 16px; color: var(--white); display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; opacity: 0; pointer-events: none; transition: opacity var(--fast), transform var(--fast); box-shadow: 0 8px 24px #202b3626; z-index: 5; }
+    .toast.visible { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
+    .toast button { color: #baceff; border: none; background: transparent; min-height: 44px; padding: 0 8px; font-size: 14px; font-weight: 600; }
+    .storage-note { font-size: 12px; color: var(--muted); text-align: center; margin: 16px 0 0; }
+    [hidden] { display: none !important; }
+    @media(max-width: 480px) { body { background: var(--surface); } .app { margin: 0 auto; padding-top: max(24px, env(safe-area-inset-top)); padding-bottom: max(24px, env(safe-area-inset-bottom)); border-radius: 0; box-shadow: none; min-height: 100dvh; } }
+    @media(max-width: 360px) { .app { padding-left: 16px; padding-right: 16px; } .glass-art { width: 140px; right: 4px; } .progress-main { padding-left: 20px; } .total { font-size: 44px; } .goal-footer { margin: 0 20px; } .drink-options { gap: 8px; } }
+    @media(prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="i-drop" viewBox="0 0 24 28"><path d="M12 2S3 12 3 17a9 9 0 0 0 18 0C21 12 12 2 12 2Z"/><path d="M7 18a5 5 0 0 0 5 5"/></symbol>
+    <symbol id="i-glass" viewBox="0 0 24 28"><path d="m5 3 1.5 21a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2L19 3Z"/><path d="M6 13c4-3 8 3 12 0"/></symbol>
+    <symbol id="i-small" viewBox="0 0 24 28"><path d="m5 8 1.5 16a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2L19 8Z"/><path d="M6 17c4-3 8 3 12 0"/></symbol>
+    <symbol id="i-bottle" viewBox="0 0 24 28"><path d="M9 2h6v5l3 4v13a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V11l3-4Z"/><path d="M9 5h6M6 16c4-3 8 3 12 0"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m7 7 10 10M17 7 7 17"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l4-1L20 7a2.8 2.8 0 0 0-4-4L4 15Z"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="m9.5 3-.7 2.2-2 .9-2.2-.5L2 10l1.6 1.8v2.3L2 16l2.6 4.4 2.3-.5 1.9 1 .7 2.1h5l.7-2.2 2-.9 2.2.5L22 16l-1.6-1.8v-2.3L22 10l-2.6-4.4-2.3.5-1.9-1L14.5 3Z" transform="translate(2 0) scale(.83)"/><circle cx="12" cy="11" r="3"/></symbol>
+  </defs></svg>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand" aria-label="Well"><svg class="brand-mark" viewBox="0 0 26 34" aria-hidden="true"><path fill="currentColor" d="M13 1C11 5 1 16 1 22a12 12 0 0 0 24 0C25 16 15 5 13 1Z"/><path d="M6 23a7 7 0 0 0 7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><span>well<span style="color:var(--blue)">.</span></span></div>
+      <button class="icon-button" id="settings" aria-label="Daily goal settings"><svg class="icon" aria-hidden="true"><use href="#i-settings"/></svg></button>
+    </header>
+    <div class="heading"><h1>Today</h1><time class="date" id="date"></time></div>
+    <section class="progress-card" aria-label="Daily water progress">
+      <div class="progress-main">
+        <p class="intake-label">Daily intake</p>
+        <div class="total" id="total" role="progressbar" aria-label="Daily water intake" aria-valuemin="0" aria-valuemax="2000" aria-valuenow="1250">1,250</div>
+        <p class="goal-label">of <span id="goal">2,000</span> ml</p>
+        <span class="percent"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".25"/><path id="mini-progress" d="M8 2.5a5.5 5.5 0 1 1-3.9 9.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span id="percent">63%</span></span>
+        <svg class="glass-art" viewBox="0 0 164 240" role="img" aria-label="A glass filled to your daily progress" id="glass-illustration">
+          <defs>
+            <linearGradient id="glass-shade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff" stop-opacity=".7"/><stop offset=".5" stop-color="#fff" stop-opacity=".2"/><stop offset="1" stop-color="#c7dcf8" stop-opacity=".6"/></linearGradient>
+            <linearGradient id="water-shade" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#6da5f8"/><stop offset="1" stop-color="#285ee5"/></linearGradient>
+            <clipPath id="glass-clip"><path d="M24 29H140L128 206Q126 223 109 224H55Q38 223 36 206Z"/></clipPath>
+          </defs>
+          <ellipse cx="84" cy="229" rx="55" ry="6" fill="#c8d9f0" opacity=".55"/>
+          <path d="M21 27H143L130 207Q128 226 109 227H55Q35 226 33 207Z" fill="url(#glass-shade)" stroke="#a5c3e9" stroke-width="1.5"/>
+          <g clip-path="url(#glass-clip)">
+            <g id="water-level" transform="translate(0 78)">
+              <path d="M15 6Q45-7 83 4T150 2V230H15Z" fill="#8bb6f9"/>
+              <path d="M14 11Q43 23 80 10T151 13V230H14Z" fill="url(#water-shade)"/>
+              <path d="M20 10Q43 22 80 10T145 12" fill="none" stroke="#b8d7ff" stroke-width="1.3"/>
+              <g fill="#d7e7ff" opacity=".65"><circle cx="61" cy="60" r="3"/><circle cx="105" cy="94" r="2"/><circle cx="92" cy="42" r="1.7"/><circle cx="57" cy="112" r="1.5"/></g>
+            </g>
+            <path d="m34 40 11 163q1 9 8 10" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+            <path d="M119 61h12M120 88h9M116 115h12M116 142h9M113 169h12M112 196h10" stroke="#fff" stroke-width="1.5" opacity=".85"/>
+          </g>
+          <ellipse cx="82" cy="28" rx="60" ry="8" fill="#eef5ff" stroke="#a5c3e9" stroke-width="1.5"/>
+          <path d="M28 29q54 10 108 0" fill="none" stroke="#fff" stroke-width="2" opacity=".9"/>
+        </svg>
+      </div>
+      <div class="goal-footer"><span class="remaining"><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg><span id="remaining">750 ml to go</span></span><button class="text-button" id="edit-goal">Edit goal<svg class="icon" aria-hidden="true"><use href="#i-edit"/></svg></button></div>
+    </section>
+    <section class="add-section" aria-labelledby="add-title">
+      <div class="section-title"><h2 id="add-title">Add a drink</h2><button class="text-button" id="custom">Custom<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></div>
+      <div class="drink-options" role="group" aria-label="Glass size">
+        <button class="drink-option" data-amount="150" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-small"/></svg><span>150 ml</span></button>
+        <button class="drink-option" data-amount="250" aria-pressed="true"><svg class="icon" aria-hidden="true"><use href="#i-glass"/></svg><span>250 ml</span></button>
+        <button class="drink-option" data-amount="500" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bottle"/></svg><span>500 ml</span></button>
+      </div>
+      <button class="primary" id="add-water"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg><span id="add-label">Add 250 ml</span></button>
+    </section>
+    <section class="history" aria-labelledby="history-title">
+      <div class="section-title"><h2 id="history-title">Today’s drinks</h2><span class="count" id="drink-count">5 drinks</span></div>
+      <ul class="log-list" id="log-list"></ul>
+      <button class="text-button show-all" id="show-all">Show all drinks<svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></button>
+    </section>
+    <p class="storage-note" id="storage-note" hidden>Changes will last until this page is closed.</p>
+  </main>
+  <dialog id="edit-dialog" aria-labelledby="dialog-title">
+    <form id="edit-form" novalidate>
+      <div class="modal-heading"><h2 id="dialog-title">Your daily goal</h2><button type="button" class="icon-button" id="close-dialog" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div>
+      <label class="input-label" for="amount-input" id="input-label">Daily water goal</label>
+      <div class="input-wrap"><input type="number" inputmode="numeric" id="amount-input" min="1" max="20000" step="1" required><span>ml</span></div>
+      <p class="form-hint" id="form-hint">Choose the daily amount that works for you.</p>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <button class="primary" id="save-amount" type="submit">Save goal</button>
+    </form>
+  </dialog>
+  <div class="toast" id="toast"><span role="status" id="toast-message"></span><button id="undo">Undo</button></div>
+  <script>
+    (() => {
+      const $ = id => document.getElementById(id);
+      const format = n => n.toLocaleString('en-US');
+      const dayKey = () => { const d = new Date(); return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`; };
+      const today = dayKey();
+      const makeTime = (h, m) => { const d = new Date(); d.setHours(h, m, 0, 0); return d.getTime(); };
+      let state = { day: today, goal: 2000, entries: [ [8, 0], [9, 15], [10, 30], [12, 0], [13, 40] ].map(([h,m], i) => ({ id: `sample-${i}`, amount: 250, time: makeTime(h,m) })) };
+      try {
+        const saved = JSON.parse(localStorage.getItem('well-water-v1'));
+        if (saved && Number.isInteger(saved.goal) && saved.goal > 0 && saved.goal <= 20000 && Array.isArray(saved.entries)) {
+          state = { day: today, goal: saved.goal, entries: saved.day === today ? saved.entries.filter(e => Number.isInteger(e.amount) && e.amount > 0 && e.amount <= 5000 && Number.isFinite(e.time) && typeof e.id === 'string') : [] };
+        }
+      } catch { $('storage-note').hidden = false; }
+      let selected = 250, expanded = false, dialogMode = 'goal', undoAction = null, toastTimer;
+      function save() { try { localStorage.setItem('well-water-v1', JSON.stringify(state)); } catch { $('storage-note').hidden = false; } }
+      function ensureDay() {
+        if (state.day !== dayKey()) { state.day = dayKey(); state.entries = []; expanded = false; undoAction = null; $('toast').classList.remove('visible'); save(); }
+      }
+      function render() {
+        ensureDay();
+        const total = state.entries.reduce((sum,e) => sum + e.amount, 0);
+        const percentage = Math.round(total / state.goal * 100);
+        $('date').textContent = new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+        $('date').dateTime = new Date().toLocaleDateString('en-CA');
+        $('total').textContent = format(total);
+        $('total').setAttribute('aria-valuenow', Math.min(total, state.goal));
+        $('total').setAttribute('aria-valuemax', state.goal);
+        $('total').setAttribute('aria-valuetext', `${format(total)} of ${format(state.goal)} milliliters, ${percentage} percent`);
+        $('total').style.fontSize = total >= 100000 ? '36px' : '';
+        $('goal').textContent = format(state.goal);
+        $('percent').textContent = `${percentage}%`;
+        $('remaining').textContent = total >= state.goal ? 'Daily goal reached' : `${format(state.goal-total)} ml to go`;
+        const fill = Math.min(total / state.goal, 1);
+        $('water-level').setAttribute('transform', `translate(0 ${214 - fill * 195})`);
+        $('glass-illustration').setAttribute('aria-label', `Glass ${Math.min(percentage,100)} percent full`);
+        $('drink-count').textContent = `${state.entries.length} drink${state.entries.length === 1 ? '' : 's'}`;
+        $('log-list').replaceChildren();
+        const entries = [...state.entries].reverse();
+        (expanded ? entries : entries.slice(0,3)).forEach(entry => {
+          const row = document.createElement('li'); row.className = 'log-row';
+          const time = new Date(entry.time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+          row.innerHTML = `<span class="log-icon"><svg class="icon" aria-hidden="true"><use href="#i-glass"/></svg></span><div class="log-info"><span class="log-name">Water<time class="log-time"></time></span><span class="log-amount"></span></div><button class="icon-button remove"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>`;
+          row.querySelector('time').textContent = time;
+          row.querySelector('time').dateTime = new Date(entry.time).toISOString();
+          row.querySelector('.log-amount').textContent = `${format(entry.amount)} ml`;
+          const remove = row.querySelector('button');
+          remove.setAttribute('aria-label', `Remove ${entry.amount} ml logged at ${time}`);
+          remove.onclick = () => {
+            const snapshot = [...state.entries];
+            state.entries = state.entries.filter(e => e.id !== entry.id); save(); render();
+            notify(`${format(entry.amount)} ml removed`, () => { state.entries = snapshot; save(); render(); });
+          };
+          $('log-list').append(row);
+        });
+        if (!entries.length) $('log-list').innerHTML = '<li class="empty"><strong>No drinks logged yet</strong>Add your first glass above.</li>';
+        $('show-all').hidden = entries.length <= 3;
+        $('show-all').firstChild.textContent = expanded ? 'Show fewer drinks' : `Show all ${entries.length} drinks`;
+        $('show-all').setAttribute('aria-expanded', String(expanded));
+      }
+      function notify(message, undo) {
+        clearTimeout(toastTimer); undoAction = undo;
+        $('toast-message').textContent = message; $('undo').hidden = !undo;
+        $('toast').classList.add('visible');
+        toastTimer = setTimeout(() => { $('toast').classList.remove('visible'); undoAction = null; }, 6000);
+      }
+      function addWater(amount) {
+        ensureDay();
+        const entry = { id: `drink-${Date.now()}-${Math.random().toString(36).slice(2,7)}`, amount, time: Date.now() };
+        state.entries.push(entry); save(); render();
+        notify(`${format(amount)} ml added`, () => { state.entries = state.entries.filter(e => e.id !== entry.id); save(); render(); });
+      }
+      document.querySelectorAll('.drink-option').forEach(button => {
+        button.onclick = () => { selected = Number(button.dataset.amount); document.querySelectorAll('.drink-option').forEach(b => b.setAttribute('aria-pressed', String(b === button))); $('add-label').textContent = `Add ${selected} ml`; };
+      });
+      $('add-water').onclick = () => addWater(selected);
+      $('show-all').onclick = () => { expanded = !expanded; render(); };
+      $('undo').onclick = () => { if (undoAction) undoAction(); undoAction = null; clearTimeout(toastTimer); $('toast').classList.remove('visible'); };
+      function openDialog(mode) {
+        dialogMode = mode; const isGoal = mode === 'goal';
+        $('dialog-title').textContent = isGoal ? 'Your daily goal' : 'Add a custom drink';
+        $('input-label').textContent = isGoal ? 'Daily water goal' : 'Amount of water';
+        $('amount-input').value = isGoal ? state.goal : '';
+        $('amount-input').max = isGoal ? 20000 : 5000;
+        $('amount-input').setAttribute('aria-describedby', 'form-hint form-error');
+        $('form-hint').textContent = isGoal ? 'Choose the daily amount that works for you.' : 'Enter the amount you just drank, in milliliters.';
+        $('save-amount').textContent = isGoal ? 'Save goal' : 'Add water';
+        $('form-error').hidden = true; $('amount-input').removeAttribute('aria-invalid');
+        $('edit-dialog').showModal(); $('amount-input').focus(); $('amount-input').select();
+      }
+      $('edit-goal').onclick = $('settings').onclick = () => openDialog('goal');
+      $('custom').onclick = () => openDialog('custom');
+      $('close-dialog').onclick = () => $('edit-dialog').close();
+      $('edit-dialog').onclick = e => { if (e.target === $('edit-dialog')) { const r = e.target.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) e.target.close(); } };
+      $('edit-form').onsubmit = e => {
+        e.preventDefault(); const value = Number($('amount-input').value), max = dialogMode === 'goal' ? 20000 : 5000;
+        if (!Number.isInteger(value) || value < 1 || value > max) {
+          $('form-error').textContent = `Enter a whole amount from 1 to ${format(max)} ml.`; $('form-error').hidden = false; $('amount-input').setAttribute('aria-invalid', 'true'); $('amount-input').focus(); return;
+        }
+        $('edit-dialog').close();
+        if (dialogMode === 'goal') { state.goal = value; save(); render(); notify('Daily goal updated'); } else addWater(value);
+      };
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
+      render();
+    })();
+  </script>
+</body>
+</html>

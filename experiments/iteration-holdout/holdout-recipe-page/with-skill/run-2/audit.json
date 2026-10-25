@@ -1,0 +1,54 @@
+{
+  "url": "../iteration-holdout/holdout-recipe-page/with-skill/run-2",
+  "consoleErrors": [],
+  "axeDesktopLight": [],
+  "content": {
+    "words": 168,
+    "headings": 4,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+  },
+  "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/4",
+    "titleCaseLabels": "0/4",
+    "dominantHue": null,
+    "violetDominant": false
+  },
+  "system": {
+    "fontSizes": 10,
+    "fontFamilies": [
+      "DM Sans",
+      "DM Serif Display"
+    ],
+    "chromaticHueBuckets": 0,
+    "radii": 3,
+    "elementsWithShadow": 0
+  },
+  "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+  },
+  "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+  },
+  "motion": {
+    "motionRules": 1,
+    "reducedMotionHandled": true
+  },
+  "luminanceLight": 0.766,
+  "focus": {
+    "stops": 10,
+    "visible": 10
+  },
+  "luminanceDark": 0.766,
+  "axeDesktopDark": [],
+  "darkMode": "light only",
+  "overflow390": 0,
+  "axeMobile": []
+}

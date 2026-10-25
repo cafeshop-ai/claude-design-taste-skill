@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="80" viewBox="0 0 96 80" role="img" aria-labelledby="title desc">
+  <title id="title">Loading forecast</title>
+  <desc id="desc">A golden sun turns behind a gently floating cloud while three blue dots pulse below.</desc>
+  <style>
+    .rays { transform-origin: 37px 29px; animation: turn 12s linear infinite; }
+    .cloud { animation: float 3s ease-in-out infinite; }
+    .dot { animation: pulse 1.5s ease-in-out infinite; }
+    .dot:nth-child(2) { animation-delay: .2s; }
+    .dot:nth-child(3) { animation-delay: .4s; }
+    @keyframes turn { to { transform: rotate(360deg); } }
+    @keyframes float { 50% { transform: translateY(-3px); } }
+    @keyframes pulse { 0%, 70%, 100% { opacity: .25; } 35% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .rays, .cloud, .dot { animation: none; }
+      .dot { opacity: .65; }
+    }
+  </style>
+  <g fill="none" stroke="#F5B544" stroke-width="3" stroke-linecap="round" class="rays">
+    <path d="M37 9v4m0 32v4M17 29h4m32 0h4M23 15l3 3m22 22 3 3M23 43l3-3m22-22 3-3"/>
+  </g>
+  <circle cx="37" cy="29" r="11" fill="#FFD36A"/>
+  <g class="cloud">
+    <path d="M30 57a12 12 0 0 1-1-24 17 17 0 0 1 32-4 14 14 0 1 1 6 28Z" fill="#F1F7FC" stroke="#8AACC7" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M35 36a11 11 0 0 1 17-5" fill="none" stroke="#FFF" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g fill="#65A9D9">
+    <circle class="dot" cx="38" cy="68" r="2.5"/>
+    <circle class="dot" cx="48" cy="68" r="2.5"/>
+    <circle class="dot" cx="58" cy="68" r="2.5"/>
+  </g>
+</svg>

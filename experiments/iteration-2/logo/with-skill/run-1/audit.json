@@ -1,5 +1,9 @@
 {
   "kind": "logo",
+  "darkVariants": {
+    "logo": "logo-reversed.svg",
+    "mark": null
+  },
   "logo": {
     "file": "logo.svg",
     "bytes": 7006,

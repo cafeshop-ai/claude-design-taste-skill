@@ -14,15 +14,22 @@ EXP = Path(__file__).resolve().parent.parent
 WEB = ["hierarchy", "typography", "color", "content", "craft", "distinctiveness"]
 
 
+VERSIONS = {"0b52da1": "v1", "008e1ca": "v2", "bdd290b": "v3", "6e3c38e": "v4"}
+
+
 def label(path):
-    it, _, cond, _ = Path(path).parts[:4]
-    n = it.split("-")[1]
-    return f"baseline (it. {n})" if cond == "baseline" else f"skill v{n}"
+    it, case, cond, run = Path(path).parts[:4]
+    n = it.split("-", 1)[1]
+    where = f"it. {n}" if n.isdigit() else n
+    if cond == "baseline":
+        return f"baseline ({where})"
+    ref = json.loads((EXP / it / case / cond / run / "meta.json").read_text()).get("skill_ref", "")
+    return f"skill {VERSIONS.get(ref, ref)}" + ("" if n.isdigit() else f" ({where})")
 
 
 def main():
     rows = []
-    for it in sorted(EXP.glob("iteration-*"), key=lambda p: int(p.name.split("-")[1])):
+    for it in sorted(EXP.glob("iteration-*"), key=lambda p: (not p.name.split("-")[1].isdigit(), p.name.split("-")[1].zfill(4))):
         for blind in sorted(it.glob("blind*")):
             mapping = json.loads((blind / "mapping.json").read_text())
             for judge, fname in (("Claude", "judgments.json"), ("Codex", "judgments-codex.json")):
