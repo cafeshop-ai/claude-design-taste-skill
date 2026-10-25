@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The quiet tool · Longhand</title>
+<meta name="description" content="The software we trust most is the software we stop noticing. Notes on restraint, and on why it is so hard to ship.">
+<!--
+  Exemplar: a long-read article page (Longhand and its writers are fictional).
+  Direction: editorial. Warm paper neutrals, Newsreader for reading and
+  headlines, Schibsted Grotesk for small UI text, one oxblood ink color,
+  2px radius. The signature is typographic: a drop cap, margin notes on wide
+  screens, and an end mark. Study the decisions; don't copy the look.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  /* ---- Decisions (overrides tokens.css) ---- */
+  :root {
+    --neutral-h: 75;  --neutral-c: 0.014;
+    --accent-h: 22;   --accent-c: 0.13;
+    --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+    --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-display: var(--font-serif);
+    --radius-base: 2px;
+
+    /* Reading scale for this page, fluid from 375px to 1440px wide. */
+    --text-body: clamp(1.0625rem, 1.0185rem + 0.1878vw, 1.1875rem); /* 17 → 19 */
+    --text-h2: clamp(1.5rem, 1.412rem + 0.3756vw, 1.75rem);         /* 24 → 28 */
+    --text-dek: clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);        /* 20 → 24 */
+    --column: 36rem;  /* about 68 characters of Newsreader at 19px */
+    --ink: var(--color-link); /* the accent as text: kicker, drop cap, note numbers */
+  }
+  /* Paper, not white. Light theme only; dark keeps the tokens' warm gray. */
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --color-bg: oklch(0.982 0.012 85); } }
+  :root[data-theme="light"] { --color-bg: oklch(0.982 0.012 85); }
+
+  body { font-family: var(--font-serif); }
+  a { color: inherit; text-decoration-color: var(--ink); }
+
+  /* ---- Masthead ---- */
+  .masthead {
+    display: flex; align-items: baseline; gap: var(--space-6); flex-wrap: wrap;
+    max-width: var(--container-xl); margin-inline: auto; padding: var(--space-5) var(--gutter);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .wordmark { font-size: var(--text-2xl); font-style: italic; font-weight: 500; letter-spacing: -0.01em; text-decoration: none; }
+  .masthead nav { display: flex; gap: var(--space-5); margin-left: auto; font: var(--text-sm)/1 var(--font-sans); }
+  .masthead nav a { color: var(--color-text-muted); text-decoration: none; padding-block: var(--space-2); }
+  .masthead nav a:hover { color: var(--color-text); }
+  .masthead nav .subscribe { color: var(--ink); font-weight: 500; }
+
+  /* ---- The story column. Normal block flow, not grid: grid items contain
+     their floats, which would stop margin notes from hanging outside. ---- */
+  .story { width: min(var(--column), 100% - 2 * var(--gutter)); margin-inline: auto; padding: var(--space-16) 0 var(--space-section); }
+
+  .kicker { font: 600 var(--text-xs)/1 var(--font-sans); letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--ink); }
+  .story h1 {
+    margin-top: var(--space-4);
+    font-size: var(--text-display-1); font-weight: 400; line-height: 1; letter-spacing: -0.025em;
+    font-variation-settings: "opsz" 72;
+  }
+  .dek { margin-top: var(--space-5); font-size: var(--text-dek); line-height: 1.35; color: var(--color-text-muted); }
+  .byline {
+    display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); margin-top: var(--space-8); padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border-strong); font: var(--text-sm)/var(--leading-sm) var(--font-sans); color: var(--color-text-muted);
+  }
+  .byline b { font-weight: 500; color: var(--color-text); }
+
+  .body { margin-top: var(--space-12); font-size: var(--text-body); line-height: 1.6; font-variant-numeric: oldstyle-nums proportional-nums; hyphens: auto; }
+  .body > * + * { margin-top: 1em; }
+  .body h2 { margin-top: 2em; font-size: var(--text-h2); font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; hyphens: manual; }
+  .body h2 + p { margin-top: 0.6em; }
+
+  /* Drop cap where initial-letter is supported; a plain first letter elsewhere. */
+  @supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
+    .lead::first-letter {
+      -webkit-initial-letter: 3; initial-letter: 3;
+      margin-right: 0.1em; color: var(--ink); font-weight: 500;
+    }
+  }
+
+  /* Margin notes: inline below the text on narrow screens, hung in the
+     right margin when there's room (the float sits wholly outside the column,
+     so it never narrows the text). */
+  .ref { font: 600 0.65em/0 var(--font-sans); color: var(--ink); vertical-align: super; margin-left: 0.1em; }
+  .note {
+    display: block; margin-top: var(--space-3); padding-left: var(--space-3); border-left: 2px solid var(--color-border-strong);
+    font: var(--text-sm)/var(--leading-sm) var(--font-sans); color: var(--color-text-muted); hyphens: manual; font-variant-numeric: normal;
+  }
+  .note .ref { vertical-align: baseline; font-size: inherit; line-height: inherit; margin: 0 var(--space-1) 0 0; }
+
+  /* Pull quote repeats the text, so it's hidden from screen readers. */
+  .pull {
+    margin-block: 1.6em; padding: var(--space-4) 0; border-block: 1px solid var(--color-border-strong);
+    font-size: var(--text-dek); font-style: italic; line-height: 1.3; letter-spacing: -0.005em; text-wrap: balance;
+  }
+  .pull::before { content: "“"; color: var(--ink); }
+  .pull::after { content: "”"; color: var(--ink); }
+
+  .end::after {
+    content: ""; display: inline-block; width: 0.5em; height: 0.5em; margin-left: 0.35em;
+    background: var(--ink); vertical-align: 0.05em;
+  }
+
+  .bio {
+    margin-top: var(--space-12); padding-top: var(--space-4); border-top: 1px solid var(--color-border);
+    font: var(--text-sm)/var(--leading-sm) var(--font-sans); color: var(--color-text-muted);
+  }
+  .bio b { color: var(--color-text); font-weight: 500; }
+
+  @media (min-width: 75rem) {
+    .note {
+      float: right; clear: right; width: 14rem; margin: 0.3em -17rem 0 0; padding: 0; border: 0;
+    }
+    .pull { clear: right; margin-right: -6rem; font-size: 1.875rem; }
+  }
+
+  /* ---- Keep reading ---- */
+  .more { border-top: 1px solid var(--color-border-strong); }
+  .more-inner { max-width: var(--container-lg); margin-inline: auto; padding: var(--space-10) var(--gutter) var(--space-16); }
+  .more h2 { font: 600 var(--text-xs)/1 var(--font-sans); letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--color-text-muted); }
+  .more ol { list-style: none; padding: 0; margin-top: var(--space-6); display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: var(--space-8); }
+  .more a { display: block; text-decoration: none; }
+  .more .t { display: block; font-size: var(--text-xl); line-height: 1.25; font-weight: 500; text-wrap: balance; }
+  .more a:hover .t { text-decoration: underline; text-decoration-color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+  .more .m { display: block; margin-top: var(--space-2); font: var(--text-sm)/var(--leading-sm) var(--font-sans); color: var(--color-text-muted); }
+  .site-foot { padding: var(--space-6) var(--gutter); text-align: center; font: var(--text-xs)/1.5 var(--font-sans); color: var(--color-text-subtle); border-top: 1px solid var(--color-border); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="#">Longhand</a>
+  <nav aria-label="Sections">
+    <a href="#">Essays</a>
+    <a href="#">Interviews</a>
+    <a href="#">Archive</a>
+    <a class="subscribe" href="#">Subscribe</a>
+  </nav>
+</header>
+
+<main>
+  <article class="story">
+    <p class="kicker">Essay</p>
+    <h1>The quiet tool</h1>
+    <p class="dek">The software we trust most is the software we stop noticing. Notes on restraint, and on why it is so hard to ship.</p>
+    <p class="byline"><span>By <b>Mara Ellison</b></span><time datetime="2026-10-21">October 21, 2026</time><span>7 min read</span></p>
+
+    <div class="body">
+      <p class="lead">There is a particular kind of praise that people give the tools they love, and it is almost always a description of absence. The knife that doesn’t need sharpening. The editor that never gets in the way. The calendar that, somehow, is never the reason you missed the meeting. We rarely say a good tool is beautiful. We say we forgot it was there.</p>
+
+      <p>That forgetting is not an accident. It is the visible result of hundreds of decisions to leave something out: a color that would have marked one more state, a border that would have boxed one more group, a notification that would have announced one more thing nobody asked to know. Each of those additions is defensible on its own. Together they make a tool that is always talking.</p>
+
+      <h2>Every addition has a cost</h2>
+
+      <p>When a product team adds a badge, it is solving a real problem: someone missed an update. The cost is paid elsewhere, by every other badge, which now matters slightly less. Attention behaves like a budget, not a well, and interfaces that treat it as a well end up shouting to be heard over themselves.<span class="ref" aria-hidden="true">1</span><span class="note" role="note"><span class="ref">1</span>Hospitals have a name for the extreme case: alarm fatigue, where monitors that sound for everything teach staff to hear nothing.</span></p>
+
+      <p>The discipline, then, is not minimalism for its own sake. Minimalism is a style, and styles can be as loud as anything else. The discipline is accounting: knowing what each element costs the person reading it, and asking whether it pays that back.</p>
+
+      <p class="pull" aria-hidden="true">Attention behaves like a budget, not a well.</p>
+
+      <h2>Quiet is not the same as empty</h2>
+
+      <p>The failure mode of restraint is blandness: an interface so careful not to offend that it says nothing at all. Gray text on white, everything centered, a single shade of blue doing every job. It is quiet the way an empty room is quiet, and just as hard to find your way around.</p>
+
+      <p>Good quiet has structure. It uses a few strong contrasts, placed where they matter, and keeps everything else in a lower register so those contrasts carry. A page of a well-set book is mostly even gray texture, which is exactly why a single italic word can change the meaning of a sentence. The texture is what gives the <em>emphasis</em> somewhere to stand.</p>
+
+      <h2>How quiet things get made</h2>
+
+      <p>In practice, quiet tools come from teams that say no in specific ways. They agree on a small set of type sizes and refuse the thirteenth. They decide that red means one thing and protect it. They treat every new setting as a small admission that they couldn’t decide, and they try to decide instead.<span class="ref" aria-hidden="true">2</span><span class="note" role="note"><span class="ref">2</span>A useful test for a proposed setting: if the team can’t agree on the default, most people won’t change it either, and the setting becomes one more thing to read past.</span></p>
+
+      <p>They also look at the work, constantly and at full size, in the places it will be used. Most loudness is not designed; it accumulates while nobody is looking at the whole. A screen reviewed one component at a time can pass every check and still feel like a crowd.</p>
+
+      <p class="end">None of this photographs well. A quiet tool rarely wins the screenshot contest, because its best qualities show up on the hundredth day of use, when you notice that you haven’t noticed it in a while. That is the praise worth designing for.</p>
+    </div>
+
+    <p class="bio"><b>Mara Ellison</b> writes about tools and the people who make them. This essay is part of Longhand’s autumn series on craft.</p>
+  </article>
+
+  <section class="more" aria-labelledby="more-h">
+    <div class="more-inner">
+      <h2 id="more-h">Keep reading</h2>
+      <ol>
+        <li><a href="#"><span class="t">Against the settings page</span><span class="m">Essay · 9 min</span></a></li>
+        <li><a href="#"><span class="t">What typesetters knew about screens before screens existed</span><span class="m">Interview · 14 min</span></a></li>
+        <li><a href="#"><span class="t">The second-best way to say no</span><span class="m">Essay · 6 min</span></a></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">Longhand is a fictional quarterly, made up for this example.</footer>
+</body>
+</html>

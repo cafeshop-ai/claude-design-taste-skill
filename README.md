@@ -4,21 +4,26 @@ A Claude skill for web design, UI design, and interaction design. It aims to giv
 
 ## Install
 
-Claude Code (personal, all projects):
+The skill is the `interface-design/` folder. Copy it into your agent's skills directory:
 
 ```sh
-git clone https://github.com/cafeshop-ai/claude-design-taste-skill ~/.claude/skills/interface-design
+git clone https://github.com/cafeshop-ai/claude-design-taste-skill
+cp -r claude-design-taste-skill/interface-design ~/.claude/skills/    # Claude Code
+cp -r claude-design-taste-skill/interface-design ~/.agents/skills/    # Codex and other Agent Skills hosts
 ```
 
-Or per project, clone into `.claude/skills/interface-design` inside the repo. The skill triggers on its own whenever Claude builds, restyles, or reviews an interface.
+Or per project, into `.claude/skills/` or `.agents/skills/` inside the repo. The skill triggers on its own whenever the agent builds, restyles, or reviews an interface.
 
 ## What's inside
+
+Inside `interface-design/`:
 
 | Path | What it is |
 |---|---|
 | `SKILL.md` | The stance, a six-step workflow, core principles, generic tells to avoid, and a pre-ship checklist |
 | `references/` | 13 deep-dive guides, loaded only when a task needs them: typography, color, layout, components, interaction, motion, web design, accessibility, aesthetic directions, critique (with before → after redesigns), craft details, implementation (Tailwind v4/v3, shadcn/ui), and native platforms |
 | `assets/tokens.css` | A starter design-token stylesheet: set a hue, a radius, and a density, and the palette, type, spacing, and light/dark themes follow (contrast-checked for every accent hue) |
+| `assets/examples/` | Complete exemplar pages (a dense app screen, an editorial article) with their decisions explained |
 | `assets/specimen.html` | A live specimen of the tokens with accent, neutral, radius, and theme controls. Open it in a browser |
 | `scripts/color.py` | WCAG 2 + APCA contrast checks, gamut-mapped OKLCH ramps, hex ↔ OKLCH (standard-library Python) |
 | `scripts/scale.py` | Modular and fluid `clamp()` type scales |
@@ -30,3 +35,7 @@ Rules alone produce work that is correct but bland. So the skill pairs its princ
 - **Decisions over defaults:** eight worked visual directions, each with a "signature element", so output doesn't fall back to the template look.
 - **Worked redesigns** that explain *why* each change is better. Taste is easier to learn from judgment applied than from rules stated.
 - **A render-and-critique loop:** look at the result at phone, tablet, and desktop widths, in dark mode, then critique it. Rendering catches what careful reading misses.
+
+## The experiment
+
+Can Claude teach another agent its design taste? `experiments/` runs the same design tasks through OpenAI's Codex with and without this skill, across web UI, interaction design, logo design, SVG animation, and content design, then audits and blind-judges the results. Every prompt, output, screenshot, score, and skill change is committed there. See [`experiments/README.md`](experiments/README.md).

@@ -198,10 +198,12 @@
   --color-surface-inverse: var(--neutral-900);                            /* toasts, tooltips */
   --color-text-inverse: var(--neutral-50);
 
-  /* Text: three levels is plenty. All pass 4.5:1 on every surface above. */
+  /* Text: three levels is plenty. All pass 4.5:1 on every surface above,
+     including hover and selected tints (a selected row in a sunken sidebar
+     is the hardest case; subtle text was tuned against it). */
   --color-text: var(--neutral-950);                                       /* ~17:1 */
-  --color-text-muted: var(--neutral-600);                                 /* ~6:1  secondary text, labels */
-  --color-text-subtle: oklch(0.54 var(--neutral-c) var(--neutral-h));     /* ~4.6:1 captions, placeholders, meta */
+  --color-text-muted: oklch(0.46 var(--neutral-c) var(--neutral-h));     /* ~7:1  secondary text, labels */
+  --color-text-subtle: oklch(0.51 var(--neutral-c) var(--neutral-h));    /* ~5:1  captions, placeholders, meta */
   --color-text-disabled: var(--neutral-400);                              /* exempt from contrast; pair with other cues */
 
   /* Lines */
@@ -268,7 +270,7 @@
 
     --color-text: oklch(0.95 calc(var(--neutral-c) * 0.3) var(--neutral-h));
     --color-text-muted: var(--neutral-400);
-    --color-text-subtle: oklch(0.66 var(--neutral-c) var(--neutral-h));
+    --color-text-subtle: oklch(0.68 var(--neutral-c) var(--neutral-h));
     --color-text-disabled: oklch(0.45 var(--neutral-c) var(--neutral-h));
 
     --color-border: oklch(1 0 0 / 0.09);
@@ -317,7 +319,7 @@
 
   --color-text: oklch(0.95 calc(var(--neutral-c) * 0.3) var(--neutral-h));
   --color-text-muted: var(--neutral-400);
-  --color-text-subtle: oklch(0.66 var(--neutral-c) var(--neutral-h));
+  --color-text-subtle: oklch(0.68 var(--neutral-c) var(--neutral-h));
   --color-text-disabled: oklch(0.45 var(--neutral-c) var(--neutral-h));
 
   --color-border: oklch(1 0 0 / 0.09);
@@ -407,8 +409,10 @@ a {
 }
 a:hover { text-decoration-thickness: 2px; }
 
-/* Numbers that line up or change in place */
-table, time, [data-numeric] { font-variant-numeric: tabular-nums; }
+/* Numbers that line up or change in place. Not on <time> by default:
+   tabular figures in running text look gappy ("21 , 2026"); add
+   data-numeric to times that sit in columns. */
+table, [data-numeric] { font-variant-numeric: tabular-nums; }
 
 code, kbd, samp, pre { font-family: var(--font-mono); font-size: 0.9em; }
 

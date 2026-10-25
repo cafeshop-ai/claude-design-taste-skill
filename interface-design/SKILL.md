@@ -165,6 +165,7 @@ Read what the task needs; don't load everything.
 - `scripts/color.py`: `contrast FG BG` (WCAG 2 ratio + APCA Lc with verdicts), `ramp --hue H --chroma C` (a gamut-mapped 50–950 OKLCH ramp with text-contrast notes; `--format css`), and `convert COLOR` (hex ↔ oklch). Standard-library Python.
 - `scripts/scale.py`: modular type scales with suggested line-heights and tracking; fluid `clamp()` values between two viewport widths (`--max-base`/`--max-ratio`); `--space --min --max` for one fluid value like section padding.
 
+- `assets/examples/`: complete exemplar pages built on tokens.css, each in a different direction, with the decisions explained in comments: `app-triage.html` (a dense, keyboard-first work tool, light and dark) and `editorial-article.html` (a long read with a drop cap and margin notes). Open them for calibration on what finished work looks like. Study the decisions; don't copy the look.
 - `assets/specimen.html`: a living specimen of tokens.css (type scale, ramps, surfaces, buttons in every state, form fields, settings switches, stat cards, a table, alerts, a toast, an empty state) with live accent-hue, neutral-hue, radius, and theme controls. Open it beside tokens.css when tuning a direction; it doubles as a reference for what "done" looks like at the component level.
 
 Run scripts with `python3 <this-skill-dir>/scripts/<name>.py --help`.

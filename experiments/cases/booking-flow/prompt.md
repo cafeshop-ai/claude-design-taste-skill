@@ -1,0 +1,1 @@
+Create a multi-step booking flow for a home-cleaning service: contact details, home details (bedrooms, bathrooms, pets), then pick a date and time slot, then a review step. It needs to work well on phones. Single file: index.html.

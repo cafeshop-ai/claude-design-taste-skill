@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pricing - Marginalia</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f8; color: #333; }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+.logo { font-size: 26px; font-weight: bold; color: #6c3ce9; }
+.nav a { margin-left: 22px; color: #555; text-decoration: none; font-size: 15px; }
+.nav .signup { background: #6c3ce9; color: white; padding: 10px 18px; border-radius: 25px; }
+.hero { text-align: center; padding: 70px 20px 130px; background: linear-gradient(135deg, #6c3ce9, #e93ca8); color: white; }
+.hero h1 { font-size: 52px; margin: 0 0 15px; }
+.hero p { font-size: 20px; color: #e0d4ff; }
+.toggle { display: inline-block; background: rgba(255,255,255,0.2); border-radius: 30px; padding: 5px; margin-top: 20px; }
+.toggle span { display: inline-block; padding: 8px 22px; border-radius: 25px; font-size: 14px; }
+.toggle .active { background: white; color: #6c3ce9; font-weight: bold; }
+.plans { display: flex; justify-content: center; gap: 30px; margin-top: -90px; padding: 0 20px; }
+.plan { background: white; width: 340px; flex-shrink: 0; border-radius: 20px; padding: 35px 28px; box-shadow: 0 10px 40px rgba(108,60,233,0.25); text-align: center; position: relative; }
+.plan.popular { transform: scale(1.06); border: 3px solid #6c3ce9; }
+.badge { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, #ff8a00, #e93ca8); color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: bold; }
+.plan .icon { font-size: 44px; }
+.plan h2 { font-size: 26px; margin: 10px 0 5px; }
+.plan .desc { color: #aaa; font-size: 14px; }
+.price { font-size: 54px; font-weight: 800; margin: 20px 0 5px; background: linear-gradient(90deg, #6c3ce9, #e93ca8); -webkit-background-clip: text; color: transparent; }
+.price small { font-size: 16px; color: #999; -webkit-text-fill-color: #999; }
+.plan ul { list-style: none; padding: 0; text-align: left; margin: 25px 0; }
+.plan li { padding: 9px 0; border-bottom: 1px solid #eee; font-size: 15px; }
+.btn { display: block; padding: 15px; border-radius: 30px; font-weight: bold; font-size: 16px; text-decoration: none; border: 2px solid #6c3ce9; color: #6c3ce9; }
+.btn:hover { transform: scale(1.05); }
+.popular .btn { background: linear-gradient(90deg, #6c3ce9, #e93ca8); color: white; border: none; }
+.features { text-align: center; padding: 90px 20px 40px; }
+.features h2 { font-size: 38px; }
+.grid { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
+.feature { background: white; width: 260px; padding: 30px 20px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.feature .circle { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #6c3ce9, #e93ca8); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+.feature p { color: #999; font-size: 14px; }
+.faq { max-width: 700px; margin: 0 auto; padding: 40px 20px 80px; text-align: center; }
+.faq h2 { font-size: 38px; }
+.q { background: white; margin: 12px 0; padding: 18px 24px; border-radius: 12px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.q b { display: block; margin-bottom: 6px; }
+.q span { color: #999; font-size: 14px; }
+.footer { text-align: center; padding: 30px; background: #222; color: #777; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="nav">
+  <div class="logo">✍️ Marginalia</div>
+  <div><a href="#">Features</a><a href="#">Pricing</a><a href="#">Blog</a><a href="#">Login</a><a class="signup" href="#">Sign Up Free</a></div>
+</div>
+
+<div class="hero">
+  <h1>Simple, Transparent Pricing 🚀</h1>
+  <p>Unlock Your Full Potential With The Ultimate Note-Taking Experience</p>
+  <div class="toggle"><span class="active">Monthly</span><span>Yearly (Save 20%!)</span></div>
+</div>
+
+<div class="plans">
+  <div class="plan">
+    <div class="icon">🌱</div>
+    <h2>Starter</h2>
+    <div class="desc">Perfect For Getting Started</div>
+    <div class="price">$0<small>/month</small></div>
+    <ul>
+      <li>✅ Up To 100 Notes</li>
+      <li>✅ 2 Devices</li>
+      <li>✅ Basic Search</li>
+      <li>❌ Offline Access</li>
+      <li>❌ Shared Notebooks</li>
+    </ul>
+    <a class="btn" href="#">Get Started</a>
+  </div>
+  <div class="plan popular">
+    <div class="badge">🔥 MOST POPULAR</div>
+    <div class="icon">⚡</div>
+    <h2>Pro</h2>
+    <div class="desc">For Power Users Who Want More</div>
+    <div class="price">$8<small>/month</small></div>
+    <ul>
+      <li>✅ Unlimited Notes</li>
+      <li>✅ Unlimited Devices</li>
+      <li>✅ Full-Text Search Inside PDFs</li>
+      <li>✅ Offline Access</li>
+      <li>❌ Shared Notebooks</li>
+    </ul>
+    <a class="btn" href="#">Get Started</a>
+  </div>
+  <div class="plan">
+    <div class="icon">🏢</div>
+    <h2>Team</h2>
+    <div class="desc">Seamless Collaboration For Teams</div>
+    <div class="price">$14<small>/user/month</small></div>
+    <ul>
+      <li>✅ Everything In Pro</li>
+      <li>✅ Shared Notebooks</li>
+      <li>✅ Admin Controls</li>
+      <li>✅ Priority Support</li>
+      <li>✅ SSO</li>
+    </ul>
+    <a class="btn" href="#">Get Started</a>
+  </div>
+</div>
+
+<div class="features">
+  <h2>Why Choose Marginalia? 🤔</h2>
+  <div class="grid">
+    <div class="feature"><div class="circle">⚡</div><h3>Lightning Fast</h3><p>Supercharge your workflow with blazing fast search.</p></div>
+    <div class="feature"><div class="circle">🔒</div><h3>Secure</h3><p>Your notes are encrypted and safe with us.</p></div>
+    <div class="feature"><div class="circle">☁️</div><h3>Sync Everywhere</h3><p>Seamlessly sync across all your devices.</p></div>
+  </div>
+</div>
+
+<div class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="q"><b>Can I cancel anytime?</b><span>Yes! You can cancel your subscription at any time with no questions asked.</span></div>
+  <div class="q"><b>Is there a free trial for Pro?</b><span>Yes, Pro comes with a 14-day free trial. No credit card required.</span></div>
+  <div class="q"><b>Do you offer student discounts?</b><span>Absolutely! Students get 50% off Pro with a valid school email.</span></div>
+</div>
+
+<div class="footer">© 2026 Marginalia Inc. All Rights Reserved. Made With ❤️</div>
+</body>
+</html>

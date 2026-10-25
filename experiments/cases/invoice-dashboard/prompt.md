@@ -1,0 +1,1 @@
+Build the main screen of a web app for freelancers to track invoices: what they're owed, what's overdue, a list of recent invoices (client, amount, status, due date), and a way to create a new invoice. Use realistic sample data. Single file: index.html.

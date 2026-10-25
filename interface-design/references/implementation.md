@@ -50,8 +50,8 @@ Pattern:
   --color-surface: var(--neutral-0);
   --color-surface-sunken: var(--neutral-100);
   --color-text: var(--neutral-950);
-  --color-text-muted: var(--neutral-600);
-  --color-text-subtle: oklch(0.54 var(--neutral-c) var(--neutral-h));
+  --color-text-muted: oklch(0.46 var(--neutral-c) var(--neutral-h));
+  --color-text-subtle: oklch(0.51 var(--neutral-c) var(--neutral-h));
   --color-border: var(--neutral-200);
   --color-border-control: oklch(0.64 var(--neutral-c) var(--neutral-h));
   --color-accent: var(--accent-600);

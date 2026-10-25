@@ -1,0 +1,1 @@
+Make a page where guests can RSVP to our wedding: Sam & Priya, Saturday June 14, 2027, 4pm, at Hollow Oak Farm in Hudson, NY. Ask for their name, whether they're coming, the number of guests, and any dietary needs. Single file: index.html.

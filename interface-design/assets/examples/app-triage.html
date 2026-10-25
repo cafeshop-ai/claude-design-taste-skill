@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active issues · Web · Fieldnote</title>
+<!--
+  Exemplar: a dense, keyboard-first work tool (Fieldnote is fictional).
+  Direction: dense and technical. Cool neutrals, IBM Plex Sans with Plex Mono
+  for identifiers, a teal accent used in only four places (selected-row bar,
+  primary button, focus ring, workspace mark), 6px radius, compact density.
+  Study the decisions; don't copy the look.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  /* ---- Decisions (overrides tokens.css) ---- */
+  :root {
+    --neutral-h: 255; --neutral-c: 0.012;
+    --accent-h: 190;  --accent-c: 0.11;
+    --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+    --radius-base: 6px;
+    --density: 0.875;
+    --row-h: 2.25rem;
+  }
+
+  body { font-size: var(--text-sm); line-height: var(--leading-sm); }
+
+  /* ---- Shell: three panes, each scrolls on its own ---- */
+  .app { display: grid; grid-template-columns: 15rem minmax(0, 1fr) 27rem; height: 100dvh; }
+  .pane { overflow-y: auto; min-width: 0; }
+
+  .icon { width: var(--icon-sm); height: var(--icon-sm); flex: none; }
+  /* tokens.css makes svg display:block, so every button holding an icon
+     needs flex layout, or the icon and label stack vertically. */
+  .btn, .icon-btn, .chip, .prop, .ws, .group-h {
+    display: inline-flex; align-items: center; gap: var(--space-1-5);
+    border: 0; background: none; border-radius: var(--radius-md);
+    transition: background-color var(--duration-fast), color var(--duration-fast);
+  }
+  .icon-btn { width: var(--control-sm); height: var(--control-sm); justify-content: center; color: var(--color-text-muted); }
+  .icon-btn:hover { background: var(--color-surface-hover); color: var(--color-text); }
+
+  .btn { height: var(--control-sm); padding: 0 var(--space-3); font-weight: var(--weight-medium); white-space: nowrap; }
+  .btn-primary { background: var(--color-accent); color: var(--color-accent-contrast); }
+  .btn-primary:hover { background: var(--color-accent-hover); }
+  .btn-primary:active { background: var(--color-accent-active); }
+  .btn-secondary { box-shadow: inset 0 0 0 1px var(--color-border-strong); color: var(--color-text); }
+  .btn-secondary:hover { background: var(--color-surface-hover); }
+
+  kbd {
+    display: inline-grid; place-items: center; min-width: 1.125rem; height: 1.125rem; padding: 0 var(--space-1);
+    border-radius: var(--radius-sm); box-shadow: inset 0 0 0 1px var(--color-border-strong);
+    font: var(--weight-medium) var(--text-xs)/1 var(--font-mono); color: var(--color-text-muted);
+  }
+  .btn-primary kbd { box-shadow: inset 0 0 0 1px oklch(1 0 0 / 0.3); color: inherit; }
+
+  /* ---- Sidebar ---- */
+  .sidebar {
+    display: flex; flex-direction: column; gap: var(--space-5); padding: var(--space-2);
+    background: var(--color-surface-sunken); border-right: 1px solid var(--color-border);
+  }
+  .ws { width: 100%; height: var(--control-md); padding: 0 var(--space-2); font-weight: var(--weight-semibold); }
+  .ws:hover { background: var(--color-surface-hover); }
+  .ws .chev { margin-left: auto; color: var(--color-text-subtle); }
+  .mark {
+    display: grid; place-items: center; width: 1.375rem; height: 1.375rem; border-radius: var(--radius-sm);
+    background: var(--color-accent); color: var(--color-accent-contrast); font-size: var(--text-xs);
+  }
+  .nav { display: grid; gap: 1px; }
+  .nav-label { padding: 0 var(--space-2) var(--space-1); font-size: var(--text-xs); font-weight: var(--weight-medium); color: var(--color-text-subtle); }
+  .nav a {
+    display: flex; align-items: center; gap: var(--space-2); height: 1.875rem; padding: 0 var(--space-2);
+    border-radius: var(--radius-md); color: var(--color-text-muted); text-decoration: none;
+  }
+  .nav a:hover { background: var(--color-surface-hover); color: var(--color-text); }
+  .nav a[aria-current="page"] { background: var(--color-surface-active); color: var(--color-text); font-weight: var(--weight-medium); }
+  .nav .sub { padding-left: var(--space-8); }
+  .nav .count { margin-left: auto; font-size: var(--text-xs); color: var(--color-text-subtle); font-variant-numeric: tabular-nums; }
+  .team-tile {
+    display: grid; place-items: center; width: 1rem; height: 1rem; border-radius: var(--radius-xs);
+    box-shadow: inset 0 0 0 1px var(--color-border-strong); font-size: 0.625rem; font-weight: var(--weight-semibold);
+  }
+  .me { margin-top: auto; display: flex; align-items: center; gap: var(--space-2); padding: var(--space-1) var(--space-1) var(--space-1) var(--space-2); }
+  .me .name { font-weight: var(--weight-medium); }
+
+  /* Initials in neutral, not a rainbow: avatars are identity, not decoration.
+     A solid background, not a translucent tint: tints stack on selected rows
+     and drag the initials below 4.5:1. 0.625rem is an optical exception for
+     two letters in a 20px circle. */
+  .avatar {
+    display: grid; place-items: center; width: 1.25rem; height: 1.25rem; border-radius: var(--radius-full); flex: none;
+    background: var(--color-surface-sunken); box-shadow: inset 0 0 0 1px var(--color-border);
+    font-size: 0.625rem; font-weight: var(--weight-semibold); color: var(--color-text-muted); letter-spacing: 0.02em;
+  }
+  .avatar.empty { background: none; box-shadow: none; border: 1px dashed var(--color-border-control); }
+
+  /* ---- List pane ---- */
+  .list-pane { display: flex; flex-direction: column; background: var(--color-surface); }
+  .bar { display: flex; align-items: center; gap: var(--space-2); flex: none; height: 3rem; padding: 0 var(--space-3) 0 var(--space-5); border-bottom: 1px solid var(--color-border); }
+  .crumb { display: flex; align-items: center; gap: var(--space-1-5); color: var(--color-text-muted); min-width: 0; }
+  .crumb h1 { font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--color-text); white-space: nowrap; }
+  .bar .spacer { flex: 1; }
+  .filters { display: flex; align-items: center; gap: var(--space-1); flex: none; padding: var(--space-2) var(--space-3) var(--space-2) var(--space-4); border-bottom: 1px solid var(--color-border); }
+  .chip { height: 1.625rem; padding: 0 var(--space-2); color: var(--color-text-muted); font-size: var(--text-xs); box-shadow: inset 0 0 0 1px var(--color-border); }
+  .chip:hover { background: var(--color-surface-hover); color: var(--color-text); }
+  .chip b { font-weight: var(--weight-medium); color: var(--color-text); }
+  .search {
+    margin-left: auto; display: flex; align-items: center; gap: var(--space-2); width: 14rem; height: 1.625rem; padding: 0 var(--space-1) 0 var(--space-2);
+    border-radius: var(--radius-md); box-shadow: inset 0 0 0 1px var(--color-border); color: var(--color-text-subtle);
+  }
+  .search:focus-within { box-shadow: inset 0 0 0 1px var(--color-border-control); }
+  .search input { flex: 1; min-width: 0; border: 0; background: none; font-size: var(--text-xs); outline: none; }
+  .search input::placeholder { color: var(--color-text-subtle); }
+
+  .issues { flex: 1; overflow-y: auto; padding-bottom: var(--space-6); }
+  .group + .group { margin-top: var(--space-2); }
+  /* Sticky and opaque: a translucent hover tint layered over the surface. */
+  .group-h {
+    position: sticky; top: 0; z-index: 1; width: 100%; height: 2rem; padding: 0 var(--space-5) 0 var(--space-4);
+    background: linear-gradient(var(--color-surface-hover), var(--color-surface-hover)), var(--color-surface);
+    border-block: 1px solid var(--color-border); border-radius: 0; font-weight: var(--weight-medium); text-align: left;
+  }
+  .group-h:hover { background: linear-gradient(var(--color-surface-active), var(--color-surface-active)), var(--color-surface); }
+  .group-h .n { color: var(--color-text-subtle); font-weight: var(--weight-regular); font-variant-numeric: tabular-nums; }
+  .group-h .chev { color: var(--color-text-subtle); transition: rotate var(--duration-base) var(--ease-out); }
+  .group-h[aria-expanded="false"] .chev { rotate: -90deg; }
+  .group-h[aria-expanded="false"] + ul { display: none; }
+
+  .issues ul { list-style: none; padding: 0; }
+  /* No row dividers: column alignment already makes the grid. */
+  .row {
+    position: relative; display: grid; align-items: center; column-gap: var(--space-3); height: var(--row-h);
+    grid-template-columns: 1rem 3.75rem 1rem minmax(0, 1fr) auto 1.25rem 3rem;
+    grid-template-areas: "pri id status title labels avatar when";
+    padding: 0 var(--space-5) 0 var(--space-4); color: var(--color-text); text-decoration: none;
+  }
+  .row:hover { background: var(--color-surface-hover); }
+  .row[aria-current="true"] { background: var(--color-surface-active); }
+  .row[aria-current="true"]::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 2px; background: var(--color-accent); }
+  .row:focus-visible { outline-offset: -2px; }
+  .row .pri { grid-area: pri; } .row .id { grid-area: id; } .row .status { grid-area: status; }
+  .row .title { grid-area: title; } .row .labels { grid-area: labels; } .row .avatar { grid-area: avatar; } .row .when { grid-area: when; }
+  .pri, .status { display: grid; place-items: center; }
+  .id { font: var(--text-xs)/1 var(--font-mono); color: var(--color-text-subtle); white-space: nowrap; }
+  .title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .done .title { color: var(--color-text-muted); }
+  .labels { display: flex; gap: var(--space-1); }
+  /* Color lives in a small dot; the label text stays neutral and readable. */
+  .label {
+    display: inline-flex; align-items: center; gap: var(--space-1-5); height: 1.25rem; padding: 0 var(--space-2);
+    border-radius: var(--radius-full); box-shadow: inset 0 0 0 1px var(--color-border);
+    font-size: var(--text-xs); color: var(--color-text-muted); white-space: nowrap;
+  }
+  .label::before { content: ""; width: 0.375rem; height: 0.375rem; border-radius: 50%; background: oklch(0.66 0.14 var(--dot)); }
+  .label.neutral::before { background: var(--color-text-subtle); }
+  .when { font-size: var(--text-xs); color: var(--color-text-subtle); text-align: right; white-space: nowrap; }
+
+  /* Status: shape carries the meaning, color reinforces it. Done recedes. */
+  .st-todo, .st-backlog, .st-done { color: var(--color-text-subtle); }
+  .st-progress { color: var(--color-warning); }
+  .st-review { color: var(--color-info); }
+  .p-urgent { color: var(--color-danger-solid); }
+  .p-high, .p-med, .p-low, .p-none { color: var(--color-text-muted); }
+
+  .hints {
+    display: flex; align-items: center; gap: var(--space-4); flex: none; height: 2.25rem; padding: 0 var(--space-5);
+    border-top: 1px solid var(--color-border); font-size: var(--text-xs); color: var(--color-text-subtle);
+  }
+  .hints span { display: inline-flex; align-items: center; gap: var(--space-1); }
+  .hints .sync { margin-left: auto; }
+
+  /* ---- Detail pane ---- */
+  .detail { background: var(--color-surface); border-left: 1px solid var(--color-border); display: flex; flex-direction: column; }
+  .detail .bar { padding-left: var(--space-6); position: sticky; top: 0; background: var(--color-surface); z-index: 1; }
+  .detail .bar .id { font-size: var(--text-xs); }
+  .detail-body { display: grid; gap: var(--space-6); padding: var(--space-5) var(--space-6) var(--space-10); }
+  .detail h2 { font-size: var(--text-xl); line-height: var(--leading-xl); letter-spacing: -0.01em; }
+  .props { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); align-items: center; row-gap: 2px; column-gap: var(--space-3); }
+  .props dt { color: var(--color-text-subtle); }
+  .props dd { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+  /* Values are editable in place; hover reveals that without adding chrome. */
+  .prop { height: 1.75rem; margin-left: calc(var(--space-2) * -1); padding: 0 var(--space-2); text-align: left; }
+  .prop:hover { background: var(--color-surface-hover); }
+  .prop .muted { color: var(--color-text-subtle); }
+  .section-h { font-size: var(--text-xs); font-weight: var(--weight-medium); color: var(--color-text-subtle); margin-bottom: var(--space-2); }
+  .desc { display: grid; gap: var(--space-3); max-width: var(--measure); }
+  .desc ol { padding-left: var(--space-5); display: grid; gap: var(--space-1); }
+  .desc code { font-size: 0.85em; padding: 0.1em 0.3em; border-radius: var(--radius-sm); background: var(--color-surface-sunken); }
+  .activity { list-style: none; padding: 0; display: grid; gap: var(--space-4); }
+  .event { display: flex; gap: var(--space-3); align-items: center; font-size: var(--text-xs); color: var(--color-text-subtle); }
+  .event b { font-weight: var(--weight-medium); color: var(--color-text-muted); }
+  .event .icon { margin-inline: 2px; }
+  .comment { padding: var(--space-3) var(--space-4); border-radius: var(--radius-lg); box-shadow: inset 0 0 0 1px var(--color-border); }
+  .comment header { display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-1-5); font-size: var(--text-xs); color: var(--color-text-subtle); }
+  .comment header b { font-weight: var(--weight-medium); color: var(--color-text); }
+  .pr { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); }
+  .composer { display: grid; gap: var(--space-2); }
+  .composer textarea {
+    width: 100%; min-height: 4.5rem; padding: var(--space-2) var(--space-3); resize: vertical;
+    border: 1px solid var(--color-border-control); border-radius: var(--radius-lg); background: var(--color-surface);
+  }
+  .composer textarea::placeholder { color: var(--color-text-subtle); }
+  .composer textarea:focus-visible { outline-offset: 0; border-color: transparent; }
+  .composer .row-end { display: flex; justify-content: flex-end; align-items: center; gap: var(--space-3); font-size: var(--text-xs); color: var(--color-text-subtle); }
+
+  .topbar { display: none; }
+
+  @media (forced-colors: active) {
+    .row[aria-current="true"] { outline: 2px solid Highlight; outline-offset: -2px; }
+  }
+
+  /* ---- Narrower: drop the detail pane, then the sidebar ---- */
+  @media (max-width: 75rem) {
+    .app { grid-template-columns: 14rem minmax(0, 1fr); }
+    .detail { display: none; }
+  }
+  @media (max-width: 48rem) {
+    /* The page scrolls now. Panes must stop being scroll containers, or the
+       sticky group headers stick inside them instead of under the top bar. */
+    .app { display: block; height: auto; }
+    .pane, .issues { overflow: visible; }
+    .sidebar, .list-pane > .bar, .hints { display: none; }
+    .topbar {
+      position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: var(--space-1);
+      height: 3.25rem; padding: 0 var(--space-2); background: var(--color-surface); border-bottom: 1px solid var(--color-border);
+    }
+    .topbar h1 { flex: 1; font-size: var(--text-base); padding-left: var(--space-1); }
+    .topbar .icon-btn { width: var(--tap-min); height: var(--tap-min); }
+    .filters { overflow-x: auto; padding-left: var(--space-4); }
+    .search { display: none; }
+    .group-h { top: 3.25rem; height: 2.5rem; }
+    .row {
+      height: auto; padding-block: var(--space-3); row-gap: var(--space-1-5);
+      grid-template-columns: 1rem auto auto minmax(0, 1fr) auto;
+      grid-template-areas: "status title title title avatar" ". pri id labels when";
+    }
+    .row .title { white-space: normal; }
+    .row .pri { justify-self: start; }
+    .labels { overflow: hidden; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-inbox" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M2 9.5 3.8 3h8.4L14 9.5V13H2z"/><path d="M2 9.5h3.5l1 1.5h3l1-1.5H14"/></symbol>
+  <symbol id="i-user" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="6.25"/><circle cx="8" cy="6.5" r="2"/><path d="M4.2 12.6c.8-1.4 2.2-2.1 3.8-2.1s3 .7 3.8 2.1"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 6.5 3.5 3.5 3.5-3.5"/></symbol>
+  <symbol id="i-slash" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="m9.5 3.5-3 9"/></symbol>
+  <symbol id="i-search" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2.5 5h6M11.5 5h2M2.5 11h2M7.5 11h6"/><circle cx="10" cy="5" r="1.5"/><circle cx="6" cy="11" r="1.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></symbol>
+  <symbol id="i-link" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M7 9a2.5 2.5 0 0 0 3.5 0l2-2A2.5 2.5 0 0 0 9 3.5l-.7.7M9 7a2.5 2.5 0 0 0-3.5 0l-2 2A2.5 2.5 0 0 0 7 12.5l.7-.7"/></symbol>
+  <symbol id="i-more" viewBox="0 0 16 16" fill="currentColor"><circle cx="3.5" cy="8" r="1.1"/><circle cx="8" cy="8" r="1.1"/><circle cx="12.5" cy="8" r="1.1"/></symbol>
+  <symbol id="i-theme" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="5.75"/><path d="M8 2.25a5.75 5.75 0 0 1 0 11.5z" fill="currentColor"/></symbol>
+  <symbol id="i-pr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="4.5" cy="3.5" r="1.5"/><circle cx="4.5" cy="12.5" r="1.5"/><circle cx="11.5" cy="12.5" r="1.5"/><path d="M4.5 5v6M11.5 11V6.5a2 2 0 0 0-2-2H7.5"/><path d="m9 3-1.5 1.5L9 6"/></symbol>
+
+  <symbol id="s-backlog" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6" stroke-dasharray="2.2 2.2"/></symbol>
+  <symbol id="s-todo" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/></symbol>
+  <symbol id="s-progress" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5a3.5 3.5 0 0 1 0 7z" fill="currentColor"/></symbol>
+  <symbol id="s-review" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5A3.5 3.5 0 1 1 4.5 8H8z" fill="currentColor"/></symbol>
+  <symbol id="s-done" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="m5.5 8.2 1.7 1.7 3.3-3.6"/></symbol>
+
+  <symbol id="p-urgent" viewBox="0 0 16 16"><rect x="1.5" y="1.5" width="13" height="13" rx="3" fill="currentColor"/><path d="M8 4.5v4.25M8 11.25v.25" stroke="#fff" stroke-width="1.75" stroke-linecap="round"/></symbol>
+  <symbol id="p-high" viewBox="0 0 16 16" fill="currentColor"><rect x="2" y="9" width="3" height="5" rx="1"/><rect x="6.5" y="6" width="3" height="8" rx="1"/><rect x="11" y="3" width="3" height="11" rx="1"/></symbol>
+  <symbol id="p-med" viewBox="0 0 16 16" fill="currentColor"><rect x="2" y="9" width="3" height="5" rx="1"/><rect x="6.5" y="6" width="3" height="8" rx="1"/><rect x="11" y="3" width="3" height="11" rx="1" opacity=".3"/></symbol>
+  <symbol id="p-low" viewBox="0 0 16 16" fill="currentColor"><rect x="2" y="9" width="3" height="5" rx="1"/><rect x="6.5" y="6" width="3" height="8" rx="1" opacity=".3"/><rect x="11" y="3" width="3" height="11" rx="1" opacity=".3"/></symbol>
+  <symbol id="p-none" viewBox="0 0 16 16" fill="currentColor"><rect x="2" y="7.25" width="3" height="1.5" rx=".75"/><rect x="6.5" y="7.25" width="3" height="1.5" rx=".75"/><rect x="11" y="7.25" width="3" height="1.5" rx=".75"/></symbol>
+</svg>
+
+<div class="app">
+
+  <nav class="sidebar pane" aria-label="Workspace">
+    <button class="ws" type="button" aria-label="Switch workspace: Fieldnote">
+      <span class="mark" aria-hidden="true">F</span> Fieldnote
+      <svg class="icon chev"><use href="#i-chev"/></svg>
+    </button>
+
+    <div class="nav">
+      <a href="#inbox"><svg class="icon"><use href="#i-inbox"/></svg> Inbox <span class="count">3</span></a>
+      <a href="#mine"><svg class="icon"><use href="#i-user"/></svg> My issues</a>
+    </div>
+
+    <div class="nav">
+      <div class="nav-label" id="teams-label">Teams</div>
+      <a href="#web"><span class="team-tile" aria-hidden="true">W</span> Web</a>
+      <a class="sub" href="#web-triage">Triage <span class="count">4</span></a>
+      <a class="sub" href="#web-active" aria-current="page">Active</a>
+      <a class="sub" href="#web-backlog">Backlog</a>
+      <a href="#mobile"><span class="team-tile" aria-hidden="true">M</span> Mobile</a>
+      <a href="#platform"><span class="team-tile" aria-hidden="true">P</span> Platform</a>
+    </div>
+
+    <div class="me">
+      <span class="avatar" aria-hidden="true">AR</span>
+      <span class="name">Ana Ruiz</span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch light or dark theme" style="margin-left:auto">
+        <svg class="icon"><use href="#i-theme"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="list-pane pane">
+    <header class="topbar">
+      <button class="icon-btn" type="button" aria-label="Open navigation"><svg class="icon"><use href="#i-menu"/></svg></button>
+      <h1>Active issues</h1>
+      <button class="icon-btn" type="button" aria-label="Search issues"><svg class="icon"><use href="#i-search"/></svg></button>
+      <button class="icon-btn" type="button" aria-label="New issue"><svg class="icon"><use href="#i-plus"/></svg></button>
+    </header>
+
+    <div class="bar">
+      <div class="crumb">
+        <span>Web</span><svg class="icon" aria-hidden="true"><use href="#i-slash"/></svg><h1>Active issues</h1>
+      </div>
+      <span class="spacer"></span>
+      <button class="btn btn-secondary" type="button"><svg class="icon"><use href="#i-sliders"/></svg> Display</button>
+      <button class="btn btn-primary" type="button"><svg class="icon"><use href="#i-plus"/></svg> New issue <kbd>C</kbd></button>
+    </div>
+
+    <div class="filters">
+      <button class="chip" type="button">Assignee <b>Anyone</b> <svg class="icon"><use href="#i-chev"/></svg></button>
+      <button class="chip" type="button">Label <b>Any</b> <svg class="icon"><use href="#i-chev"/></svg></button>
+      <button class="chip" type="button">Cycle <b>31</b> <svg class="icon"><use href="#i-chev"/></svg></button>
+      <label class="search">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <span class="sr-only">Filter issues</span>
+        <input type="search" placeholder="Filter by title or ID">
+        <kbd aria-hidden="true">/</kbd>
+      </label>
+    </div>
+
+    <div class="issues" id="issues">
+      <section class="group" aria-labelledby="g-progress">
+        <button class="group-h" id="g-progress" type="button" aria-expanded="true">
+          <svg class="icon chev"><use href="#i-chev"/></svg>
+          <svg class="icon st-progress"><use href="#s-progress"/></svg> In progress <span class="n">3</span>
+        </button>
+        <ul>
+          <li><a class="row" href="#WEB-412" aria-current="true" data-desc="On Safari 17 and 18, opening the date picker inside the booking modal renders the calendar underneath the modal's backdrop, so guests can't pick a date.">
+            <span class="pri p-urgent"><svg class="icon"><use href="#p-urgent"/></svg><span class="sr-only">Urgent</span></span>
+            <span class="id">WEB-412</span>
+            <span class="status st-progress"><svg class="icon"><use href="#s-progress"/></svg><span class="sr-only">In progress</span></span>
+            <span class="title">Safari: date picker opens behind the booking modal</span>
+            <span class="labels"><span class="label" style="--dot:25">Bug</span><span class="label" style="--dot:235">Customer</span></span>
+            <span class="avatar" title="Ana Ruiz">AR</span>
+            <time class="when" data-numeric datetime="2026-10-24">Oct 24</time>
+          </a></li>
+          <li><a class="row" href="#WEB-405" data-desc="The calendar subscribes to a one-second clock even when the tab is hidden, which re-renders the whole week grid and drains laptop batteries.">
+            <span class="pri p-high"><svg class="icon"><use href="#p-high"/></svg><span class="sr-only">High</span></span>
+            <span class="id">WEB-405</span>
+            <span class="status st-progress"><svg class="icon"><use href="#s-progress"/></svg><span class="sr-only">In progress</span></span>
+            <span class="title">Calendar view re-renders every second while the tab is idle</span>
+            <span class="labels"><span class="label" style="--dot:75">Performance</span></span>
+            <span class="avatar" title="Jun Park">JP</span>
+            <time class="when" data-numeric datetime="2026-10-23">Oct 23</time>
+          </a></li>
+          <li><a class="row" href="#WEB-398" data-desc="Teams with no bookings see a blank grid. Replace it with an empty state that explains what will appear here and links to sharing their booking page.">
+            <span class="pri p-med"><svg class="icon"><use href="#p-med"/></svg><span class="sr-only">Medium</span></span>
+            <span class="id">WEB-398</span>
+            <span class="status st-progress"><svg class="icon"><use href="#s-progress"/></svg><span class="sr-only">In progress</span></span>
+            <span class="title">New empty state for teams with no bookings yet</span>
+            <span class="labels"><span class="label" style="--dot:340">Design</span></span>
+            <span class="avatar" title="Mira Osei">MO</span>
+            <time class="when" data-numeric datetime="2026-10-21">Oct 21</time>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" aria-labelledby="g-review">
+        <button class="group-h" id="g-review" type="button" aria-expanded="true">
+          <svg class="icon chev"><use href="#i-chev"/></svg>
+          <svg class="icon st-review"><use href="#s-review"/></svg> In review <span class="n">2</span>
+        </button>
+        <ul>
+          <li><a class="row" href="#WEB-401" data-desc="Admins can export bookings, but only for the current month. Add a date-range picker to the export dialog and include the guest's time zone column.">
+            <span class="pri p-med"><svg class="icon"><use href="#p-med"/></svg><span class="sr-only">Medium</span></span>
+            <span class="id">WEB-401</span>
+            <span class="status st-review"><svg class="icon"><use href="#s-review"/></svg><span class="sr-only">In review</span></span>
+            <span class="title">Let admins export bookings as CSV for any date range</span>
+            <span class="labels"><span class="label" style="--dot:295">Feature</span></span>
+            <span class="avatar" title="Ana Ruiz">AR</span>
+            <time class="when" data-numeric datetime="2026-10-22">Oct 22</time>
+          </a></li>
+          <li><a class="row" href="#WEB-389" data-desc="The cancellation email says “Your booking was canceled” without saying by whom. Name the person and offer a one-click rebook link.">
+            <span class="pri p-low"><svg class="icon"><use href="#p-low"/></svg><span class="sr-only">Low</span></span>
+            <span class="id">WEB-389</span>
+            <span class="status st-review"><svg class="icon"><use href="#s-review"/></svg><span class="sr-only">In review</span></span>
+            <span class="title">Rewrite the cancellation email so it says who canceled</span>
+            <span class="labels"><span class="label neutral">Copy</span></span>
+            <span class="avatar" title="Sam Keller">SK</span>
+            <time class="when" data-numeric datetime="2026-10-20">Oct 20</time>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" aria-labelledby="g-todo">
+        <button class="group-h" id="g-todo" type="button" aria-expanded="true">
+          <svg class="icon chev"><use href="#i-chev"/></svg>
+          <svg class="icon st-todo"><use href="#s-todo"/></svg> Todo <span class="n">4</span>
+        </button>
+        <ul>
+          <li><a class="row" href="#WEB-415" data-desc="Guests who open a shared booking link see times in UTC instead of their local time zone. Detect the browser's zone and show it next to each slot.">
+            <span class="pri p-high"><svg class="icon"><use href="#p-high"/></svg><span class="sr-only">High</span></span>
+            <span class="id">WEB-415</span>
+            <span class="status st-todo"><svg class="icon"><use href="#s-todo"/></svg><span class="sr-only">Todo</span></span>
+            <span class="title">Times show in UTC for guests who book from a shared link</span>
+            <span class="labels"><span class="label" style="--dot:25">Bug</span></span>
+            <span class="avatar empty" title="Unassigned"><span class="sr-only">Unassigned</span></span>
+            <time class="when" data-numeric datetime="2026-10-24">Oct 24</time>
+          </a></li>
+          <li><a class="row" href="#WEB-414" data-desc="After closing the reschedule dialog, focus goes to the top of the page instead of returning to the booking that opened it.">
+            <span class="pri p-med"><svg class="icon"><use href="#p-med"/></svg><span class="sr-only">Medium</span></span>
+            <span class="id">WEB-414</span>
+            <span class="status st-todo"><svg class="icon"><use href="#s-todo"/></svg><span class="sr-only">Todo</span></span>
+            <span class="title">Focus is lost after closing the reschedule dialog</span>
+            <span class="labels"><span class="label" style="--dot:150">Accessibility</span></span>
+            <span class="avatar" title="Jun Park">JP</span>
+            <time class="when" data-numeric datetime="2026-10-24">Oct 24</time>
+          </a></li>
+          <li><a class="row" href="#WEB-410" data-desc="Every visit opens the week view. Remember whether each person last used day, week, or month, per device.">
+            <span class="pri p-none"><svg class="icon"><use href="#p-none"/></svg><span class="sr-only">No priority</span></span>
+            <span class="id">WEB-410</span>
+            <span class="status st-todo"><svg class="icon"><use href="#s-todo"/></svg><span class="sr-only">Todo</span></span>
+            <span class="title">Remember the last-used calendar view for each person</span>
+            <span class="labels"><span class="label" style="--dot:295">Feature</span></span>
+            <span class="avatar" title="Mira Osei">MO</span>
+            <time class="when" data-numeric datetime="2026-10-23">Oct 23</time>
+          </a></li>
+          <li><a class="row" href="#WEB-407" data-desc="Room names longer than about 30 characters push the price off-screen in the booking summary at 375px wide.">
+            <span class="pri p-low"><svg class="icon"><use href="#p-low"/></svg><span class="sr-only">Low</span></span>
+            <span class="id">WEB-407</span>
+            <span class="status st-todo"><svg class="icon"><use href="#s-todo"/></svg><span class="sr-only">Todo</span></span>
+            <span class="title">Long room names push the price off the booking summary on phones</span>
+            <span class="labels"><span class="label" style="--dot:25">Bug</span></span>
+            <span class="avatar" title="Sam Keller">SK</span>
+            <time class="when" data-numeric datetime="2026-10-22">Oct 22</time>
+          </a></li>
+        </ul>
+      </section>
+
+      <section class="group" aria-labelledby="g-done">
+        <button class="group-h" id="g-done" type="button" aria-expanded="false">
+          <svg class="icon chev"><use href="#i-chev"/></svg>
+          <svg class="icon st-done"><use href="#s-done"/></svg> Done this week <span class="n">3</span>
+        </button>
+        <ul>
+          <li><a class="row done" href="#WEB-396" data-desc="Booking confirmation now includes an .ics attachment.">
+            <span class="pri p-med"><svg class="icon"><use href="#p-med"/></svg><span class="sr-only">Medium</span></span>
+            <span class="id">WEB-396</span>
+            <span class="status st-done"><svg class="icon"><use href="#s-done"/></svg><span class="sr-only">Done</span></span>
+            <span class="title">Attach a calendar file to booking confirmations</span>
+            <span class="labels"><span class="label" style="--dot:295">Feature</span></span>
+            <span class="avatar" title="Ana Ruiz">AR</span>
+            <time class="when" data-numeric datetime="2026-10-22">Oct 22</time>
+          </a></li>
+        </ul>
+      </section>
+    </div>
+
+    <footer class="hints" aria-label="Keyboard shortcuts">
+      <span><kbd>J</kbd><kbd>K</kbd> move</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>C</kbd> new issue</span>
+      <span><kbd>/</kbd> filter</span>
+      <span class="sync">Synced just now</span>
+    </footer>
+  </main>
+
+  <aside class="detail pane" aria-labelledby="d-title">
+    <div class="bar">
+      <span class="id" id="d-id">WEB-412</span>
+      <span class="spacer"></span>
+      <button class="icon-btn" type="button" aria-label="Copy link to issue"><svg class="icon"><use href="#i-link"/></svg></button>
+      <button class="icon-btn" type="button" aria-label="More actions"><svg class="icon"><use href="#i-more"/></svg></button>
+    </div>
+
+    <div class="detail-body">
+      <h2 id="d-title">Safari: date picker opens behind the booking modal</h2>
+
+      <dl class="props">
+        <dt>Status</dt>
+        <dd><button class="prop" type="button" id="d-status"><svg class="icon st-progress"><use href="#s-progress"/></svg> In progress</button></dd>
+        <dt>Priority</dt>
+        <dd><button class="prop" type="button" id="d-priority"><svg class="icon p-urgent"><use href="#p-urgent"/></svg> Urgent</button></dd>
+        <dt>Assignee</dt>
+        <dd><button class="prop" type="button" id="d-assignee"><span class="avatar" aria-hidden="true">AR</span> Ana Ruiz</button></dd>
+        <dt>Labels</dt>
+        <dd id="d-labels"><span class="label" style="--dot:25">Bug</span><span class="label" style="--dot:235">Customer</span></dd>
+        <dt>Cycle</dt>
+        <dd><button class="prop" type="button">Cycle 31 <span class="muted">· ends Oct 31</span></button></dd>
+      </dl>
+
+      <div>
+        <h3 class="section-h">Description</h3>
+        <div class="desc" id="d-desc">
+          <p>On Safari 17 and 18, opening the date picker inside the booking modal renders the calendar underneath the modal's backdrop, so guests can't pick a date.</p>
+          <ol>
+            <li>Open any booking page in Safari.</li>
+            <li>Choose <em>Pick another day</em>.</li>
+            <li>The calendar appears dimmed behind the overlay and ignores clicks.</li>
+          </ol>
+          <p>Likely the picker's portal mounts at <code>z-index: 50</code> while the modal sits at <code>400</code>.</p>
+        </div>
+      </div>
+
+      <div id="d-activity">
+        <h3 class="section-h">Activity</h3>
+        <ol class="activity">
+          <li class="event"><span class="avatar" aria-hidden="true">SK</span><span><b>Sam Keller</b> created the issue from a support ticket · Oct 24</span></li>
+          <li class="event"><svg class="icon st-progress"><use href="#s-progress"/></svg><span><b>Ana Ruiz</b> moved it to In progress · 2h ago</span></li>
+          <li class="comment">
+            <header><span class="avatar" aria-hidden="true">JP</span><b>Jun Park</b> 1h ago</header>
+            <p>Confirmed the portal theory. Raising it to the modal's layer fixes Safari and doesn't change Chrome.</p>
+          </li>
+          <li class="event"><svg class="icon"><use href="#i-pr"/></svg><span><b>Ana Ruiz</b> linked <span class="pr">#1840</span> Mount picker above the modal layer</span></li>
+        </ol>
+      </div>
+
+      <form class="composer" onsubmit="return false">
+        <label class="sr-only" for="comment">Comment</label>
+        <textarea id="comment" placeholder="Leave a comment"></textarea>
+        <div class="row-end"><span><kbd>⌘</kbd><kbd>↵</kbd> to send</span><button class="btn btn-secondary" type="submit">Comment</button></div>
+      </form>
+    </div>
+  </aside>
+</div>
+
+<script>
+  const root = document.documentElement;
+  document.querySelector("[data-theme-toggle]").addEventListener("click", () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+  });
+
+  // Collapsible groups
+  document.querySelectorAll(".group-h").forEach(h => h.addEventListener("click", () => {
+    h.setAttribute("aria-expanded", h.getAttribute("aria-expanded") === "true" ? "false" : "true");
+  }));
+
+  // Selection: click, or J/K and arrow keys anywhere outside a text field.
+  const rows = () => [...document.querySelectorAll(".group-h[aria-expanded='true'] + ul .row")];
+  const $ = id => document.getElementById(id);
+  const fullRecord = $("d-desc").innerHTML; // only WEB-412 has a full record in this mock
+  const iconOf = cell => {
+    const svg = cell.querySelector("svg").cloneNode(true);
+    svg.classList.add(cell.classList[1]);
+    return svg;
+  };
+  function select(row, focus) {
+    document.querySelector(".row[aria-current]")?.removeAttribute("aria-current");
+    row.setAttribute("aria-current", "true");
+    if (focus) row.focus();
+    row.scrollIntoView({ block: "nearest" });
+    const text = sel => row.querySelector(sel).textContent.trim();
+    $("d-id").textContent = text(".id");
+    $("d-title").textContent = text(".title");
+    $("d-status").replaceChildren(iconOf(row.querySelector(".status")), " " + text(".status .sr-only"));
+    $("d-priority").replaceChildren(iconOf(row.querySelector(".pri")), " " + text(".pri .sr-only"));
+    const who = row.querySelector(".avatar");
+    $("d-assignee").innerHTML = who.classList.contains("empty")
+      ? '<span class="avatar empty" aria-hidden="true"></span> <span class="muted">Unassigned</span>'
+      : `<span class="avatar" aria-hidden="true">${who.textContent}</span> ${who.title}`;
+    $("d-labels").innerHTML = row.querySelector(".labels").innerHTML;
+    const full = row.hash === "#WEB-412";
+    if (full) $("d-desc").innerHTML = fullRecord;
+    else $("d-desc").replaceChildren(Object.assign(document.createElement("p"), { textContent: row.dataset.desc }));
+    $("d-activity").hidden = !full;
+  }
+  document.getElementById("issues").addEventListener("click", e => {
+    const row = e.target.closest(".row");
+    if (!row) return;
+    e.preventDefault();
+    if (row.getAttribute("aria-current") !== "true") select(row, false);
+  });
+  document.addEventListener("keydown", e => {
+    if (e.target.closest("input, textarea") || e.metaKey || e.ctrlKey || e.altKey) return;
+    const list = rows();
+    const i = list.findIndex(r => r.getAttribute("aria-current") === "true");
+    const step = { j: 1, ArrowDown: 1, k: -1, ArrowUp: -1 }[e.key];
+    if (step) {
+      e.preventDefault();
+      select(list[Math.min(list.length - 1, Math.max(0, i + step))] ?? list[0], true);
+    } else if (e.key === "/") {
+      e.preventDefault();
+      document.querySelector(".search input").focus();
+    }
+  });
+</script>
+</body>
+</html>

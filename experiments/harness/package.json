@@ -1,0 +1,9 @@
+{
+  "name": "design-taste-harness",
+  "private": true,
+  "description": "Renders and audits experiment outputs",
+  "dependencies": {
+    "axe-core": "4.10.2",
+    "playwright": "1.48.2"
+  }
+}
