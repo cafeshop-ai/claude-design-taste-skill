@@ -14,7 +14,7 @@
 #   --force          replace an existing install
 #   --version <tag>  install a specific release (e.g. v5.0.0) instead of the latest
 #
-# Downloads only the skill (a ~100 KB zip), never the repository's experiment data.
+# Downloads only the skill (a ~150 KB zip), never the repository's experiment data.
 set -eu
 
 REPO="cafeshop-ai/claude-design-taste-skill"

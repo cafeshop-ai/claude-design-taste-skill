@@ -8,6 +8,6 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 mkdir -p "$ROOT/dist"
 rm -f "$ROOT/dist/interface-design.zip"
 git -C "$ROOT" archive --format=zip -o "$ROOT/dist/interface-design.zip" "$REF" interface-design
-unzip -l "$ROOT/dist/interface-design.zip" | grep -q "interface-design/SKILL.md" || { echo "SKILL.md missing from archive" >&2; exit 1; }
+python3 -c "import sys, zipfile; n = zipfile.ZipFile(sys.argv[1]).namelist(); sys.exit(0 if 'interface-design/SKILL.md' in n else 1)" "$ROOT/dist/interface-design.zip" || { echo "SKILL.md missing from archive" >&2; exit 1; }
 if command -v sha256sum >/dev/null 2>&1; then sha256sum "$ROOT/dist/interface-design.zip"; else shasum -a 256 "$ROOT/dist/interface-design.zip"; fi
 ls -l "$ROOT/dist/interface-design.zip"

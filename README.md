@@ -46,7 +46,7 @@ Or ask Codex to use its built-in installer: *"Use $skill-installer to install ht
 
 ### Any agent that reads skill folders
 
-The installer downloads only the skill (about 100 KB) from the latest release:
+The installer downloads only the skill (about 150 KB) from the latest release:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/cafeshop-ai/claude-design-taste-skill/main/install.sh | sh                        # ~/.claude/skills
