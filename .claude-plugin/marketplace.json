@@ -1,0 +1,25 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "design-taste",
+  "description": "A design-taste skill for web, UI, and interaction design, with the content, logos, and illustrations that go with them",
+  "owner": {
+    "name": "cafeshop-ai",
+    "url": "https://github.com/cafeshop-ai"
+  },
+  "plugins": [
+    {
+      "name": "interface-design",
+      "displayName": "Interface Design",
+      "source": "./interface-design",
+      "description": "Opinionated craft guidance for web, UI, and interaction design: hierarchy, typography, color, layout, states, motion and SVG animation, logos, content design, accessibility, and critique. Ships a token stylesheet and contrast and type-scale scripts.",
+      "version": "5.0.0",
+      "author": {
+        "name": "cafeshop-ai"
+      },
+      "homepage": "https://github.com/cafeshop-ai/claude-design-taste-skill",
+      "repository": "https://github.com/cafeshop-ai/claude-design-taste-skill",
+      "keywords": ["design", "ui", "ux", "web-design", "accessibility", "typography", "logo", "svg-animation"],
+      "category": "design"
+    }
+  ]
+}

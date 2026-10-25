@@ -4,15 +4,57 @@ A Claude skill for web design, UI design, and interaction design. It aims to giv
 
 ## Install
 
-The skill is the `interface-design/` folder. Copy it into your agent's skills directory:
+### Claude Code
 
-```sh
-git clone https://github.com/cafeshop-ai/claude-design-taste-skill
-cp -r claude-design-taste-skill/interface-design ~/.claude/skills/    # Claude Code
-cp -r claude-design-taste-skill/interface-design ~/.agents/skills/    # Codex and other Agent Skills hosts
+From a Claude Code session (2.1.275 or later), in one step:
+
+```
+/plugin install interface-design --marketplace cafeshop-ai/claude-design-taste-skill
 ```
 
-Or per project, into `.claude/skills/` or `.agents/skills/` inside the repo. The skill triggers on its own whenever the agent builds, restyles, or reviews an interface.
+Or add the marketplace once, then install, which works on any version with plugins:
+
+```
+/plugin marketplace add cafeshop-ai/claude-design-taste-skill
+/plugin install interface-design@design-taste
+```
+
+The same commands work in your shell as `claude plugin marketplace add …` and `claude plugin install …`. Installed as a plugin, the skill updates with `/plugin update`, and its slash command is `/interface-design:interface-design`; it also triggers on its own for design work.
+
+This repository also holds the experiment's data (about 35 MB of screenshots). To fetch only the skill when adding the marketplace, use a sparse checkout:
+
+```
+claude plugin marketplace add cafeshop-ai/claude-design-taste-skill --sparse .claude-plugin interface-design
+```
+
+### Claude.ai and the Claude desktop app
+
+1. Download [`interface-design.zip`](https://github.com/cafeshop-ai/claude-design-taste-skill/releases/latest/download/interface-design.zip) from the latest release.
+2. In Claude, open **Customize → Skills**, click **+**, choose **Create skill → Upload a skill**, and upload the ZIP.
+
+Skills need code execution ("Create and edit files" under Settings → Capabilities). On Team and Enterprise plans, an owner may need to allow custom skills.
+
+### Codex
+
+With one command:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/cafeshop-ai/claude-design-taste-skill/main/install.sh | sh -s -- --codex
+```
+
+Or ask Codex to use its built-in installer: *"Use $skill-installer to install https://github.com/cafeshop-ai/claude-design-taste-skill/tree/main/interface-design"*. Either way, restart Codex to pick up the skill.
+
+### Any agent that reads skill folders
+
+The installer downloads only the skill (about 100 KB) from the latest release:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/cafeshop-ai/claude-design-taste-skill/main/install.sh | sh                        # ~/.claude/skills
+curl -fsSL https://raw.githubusercontent.com/cafeshop-ai/claude-design-taste-skill/main/install.sh | sh -s -- --agents        # ~/.agents/skills
+curl -fsSL https://raw.githubusercontent.com/cafeshop-ai/claude-design-taste-skill/main/install.sh | sh -s -- --dir PATH      # PATH/interface-design
+```
+
+Add `--force` to update an existing install, or `--version v5.0.0` to pin a release. To do it by hand, unzip [`interface-design.zip`](https://github.com/cafeshop-ai/claude-design-taste-skill/releases/latest/download/interface-design.zip) into your agent's skills folder.
 
 ## What's inside
 
