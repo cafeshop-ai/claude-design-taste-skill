@@ -1,0 +1,2433 @@
+[
+ {
+  "case": "booking-flow",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "booking-flow",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 327
+  },
+  "audit": {
+   "url": "../iteration-1/booking-flow/baseline/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 27
+    }
+   ],
+   "content": {
+    "words": 189,
+    "headings": 4,
+    "sections": 5,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 1,
+    "buzzwords": [],
+    "centeredParagraphs": "0/3",
+    "titleCaseLabels": "0/6",
+    "dominantHue": 120,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 12,
+    "fontFamilies": [
+     "Manrope",
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 6,
+    "elementsWithShadow": 2
+   },
+   "numbers": {
+    "numericCells": 2,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 7,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 4,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.963,
+   "focus": {
+    "stops": 9,
+    "visible": 9
+   },
+   "luminanceDark": 0.963,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 27
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 15
+    }
+   ]
+  },
+  "interaction": {
+   "steps": [
+    {
+     "button": "Continue",
+     "advanced": true,
+     "errorsAfter": 0
+    },
+    {
+     "button": "Continue",
+     "advanced": true,
+     "errorsAfter": 0
+    },
+    {
+     "button": "Continue",
+     "advanced": true,
+     "errorsAfter": 0
+    }
+   ],
+   "emptySubmit": {
+    "button": "Continue",
+    "errorsShown": "custom",
+    "advanced": false
+   },
+   "completed": true,
+   "stepsTaken": 3,
+   "pageErrors": []
+  },
+  "skill_files": [],
+  "tokens_in": 363337,
+  "tokens_out": 18776,
+  "commands": 16
+ },
+ {
+  "case": "booking-flow",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "booking-flow",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 304
+  },
+  "audit": {
+   "url": "../iteration-1/booking-flow/baseline/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 24
+    }
+   ],
+   "content": {
+    "words": 184,
+    "headings": 3,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 1,
+    "buzzwords": [],
+    "centeredParagraphs": "1/3",
+    "titleCaseLabels": "0/11",
+    "dominantHue": 60,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 9,
+    "fontFamilies": [
+     "Manrope",
+     "DM Sans",
+     "Georgia"
+    ],
+    "chromaticHueBuckets": 2,
+    "radii": 4,
+    "elementsWithShadow": 2
+   },
+   "numbers": {
+    "numericCells": 4,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 6,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 5,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.969,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.969,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 24
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 21
+    }
+   ]
+  },
+  "interaction": {
+   "steps": [
+    {
+     "button": "Continue to home details",
+     "advanced": true,
+     "errorsAfter": 0
+    },
+    {
+     "button": "Choose date & time",
+     "advanced": true,
+     "errorsAfter": 0
+    },
+    {
+     "button": "Review your booking",
+     "advanced": true,
+     "errorsAfter": 0
+    },
+    {
+     "button": "Confirm booking \u00b7 $120",
+     "advanced": true,
+     "errorsAfter": 0
+    }
+   ],
+   "emptySubmit": {
+    "button": "Continue to home details",
+    "errorsShown": "custom",
+    "advanced": false
+   },
+   "completed": true,
+   "stepsTaken": 4,
+   "pageErrors": []
+  },
+  "skill_files": [],
+  "tokens_in": 301389,
+  "tokens_out": 17639,
+  "commands": 14
+ },
+ {
+  "case": "booking-flow",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "booking-flow",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 393
+  },
+  "audit": {
+   "url": "../iteration-1/booking-flow/with-skill/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 190,
+    "headings": 3,
+    "sections": 3,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 1,
+    "buzzwords": [],
+    "centeredParagraphs": "0/6",
+    "titleCaseLabels": "0/7",
+    "dominantHue": null,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 10,
+    "fontFamilies": [
+     "DM Sans",
+     "Libre Caslon Display"
+    ],
+    "chromaticHueBuckets": 0,
+    "radii": 5,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 2,
+    "tabular": 1
+   },
+   "forms": {
+    "fields": 8,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 2,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.954,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.954,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": {
+   "steps": [
+    {
+     "button": "Continue to home details",
+     "advanced": true,
+     "errorsAfter": 0
+    },
+    {
+     "button": "Choose date & time",
+     "advanced": true,
+     "errorsAfter": 0
+    },
+    {
+     "button": "Review your booking",
+     "advanced": true,
+     "errorsAfter": 0
+    },
+    {
+     "button": "Confirm demo booking",
+     "advanced": true,
+     "errorsAfter": 0
+    }
+   ],
+   "emptySubmit": {
+    "button": "Continue to home details",
+    "errorsShown": "custom",
+    "advanced": false
+   },
+   "completed": true,
+   "stepsTaken": 4,
+   "pageErrors": []
+  },
+  "skill_files": [
+   "SKILL.md",
+   "references/interaction.md",
+   "references/craft-details.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 506379,
+  "tokens_out": 21275,
+  "commands": 16
+ },
+ {
+  "case": "booking-flow",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "booking-flow",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 301
+  },
+  "audit": {
+   "url": "../iteration-1/booking-flow/with-skill/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 209,
+    "headings": 4,
+    "sections": 3,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 1,
+    "buzzwords": [],
+    "centeredParagraphs": "0/4",
+    "titleCaseLabels": "0/8",
+    "dominantHue": 150,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 10,
+    "fontFamilies": [
+     "DM Sans",
+     "DM Serif Display"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 5,
+    "elementsWithShadow": 1
+   },
+   "numbers": {
+    "numericCells": 2,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 8,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 4,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.943,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.943,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": {
+   "steps": [
+    {
+     "button": "Continue",
+     "advanced": true,
+     "errorsAfter": 0
+    },
+    {
+     "button": "Continue",
+     "advanced": true,
+     "errorsAfter": 0
+    },
+    {
+     "button": "Continue",
+     "advanced": true,
+     "errorsAfter": 0
+    },
+    {
+     "button": "Confirm demo booking",
+     "advanced": true,
+     "errorsAfter": 0
+    }
+   ],
+   "emptySubmit": {
+    "button": "Continue",
+    "errorsShown": "custom",
+    "advanced": false
+   },
+   "completed": true,
+   "stepsTaken": 4,
+   "pageErrors": []
+  },
+  "skill_files": [
+   "SKILL.md",
+   "references/aesthetic-directions.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 340712,
+  "tokens_out": 18037,
+  "commands": 14
+ },
+ {
+  "case": "invoice-dashboard",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "invoice-dashboard",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 314
+  },
+  "audit": {
+   "url": "../iteration-1/invoice-dashboard/baseline/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 64
+    }
+   ],
+   "content": {
+    "words": 218,
+    "headings": 2,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 1,
+    "buzzwords": [],
+    "centeredParagraphs": "0/4",
+    "titleCaseLabels": "1/7",
+    "dominantHue": 60,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 12,
+    "fontFamilies": [
+     "Manrope",
+     "DM Sans",
+     "Georgia"
+    ],
+    "chromaticHueBuckets": 5,
+    "radii": 10,
+    "elementsWithShadow": 3
+   },
+   "numbers": {
+    "numericCells": 13,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 1,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 4,
+    "reducedMotionHandled": false
+   },
+   "luminanceLight": 0.968,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.968,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 64
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 45
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 365043,
+  "tokens_out": 19567,
+  "commands": 16
+ },
+ {
+  "case": "invoice-dashboard",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "invoice-dashboard",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 354
+  },
+  "audit": {
+   "url": "../iteration-1/invoice-dashboard/baseline/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 78
+    }
+   ],
+   "content": {
+    "words": 208,
+    "headings": 3,
+    "sections": 3,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/2",
+    "titleCaseLabels": "0/5",
+    "dominantHue": 300,
+    "violetDominant": true
+   },
+   "system": {
+    "fontSizes": 12,
+    "fontFamilies": [
+     "Manrope",
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 7,
+    "radii": 8,
+    "elementsWithShadow": 2
+   },
+   "numbers": {
+    "numericCells": 14,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 1,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 4,
+    "reducedMotionHandled": false
+   },
+   "luminanceLight": 0.952,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.952,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 78
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 41
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 318382,
+  "tokens_out": 20531,
+  "commands": 12
+ },
+ {
+  "case": "invoice-dashboard",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "invoice-dashboard",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 396
+  },
+  "audit": {
+   "url": "../iteration-1/invoice-dashboard/with-skill/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 15
+    }
+   ],
+   "content": {
+    "words": 268,
+    "headings": 8,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 1,
+    "buzzwords": [],
+    "centeredParagraphs": "0/3",
+    "titleCaseLabels": "0/6",
+    "dominantHue": 150,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 12,
+    "fontFamilies": [
+     "DM Serif Display",
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 7,
+    "radii": 10,
+    "elementsWithShadow": 1
+   },
+   "numbers": {
+    "numericCells": 17,
+    "tabular": 16
+   },
+   "forms": {
+    "fields": 8,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 3,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.955,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.955,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 15
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 11
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 495595,
+  "tokens_out": 24213,
+  "commands": 15
+ },
+ {
+  "case": "invoice-dashboard",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "invoice-dashboard",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 315
+  },
+  "audit": {
+   "url": "../iteration-1/invoice-dashboard/with-skill/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 33
+    }
+   ],
+   "content": {
+    "words": 241,
+    "headings": 4,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "0/3",
+    "titleCaseLabels": "0/6",
+    "dominantHue": 0,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 10,
+    "fontFamilies": [
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 7,
+    "radii": 8,
+    "elementsWithShadow": 1
+   },
+   "numbers": {
+    "numericCells": 16,
+    "tabular": 14
+   },
+   "forms": {
+    "fields": 8,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 3,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.946,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.946,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 33
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 196,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 22
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md"
+  ],
+  "tokens_in": 342770,
+  "tokens_out": 19781,
+  "commands": 12
+ },
+ {
+  "case": "landing-page",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "landing-page",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 387
+  },
+  "audit": {
+   "url": "../iteration-1/landing-page/baseline/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "aria-prohibited-attr",
+     "impact": "serious",
+     "nodes": 1
+    },
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 50
+    }
+   ],
+   "content": {
+    "words": 668,
+    "headings": 12,
+    "sections": 8,
+    "claims": [],
+    "testimonials": 2
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 20,
+    "buzzwords": [
+     "next-level"
+    ],
+    "centeredParagraphs": "1/14",
+    "titleCaseLabels": "1/28",
+    "dominantHue": 120,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 30,
+    "fontFamilies": [
+     "DM Sans",
+     "Instrument Serif"
+    ],
+    "chromaticHueBuckets": 2,
+    "radii": 14,
+    "elementsWithShadow": 10
+   },
+   "numbers": {
+    "numericCells": 2,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 4,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 2,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.848,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.848,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 50
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 48
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 302126,
+  "tokens_out": 20676,
+  "commands": 10
+ },
+ {
+  "case": "landing-page",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "landing-page",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 544
+  },
+  "audit": {
+   "url": "../iteration-1/landing-page/baseline/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 51
+    }
+   ],
+   "content": {
+    "words": 565,
+    "headings": 9,
+    "sections": 6,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 13,
+    "buzzwords": [],
+    "centeredParagraphs": "2/12",
+    "titleCaseLabels": "2/19",
+    "dominantHue": 120,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 30,
+    "fontFamilies": [
+     "Manrope",
+     "DM Sans",
+     "Instrument Serif"
+    ],
+    "chromaticHueBuckets": 2,
+    "radii": 11,
+    "elementsWithShadow": 6
+   },
+   "numbers": {
+    "numericCells": 2,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 4,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.885,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.885,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 51
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 52
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 555129,
+  "tokens_out": 27519,
+  "commands": 22
+ },
+ {
+  "case": "landing-page",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "landing-page",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 367
+  },
+  "audit": {
+   "url": "../iteration-1/landing-page/with-skill/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 3
+    }
+   ],
+   "content": {
+    "words": 423,
+    "headings": 8,
+    "sections": 6,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 4,
+    "buzzwords": [],
+    "centeredParagraphs": "1/10",
+    "titleCaseLabels": "0/13",
+    "dominantHue": 120,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 17,
+    "fontFamilies": [
+     "DM Sans",
+     "DM Serif Display",
+     "Arial"
+    ],
+    "chromaticHueBuckets": 3,
+    "radii": 8,
+    "elementsWithShadow": 3
+   },
+   "numbers": {
+    "numericCells": 1,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 1,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 0,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.898,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.898,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 3
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 2
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/aesthetic-directions.md",
+   "references/web-design.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 537545,
+  "tokens_out": 20027,
+  "commands": 16
+ },
+ {
+  "case": "landing-page",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "landing-page",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 431
+  },
+  "audit": {
+   "url": "../iteration-1/landing-page/with-skill/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "aria-prohibited-attr",
+     "impact": "serious",
+     "nodes": 1
+    },
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 1
+    }
+   ],
+   "content": {
+    "words": 587,
+    "headings": 13,
+    "sections": 5,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 4,
+    "buzzwords": [],
+    "centeredParagraphs": "1/12",
+    "titleCaseLabels": "0/22",
+    "dominantHue": 120,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 22,
+    "fontFamilies": [
+     "DM Sans",
+     "DM Serif Display"
+    ],
+    "chromaticHueBuckets": 2,
+    "radii": 8,
+    "elementsWithShadow": 6
+   },
+   "numbers": {
+    "numericCells": 2,
+    "tabular": 2
+   },
+   "forms": {
+    "fields": 3,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 0,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.919,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.919,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 1
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": -15,
+   "axeMobile": []
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/aesthetic-directions.md",
+   "references/web-design.md",
+   "references/craft-details.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 586504,
+  "tokens_out": 24740,
+  "commands": 20
+ },
+ {
+  "case": "logo",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "logo",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 131
+  },
+  "audit": {
+   "kind": "logo",
+   "logo": {
+    "file": "logo.svg",
+    "bytes": 17719,
+    "elements": 8,
+    "distinctColors": 2,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   },
+   "mark": {
+    "file": "mark.svg",
+    "bytes": 955,
+    "elements": 5,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   }
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 184558,
+  "tokens_out": 5322,
+  "commands": 12
+ },
+ {
+  "case": "logo",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "logo",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 238
+  },
+  "audit": {
+   "kind": "logo",
+   "logo": {
+    "file": "logo.svg",
+    "bytes": 25595,
+    "elements": 4,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   },
+   "mark": {
+    "file": "mark.svg",
+    "bytes": 556,
+    "elements": 1,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   }
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 534638,
+  "tokens_out": 9083,
+  "commands": 16
+ },
+ {
+  "case": "logo",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "logo",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 114
+  },
+  "audit": {
+   "kind": "logo",
+   "logo": {
+    "file": "logo.svg",
+    "bytes": 16965,
+    "elements": 4,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   },
+   "mark": {
+    "file": "mark.svg",
+    "bytes": 417,
+    "elements": 1,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   }
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 169465,
+  "tokens_out": 4556,
+  "commands": 12
+ },
+ {
+  "case": "logo",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "logo",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 144
+  },
+  "audit": {
+   "kind": "logo",
+   "logo": {
+    "file": "logo.svg",
+    "bytes": 18075,
+    "elements": 8,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   },
+   "mark": {
+    "file": "mark.svg",
+    "bytes": 565,
+    "elements": 5,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 0,
+     "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+   }
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 167885,
+  "tokens_out": 5590,
+  "commands": 9
+ },
+ {
+  "case": "pricing-restyle",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "pricing-restyle",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 171
+  },
+  "audit": {
+   "url": "../iteration-1/pricing-restyle/baseline/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 18
+    }
+   ],
+   "content": {
+    "words": 294,
+    "headings": 9,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 2,
+    "buzzwords": [
+     "effortless",
+     "seamlessly"
+    ],
+    "centeredParagraphs": "1/8",
+    "titleCaseLabels": "1/10",
+    "dominantHue": 30,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 12,
+    "fontFamilies": [
+     "Georgia",
+     "Inter"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 4,
+    "elementsWithShadow": 2
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 3,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.955,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.955,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 18
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 15
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 206406,
+  "tokens_out": 10931,
+  "commands": 11
+ },
+ {
+  "case": "pricing-restyle",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "pricing-restyle",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 206
+  },
+  "audit": {
+   "url": "../iteration-1/pricing-restyle/baseline/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 4
+    }
+   ],
+   "content": {
+    "words": 296,
+    "headings": 9,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 2,
+    "buzzwords": [],
+    "centeredParagraphs": "1/8",
+    "titleCaseLabels": "1/11",
+    "dominantHue": 120,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 13,
+    "fontFamilies": [
+     "Arial",
+     "Georgia"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 4,
+    "elementsWithShadow": 1
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 2,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.889,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.889,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 4
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 4
+    }
+   ]
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 220592,
+  "tokens_out": 11154,
+  "commands": 10
+ },
+ {
+  "case": "pricing-restyle",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "pricing-restyle",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 304
+  },
+  "audit": {
+   "url": "../iteration-1/pricing-restyle/with-skill/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 274,
+    "headings": 9,
+    "sections": 3,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 5,
+    "buzzwords": [],
+    "centeredParagraphs": "1/8",
+    "titleCaseLabels": "1/11",
+    "dominantHue": null,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 8,
+    "fontFamilies": [
+     "-apple-system",
+     "Iowan Old Style"
+    ],
+    "chromaticHueBuckets": 0,
+    "radii": 2,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 0,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.947,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.947,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/web-design.md",
+   "references/critique.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 624834,
+  "tokens_out": 20418,
+  "commands": 17
+ },
+ {
+  "case": "pricing-restyle",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "pricing-restyle",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 272
+  },
+  "audit": {
+   "url": "../iteration-1/pricing-restyle/with-skill/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 288,
+    "headings": 10,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 3,
+    "buzzwords": [],
+    "centeredParagraphs": "1/7",
+    "titleCaseLabels": "0/12",
+    "dominantHue": 180,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 11,
+    "fontFamilies": [
+     "-apple-system",
+     "Georgia"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 2,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 1,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.945,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.945,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/web-design.md",
+   "references/critique.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 322350,
+  "tokens_out": 19175,
+  "commands": 13
+ },
+ {
+  "case": "rsvp-page",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "rsvp-page",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 130
+  },
+  "audit": {
+   "url": "../iteration-1/rsvp-page/baseline/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 10
+    }
+   ],
+   "content": {
+    "words": 129,
+    "headings": 2,
+    "sections": 2,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 1,
+    "buzzwords": [],
+    "centeredParagraphs": "1/2",
+    "titleCaseLabels": "3/5",
+    "dominantHue": 120,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 13,
+    "fontFamilies": [
+     "Cormorant Garamond",
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 3,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 3,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 4,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.861,
+   "focus": {
+    "stops": 9,
+    "visible": 8
+   },
+   "luminanceDark": 0.861,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 10
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 9
+    }
+   ]
+  },
+  "interaction": {
+   "steps": [
+    {
+     "button": "Send our RSVP",
+     "advanced": true,
+     "errorsAfter": 0
+    }
+   ],
+   "emptySubmit": {
+    "button": "Send our RSVP",
+    "errorsShown": "native browser bubble",
+    "advanced": false
+   },
+   "completed": true,
+   "stepsTaken": 1,
+   "pageErrors": []
+  },
+  "skill_files": [],
+  "tokens_in": 78875,
+  "tokens_out": 7470,
+  "commands": 5
+ },
+ {
+  "case": "rsvp-page",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "rsvp-page",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 194
+  },
+  "audit": {
+   "url": "../iteration-1/rsvp-page/baseline/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 12
+    }
+   ],
+   "content": {
+    "words": 149,
+    "headings": 3,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 1,
+    "buzzwords": [],
+    "centeredParagraphs": "2/4",
+    "titleCaseLabels": "2/5",
+    "dominantHue": null,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 13,
+    "fontFamilies": [
+     "Cormorant Garamond",
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 0,
+    "radii": 2,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 3,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 4,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.941,
+   "focus": {
+    "stops": 9,
+    "visible": 9
+   },
+   "luminanceDark": 0.941,
+   "axeDesktopDark": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 12
+    }
+   ],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "nodes": 11
+    }
+   ]
+  },
+  "interaction": {
+   "steps": [
+    {
+     "button": "Send my RSVP",
+     "advanced": true,
+     "errorsAfter": 0
+    }
+   ],
+   "emptySubmit": {
+    "button": "Send my RSVP",
+    "errorsShown": "native browser bubble",
+    "advanced": false
+   },
+   "completed": true,
+   "stepsTaken": 1,
+   "pageErrors": []
+  },
+  "skill_files": [],
+  "tokens_in": 97612,
+  "tokens_out": 10046,
+  "commands": 4
+ },
+ {
+  "case": "rsvp-page",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "rsvp-page",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 252
+  },
+  "audit": {
+   "url": "../iteration-1/rsvp-page/with-skill/run-1",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 145,
+    "headings": 2,
+    "sections": 2,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "3/4",
+    "titleCaseLabels": "1/3",
+    "dominantHue": 330,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 14,
+    "fontFamilies": [
+     "Cormorant Garamond",
+     "DM Sans"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 1,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 3,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 3,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.911,
+   "focus": {
+    "stops": 9,
+    "visible": 9
+   },
+   "luminanceDark": 0.911,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": {
+   "steps": [
+    {
+     "button": "Confirm my RSVP",
+     "advanced": true,
+     "errorsAfter": 0
+    }
+   ],
+   "emptySubmit": {
+    "button": "Confirm my RSVP",
+    "errorsShown": "custom",
+    "advanced": false
+   },
+   "completed": true,
+   "stepsTaken": 1,
+   "pageErrors": []
+  },
+  "skill_files": [
+   "SKILL.md",
+   "references/aesthetic-directions.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 344711,
+  "tokens_out": 13167,
+  "commands": 12
+ },
+ {
+  "case": "rsvp-page",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "rsvp-page",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 247
+  },
+  "audit": {
+   "url": "../iteration-1/rsvp-page/with-skill/run-2",
+   "consoleErrors": [],
+   "axeDesktopLight": [],
+   "content": {
+    "words": 116,
+    "headings": 3,
+    "sections": 2,
+    "claims": [],
+    "testimonials": 0
+   },
+   "tells": {
+    "gradientText": 0,
+    "emoji": 1,
+    "buzzwords": [],
+    "centeredParagraphs": "3/3",
+    "titleCaseLabels": "4/5",
+    "dominantHue": null,
+    "violetDominant": false
+   },
+   "system": {
+    "fontSizes": 15,
+    "fontFamilies": [
+     "DM Sans",
+     "Cormorant Garamond"
+    ],
+    "chromaticHueBuckets": 0,
+    "radii": 2,
+    "elementsWithShadow": 0
+   },
+   "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+   },
+   "forms": {
+    "fields": 3,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+   },
+   "motion": {
+    "motionRules": 0,
+    "reducedMotionHandled": true
+   },
+   "luminanceLight": 0.728,
+   "focus": {
+    "stops": 10,
+    "visible": 10
+   },
+   "luminanceDark": 0.728,
+   "axeDesktopDark": [],
+   "darkMode": "light only",
+   "overflow390": 0,
+   "axeMobile": []
+  },
+  "interaction": {
+   "steps": [
+    {
+     "button": "Confirm RSVP",
+     "advanced": true,
+     "errorsAfter": 0
+    }
+   ],
+   "emptySubmit": {
+    "button": "Confirm RSVP",
+    "errorsShown": "custom",
+    "advanced": false
+   },
+   "completed": true,
+   "stepsTaken": 1,
+   "pageErrors": []
+  },
+  "skill_files": [
+   "SKILL.md",
+   "references/implementation.md",
+   "references/aesthetic-directions.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 454300,
+  "tokens_out": 13307,
+  "commands": 20
+ },
+ {
+  "case": "svg-animation",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "svg-animation",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 42
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "caught-up.svg",
+    "bytes": 1944,
+    "elements": 15,
+    "distinctColors": 10,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 2,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "6s"
+    ]
+   },
+   "changedPixels": 0.0108,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 48900,
+  "tokens_out": 1631,
+  "commands": 3
+ },
+ {
+  "case": "svg-animation",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "svg-animation",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 26
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "caught-up.svg",
+    "bytes": 2154,
+    "elements": 14,
+    "distinctColors": 13,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 3,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "6s"
+    ]
+   },
+   "changedPixels": 0.0071,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 48835,
+  "tokens_out": 1609,
+  "commands": 3
+ },
+ {
+  "case": "svg-animation",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "svg-animation",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 63
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "caught-up.svg",
+    "bytes": 1780,
+    "elements": 8,
+    "distinctColors": 8,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 2,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "6s"
+    ]
+   },
+   "changedPixels": 0.0127,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/motion.md"
+  ],
+  "tokens_in": 191396,
+  "tokens_out": 2787,
+  "commands": 10
+ },
+ {
+  "case": "svg-animation",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "svg-animation",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "0b52da1",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 61
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "caught-up.svg",
+    "bytes": 1761,
+    "elements": 11,
+    "distinctColors": 8,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 1,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "7s"
+    ]
+   },
+   "changedPixels": 0,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/motion.md"
+  ],
+  "tokens_in": 160664,
+  "tokens_out": 2710,
+  "commands": 9
+ }
+]

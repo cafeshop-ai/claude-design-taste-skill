@@ -1,0 +1,3 @@
+{"case": "pricing-restyle", "condition": "with-skill", "run": 2, "skill_ref": "0b52da1",
+ "codex": "codex-cli 0.159.2", "model": "gpt-6.1-sol", "effort": "high",
+ "exit_status": 0, "seconds": 272}

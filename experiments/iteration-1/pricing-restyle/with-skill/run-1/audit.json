@@ -1,0 +1,54 @@
+{
+  "url": "../iteration-1/pricing-restyle/with-skill/run-1",
+  "consoleErrors": [],
+  "axeDesktopLight": [],
+  "content": {
+    "words": 274,
+    "headings": 9,
+    "sections": 3,
+    "claims": [],
+    "testimonials": 0
+  },
+  "tells": {
+    "gradientText": 0,
+    "emoji": 5,
+    "buzzwords": [],
+    "centeredParagraphs": "1/8",
+    "titleCaseLabels": "1/11",
+    "dominantHue": null,
+    "violetDominant": false
+  },
+  "system": {
+    "fontSizes": 8,
+    "fontFamilies": [
+      "-apple-system",
+      "Iowan Old Style"
+    ],
+    "chromaticHueBuckets": 0,
+    "radii": 2,
+    "elementsWithShadow": 0
+  },
+  "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+  },
+  "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+  },
+  "motion": {
+    "motionRules": 0,
+    "reducedMotionHandled": true
+  },
+  "luminanceLight": 0.947,
+  "focus": {
+    "stops": 10,
+    "visible": 10
+  },
+  "luminanceDark": 0.947,
+  "axeDesktopDark": [],
+  "darkMode": "light only",
+  "overflow390": 0,
+  "axeMobile": []
+}

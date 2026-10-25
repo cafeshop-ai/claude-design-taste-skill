@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160" fill="none" role="img" aria-labelledby="caught-up-title caught-up-desc">
+  <title id="caught-up-title">You're all caught up</title>
+  <desc id="caught-up-desc">An open envelope with a green checkmark drifts gently up and down.</desc>
+  <style>
+    .caught-up-envelope { animation: caught-up-float 6s ease-in-out infinite; }
+    .caught-up-shadow { animation: caught-up-breathe 6s ease-in-out infinite; transform-origin: 100px 132px; }
+    @keyframes caught-up-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    @keyframes caught-up-breathe {
+      0%, 100% { transform: scaleX(1); opacity: .12; }
+      50% { transform: scaleX(.94); opacity: .08; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .caught-up-envelope, .caught-up-shadow { animation: none; }
+    }
+  </style>
+  <ellipse class="caught-up-shadow" cx="100" cy="132" rx="40" ry="4" fill="#527565" opacity=".12"/>
+  <g class="caught-up-envelope" stroke-linecap="round" stroke-linejoin="round">
+    <!-- The open flap and letter remain readable in the static fallback. -->
+    <path d="M52 74 94 42a10 10 0 0 1 12 0l42 32v40a8 8 0 0 1-8 8H60a8 8 0 0 1-8-8Z" fill="#DEEAE3" stroke="#698577" stroke-width="2"/>
+    <rect x="68" y="38" width="64" height="68" rx="6" fill="#FAFCFA" stroke="#698577" stroke-width="2"/>
+    <path d="m88 65 8 8 16-17" stroke="#39745A" stroke-width="3"/>
+    <path d="M84 86h32" stroke="#CBDCD1" stroke-width="2"/>
+    <path d="M52 74 94 99a12 12 0 0 0 12 0l42-25v40a8 8 0 0 1-8 8H60a8 8 0 0 1-8-8Z" fill="#EDF3EF" stroke="#698577" stroke-width="2"/>
+    <path d="m55 119 31-24m59 24-31-24" stroke="#A6BCAF" stroke-width="1.5"/>
+  </g>
+</svg>

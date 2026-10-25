@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f5ef">
+  <title>Sam & Priya — A day to remember</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;450;500;550;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f6f5ef;--ink:#283e4b;--muted:#7c827e;--line:#dcded5;--sage:#e8ecdf;--white:#fcfcf8;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;-webkit-font-smoothing:antialiased}button,input,textarea{font:inherit}button,a,input,textarea{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}a{color:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:5px}header{max-width:1440px;margin:auto;padding:27px 64px 25px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.monogram{text-decoration:none;font:italic 29px var(--serif);letter-spacing:-2px;display:flex;align-items:center;gap:5px}.monogram span{font-size:19px;font-weight:400}.header-note{font-size:10px;letter-spacing:2.3px;text-transform:uppercase}.nav-link{font-size:11px;text-decoration:none;letter-spacing:1.3px;text-transform:uppercase;display:flex;align-items:center;gap:13px}.nav-link svg{width:15px;height:15px}
+    main{max-width:1312px;margin:0 auto;padding:49px 40px 50px;display:grid;grid-template-columns:1fr 1fr;gap:94px}.invitation{text-align:center;min-width:0}.eyebrow{font-size:10px;letter-spacing:2.1px;text-transform:uppercase;font-weight:500;margin:0}.names{font:400 clamp(68px,6.5vw,94px)/1.06 var(--serif);letter-spacing:-4px;margin:15px 0 26px;white-space:nowrap}.names em{font-weight:400;font-size:.87em;margin:0 4px}.landscape{height:350px;position:relative;border-radius:230px 230px 3px 3px;overflow:hidden;margin:0;background:#849174}.landscape img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:brightness(.88) saturate(.68)}.landscape:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(21,39,30,.3),transparent 45%)}.photo-caption{position:absolute;z-index:1;bottom:27px;left:0;right:0;color:#fffdf2;font:italic 27px var(--serif);letter-spacing:.1px}.event-details{display:grid;grid-template-columns:1fr 1fr;position:relative;margin-top:25px;padding:0 5px}.event-details:after{content:"";position:absolute;width:1px;height:39px;background:var(--line);left:50%;top:4px}.detail-title{font:500 22px var(--serif);margin:0 0 7px}.detail-subtitle{color:var(--muted);font-size:11px;letter-spacing:.2px;margin:0}.venue-link{text-decoration:none}.venue-link:hover .detail-title{text-decoration:underline;text-underline-offset:4px}.little-note{font:italic 18px var(--serif);color:#7d8578;margin:24px 0 0;display:flex;align-items:center;justify-content:center;gap:12px}.little-note:before,.little-note:after{content:"";height:1px;width:26px;background:#cbd0c2}
+    .rsvp{padding-top:7px;max-width:480px;width:100%;margin:0 auto}.sprig{width:49px;height:53px;margin:0 0 12px;color:#7c8d72}.rsvp h2{font:400 51px/1.1 var(--serif);letter-spacing:-1.5px;margin:0 0 13px}.intro{font-size:13px;line-height:1.8;color:#7a817c;margin:0 0 29px;max-width:385px}.field{margin-bottom:23px}.field-label,legend{font-size:12px;font-weight:500;display:block;margin:0 0 10px}.optional{font-size:11px;font-weight:400;color:#8a9089;margin-left:5px}input[type=text],textarea{width:100%;background:transparent;border:1px solid #d8dcd2;border-radius:3px;color:var(--ink);outline:none;padding:14px 15px;font-size:12px;transition:border-color .2s,background .2s}input[type=text]{height:47px}input::placeholder,textarea::placeholder{color:#a0a49a}input[type=text]:focus,textarea:focus{border-color:#788a75;background:#fafbf5;box-shadow:0 0 0 2px #7c8d7212}fieldset{border:0;padding:0;min-width:0;margin:0 0 23px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choice{position:relative;cursor:pointer}.choice input{position:absolute;opacity:0;width:1px;height:1px}.choice-body{min-height:49px;display:flex;align-items:center;padding:12px 14px;gap:10px;border:1px solid #d8dcd2;border-radius:3px;font-size:12px;transition:all .2s}.radio-circle{width:16px;height:16px;border:1px solid #b9c0b3;border-radius:50%;display:grid;place-items:center;flex-shrink:0}.radio-circle svg{width:10px;height:10px;opacity:0}.choice input:checked+.choice-body{background:var(--sage);border-color:#9aa88b}.choice input:checked+.choice-body .radio-circle{background:#607650;border-color:#607650;color:white}.choice input:checked+.choice-body svg{opacity:1}.choice input:focus-visible+.choice-body{outline:2px solid var(--ink);outline-offset:3px}.guests-row{display:flex;align-items:center;justify-content:space-between;min-height:51px}.guests-row .field-label{margin-bottom:5px}.hint{font-size:11px;color:#8a9089;margin:0}.stepper{display:flex;align-items:center;border:1px solid #d8dcd2;border-radius:3px;height:43px}.stepper button{border:0;background:transparent;width:39px;height:41px;color:var(--ink);font-size:20px;font-weight:400;transition:background .2s}.stepper button:hover:not(:disabled){background:var(--sage)}.stepper button:disabled{color:#b8beb3;cursor:default}.stepper input{width:37px;text-align:center;appearance:textfield;-moz-appearance:textfield;border:0;outline:0;background:transparent;font-size:13px;color:var(--ink);padding:0}.stepper input::-webkit-inner-spin-button,.stepper input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}textarea{resize:vertical;min-height:85px;line-height:1.6}.submit{width:100%;border:1px solid var(--ink);border-radius:3px;min-height:50px;background:var(--ink);color:#fafbf4;display:flex;align-items:center;justify-content:center;gap:18px;font-size:12px;letter-spacing:.3px;transition:background .2s,transform .2s}.submit:hover{background:#3c5360;transform:translateY(-1px)}.submit svg{width:17px;height:17px}.form-note{text-align:center;font-size:10px;color:#8c9188;margin:15px 0 0;letter-spacing:.1px}.form-note svg{width:11px;height:11px;margin-right:4px;vertical-align:-2px}.error{font-size:12px;color:#9b4737;line-height:1.5;margin:0 0 13px}.hidden,[hidden]{display:none!important}.success{border-top:1px solid var(--line);padding:30px 0;margin-top:30px}.success-icon{width:45px;height:45px;background:var(--sage);border-radius:50%;display:grid;place-items:center;margin-bottom:19px}.success-icon svg{width:20px;height:20px}.success h3{font:400 35px var(--serif);margin:0 0 12px}.success p{font-size:13px;color:#7a817c;line-height:1.8}.edit-button{border:0;background:transparent;color:var(--ink);padding:10px 0;border-bottom:1px solid var(--ink);margin-top:10px;font-size:12px}footer{max-width:1312px;margin:0 auto;padding:22px 40px 26px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;color:#8b9187;font-size:10px;letter-spacing:.3px}.footer-center{font:italic 18px var(--serif);color:#7d8578}.footer-date{letter-spacing:1.8px}.heart{width:12px;height:12px;vertical-align:-2px;margin:0 3px}
+    @media(min-width:1500px){header{max-width:1440px}main{padding-top:65px;padding-bottom:65px;gap:110px}.landscape{height:400px}.rsvp{padding-top:16px}.field{margin-bottom:26px}}
+    @media(max-width:1050px){header{padding:24px 36px}main{gap:48px;padding:40px 36px}.names{font-size:74px}.landscape{height:325px}.rsvp h2{font-size:43px}.choices{gap:8px}.choice-body{padding:12px 10px;font-size:11px;gap:7px}}
+    @media(max-width:760px){header{padding:20px 24px}.header-note{display:none}.nav-link{font-size:10px}main{grid-template-columns:1fr;padding:35px 24px 45px;gap:46px;max-width:570px}.invitation{width:100%;max-width:440px;margin:auto}.names{font-size:82px;margin:14px 0 24px}.eyebrow{font-size:9px;letter-spacing:1.8px}.landscape{height:330px}.event-details{margin-top:23px}.detail-title{font-size:21px}.little-note{margin-top:23px}.rsvp{padding:31px 0 0;border-top:1px solid var(--line)}.sprig{display:block;margin:0 auto 15px}.rsvp h2{text-align:center;font-size:45px}.intro{text-align:center;margin:0 auto 28px;max-width:330px}.choice-body{font-size:12px;padding:13px}.field{margin-bottom:24px}footer{margin:0 24px;padding:23px 0;gap:15px}.footer-center{display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="monogram" href="#" aria-label="Sam and Priya home">S<span>&</span>P</a>
+    <span class="header-note">A little celebration. A lifetime of love.</span>
+    <a class="nav-link" href="#rsvp">Kindly RSVP <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+  </header>
+
+  <main>
+    <section class="invitation" aria-labelledby="couple-names">
+      <p class="eyebrow">With full hearts & open arms</p>
+      <h1 class="names" id="couple-names">Sam <em>&</em> Priya</h1>
+      <figure class="landscape">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85" alt="Golden evening light falling across rolling green countryside" fetchpriority="high">
+        <figcaption class="photo-caption">Our next chapter starts with you.</figcaption>
+      </figure>
+      <div class="event-details">
+        <div><p class="detail-title">June 14, 2027</p><p class="detail-subtitle">Saturday · 4:00 in the afternoon</p></div>
+        <a class="venue-link" href="https://www.google.com/maps/search/?api=1&query=Hollow+Oak+Farm+Hudson+NY" target="_blank" rel="noopener noreferrer" aria-label="Find Hollow Oak Farm in Hudson, New York on a map"><p class="detail-title">Hollow Oak Farm</p><p class="detail-subtitle">Hudson, New York ↗</p></a>
+      </div>
+      <p class="little-note">Good company. A little dancing. A whole lot of love.</p>
+    </section>
+
+    <section class="rsvp" id="rsvp" aria-labelledby="rsvp-heading">
+      <svg class="sprig" viewBox="0 0 56 62" fill="none" aria-hidden="true"><path d="M22 59C29 42 33 25 34 5M28 43C17 40 13 33 15 25c9 1 15 7 13 18Zm4-17C22 22 21 15 23 8c8 4 11 9 9 18Zm1 7c10-2 16-8 16-16-10 1-16 7-16 16ZM25 51C14 50 7 44 6 37c10-1 17 4 19 14Zm6-9c10 1 16-3 20-10-9-4-17 0-20 10Z" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h2 id="rsvp-heading">Will you join us?</h2>
+      <p class="intro">We can’t wait to celebrate with our favorite people.<br>Let us know if you’ll be there for our big day.</p>
+
+      <form id="rsvp-form">
+        <div class="field">
+          <label class="field-label" for="guest-name">Your full name</label>
+          <input id="guest-name" name="name" type="text" placeholder="First and last name" autocomplete="name" maxlength="120" required>
+        </div>
+        <fieldset>
+          <legend>Will you be joining us?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="attendance" value="yes" required checked><span class="choice-body"><span class="radio-circle"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m2.5 6 2.2 2.2 4.8-4.8"/></svg></span>Joyfully accepts</span></label>
+            <label class="choice"><input type="radio" name="attendance" value="no" required><span class="choice-body"><span class="radio-circle"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m2.5 6 2.2 2.2 4.8-4.8"/></svg></span>Regretfully declines</span></label>
+          </div>
+        </fieldset>
+        <div id="attending-fields">
+          <div class="field guests-row">
+            <div><label class="field-label" for="guest-count">Number of guests</label><p class="hint">Including yourself</p></div>
+            <div class="stepper"><button type="button" id="minus" aria-label="Remove one guest" disabled>−</button><input id="guest-count" type="number" name="guests" min="1" max="20" value="1" required aria-label="Number of guests, including yourself"><button type="button" id="plus" aria-label="Add one guest">+</button></div>
+          </div>
+          <div class="field"><label class="field-label" for="dietary">Any dietary needs? <span class="optional">(optional)</span></label><textarea id="dietary" name="dietary" rows="2" maxlength="2000" placeholder="Allergies, dietary preferences, or anything we should know…"></textarea></div>
+        </div>
+        <p class="error" id="form-error" role="alert" hidden></p>
+        <button class="submit" type="submit">Send our RSVP <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+        <p class="form-note"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M8 13.3S2 9.8 2 5.7C2 2.5 6 1.8 8 4.5c2-2.7 6-2 6 1.2 0 4.1-6 7.6-6 7.6Z"/></svg> A day made even better with you in it.</p>
+      </form>
+      <div class="success" id="confirmation" role="status" tabindex="-1" hidden>
+        <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></div>
+        <h3 id="thank-you"></h3>
+        <p id="response-summary"></p>
+        <p id="storage-message"></p>
+        <button class="edit-button" id="edit-response" type="button">Edit your response ↗</button>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>With love, Sam & Priya</span><span class="footer-center">Together is a beautiful place to be.</span><span class="footer-date">06 . 14 . 2027</span></footer>
+
+  <script>
+    const form = document.getElementById('rsvp-form');
+    const count = document.getElementById('guest-count');
+    const minus = document.getElementById('minus');
+    const plus = document.getElementById('plus');
+    const attendingFields = document.getElementById('attending-fields');
+    const confirmation = document.getElementById('confirmation');
+    const error = document.getElementById('form-error');
+    const storageKey = 'sam-priya-wedding-rsvp';
+
+    function syncCount() {
+      minus.disabled = Number(count.value) <= 1;
+      plus.disabled = Number(count.value) >= 20;
+    }
+    minus.addEventListener('click', () => { count.stepDown(); syncCount(); });
+    plus.addEventListener('click', () => { count.stepUp(); syncCount(); });
+    count.addEventListener('input', syncCount);
+
+    function syncAttendance() {
+      const attending = form.elements.attendance.value === 'yes';
+      attendingFields.hidden = !attending;
+      count.disabled = !attending;
+      document.getElementById('dietary').disabled = !attending;
+    }
+    form.querySelectorAll('[name="attendance"]').forEach(input => input.addEventListener('change', syncAttendance));
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const name = form.elements.name.value.trim();
+      if (!name) {
+        error.textContent = 'Please enter your name so we know who’s responding.';
+        error.hidden = false;
+        form.elements.name.focus();
+        return;
+      }
+      error.hidden = true;
+      const attending = form.elements.attendance.value === 'yes';
+      const response = { name, attending, guests: attending ? Number(count.value) : 0, dietary: attending ? form.elements.dietary.value.trim() : '', savedAt: new Date().toISOString() };
+      let saved = false;
+      try { localStorage.setItem(storageKey, JSON.stringify(response)); saved = true; } catch (_) {}
+      document.getElementById('thank-you').textContent = `Thank you, ${name.split(/\s+/)[0]}!`;
+      document.getElementById('response-summary').textContent = attending ? `A little dancing and a whole lot of love await. Your response is “Joyfully accepts” for ${response.guests} ${response.guests === 1 ? 'guest' : 'guests'}.` : 'You’ll be there in spirit. Your response is “Regretfully declines.”';
+      document.getElementById('storage-message').textContent = saved ? 'Your response is saved on this device. This page is a preview; it has not sent your RSVP to Sam & Priya.' : 'This page is a preview. Your response has not been saved or sent to Sam & Priya.';
+      form.hidden = true;
+      confirmation.hidden = false;
+      confirmation.focus({ preventScroll: true });
+    });
+    document.getElementById('edit-response').addEventListener('click', () => {
+      confirmation.hidden = true;
+      form.hidden = false;
+      form.elements.name.focus({ preventScroll: true });
+    });
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey));
+      if (saved && typeof saved.name === 'string' && typeof saved.attending === 'boolean') {
+        form.elements.name.value = saved.name;
+        form.elements.attendance.value = saved.attending ? 'yes' : 'no';
+        count.value = Number.isInteger(saved.guests) && saved.guests >= 1 && saved.guests <= 20 ? saved.guests : 1;
+        form.elements.dietary.value = typeof saved.dietary === 'string' ? saved.dietary : '';
+        syncCount(); syncAttendance();
+      }
+    } catch (_) {}
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Created [caught-up.svg](caught-up.svg): a 200 × 160 envelope with a checkmark, a gentle six-second loop, transparent background, and reduced-motion support.

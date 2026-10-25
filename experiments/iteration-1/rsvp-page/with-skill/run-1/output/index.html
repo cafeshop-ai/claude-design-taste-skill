@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f6f0">
+  <meta name="description" content="Join Sam & Priya to celebrate their wedding on June 14, 2027 at Hollow Oak Farm in Hudson, New York. Kindly RSVP here.">
+  <title>Sam & Priya · Kindly RSVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f8f6f0;
+      --invitation: #eeeae2;
+      --ink: #49364b;
+      --muted: #6e646b;
+      --accent: #634565;
+      --accent-hover: #4d344f;
+      --selected: #eee7ef;
+      --line: #dcd5d8;
+      --field-border: #93878d;
+      --white: #fffdf9;
+      --error: #9d3535;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+      --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px;
+      --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+      --small: 12px; --body: 14px; --label: 13px; --large: 18px;
+      --radius: 4px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 400 var(--body)/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+    button, input, select, textarea { font: inherit; }
+    button, label, select { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    [hidden] { display: none !important; }
+    .masthead { height: 96px; max-width: 1440px; margin: 0 auto; padding: 0 var(--s8); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+    .monogram { font: 500 32px/1 var(--serif); letter-spacing: -2px; }
+    .monogram span { font-style: italic; font-size: 25px; padding: 0 3px; }
+    .masthead-note, .eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; }
+    .masthead-date { font-size: 11px; letter-spacing: 1.5px; }
+    main { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; }
+    .invitation { background: var(--invitation); padding: var(--s8) var(--s7) var(--s7); text-align: center; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; }
+    .invitation .eyebrow { margin: 0 0 var(--s4); }
+    h1 { font: 400 clamp(64px, 6.6vw, 96px)/1.04 var(--serif); letter-spacing: -4px; margin: 0; white-space: nowrap; }
+    h1 span { font-style: italic; font-size: .75em; padding: 0 4px; }
+    .invitation-message { margin: var(--s4) 0 var(--s6); color: var(--muted); font: italic 400 21px/1.4 var(--serif); }
+    .landscape { width: min(100%, 392px); height: auto; display: block; margin: 0 auto var(--s6); }
+    .event-date { font: 500 27px/1.3 var(--serif); margin: 0 0 var(--s2); }
+    .event-time { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; margin: 0; }
+    .tiny-flower { margin: var(--s5) 0 var(--s4); width: 24px; height: 24px; }
+    .venue { font: 500 23px/1.3 var(--serif); margin: 0 0 var(--s1); }
+    .location { font-size: var(--small); margin: 0; color: var(--muted); }
+    .form-panel { padding: 56px clamp(32px, 5.2vw, 80px) var(--s7); }
+    .form-panel > .eyebrow { margin: 0 0 var(--s2); color: var(--accent); }
+    h2 { font: 400 56px/1.1 var(--serif); letter-spacing: -1.5px; margin: 0 0 var(--s3); }
+    .intro { color: var(--muted); margin: 0 0 var(--s6); max-width: 360px; }
+    .field { margin: 0 0 var(--s5); padding: 0; border: 0; min-width: 0; }
+    .field-label, legend { display: block; font-size: var(--label); font-weight: 500; padding: 0; margin-bottom: var(--s2); }
+    .optional, .label-hint { font-size: var(--small); font-weight: 400; color: var(--muted); }
+    .optional { margin-left: var(--s1); }
+    input[type="text"], select, textarea { display: block; width: 100%; border: 1px solid var(--field-border); border-radius: var(--radius); background: transparent; color: var(--ink); padding: var(--s3) var(--s4); min-height: 48px; transition: border-color 160ms, background 160ms; }
+    input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
+    input[type="text"]:hover, select:hover, textarea:hover { border-color: var(--accent); }
+    input[type="text"]:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 2px; background: var(--white); }
+    textarea { resize: vertical; min-height: 88px; max-height: 240px; }
+    .choices { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+    .choice { position: relative; display: flex; align-items: center; gap: var(--s3); min-height: 52px; border: 1px solid var(--field-border); border-radius: var(--radius); padding: var(--s3); cursor: pointer; transition: background 160ms, border-color 160ms; font-size: var(--label); }
+    .choice:hover { background: var(--selected); border-color: var(--accent); }
+    .choice:has(input:checked) { background: var(--selected); border-color: var(--accent); }
+    .choice input { margin: 0; width: 16px; height: 16px; accent-color: var(--accent); flex-shrink: 0; cursor: pointer; }
+    .label-row { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s2); }
+    .select-wrap { position: relative; }
+    select { appearance: none; padding-right: var(--s7); cursor: pointer; }
+    .select-wrap svg { position: absolute; right: 16px; top: 17px; width: 14px; height: 14px; pointer-events: none; }
+    .submit { width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: var(--s4); border: 1px solid var(--accent); border-radius: var(--radius); background: var(--accent); color: var(--paper); font-size: var(--label); font-weight: 500; letter-spacing: .3px; transition: background 160ms; }
+    .submit:hover { background: var(--accent-hover); }
+    .submit:active { transform: translateY(1px); }
+    .submit svg { width: 18px; height: 18px; }
+    .form-note { text-align: center; font-size: 11px; color: var(--muted); margin: var(--s3) 0 0; }
+    .error { color: var(--error); font-size: var(--small); margin: var(--s2) 0 0; }
+    [aria-invalid="true"] { border-color: var(--error) !important; }
+    footer { max-width: 1440px; margin: 0 auto; border-top: 1px solid var(--line); padding: var(--s5) var(--s8); display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 11px; }
+    .footer-note { font: italic 400 18px/1.4 var(--serif); }
+    .footer-signature { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .confirmation { padding-top: var(--s7); }
+    .confirmation .confirmation-mark { width: 56px; height: 56px; color: var(--accent); margin-bottom: var(--s5); }
+    .confirmation h2 { font-size: 48px; }
+    .confirmation p { color: var(--muted); }
+    .response-summary { margin: var(--s6) 0; padding: var(--s5) 0; border-block: 1px solid var(--line); }
+    .response-summary div { display: grid; grid-template-columns: 100px 1fr; gap: var(--s4); margin: var(--s2) 0; }
+    .response-summary dt { color: var(--muted); font-size: var(--small); }
+    .response-summary dd { margin: 0; overflow-wrap: anywhere; }
+    .text-button { border: 0; border-bottom: 1px solid var(--accent); background: none; padding: var(--s3) 0; color: var(--accent); min-height: 44px; }
+    .text-button:hover { color: var(--accent-hover); border-bottom-width: 2px; }
+    .storage-note { font-size: var(--small); }
+    @media (min-width: 1441px) { .masthead, main, footer { border-inline: 1px solid var(--line); } }
+    @media (max-width: 1000px) {
+      .masthead { padding-inline: var(--s6); }
+      .form-panel { padding-inline: var(--s6); }
+      .invitation { padding-inline: var(--s5); }
+      h1 { font-size: 68px; }
+      .choice { gap: var(--s2); font-size: 12px; padding-inline: var(--s2); }
+    }
+    @media (max-width: 700px) {
+      .masthead { height: 72px; padding-inline: var(--s5); }
+      .masthead-note { display: none; }
+      main { grid-template-columns: 1fr; }
+      .invitation { padding: var(--s7) var(--s5); }
+      h1 { font-size: clamp(64px, 12vw, 84px); }
+      .invitation-message { margin-bottom: var(--s5); }
+      .landscape { width: 280px; margin-bottom: var(--s5); }
+      .tiny-flower { margin-block: var(--s4); }
+      .form-panel { padding: var(--s7) var(--s5); width: 100%; max-width: 520px; margin-inline: auto; }
+      h2 { font-size: 48px; }
+      input[type="text"], select, textarea { font-size: 16px; }
+      .choice { font-size: var(--label); padding-inline: var(--s3); }
+      footer { padding: var(--s5); flex-direction: column; gap: var(--s3); text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="monogram" aria-label="Sam and Priya">S<span>&</span>P</div>
+    <div class="masthead-note">Together is a beautiful place to be</div>
+    <div class="masthead-date">06 · 14 · 2027</div>
+  </header>
+
+  <main>
+    <section class="invitation" aria-labelledby="couple-names">
+      <p class="eyebrow">With full hearts & open arms</p>
+      <h1 id="couple-names">Sam <span>&</span> Priya</h1>
+      <p class="invitation-message">A little countryside. A whole lot of love.</p>
+
+      <svg class="landscape" viewBox="0 0 440 292" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="An illustrated oak tree and barn in the rolling Hudson Valley countryside" role="img">
+        <defs>
+          <clipPath id="arch"><path d="M26 282V193C26 86 113 8 220 8s194 78 194 185v89H26Z"/></clipPath>
+          <pattern id="barn-lines" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M1 0v9" stroke="#8b7186" stroke-width=".7"/></pattern>
+          <g id="leaves"><path d="M-24 8C-42 3-37-16-24-17c-5-16 16-26 25-14 11-13 31-5 27 9C46-15 41 4 29 7c3 14-20 22-29 11C-10 28-27 21-24 8Z" fill="#a39b99"/><path d="M-25 5c13-9 30-12 52-7M-10-21 1 15M12-18 5-3" stroke="#6c5b6e" stroke-width=".85"/></g>
+          <g id="grass"><path d="m0 0-2-9m2 9 5-12M0 0l-7-5" stroke="#766674" stroke-width="1" stroke-linecap="round"/></g>
+        </defs>
+        <g clip-path="url(#arch)">
+          <path fill="#d9d0dc" d="M0 0h440v292H0z"/>
+          <circle cx="290" cy="83" r="25" fill="#f5eee0"/>
+          <path d="M-12 195c75-52 126-27 199-7 72 19 119-66 192-54 32 5 60 26 83 34v124H0Z" fill="#c7c4b6"/>
+          <path d="M-15 228c100-69 146-21 222-24s126-27 248-5v105H-15Z" fill="#e3ddcb"/>
+          <path d="M-7 226c106-65 154-21 219-24s130-26 236-5M264 167c52-33 87-32 133-12" stroke="#8d8281" stroke-width="1"/>
+          <path d="M283 166v62h89v-66l-42-29-47 33Z" fill="#f5eee0" stroke="#695369" stroke-width="1.3"/>
+          <path d="m272 169 57-43 55 41-9 5-46-34-48 37-9-6Z" fill="#7f687d" stroke="#695369" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M287 174v52h81v-52l-39-29-42 29Z" fill="url(#barn-lines)"/>
+          <path d="M317 192h26v36h-26z" fill="#94798d" stroke="#695369"/><path d="m318 194 24 32m0-32-24 32m12-34v36" stroke="#eee4dc" stroke-width="1"/>
+          <path d="M324 157h11v13h-11z" fill="#f5eee0" stroke="#695369"/><path d="M329.5 157v13m-5.5-6.5h11" stroke="#695369"/>
+          <path d="M278 229h104M294 232l-33 60m85-61 42 61" stroke="#9e8b89" stroke-width="1"/>
+          <path d="M56 219c28-6 62-4 81-1 39 7 64 7 102-2" stroke="#8d8281"/>
+          <path d="M131 235c5-34 8-67 4-104l11-2c-1 39 3 74 12 106-8-4-18-4-27 0Z" fill="#7d6a73" stroke="#615165" stroke-width="1.1"/>
+          <path d="m142 182-32-42-30-20m62 45 35-43 29-16m-64 44-5-45m-7 59-29-12m46 32 37-28" stroke="#65536a" stroke-width="5" stroke-linecap="round"/>
+          <g>
+            <use href="#leaves" transform="translate(79 116) scale(1.1)"/><use href="#leaves" transform="translate(106 91) scale(1.1)"/><use href="#leaves" transform="translate(143 83) scale(1.15)"/><use href="#leaves" transform="translate(177 91) scale(1.05)"/><use href="#leaves" transform="translate(204 115)"/><use href="#leaves" transform="translate(97 137)"/><use href="#leaves" transform="translate(137 120) scale(1.2)"/><use href="#leaves" transform="translate(174 137) scale(1.1)"/><use href="#leaves" transform="translate(135 146) scale(.9)"/>
+          </g>
+          <g stroke="#71616f" stroke-width=".8" stroke-linecap="round"><path d="m66 102 7 3m13-17 4 4m34-26 3 5m31-7 2 5m29 16-4 4m27 12-5 2m-37 10 4 3m-63 5 3 4m-23 13 6-1m58 12 5-2m40-3 5-3m-46-44-4 5"/></g>
+          <path d="M22 253c51-15 87-10 119-5 63 11 89-13 141-6M-8 277c61-21 125-14 176-6s90-10 131-6m67-21 65 15" stroke="#a09287" stroke-width="1"/>
+          <path d="M42 239v-26m40 20v-27m-49 13 70-14m-68 23 65-13M383 221v-24m27 30v-23m-34 1 50 12m-48-4 49 12" stroke="#8b7c7a" stroke-width="1.7" stroke-linecap="round"/>
+          <g><use href="#grass" x="59" y="271"/><use href="#grass" x="76" y="264"/><use href="#grass" x="201" y="252"/><use href="#grass" x="228" y="279"/><use href="#grass" x="376" y="269"/><use href="#grass" x="354" y="254"/><use href="#grass" x="104" y="246"/></g>
+          <path d="m240 91 5-2 5 2m-15 12 4-2 4 2" stroke="#7c6a7e" stroke-linecap="round"/>
+        </g>
+        <path d="M26 282V193C26 86 113 8 220 8s194 78 194 185v89H26Z" stroke="#8e7a8d" stroke-width="1"/>
+        <path d="M18 282V193C18 82 109 0 220 0s202 82 202 193v89M8 282h424" stroke="#a597a2" stroke-width=".7"/>
+      </svg>
+
+      <p class="event-date"><time datetime="2027-06-14T16:00:00-04:00">June 14, 2027</time></p>
+      <p class="event-time">The celebration begins at 4:00 pm</p>
+      <svg class="tiny-flower" viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width=".8"><ellipse cx="12" cy="7" rx="2.5" ry="5"/><ellipse cx="12" cy="17" rx="2.5" ry="5"/><ellipse cx="7" cy="12" rx="5" ry="2.5"/><ellipse cx="17" cy="12" rx="5" ry="2.5"/><circle cx="12" cy="12" r="2" fill="var(--invitation)"/></g></svg>
+      <p class="venue">Hollow Oak Farm</p>
+      <p class="location">Hudson, New York</p>
+    </section>
+
+    <section class="form-panel" aria-labelledby="rsvp-heading">
+      <p class="eyebrow">A seat at our table</p>
+      <div id="form-view">
+        <h2 id="rsvp-heading">Will you join us?</h2>
+        <p class="intro">Our day wouldn’t be the same without you.<br>Let us know if you can make it.</p>
+        <form id="rsvp-form" novalidate>
+          <div class="field">
+            <label class="field-label" for="guest-name">Your full name</label>
+            <input id="guest-name" name="name" type="text" placeholder="First and last name" autocomplete="name" required maxlength="150" aria-describedby="name-error">
+            <p class="error" id="name-error" hidden>Please enter your name so we know who’s replying.</p>
+          </div>
+          <fieldset class="field" aria-describedby="attendance-error">
+            <legend>Will you be attending?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="attendance" value="yes" required><span>Joyfully accept</span></label>
+              <label class="choice"><input type="radio" name="attendance" value="no"><span>Regretfully decline</span></label>
+            </div>
+            <p class="error" id="attendance-error" hidden>Please let us know whether you’ll be joining us.</p>
+          </fieldset>
+          <div id="attending-fields">
+            <div class="field">
+              <div class="label-row"><label class="field-label" for="guest-count">Number of guests</label><span class="label-hint" id="count-hint">Including yourself</span></div>
+              <div class="select-wrap">
+                <select id="guest-count" name="guests" aria-describedby="count-hint">
+                  <option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option><option value="8">8 guests</option><option value="9">9 guests</option><option value="10">10 guests</option>
+                </select>
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field-label" for="dietary">Dietary needs <span class="optional">(optional)</span></label>
+              <textarea id="dietary" name="dietary" placeholder="Any allergies or dietary preferences for your party?" maxlength="2000" rows="2"></textarea>
+            </div>
+          </div>
+          <button class="submit" type="submit">Confirm my RSVP <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <p class="form-note">With love, and a little happy anticipation.</p>
+          <p class="form-note">Preview · Your RSVP is saved on this device only.</p>
+        </form>
+      </div>
+      <div id="confirmation" class="confirmation" tabindex="-1" hidden>
+        <svg class="confirmation-mark" viewBox="0 0 56 56" fill="none" aria-hidden="true"><path d="M28 46S8 34 8 20a10 10 0 0 1 20-2 10 10 0 0 1 20 2c0 14-20 26-20 26Z" stroke="currentColor" stroke-width="1.2"/><path d="m21 27 5 5 10-11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h2 id="confirmation-heading">A little love, confirmed.</h2>
+        <p id="confirmation-message"></p>
+        <dl class="response-summary" id="response-summary"></dl>
+        <p class="storage-note" id="storage-note">Your RSVP is saved on this device. This preview does not send your response to Sam & Priya.</p>
+        <button type="button" class="text-button" id="edit-response">Edit my response</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <span class="footer-note">Good food, happy tears, and our favorite people.</span>
+    <span class="footer-signature">Sam & Priya · Hudson, NY · 2027</span>
+  </footer>
+
+  <script>
+    (() => {
+      const form = document.getElementById('rsvp-form');
+      const nameInput = document.getElementById('guest-name');
+      const attendingFields = document.getElementById('attending-fields');
+      const nameError = document.getElementById('name-error');
+      const attendanceError = document.getElementById('attendance-error');
+      const formView = document.getElementById('form-view');
+      const confirmation = document.getElementById('confirmation');
+      const storageKey = 'sam-priya-wedding-rsvp';
+      const scrollBehavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+
+      function validateName() {
+        const valid = nameInput.value.trim().length > 0;
+        nameError.hidden = valid;
+        nameInput.setAttribute('aria-invalid', String(!valid));
+        return valid;
+      }
+      function updateAttendance() {
+        const declining = form.elements.attendance.value === 'no';
+        attendingFields.hidden = declining;
+        document.getElementById('guest-count').disabled = declining;
+        document.getElementById('dietary').disabled = declining;
+        attendanceError.hidden = true;
+      }
+      nameInput.addEventListener('blur', validateName);
+      nameInput.addEventListener('input', () => {
+        if (nameInput.value.trim()) {
+          nameError.hidden = true;
+          nameInput.setAttribute('aria-invalid', 'false');
+        }
+      });
+      form.querySelectorAll('[name="attendance"]').forEach(radio => radio.addEventListener('change', updateAttendance));
+
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const nameValid = validateName();
+        const attendance = form.elements.attendance.value;
+        attendanceError.hidden = Boolean(attendance);
+        if (!nameValid) { nameInput.focus(); return; }
+        if (!attendance) { form.querySelector('[name="attendance"]').focus(); return; }
+
+        const response = {
+          name: nameInput.value.trim(),
+          attendance,
+          guests: attendance === 'yes' ? Number(form.elements.guests.value) : 0,
+          dietary: attendance === 'yes' ? form.elements.dietary.value.trim() : ''
+        };
+        let saved = false;
+        try { localStorage.setItem(storageKey, JSON.stringify(response)); saved = true; } catch (_) {}
+
+        document.getElementById('confirmation-message').textContent = attendance === 'yes'
+          ? 'We can’t wait to celebrate, laugh, and dance with you.'
+          : 'You’ll be missed, and we’ll be thinking of you on our special day.';
+        document.getElementById('storage-note').textContent = saved
+          ? 'Your RSVP is saved on this device. This preview does not send your response to Sam & Priya.'
+          : 'Your response is shown below, but your browser couldn’t save it. This preview does not send your response to Sam & Priya.';
+        const summary = document.getElementById('response-summary');
+        summary.replaceChildren();
+        const rows = [['Name', response.name], ['Response', attendance === 'yes' ? 'Joyfully accepting' : 'Regretfully declining']];
+        if (attendance === 'yes') {
+          rows.push(['Guests', String(response.guests)]);
+          if (response.dietary) rows.push(['Dietary needs', response.dietary]);
+        }
+        rows.forEach(([label, value]) => {
+          const row = document.createElement('div');
+          const term = document.createElement('dt');
+          const detail = document.createElement('dd');
+          term.textContent = label;
+          detail.textContent = value;
+          row.append(term, detail);
+          summary.append(row);
+        });
+        formView.hidden = true;
+        confirmation.hidden = false;
+        confirmation.setAttribute('aria-labelledby', 'confirmation-heading');
+        confirmation.focus({ preventScroll: true });
+        confirmation.scrollIntoView({ behavior: scrollBehavior, block: 'nearest' });
+      });
+
+      document.getElementById('edit-response').addEventListener('click', () => {
+        confirmation.hidden = true;
+        formView.hidden = false;
+        nameInput.focus({ preventScroll: true });
+        nameInput.scrollIntoView({ behavior: scrollBehavior, block: 'nearest' });
+      });
+
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey));
+        if (saved && typeof saved.name === 'string' && ['yes', 'no'].includes(saved.attendance)) {
+          nameInput.value = saved.name;
+          form.elements.attendance.value = saved.attendance;
+          if (Number.isInteger(saved.guests) && saved.guests >= 1 && saved.guests <= 10) form.elements.guests.value = String(saved.guests);
+          if (typeof saved.dietary === 'string') form.elements.dietary.value = saved.dietary;
+          updateAttendance();
+        }
+      } catch (_) {}
+    })();
+  </script>
+</body>
+</html>

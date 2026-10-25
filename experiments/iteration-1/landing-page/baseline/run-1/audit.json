@@ -1,0 +1,79 @@
+{
+  "url": "../iteration-1/landing-page/baseline/run-1",
+  "consoleErrors": [],
+  "axeDesktopLight": [
+    {
+      "id": "aria-prohibited-attr",
+      "impact": "serious",
+      "nodes": 1
+    },
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 50
+    }
+  ],
+  "content": {
+    "words": 668,
+    "headings": 12,
+    "sections": 8,
+    "claims": [],
+    "testimonials": 2
+  },
+  "tells": {
+    "gradientText": 0,
+    "emoji": 20,
+    "buzzwords": [
+      "next-level"
+    ],
+    "centeredParagraphs": "1/14",
+    "titleCaseLabels": "1/28",
+    "dominantHue": 120,
+    "violetDominant": false
+  },
+  "system": {
+    "fontSizes": 30,
+    "fontFamilies": [
+      "DM Sans",
+      "Instrument Serif"
+    ],
+    "chromaticHueBuckets": 2,
+    "radii": 14,
+    "elementsWithShadow": 10
+  },
+  "numbers": {
+    "numericCells": 2,
+    "tabular": 0
+  },
+  "forms": {
+    "fields": 4,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+  },
+  "motion": {
+    "motionRules": 2,
+    "reducedMotionHandled": true
+  },
+  "luminanceLight": 0.848,
+  "focus": {
+    "stops": 10,
+    "visible": 10
+  },
+  "luminanceDark": 0.848,
+  "axeDesktopDark": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 50
+    }
+  ],
+  "darkMode": "light only",
+  "overflow390": 0,
+  "axeMobile": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 48
+    }
+  ]
+}

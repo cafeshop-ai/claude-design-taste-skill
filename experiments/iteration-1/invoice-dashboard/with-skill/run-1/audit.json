@@ -1,0 +1,72 @@
+{
+  "url": "../iteration-1/invoice-dashboard/with-skill/run-1",
+  "consoleErrors": [],
+  "axeDesktopLight": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 15
+    }
+  ],
+  "content": {
+    "words": 268,
+    "headings": 8,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+  },
+  "tells": {
+    "gradientText": 0,
+    "emoji": 1,
+    "buzzwords": [],
+    "centeredParagraphs": "0/3",
+    "titleCaseLabels": "0/6",
+    "dominantHue": 150,
+    "violetDominant": false
+  },
+  "system": {
+    "fontSizes": 12,
+    "fontFamilies": [
+      "DM Serif Display",
+      "DM Sans"
+    ],
+    "chromaticHueBuckets": 7,
+    "radii": 10,
+    "elementsWithShadow": 1
+  },
+  "numbers": {
+    "numericCells": 17,
+    "tabular": 16
+  },
+  "forms": {
+    "fields": 8,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+  },
+  "motion": {
+    "motionRules": 3,
+    "reducedMotionHandled": true
+  },
+  "luminanceLight": 0.955,
+  "focus": {
+    "stops": 10,
+    "visible": 10
+  },
+  "luminanceDark": 0.955,
+  "axeDesktopDark": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 15
+    }
+  ],
+  "darkMode": "light only",
+  "overflow390": 0,
+  "axeMobile": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 11
+    }
+  ]
+}

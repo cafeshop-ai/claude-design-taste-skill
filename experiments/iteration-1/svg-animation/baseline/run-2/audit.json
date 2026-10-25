@@ -1,0 +1,26 @@
+{
+  "kind": "svg-animation",
+  "animation": {
+    "file": "caught-up.svg",
+    "bytes": 2154,
+    "elements": 14,
+    "distinctColors": 13,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+      "keyframes": 3,
+      "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+      "6s"
+    ]
+  },
+  "changedPixels": 0.0071,
+  "changedPixelsReduced": 0,
+  "stopsUnderReducedMotion": true
+}

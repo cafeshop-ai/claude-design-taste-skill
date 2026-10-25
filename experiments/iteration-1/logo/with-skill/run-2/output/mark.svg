@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-labelledby="title desc">
+  <title id="title">Fernway</title>
+  <desc id="desc">A bold forest-green fern forming the letter F, designed to remain clear at 16 pixels.</desc>
+  <g fill="#234b3b">
+      <path d="M11 29 C12 23 12 16 12 13 L15 13 C15 17 15 24 14 29 Z"/>
+      <path d="M13 14 C12 6 18 3 28 3 C28 10 22 14 13 14 Z"/>
+      <path d="M13 23 C13 16 19 14 27 15 C26 21 21 24 13 23 Z"/>
+      <path d="M13 20 C6 19 3 14 4 7 C11 8 15 13 13 20 Z"/>
+  </g>
+</svg>

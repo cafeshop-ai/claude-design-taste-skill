@@ -1,0 +1,42 @@
+<!doctype html><meta charset="utf-8"><style>
+  body{margin:0;font:13px/1.4 system-ui,sans-serif;color:#555;background:#fff}
+  .sheet{display:grid;gap:24px;padding:32px;width:1100px}
+  .row{display:flex;gap:24px;align-items:stretch}
+  .panel{flex:1;display:grid;place-items:center;gap:12px;padding:40px;border:1px solid #e5e5e5;border-radius:8px;min-height:180px}
+  .dark{background:#151515;border-color:#151515;color:#aaa}
+  .sizes{display:flex;gap:28px;align-items:end}
+  .sizes figure{margin:0;display:grid;justify-items:center;gap:6px}
+  .tab{display:flex;align-items:center;gap:8px;width:220px;padding:8px 12px;border-radius:8px 8px 0 0;background:#f1f1f1;color:#222}
+  .tab.d{background:#2a2a2a;color:#eee}
+  img{display:block}
+#art svg{width:100%;height:auto;max-height:240px}</style><div class="sheet"><div class="row">
+        <div class="panel" id="stage" style="flex:none;width:420px;height:320px"><div id="art" style="width:240px"><svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160" fill="none" role="img" aria-labelledby="caught-up-title caught-up-desc">
+  <title id="caught-up-title">You're all caught up</title>
+  <desc id="caught-up-desc">An open envelope with a green checkmark drifts gently up and down.</desc>
+  <style>
+    .caught-up-envelope { animation: caught-up-float 6s ease-in-out infinite; }
+    .caught-up-shadow { animation: caught-up-breathe 6s ease-in-out infinite; transform-origin: 100px 132px; }
+    @keyframes caught-up-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    @keyframes caught-up-breathe {
+      0%, 100% { transform: scaleX(1); opacity: .12; }
+      50% { transform: scaleX(.94); opacity: .08; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .caught-up-envelope, .caught-up-shadow { animation: none; }
+    }
+  </style>
+  <ellipse class="caught-up-shadow" cx="100" cy="132" rx="40" ry="4" fill="#527565" opacity=".12"/>
+  <g class="caught-up-envelope" stroke-linecap="round" stroke-linejoin="round">
+    <!-- The open flap and letter remain readable in the static fallback. -->
+    <path d="M52 74 94 42a10 10 0 0 1 12 0l42 32v40a8 8 0 0 1-8 8H60a8 8 0 0 1-8-8Z" fill="#DEEAE3" stroke="#698577" stroke-width="2"/>
+    <rect x="68" y="38" width="64" height="68" rx="6" fill="#FAFCFA" stroke="#698577" stroke-width="2"/>
+    <path d="m88 65 8 8 16-17" stroke="#39745A" stroke-width="3"/>
+    <path d="M84 86h32" stroke="#CBDCD1" stroke-width="2"/>
+    <path d="M52 74 94 99a12 12 0 0 0 12 0l42-25v40a8 8 0 0 1-8 8H60a8 8 0 0 1-8-8Z" fill="#EDF3EF" stroke="#698577" stroke-width="2"/>
+    <path d="m55 119 31-24m59 24-31-24" stroke="#A6BCAF" stroke-width="1.5"/>
+  </g>
+</svg>
+</div></div></div></div>

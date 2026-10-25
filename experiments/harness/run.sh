@@ -48,6 +48,9 @@ codex "${args[@]}" "$(cat "$EXP/cases/$CASE/prompt.md")" \
   < /dev/null > "$OUT/events.jsonl" 2> "$OUT/stderr.log" || status=$?
 seconds=$(( $(date +%s) - start ))
 
+# Logs are published: drop raw command output, which can describe the host.
+python3 "$HERE/sanitize-events.py" "$OUT/events.jsonl"
+
 # Keep what Codex produced, not the skill copy.
 (cd "$WORK" && tar --exclude=./.agents -cf - .) | tar -xf - -C "$OUT/output"
 

@@ -1,0 +1,1 @@
+Created [caught-up.svg](caught-up.svg): a compact envelope and checkmark with a gentle six-second floating loop. Includes reduced-motion support.

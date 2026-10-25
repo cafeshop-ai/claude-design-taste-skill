@@ -1,0 +1,1 @@
+Created [caught-up.svg](caught-up.svg): a pastel envelope with a green checkmark and a gentle six-second loop. Includes reduced-motion support.

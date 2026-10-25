@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Fernway</title>
+  <desc id="desc">A fern growing from an open book. Simplified for display at 16 pixels.</desc>
+  <g fill="#214B3D">
+    <!-- Open pages; the clear central gutter remains visible at 16px. -->
+    <path d="M6 35C15 34 23 37 30 42V58C23 53 15 50 6 51Z"/>
+    <path d="M34 42C41 37 49 34 58 35V51C49 50 41 53 34 58Z"/>
+    <!-- Five broad fern leaflets, arranged along a rising stem. -->
+    <path d="M31 38C23 38 19 33 18 27C26 27 31 30 31 38Z
+             M31 31C35 24 41 24 47 25C43 31 38 34 31 33Z
+             M31 26C24 25 22 20 22 14C29 16 32 20 31 26Z
+             M34 20C37 14 42 13 47 14C44 20 40 22 34 22Z
+             M37 15C34 9 37 5 43 3C44 9 42 13 37 15Z"/>
+    <path d="M32 45C28 31 30 19 39 10" fill="none" stroke="#214B3D" stroke-width="2.8" stroke-linecap="round"/>
+  </g>
+</svg>

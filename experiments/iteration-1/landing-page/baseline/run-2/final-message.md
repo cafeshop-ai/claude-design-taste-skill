@@ -1,0 +1,1 @@
+Created [index.html](./index.html) with a responsive design, climbing visuals, interactive dashboard tabs, pricing toggle, and sample booking flows. All CSS and JavaScript are inline.

@@ -1,0 +1,75 @@
+{
+  "url": "../iteration-1/pricing-restyle/baseline/run-1",
+  "consoleErrors": [],
+  "axeDesktopLight": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 18
+    }
+  ],
+  "content": {
+    "words": 294,
+    "headings": 9,
+    "sections": 4,
+    "claims": [],
+    "testimonials": 0
+  },
+  "tells": {
+    "gradientText": 0,
+    "emoji": 2,
+    "buzzwords": [
+      "effortless",
+      "seamlessly"
+    ],
+    "centeredParagraphs": "1/8",
+    "titleCaseLabels": "1/10",
+    "dominantHue": 30,
+    "violetDominant": false
+  },
+  "system": {
+    "fontSizes": 12,
+    "fontFamilies": [
+      "Georgia",
+      "Inter"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 4,
+    "elementsWithShadow": 2
+  },
+  "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+  },
+  "forms": {
+    "fields": 0,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+  },
+  "motion": {
+    "motionRules": 3,
+    "reducedMotionHandled": true
+  },
+  "luminanceLight": 0.955,
+  "focus": {
+    "stops": 10,
+    "visible": 10
+  },
+  "luminanceDark": 0.955,
+  "axeDesktopDark": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 18
+    }
+  ],
+  "darkMode": "light only",
+  "overflow390": 0,
+  "axeMobile": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 15
+    }
+  ]
+}

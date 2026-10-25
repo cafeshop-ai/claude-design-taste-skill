@@ -133,7 +133,18 @@ const pageFacts = () => {
   const fields = [...document.querySelectorAll("input:not([type=hidden]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]), select, textarea")];
   const unlabeled = fields.filter(f => !(f.labels && f.labels.length) && !f.getAttribute("aria-label") && !f.getAttribute("aria-labelledby"));
 
+  // Content: how much is there, and does it assert things nobody supplied?
+  const claims = text.match(/\b\d[\d,.]*\s?[kKmM]?\+(?=\s|$|\W)|\b\d(?:\.\d)?\s?\/\s?5\b|[★⭐]|\b(trusted|loved|used) by\b|\bjoin (over )?\d|\b\d+%\s(of|faster|more|less|fewer|increase|reduction)\b/gi) || [];
+  const testimonials = document.querySelectorAll("blockquote, [class*=testimonial i], [id*=testimonial i]").length;
+  const content = {
+    words: text.split(/\s+/).filter(Boolean).length,
+    headings: [...document.querySelectorAll("h1,h2,h3")].filter(vis).length,
+    sections: [...document.querySelectorAll("section, main > div, body > div > section")].filter(vis).length,
+    claims, testimonials,
+  };
+
   return {
+    content,
     tells: { gradientText, emoji, buzzwords: buzz, centeredParagraphs: `${centered}/${paras.length}`, titleCaseLabels: `${titleCase}/${labels.length}`,
              dominantHue: dominant, violetDominant: dominant !== null && dominant >= 270 && dominant <= 315 },
     system: { fontSizes: fontSizes.size, fontFamilies: [...families], chromaticHueBuckets: hues.length, radii: radii.size, elementsWithShadow: shadows },

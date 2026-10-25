@@ -1,0 +1,47 @@
+<!doctype html><meta charset="utf-8"><style>
+  body{margin:0;font:13px/1.4 system-ui,sans-serif;color:#555;background:#fff}
+  .sheet{display:grid;gap:24px;padding:32px;width:1100px}
+  .row{display:flex;gap:24px;align-items:stretch}
+  .panel{flex:1;display:grid;place-items:center;gap:12px;padding:40px;border:1px solid #e5e5e5;border-radius:8px;min-height:180px}
+  .dark{background:#151515;border-color:#151515;color:#aaa}
+  .sizes{display:flex;gap:28px;align-items:end}
+  .sizes figure{margin:0;display:grid;justify-items:center;gap:6px}
+  .tab{display:flex;align-items:center;gap:8px;width:220px;padding:8px 12px;border-radius:8px 8px 0 0;background:#f1f1f1;color:#222}
+  .tab.d{background:#2a2a2a;color:#eee}
+  img{display:block}
+#art svg{width:100%;height:auto;max-height:240px}</style><div class="sheet"><div class="row">
+        <div class="panel" id="stage" style="flex:none;width:420px;height:320px"><div id="art" style="width:240px"><svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="none" role="img" aria-labelledby="caught-up-title caught-up-desc">
+  <title id="caught-up-title">You're all caught up</title>
+  <desc id="caught-up-desc">An envelope with a green checkmark floats gently above its shadow. All your email is taken care of.</desc>
+  <style>
+    .caught-up-envelope {
+      animation: caught-up-float 7s ease-in-out infinite;
+    }
+    @keyframes caught-up-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .caught-up-envelope { animation: none; }
+    }
+  </style>
+
+  <!-- Quiet backdrop; the canvas itself stays transparent. -->
+  <circle cx="120" cy="86" r="60" fill="#F0F5F1"/>
+  <ellipse cx="120" cy="145" rx="43" ry="4" fill="#294F40" opacity=".08"/>
+
+  <g class="caught-up-envelope">
+    <!-- A closed envelope: a finished task, with nothing waiting inside. -->
+    <rect x="65" y="65" width="110" height="70" rx="10" fill="#FDFEFC"/>
+    <path d="m68 130 38-30m66 30-38-30" stroke="#B5C9BD" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="m67 70 44 34a15 15 0 0 0 18 0l44-34" fill="#E4EEE7"/>
+    <path d="m67 70 44 34a15 15 0 0 0 18 0l44-34" stroke="#719480" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="65" y="65" width="110" height="70" rx="10" stroke="#719480" stroke-width="1.5"/>
+
+    <!-- The check remains visible throughout the loop. -->
+    <circle cx="171" cy="66" r="20" fill="#F0F5F1"/>
+    <circle cx="171" cy="66" r="16" fill="#326B50"/>
+    <path d="m164 66 5 5 9-10" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
+</div></div></div></div>
