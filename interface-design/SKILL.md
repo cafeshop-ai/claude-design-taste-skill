@@ -1,6 +1,6 @@
 ---
 name: interface-design
-description: Opinionated craft guidance for web design, UI design, and interaction design. Covers visual hierarchy, typography, color and dark mode, spacing and layout, components, states, forms, motion, responsive behavior, accessibility, and design critique. Ships with a contrast/palette script, a type-scale script, and a starter design-token stylesheet. Use this skill whenever you build, restyle, or review anything people will look at or click (websites, landing pages, web apps, dashboards, settings screens, forms, components, HTML/CSS/Tailwind/React front-end work, prototypes, mockups), even if the user never says "design" (for example "build a signup page", "make this look more professional", "why does this feel off?", "add an empty state", "pick fonts for my blog"). Also use it for UX reviews, design systems and tokens, choosing palettes, and making something accessible.
+description: Opinionated craft guidance for web, UI, and interaction design, and the content, logos, and illustrations that go with them. Covers hierarchy, typography, color and dark mode, layout, components, states, forms, motion and SVG animation, logos and favicons, content design (build only what was asked, write less, never invent facts), accessibility, and critique. Ships contrast and type-scale scripts and a design-token stylesheet. Use this skill whenever you build, restyle, or review anything people will look at or click (websites, landing pages, web apps, dashboards, forms, sign-up pages, components, HTML/CSS/Tailwind/React front-end work, prototypes) or make a logo, icon, favicon, or animated SVG, even if the user never says "design" (for example "build a signup page", "make this look professional", "why does this feel off?", "make a logo for my shop", "animate this illustration"). Also use it for UX reviews, interface copy, design tokens, palettes, and accessibility.
 ---
 
 # Interface Design
@@ -12,6 +12,7 @@ Good interfaces come from a small number of deliberate decisions applied with di
 - **How it works comes first, then how it looks.** A screen is a tool for someone to get something done. Start from the person and the job, and let the visuals express the hierarchy of that job.
 - **Content first.** Design with real or realistic content. Lorem ipsum and "Feature One" hide every real problem: long names, empty lists, three-line titles, seven-digit numbers.
 - **Restraint is the default; emphasis is earned.** If everything is bold, nothing is. Every extra color, weight, border, shadow, or animation must justify itself by communicating something.
+- **Build what was asked, in as few words as do the job.** Unrequested sections, features, and paragraphs are the most common way generated interfaces go wrong. Invented facts (prices, policies, statistics, testimonials, customer logos) are worse than gaps, because they look finished and get shipped. Offer extras in your reply instead of building them.
 - **Quiet almost everywhere, memorable somewhere.** Restraint alone produces competent, forgettable work. Spend boldness deliberately in one or two places (a confident headline, an ownable color, a beautifully made empty state, a delightful core interaction), and keep everything around it disciplined so it lands. "Clean and modern" is not a direction.
 - **Systems over one-offs.** Choose scales (type, space, color, radius, motion) and use only values from them. Consistency is what makes plain things look designed.
 - **Specific beats generic.** The generic version of anything (gradient hero, three emoji feature cards, "Unlock your potential") is invisible. Make choices particular to this product and audience.
@@ -21,6 +22,7 @@ Good interfaces come from a small number of deliberate decisions applied with di
 
 ### 1. Understand before drawing
 Work out, mostly by inference (ask only when the answer would materially change the design and you can't infer it):
+- **What exactly was asked?** List it, plus what the page needs in order to work (a submit button, a confirmation, error states). That's the scope. Anything else needs a reason the user would agree with.
 - **Who** uses this, how often, on what device, in what state of mind? A daily-use admin tool wants density and speed; a once-a-year tax form wants guidance and reassurance.
 - **What is the one primary job** of this screen, and what are the secondary ones?
 - **What content** exists, how big can it get, and what does it look like empty?
@@ -38,6 +40,8 @@ Decide the personality in one sentence ("a calm, precise tool for accountants"; 
 5. Density and base text size.
 6. Motion character: none, snappy, or soft.
 
+**Name your default, then leave it.** Before deciding, name the look you'd produce on autopilot for this brief. For today's models that is usually a cream or off-white page, a forest-green or violet accent, a geometric sans with one italic-serif word in every headline, a small uppercase eyebrow label over every heading, rounded cards in threes, and a tilted sticker badge. Then change at least two of the decisions above, for reasons that come from this brief (its audience, its content, its name), not from novelty.
+
 `references/aesthetic-directions.md` has eight worked directions with these filled in. Start from one rather than the no-decision default (Inter everywhere, indigo accent, 12px radius, soft shadows, everything centered), which reads as "template" instantly. For substantial new work, tell the user the direction in a line or two so they can redirect early.
 
 Encode the decisions as tokens. `assets/tokens.css` is a complete starter: change its DECISIONS block, and the palette, radii, and density follow.
@@ -52,7 +56,7 @@ Fill in type, color, and surfaces from the tokens only. When you reach for an of
 Default, hover, focus-visible, active, disabled, loading, empty, error, success, and overflow (long text, many items, huge numbers). Unhandled states are where interfaces feel broken. See `references/interaction.md`.
 
 ### 6. Look at it, then critique it
-If you can render (browser tools, Playwright, screenshots), do it at ~375px, ~768px, and ~1440px wide, in dark mode if supported. This step is not optional polish. Rendering routinely catches what careful reading of the code misses: a selector silently overriding another's font size, grid children stretching to fill a row, colors clipping out of gamut and shifting hue, a fill that passes contrast in light mode and fails in dark, identifiers wrapping mid-word on a phone. Squint at it. Tab through it. Then run the checklist below, or the full method in `references/critique.md`, and fix the biggest problems first. When the structure is right, do a polish pass with `references/craft-details.md`.
+If you can render (browser tools, Playwright, screenshots), do it at ~375px, ~768px, and ~1440px wide, in dark mode if supported. This step is not optional polish. Rendering routinely catches what careful reading of the code misses: a selector silently overriding another's font size, grid children stretching to fill a row, colors clipping out of gamut and shifting hue, a fill that passes contrast in light mode and fails in dark, identifiers wrapping mid-word on a phone. Squint at it. Tab through it. Then run the checklist below, or the full method in `references/critique.md`, and fix the biggest problems first. Then read every sentence on the page and delete the ones that restate a heading, invent a fact, or just cheer. When the structure is right, do a polish pass with `references/craft-details.md`.
 
 ## Core principles
 
@@ -101,11 +105,16 @@ If you can render (browser tools, Playwright, screenshots), do it at ~375px, ~76
 - Forms: labels above fields (never placeholder-as-label), validate on blur, keep submit enabled and explain what's missing, use correct `type` and `autocomplete`.
 - Motion is functional and fast: 150–250ms for most UI, ease-out for entrances, quicker exits, and `prefers-reduced-motion` respected.
 
-### Copy is design
-- Buttons are verbs plus objects: "Save changes", "Send invite". Avoid "Submit", "Yes/No", and "Click here"; "OK" only for a plain acknowledgment.
-- Sentence case for all UI text. Specific over grand: "3 files uploaded", not "Your upload was successful!"
-- Errors say what happened and how to fix it, next to the problem, without blame.
-- Never invent statistics, testimonials, or logos. Use clearly marked placeholders and tell the user.
+### Content: scope, facts, and words
+- **Build only what was asked, plus what it needs to work.** A single-purpose page (a form, a sign-up, a confirmation, a 404) gets one column, one action, and no marketing sections: no countdowns, FAQs, testimonial strips, or "why us" cards unless requested.
+- **Never invent facts:** prices, fees, cancellation or refund policies, guarantees, trust badges ("Certified experts"), statistics, ratings, testimonials, customer logos, schedules, what a service includes. They hide in fine print as easily as in headlines. Leave them out, or use an unmistakable placeholder and list it in your reply.
+- **Sample data uses fictional people and companies,** never real brands as customers or clients. Don't preselect answers people must give (attendance, consent, plan).
+- **Cut filler:** paired slogans ("A little X. A lot of Y.", "Less X. More Y."), eyebrow labels that restate the heading below them, taglines under logos, buttons, and in footers, cheerleading inside tools ("You're doing great"), and promo cards nobody asked for. Delete a sentence; if no information is lost, it stays deleted.
+- **Buttons say what happens:** "Send invite", "Export report", "Save changes". Avoid "Submit", "Yes/No", and "Click here"; "OK" only for a plain acknowledgment.
+- **Sentence case** for all UI text. Specific over grand: "3 files uploaded", not "Your upload was successful!"
+- **Errors** say what happened and how to fix it, next to the problem, without blame.
+
+`references/content-design.md` has the full method and a worked example of a cluttered page versus a considered one.
 
 ## Generic tells to avoid
 
@@ -115,6 +124,8 @@ These signal that nothing was decided. Each needs a real reason to appear:
 - A pill badge above every hero headline; "Unlock / Supercharge / Seamless / Revolutionize" copy; triplet slogans.
 - The same large radius and soft shadow on everything; cards that scale up on hover; everything fading in on scroll.
 - Low-contrast gray text, everything centered, uniform sizes with no hierarchy.
+- Today's generated-page house style: an italic-serif accent word in every headline, an uppercase eyebrow label above every heading, "Less X. More Y." headlines, tilted sticker badges, floating notification cards over hero images, cream backgrounds with forest green.
+- Inside apps: upsell cards, motivational lines, decorative illustrations in the sidebar, a slogan under the page title.
 
 The fix is never more style. It's a specific choice: a typeface with character, a real product screenshot, a layout that follows the content, copy that says something only this product could say. `references/critique.md` has the full list, a symptom → cause table, and two worked before → after redesigns that show this judgment in action. Read them when you want calibration.
 
@@ -136,8 +147,13 @@ The fix is never more style. It's a specific choice: a typeface with character, 
 - [ ] Keyboard: logical order, visible focus, Escape closes overlays, focus returns.
 - [ ] Semantic HTML: buttons act, links navigate, inputs have labels, headings in order.
 - [ ] Motion purposeful and short; reduced-motion respected.
-- [ ] Copy specific, sentence case, verb buttons, no invented claims.
-- [ ] No generic tells left without a reason.
+- [ ] Nothing unrequested: no extra sections, features, or promo cards. Extras are offered in the reply instead.
+- [ ] No invented facts anywhere, including fine print: prices, fees, policies, guarantees, trust badges, statistics, testimonials, real brands as sample data.
+- [ ] Every sentence carries information. Copy is specific, sentence case, with verb buttons; no filler slogans or taglines.
+- [ ] Tables and other wide content scroll inside their own container, or reflow, on a phone.
+- [ ] No generic tells left without a reason, including the house style above.
+- [ ] Logos: a version for dark backgrounds, no tagline in the primary mark, a mark redrawn to be legible at 16px.
+- [ ] Animation: one idea, small but visible movement, and a complete still frame under reduced motion.
 
 ## Reference files
 
@@ -158,6 +174,9 @@ Read what the task needs; don't load everything.
 | `references/craft-details.md` | the polish pass: the small type, color, edge, optical, and interaction details that separate good from great |
 | `references/implementation.md` | putting tokens into Tailwind v4/v3, shadcn/ui, other component libraries, React components, or single-file HTML |
 | `references/platforms.md` | native iOS/Android conventions, mobile web specifics, tablets |
+| `references/content-design.md` | any page with copy, and always for single-purpose pages and landing pages: deciding scope, writing UI text, avoiding invented facts and filler |
+| `references/logo-design.md` | designing a logo, wordmark, monogram, app icon, or favicon |
+| `references/svg-animation.md` | SVG illustrations, empty-state art, loaders, animated icons, success animations |
 
 ## Bundled tools
 
