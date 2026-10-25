@@ -40,7 +40,7 @@ Decide the personality in one sentence ("a calm, precise tool for accountants"; 
 5. Density and base text size.
 6. Motion character: none, snappy, or soft.
 
-**Find the direction in the brief, not in a list of things to avoid.** Write down three concrete things from the product's world (its materials, places, objects, era, the people who use it, the name itself) and let them choose the palette, the type, and one signature element. A tea importer might take oxidized green, rice paper, and brushy lettering; a payroll tool for restaurants might take kitchen-ticket monospace and tomato red. Swapping one default for another is not a direction: generic blue-and-white SaaS is a default too, and so is whatever palette you reach for first on every brief. Warmth and character are good when they come from the brief. For calibration, `assets/examples/` has two finished pages in deliberately different directions.
+**Find the direction in the brief, not in a list of things to avoid.** Write down three concrete things from the product's world (its materials, places, objects, era, the people who use it, the name itself) and let them choose the palette, the type, and one signature element. A tea importer might take oxidized green, rice paper, and brushy lettering; a payroll tool for restaurants might take kitchen-ticket monospace and tomato red. Swapping one default for another is not a direction: generic blue-and-white SaaS is a default too, and so is whatever palette you reach for first on every brief. Warmth and character are good when they come from the brief. A page built only from type and pale cards is usually under-designed: decide what visual makes it specific (an illustration made for it, the real product UI, a photo of the real subject, a typographic gesture). For calibration, `assets/examples/` has two finished pages in deliberately different directions.
 
 `references/aesthetic-directions.md` has eight worked directions with these filled in. Start from one rather than the no-decision default (Inter everywhere, indigo accent, 12px radius, soft shadows, everything centered), which reads as "template" instantly. For substantial new work, tell the user the direction in a line or two so they can redirect early.
 
@@ -106,7 +106,7 @@ If you can render (browser tools, Playwright, screenshots), do it at ~375px, ~76
 - Motion is functional and fast: 150–250ms for most UI, ease-out for entrances, quicker exits, and `prefers-reduced-motion` respected.
 
 ### Content: scope, facts, and words
-- **Build only what was asked, plus what it needs to work.** A single-purpose page (a form, a sign-up, a confirmation, a 404) gets one column, one action, and no marketing sections: no countdowns, FAQs, testimonial strips, or "why us" cards unless requested.
+- **Build what was asked, fully, and nothing beside it.** Depth on the requested jobs is good: if the brief asks which orders are late, show which ones, how late, and a way to contact the customer; a chart that explains a headline number earns its place. What gets cut is breadth (sections, features, and promo nobody asked for) and padding (filler copy, invented facts). A single-purpose page (a form, a sign-up, a confirmation, a 404) gets one column, one action, and no marketing sections: no countdowns, FAQs, testimonial strips, or "why us" cards unless requested.
 - **Never invent facts:** prices, fees, cancellation or refund policies, guarantees, trust badges ("Certified experts"), statistics, ratings, testimonials, customer logos, schedules, what a service includes. They hide in fine print as easily as in headlines. Leave them out, or use an unmistakable placeholder and list it in your reply.
 - **Sample data uses fictional people and companies,** never real brands as customers or clients. Don't preselect answers people must give (attendance, consent, plan).
 - **Cut filler:** paired slogans ("A little X. A lot of Y.", "Less X. More Y."), eyebrow labels that restate the heading below them, taglines under logos, buttons, and in footers, cheerleading inside tools ("You're doing great"), and promo cards nobody asked for. Delete a sentence; if no information is lost, it stays deleted.
@@ -114,7 +114,7 @@ If you can render (browser tools, Playwright, screenshots), do it at ~375px, ~76
 - **Sentence case** for all UI text. Specific over grand: "3 files uploaded", not "Your upload was successful!"
 - **Errors** say what happened and how to fix it, next to the problem, without blame.
 
-- **Discipline cuts words, claims, sections, and features, not identity.** Imagery, illustration, and typographic character that are about the product stay. Cut the slogan, keep the illustration. A headline with a point of view ("Bookkeeping for people who'd rather be making things") isn't filler; a line that could sit on any site ("Everything you need, all in one place") is.
+- **Discipline cuts words, claims, sections, and features, not identity.** Imagery, illustration, and typographic character that are about the product stay. Cut the slogan, keep the illustration. A headline with a point of view ("Bookkeeping for people who'd rather be making things") isn't filler; a line that could sit on any site ("Everything you need, all in one place") is. When restyling, replace a generic line with a specific one rather than deleting the voice.
 
 `references/content-design.md` has the full method and a worked example of a cluttered page versus a considered one.
 
@@ -152,7 +152,8 @@ The fix is never more style. It's a specific choice: a typeface with character, 
 - [ ] Nothing unrequested: no extra sections, features, or promo cards. Extras are offered in the reply instead.
 - [ ] No invented facts anywhere, including fine print: prices, fees, policies, guarantees, trust badges, statistics, testimonials, real brands as sample data.
 - [ ] Every sentence carries information. Copy is specific, sentence case, with verb buttons; no filler slogans or taglines.
-- [ ] Tables and other wide content scroll inside their own container (`overflow-x: auto; position: relative`, so hidden labels inside can't widen the page), or reflow, on a phone.
+- [ ] On a phone, tables keep their key fields visible: reflow rows into stacked cards showing the 2–4 fields that matter (name, status, date, total) instead of hiding them off to the side. Anything that must scroll sideways sits in `overflow-x: auto; position: relative`, so hidden labels inside can't widen the page.
+- [ ] Fixed or sticky bars on a phone reserve their own space (padding under the content) and never cover fields, buttons, or the last row.
 - [ ] No generic tells left without a reason, including the tics above.
 - [ ] One signature element tied to the brief, so the page couldn't be mistaken for a template with the logo swapped.
 - [ ] Logos: a version for dark backgrounds, no tagline in the primary mark, a mark redrawn to be legible at 16px.

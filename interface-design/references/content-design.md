@@ -17,6 +17,7 @@ The most common way generated interfaces go wrong isn't ugliness. It's excess: s
 
 The request defines the scope. A volunteer sign-up page is a form with the facts volunteers need; it is not the organization's website. A 404 page is a sentence and a way back; it is not a sitemap. A CRM screen shows contacts; it doesn't need a marketing banner.
 
+- **Build the requested jobs fully.** Scope discipline is about breadth, not depth. If a support dashboard brief asks which tickets are breaching their response time, a list that names each ticket, how long it has waited, and who it's assigned to, with a way to reassign it, *is* the scope done well. A bare red number is the scope done minimally.
 - **List what the request explicitly asks for, then what the page obviously needs to work** (a submit button, a confirmation, an error state). That's the scope. Everything else is an addition, and additions need a reason the user would agree with.
 - **"Obviously needs" is narrow.** It means the page fails without it. A countdown timer, an "Our story" section, a FAQ, a newsletter signup, a testimonial strip, a stats band, or a footer with twelve links are not needed by a page whose job is collecting sign-ups.
 - **If you think something extra would genuinely help, offer it in your reply instead of building it.** "I kept this to the sign-up form. If you want, I can add a map and parking details once you have them." The user can say yes in five words; they can't easily un-build a page.
