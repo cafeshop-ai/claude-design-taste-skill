@@ -1,0 +1,27 @@
+{
+  "steps": [
+    {
+      "button": "Next: your home",
+      "advanced": true,
+      "errorsAfter": 0
+    },
+    {
+      "button": "Next: date & time",
+      "advanced": true,
+      "errorsAfter": 0
+    },
+    {
+      "button": "Review my booking",
+      "advanced": true,
+      "errorsAfter": 0
+    }
+  ],
+  "emptySubmit": {
+    "button": "Next: your home",
+    "errorsShown": "custom",
+    "advanced": false
+  },
+  "completed": true,
+  "stepsTaken": 3,
+  "pageErrors": []
+}

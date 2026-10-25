@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7f2">
+  <title>Book a little breathing room · Spruce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#233d32;--green:#295b43;--green-dark:#204b36;--muted:#7b817a;--line:#e6e9e1;--cream:#f6f7f2;--light:#edf2e9;--white:#fff;--error:#ab4036}
+    *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}button,input{font:inherit}button,a,input{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:not-allowed}button:focus-visible,a:focus-visible{outline:3px solid #a7bb8e;outline-offset:4px}a{color:inherit}svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}[hidden]{display:none!important}.icon-defs{position:absolute;width:0;height:0;overflow:hidden}
+    .site-header{height:91px;background:#fff;border-bottom:1px solid var(--line)}.header-inner{height:100%;max-width:1200px;margin:auto;padding:0 36px;display:flex;align-items:center;justify-content:space-between}.brand{text-decoration:none;display:flex;align-items:center;gap:10px;font-family:Manrope,sans-serif;font-size:30px;font-weight:800;letter-spacing:-1.5px}.brand-mark{width:32px;height:36px;fill:var(--green);stroke:none}.header-right{display:flex;align-items:center;gap:26px}.header-note{font-size:12px;color:var(--muted)}.help-link{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;text-decoration:none}.help-link svg{width:17px}
+    main{max-width:1130px;margin:0 auto;padding:49px 24px 36px}.intro{text-align:center;margin-bottom:35px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--green);text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px}.eyebrow svg{width:15px;height:15px}h1{font-family:Manrope,sans-serif;font-size:37px;font-weight:650;letter-spacing:-1.65px;line-height:1.3;margin:13px 0 10px}.intro p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}.content-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:25px;align-items:start}.booking-card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 5px 16px #283e2c03}
+    .progress{padding:27px 30px 24px;display:flex;border-bottom:1px solid var(--line);gap:0}.step-tab{border:0;background:none;display:flex;align-items:center;padding:0;gap:9px;font-size:12px;color:#999e97;white-space:nowrap;position:relative}.step-tab:disabled{opacity:1}.step-circle{border:1px solid #e1e5dd;border-radius:50%;width:27px;height:27px;display:flex;align-items:center;justify-content:center;font-size:11px;background:#fff;font-weight:600}.step-tab.active{color:var(--green);font-weight:700}.step-tab.active .step-circle{background:var(--green);color:#fff;border-color:var(--green)}.step-tab.done{color:var(--green)}.step-tab.done .step-circle{background:var(--light);border-color:var(--light)}.step-circle svg{width:13px;height:13px}.step-line{height:1px;background:var(--line);flex:1;min-width:10px;margin:13px 13px 0}.step-line.done{background:#bdcdb6}
+    .form-body{padding:29px 33px 26px;min-height:451px}.section-kicker{color:var(--muted);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin:0 0 9px}.form-body h2{font-family:Manrope,sans-serif;font-size:24px;font-weight:650;letter-spacing:-.8px;margin:0 0 8px}.section-subtitle{color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 24px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px}.field.full{grid-column:1/-1}.field label{display:block;font-size:12px;font-weight:600;margin-bottom:8px}.optional{font-weight:400;color:#949a91;font-size:11px;margin-left:3px}.field input{width:100%;height:45px;border:1px solid #dfe4da;border-radius:7px;padding:0 13px;outline:none;color:var(--ink);background:#fff;transition:border .15s,box-shadow .15s}.field input::placeholder{color:#b0b4ac;font-size:12px}.field input:focus{border-color:var(--green);box-shadow:0 0 0 3px #295b430c}.field input:user-invalid{border-color:var(--error)}.input-icon{position:relative}.input-icon input{padding-left:39px}.input-icon svg{position:absolute;left:13px;top:14px;width:17px;height:17px;color:#929c8e}.privacy-note{display:flex;align-items:center;gap:7px;font-size:10px;color:#899081;margin:19px 0 0}.privacy-note svg{width:13px;height:13px}.form-footer{border-top:1px solid var(--line);padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:15px;background:#fdfefb}.footer-hint{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:7px}.footer-hint svg{width:14px;height:14px}.button-primary{border:1px solid var(--green);border-radius:7px;background:var(--green);color:#fff;min-height:45px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:22px;font-weight:600;font-size:12px;transition:background .15s,transform .15s}.button-primary:hover{background:var(--green-dark);transform:translateY(-1px)}.button-primary svg{width:17px;height:17px}.button-back{border:0;background:none;display:flex;align-items:center;gap:7px;color:var(--muted);font-size:12px;padding:10px 0}.button-back:hover{color:var(--green)}.button-back svg{width:15px;height:15px}
+    .sidebar{display:flex;flex-direction:column;gap:15px}.summary-card{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff}.summary-photo{height:188px;position:relative;background:#dcded1}.summary-photo img{width:100%;height:100%;object-fit:cover;object-position:center 59%;display:block}.photo-tag{position:absolute;left:17px;bottom:15px;background:#fffffff2;border-radius:30px;padding:7px 11px;display:flex;align-items:center;gap:5px;color:var(--ink);font-size:10px;font-weight:600;box-shadow:0 2px 12px #0000000a}.photo-tag svg{width:13px;height:13px;color:var(--green)}.summary-content{padding:23px 24px 21px}.summary-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.summary-heading h2{font-family:Manrope,sans-serif;font-size:17px;letter-spacing:-.5px;margin:0;font-weight:700}.service-tag{font-size:9px;font-weight:600;color:var(--green);background:var(--light);padding:5px 8px;border-radius:4px}.summary-row{display:flex;align-items:center;gap:10px;font-size:12px;color:#6f786d;margin:14px 0}.summary-row svg{width:16px;height:16px;color:#7b8e73}.summary-row .muted{color:#9ca295}.summary-total{border-top:1px dashed #dce3d7;display:flex;align-items:center;justify-content:space-between;padding-top:18px;margin-top:21px}.summary-total-label{font-size:12px;font-weight:500}.price{font-family:Manrope,sans-serif;font-size:28px;font-weight:700;letter-spacing:-1px}.price small{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:0;color:var(--muted);font-weight:400;margin-left:3px}.price-note{font-size:10px;color:#909687;text-align:right;margin:5px 0 0}.promise-card{border:1px solid #e3e8dc;background:#eef2e7;border-radius:12px;padding:18px 20px;display:flex;align-items:flex-start;gap:12px}.promise-card>svg{width:27px;height:27px;margin-top:2px;color:#5a7651}.promise-card h3{font-size:12px;margin:0 0 5px;font-weight:600}.promise-card p{font-size:11px;color:#7a8471;margin:0;line-height:1.7}.testimonial{padding:10px 15px 0;text-align:center}.stars{font-size:13px;color:#6e8453;letter-spacing:3px}.testimonial p{font-size:12px;color:#7c8375;margin:8px 0}.testimonial strong{color:var(--ink);font-weight:600}.testimonial .review-count{font-size:10px;color:#939a8c}.bottom-note{text-align:center;color:#969c90;display:flex;align-items:center;justify-content:center;gap:7px;font-size:10px;margin:25px 0 0}.bottom-note svg{width:13px;height:13px}.site-footer{max-width:1082px;margin:2px auto 0;padding:20px 0;border-top:1px solid #e4e8dd;display:flex;justify-content:space-between;color:#969c90;font-size:10px}.footer-wordmark{font-weight:600;color:#727e6c}.footer-dot{margin:0 8px}
+    .counter-row{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);padding:18px 17px;border-radius:8px;margin-bottom:13px;gap:15px}.counter-label{display:flex;align-items:center;gap:12px}.counter-label>svg{color:#7a8c70;width:24px;height:24px}.counter-label strong{display:block;font-size:13px;font-weight:600}.counter-label small{color:var(--muted);font-size:11px;display:block;margin-top:4px}.counter-control{display:flex;align-items:center;gap:17px}.counter-control button{width:29px;height:29px;border-radius:50%;border:1px solid #dfe5da;background:#fff;color:var(--green);display:grid;place-items:center;font-size:18px}.counter-control button:disabled{opacity:.3}.counter-control output{font-size:14px;font-weight:600;min-width:12px;text-align:center}.group-label{border:0;padding:0;margin:23px 0 0}.group-label legend{font-size:12px;font-weight:600;margin-bottom:11px}.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.choice{position:relative;cursor:pointer}.choice input{position:absolute;opacity:0;width:1px;height:1px}.choice span{border:1px solid var(--line);border-radius:7px;padding:13px 12px;display:flex;justify-content:center;align-items:center;gap:7px;font-size:12px;transition:background .15s}.choice input:checked+span{border-color:#7d9b70;color:var(--green);background:#f1f5ed}.choice input:focus-visible+span{outline:3px solid #a7bb8e;outline-offset:2px}.choice span svg{width:17px;height:17px}.soft-note{font-size:11px;color:var(--muted);line-height:1.7;background:#f7f8f4;border-radius:6px;padding:11px 13px;margin:20px 0 0;display:flex;align-items:center;gap:8px}.soft-note svg{width:15px;height:15px;flex-shrink:0}
+    .calendar{border:1px solid var(--line);border-radius:9px;padding:16px 19px}.calendar-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}.calendar-header strong{font-size:13px;font-weight:600}.calendar-nav{display:flex;gap:10px}.calendar-nav button{border:0;background:#f5f7f0;display:grid;place-items:center;border-radius:5px;width:26px;height:26px;color:var(--green)}.calendar-nav button:disabled{opacity:.25}.calendar-nav svg{width:14px;height:14px}.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.weekday{text-align:center;font-size:10px;color:var(--muted);padding:4px 0 8px}.calendar-day{height:32px;border:0;border-radius:5px;background:none;font-size:12px;color:var(--ink)}.calendar-day:hover:not(:disabled){background:var(--light)}.calendar-day:disabled{color:#c8cdc3}.calendar-day.selected{background:var(--green)!important;color:#fff}.calendar-day.today{box-shadow:inset 0 0 0 1px #ced8c4}.time-field{margin:19px 0 0;border:0;padding:0}.time-field legend{font-size:12px;font-weight:600;margin-bottom:11px}.time-options{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.time-options .choice span{padding:11px 6px;font-size:11px}.schedule-error{color:var(--error);font-size:11px;margin:12px 0 0}.review-block{padding:17px 0;border-bottom:1px solid var(--line)}.review-block:first-of-type{padding-top:3px}.review-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.review-title h3{font-size:12px;margin:0;font-weight:650}.edit-button{border:0;background:none;font-size:11px;color:var(--green);text-decoration:underline;text-underline-offset:3px;padding:4px}.review-block p{margin:3px 0;font-size:12px;color:var(--muted);line-height:1.65;overflow-wrap:anywhere}.review-price{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:13px;font-weight:600}.review-price strong{font-size:22px}.success{text-align:center;padding:44px 30px;min-height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center}.success-icon{width:65px;height:65px;background:var(--light);color:var(--green);border-radius:50%;display:grid;place-items:center;margin-bottom:20px}.success-icon svg{width:30px;height:30px}.success h2{font-family:Manrope,sans-serif;font-size:28px;margin:0 0 12px;letter-spacing:-1px}.success p{font-size:13px;color:var(--muted);line-height:1.8;margin:0 0 20px;max-width:370px}.success-detail{background:#f6f8f2;border-radius:9px;padding:18px;width:100%;margin:0 0 22px;font-size:13px;line-height:1.8}.success-detail small{display:block;color:var(--muted)}.demo-note{font-size:11px!important;margin:18px 0 0!important}.fade-in{animation:appear .25s ease-out}@keyframes appear{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+    @media(min-width:1350px){main{padding-top:54px}.intro{margin-bottom:40px}.form-body{min-height:466px}.summary-photo{height:197px}}
+    @media(max-width:850px){.content-layout{grid-template-columns:minmax(0,1fr) 285px;gap:18px}.form-body{padding:26px 23px}.progress{padding:24px 22px}.step-tab{gap:6px;font-size:11px}.step-line{margin-left:8px;margin-right:8px}.form-footer{padding:19px 22px}.summary-content{padding:20px}.header-inner{padding:0 25px}.site-footer{margin-left:24px;margin-right:24px}.footer-hint{font-size:10px}.button-primary{gap:13px;padding:0 16px}}
+    @media(max-width:700px){.site-header{height:72px}.header-inner{padding:0 22px}.brand{font-size:27px}.brand-mark{width:29px}.header-note{display:none}.help-link{font-size:11px;gap:6px}.help-link svg{width:16px}main{padding:29px 18px 25px}.intro{margin-bottom:25px}.eyebrow{font-size:9px;letter-spacing:1.6px}h1{font-size:29px;letter-spacing:-1.3px;margin-top:12px}.intro p{font-size:12px;max-width:270px;margin:auto}.content-layout{grid-template-columns:1fr;gap:20px}.progress{padding:23px 21px}.step-tab{font-size:10px;gap:6px}.step-circle{width:24px;height:24px;font-size:10px}.step-line{margin:12px 8px 0;min-width:4px}.form-body{padding:26px 22px 24px;min-height:0}.form-body h2{font-size:23px}.section-subtitle{font-size:12px;margin-bottom:22px}.fields{gap:18px 12px}.field input{height:47px;font-size:16px}.field label{font-size:11px}.form-footer{padding:18px 22px;gap:10px}.footer-hint{font-size:9px;gap:5px}.footer-hint svg{width:12px}.button-primary{min-height:46px;font-size:12px;gap:17px;padding:0 17px}.sidebar{gap:13px}.summary-card{display:flex;flex-direction:row}.summary-photo{height:auto;width:105px;min-width:105px}.summary-photo img{position:absolute;object-position:62% center}.photo-tag{display:none}.summary-content{padding:19px;flex:1;min-width:0}.summary-heading{margin-bottom:13px}.summary-heading h2{font-size:15px}.service-tag{font-size:8px;padding:4px 6px}.summary-row{font-size:11px;margin:10px 0;gap:7px}.summary-row svg{width:14px;height:14px}.summary-total{padding-top:13px;margin-top:14px}.summary-total-label{font-size:10px}.price{font-size:23px}.price small{font-size:9px}.price-note{font-size:9px}.promise-card{padding:16px 19px}.promise-card p{font-size:10px}.testimonial{padding-top:4px}.bottom-note{margin-top:22px;font-size:9px}.site-footer{padding:18px 0 22px;margin:0 20px;font-size:9px}.calendar{padding:14px}.calendar-day{height:38px}.counter-control button{width:38px;height:38px}.calendar-nav button{width:34px;height:34px}.time-options .choice span{font-size:10px}.success{padding:35px 22px;min-height:450px}}
+    @media(max-width:360px){main{padding-left:12px;padding-right:12px}.form-body{padding-left:17px;padding-right:17px}.progress{padding-left:15px;padding-right:15px}.step-line{margin-left:5px;margin-right:5px}.summary-photo{width:75px;min-width:75px}.footer-hint{max-width:90px}.form-footer{padding-left:17px;padding-right:17px}.choice span{padding-left:7px;padding-right:7px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4Z"/><path d="m20 2 .6 1.4L22 4l-1.4.6L20 6l-.6-1.4L18 4l1.4-.6Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9S4 17 4 12V6Z"/><path d="m8 11 3 3 5-5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="m5 3 4 1 1 5-3 2a14 14 0 0 0 6 6l2-3 5 1 1 4c-1 6-17 0-18-11 0-3 1-5 2-5Z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 9v11h14V9M9 20v-7h6v7"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16m-12 4h2m4 0h2"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3C7 1 2 8 6 15s17 1 14-12ZM5 21c0-7 5-10 10-13"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11a8 8 0 0 1-8 8H7l-4 3V11a9 9 0 0 1 18 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V7m18 11v-6a2 2 0 0 0-2-2H3m0 6h18M7 10V6h10v4M3 18v3m18-3v3"/></symbol>
+    <symbol id="i-bath" viewBox="0 0 24 24"><path d="M3 12h18v3a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5v-3ZM6 12V5a2 2 0 0 1 4 0v1m-5 14-1 2m14-2 1 2"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20 5c-3-3-7-1-8 2-1-3-5-5-8-2s0 8 8 15c8-7 11-12 8-15Z"/></symbol>
+  </defs></svg>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="./" aria-label="Spruce home"><svg class="brand-mark" viewBox="0 0 36 40" aria-hidden="true"><path d="M18 19C1 20 1 1 10 2c8 0 8 12 8 17Zm0 0C17 2 35 2 34 11c0 8-12 8-16 8Zm0 0c17-1 17 18 8 17-8 0-8-12-8-17Zm0 0C19 36 1 36 2 27c0-8 12-8 16-8Z"/></svg>spruce<span style="color:#8ca17a">.</span></a>
+    <div class="header-right"><span class="header-note">A little clean. A lot of calm.</span><a class="help-link" href="mailto:hello@spruce.example"><svg><use href="#i-chat"/></svg>Need a hand?</a></div>
+  </div></header>
+  <main>
+    <div class="intro"><div class="eyebrow"><svg><use href="#i-spark"/></svg>A happier home starts here</div><h1>Come home to a clean slate.</h1><p>A few little details. A lovely, clean home. More time for you.</p></div>
+    <div class="content-layout">
+      <section class="booking-card" aria-label="Book your home cleaning">
+        <nav class="progress" aria-label="Booking progress">
+          <button class="step-tab active" type="button" data-step="0" aria-current="step"><span class="step-circle">1</span>Contact</button><span class="step-line"></span>
+          <button class="step-tab" type="button" data-step="1" disabled><span class="step-circle">2</span>Home</button><span class="step-line"></span>
+          <button class="step-tab" type="button" data-step="2" disabled><span class="step-circle">3</span>Schedule</button><span class="step-line"></span>
+          <button class="step-tab" type="button" data-step="3" disabled><span class="step-circle">4</span>Review</button>
+        </nav>
+        <form id="booking-form">
+          <div class="form-body">
+            <section data-panel="0" class="fade-in" aria-labelledby="contact-title">
+              <p class="section-kicker">Step 01 · A friendly hello</p><h2 id="contact-title" tabindex="-1">First, let’s get to know you.</h2><p class="section-subtitle">Tell us who you are and where we’ll bring the sparkle.</p>
+              <div class="fields">
+                <div class="field"><label for="first-name">First name</label><input id="first-name" name="firstName" autocomplete="given-name" placeholder="e.g. Jamie" required maxlength="60"></div>
+                <div class="field"><label for="last-name">Last name</label><input id="last-name" name="lastName" autocomplete="family-name" placeholder="e.g. Parker" required maxlength="60"></div>
+                <div class="field full"><label for="email">Email address</label><div class="input-icon"><svg aria-hidden="true"><use href="#i-mail"/></svg><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div></div>
+                <div class="field full"><label for="phone">Phone number</label><div class="input-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000" required pattern="[+\(\)0-9 .\-]{7,25}" title="Enter a phone number with 7–25 characters, using digits, spaces, +, parentheses or dashes."></div></div>
+                <div class="field full"><label for="address">Street address</label><input id="address" name="address" autocomplete="street-address" placeholder="123 Maple Street" required maxlength="200"></div>
+                <div class="field"><label for="apt">Apt / suite <span class="optional">(optional)</span></label><input id="apt" name="apt" autocomplete="address-line2" placeholder="Apt 4B" maxlength="40"></div>
+                <div class="field"><label for="zip">ZIP code</label><input id="zip" name="zip" autocomplete="postal-code" inputmode="numeric" placeholder="e.g. 10001" required pattern="[0-9]{5}(-[0-9]{4})?" title="Enter a 5-digit ZIP code, optionally followed by a 4-digit extension."></div>
+              </div><p class="privacy-note"><svg><use href="#i-lock"/></svg>Your details are safe with us. Always.</p>
+            </section>
+            <section data-panel="1" hidden aria-labelledby="home-title">
+              <p class="section-kicker">Step 02 · Your little corner of the world</p><h2 id="home-title" tabindex="-1">Tell us about your home.</h2><p class="section-subtitle">Big or small, we’ll give your space the care it deserves.</p>
+              <div class="counter-row"><div class="counter-label"><svg><use href="#i-bed"/></svg><div><strong>Bedrooms</strong><small>Including rooms used as an office</small></div></div><div class="counter-control"><button type="button" data-counter="bedrooms" data-delta="-1" aria-label="Remove a bedroom">−</button><output id="bedrooms-count" aria-live="polite">2</output><button type="button" data-counter="bedrooms" data-delta="1" aria-label="Add a bedroom">+</button></div></div>
+              <div class="counter-row"><div class="counter-label"><svg><use href="#i-bath"/></svg><div><strong>Bathrooms</strong><small>Half baths count as one</small></div></div><div class="counter-control"><button type="button" data-counter="bathrooms" data-delta="-1" aria-label="Remove a bathroom">−</button><output id="bathrooms-count" aria-live="polite">1</output><button type="button" data-counter="bathrooms" data-delta="1" aria-label="Add a bathroom">+</button></div></div>
+              <fieldset class="group-label"><legend>Any furry friends at home?</legend><div class="choice-grid"><label class="choice"><input type="radio" name="pets" value="No pets" checked><span>No pets</span></label><label class="choice"><input type="radio" name="pets" value="Cat(s)"><span>Cat(s)</span></label><label class="choice"><input type="radio" name="pets" value="Dog(s)"><span>Dog(s)</span></label><label class="choice"><input type="radio" name="pets" value="Cats & dogs"><span>Cats & dogs</span></label><label class="choice"><input type="radio" name="pets" value="Other pets"><span>Other pets</span></label></div></fieldset>
+              <p class="soft-note"><svg><use href="#i-heart"/></svg>We’re pet people, too. No extra charge for furry family members.</p>
+            </section>
+            <section data-panel="2" hidden aria-labelledby="schedule-title">
+              <p class="section-kicker">Step 03 · Make a little time</p><h2 id="schedule-title" tabindex="-1">When works for you?</h2><p class="section-subtitle">Pick a day and arrival window. We’ll take it from there.</p>
+              <div class="calendar" aria-label="Choose a cleaning date"><div class="calendar-header"><strong id="calendar-month" aria-live="polite"></strong><div class="calendar-nav"><button id="prev-month" type="button" aria-label="Previous month"><svg><use href="#i-left"/></svg></button><button id="next-month" type="button" aria-label="Next month"><svg><use href="#i-right"/></svg></button></div></div><div class="calendar-grid" id="calendar-grid"></div></div>
+              <fieldset class="time-field"><legend>Arrival window</legend><div class="time-options"><label class="choice"><input type="radio" name="time" value="8:00–10:00 AM"><span>8:00–10:00 AM</span></label><label class="choice"><input type="radio" name="time" value="10:00 AM–12:00 PM"><span>10:00 AM–12:00 PM</span></label><label class="choice"><input type="radio" name="time" value="1:00–3:00 PM"><span>1:00–3:00 PM</span></label></div></fieldset>
+              <p class="schedule-error" id="schedule-error" role="alert" hidden>Please choose a date and an arrival window.</p><p class="soft-note"><svg><use href="#i-calendar"/></svg>Plans change. Reschedule for free up to 24 hours before your clean.</p>
+            </section>
+            <section data-panel="3" hidden aria-labelledby="review-title">
+              <p class="section-kicker">Step 04 · One last look</p><h2 id="review-title" tabindex="-1">Looking good. Ready for clean?</h2><p class="section-subtitle">Check the little details before you make it official.</p>
+              <div class="review-block"><div class="review-title"><h3>Your contact & address</h3><button type="button" class="edit-button" data-edit="0">Edit</button></div><p id="review-name"></p><p id="review-contact"></p><p id="review-address"></p></div>
+              <div class="review-block"><div class="review-title"><h3>Your home</h3><button type="button" class="edit-button" data-edit="1">Edit</button></div><p id="review-home"></p></div>
+              <div class="review-block"><div class="review-title"><h3>Your cleaning date</h3><button type="button" class="edit-button" data-edit="2">Edit</button></div><p id="review-date"></p><p id="review-time"></p></div>
+              <div class="review-price"><span>One-time standard clean</span><strong id="review-total">$119</strong></div><p class="soft-note"><svg><use href="#i-lock"/></svg>This is a booking preview. No payment is needed.</p>
+            </section>
+          </div>
+          <div class="form-footer"><span class="footer-hint" id="first-step-hint"><svg><use href="#i-shield"/></svg>A clean home, without the hassle.</span><button type="button" class="button-back" id="back-button" hidden><svg><use href="#i-left"/></svg>Back</button><button class="button-primary" type="submit"><span id="continue-label">Continue</span><svg><use href="#i-arrow"/></svg></button></div>
+        </form>
+        <div class="success fade-in" id="success" hidden role="status"><div class="success-icon"><svg><use href="#i-check"/></svg></div><p class="section-kicker">A little less on your plate</p><h2>Your clean is all planned.</h2><p>More time for the things you love. Here’s a look at your booking.</p><div class="success-detail"><strong id="success-date"></strong><small id="success-time"></small><small id="success-address"></small></div><button type="button" class="button-primary" id="start-over">Book another clean<svg><use href="#i-arrow"/></svg></button><p class="demo-note">This is a demo. No real appointment has been made<br>and no confirmation email has been sent.</p></div>
+      </section>
+      <aside class="sidebar" aria-label="Your booking summary">
+        <section class="summary-card"><div class="summary-photo"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=760&q=85" alt="A sunlit living room with a soft sofa, natural wood, and green plants"><span class="photo-tag"><svg><use href="#i-spark"/></svg>A fresh space. A fresh feeling.</span></div><div class="summary-content"><div class="summary-heading"><h2>Your clean, at a glance.</h2><span class="service-tag">One-time</span></div><div class="summary-row"><svg><use href="#i-home"/></svg><span id="summary-home">2 bedrooms · 1 bathroom</span></div><div class="summary-row"><svg><use href="#i-calendar"/></svg><span id="summary-date" class="muted">Your perfect time, coming up</span></div><div class="summary-row"><svg><use href="#i-leaf"/></svg><span>Supplies & a little TLC included</span></div><div class="summary-total"><span class="summary-total-label">Estimated total</span><span class="price"><span id="summary-price">$119</span><small>/ clean</small></span></div><p class="price-note">No surprises. Just a sparkling home.</p></div></section>
+        <div class="promise-card"><svg><use href="#i-shield"/></svg><div><h3>The Spruce promise</h3><p>Thoughtful, vetted cleaners. A clean you’ll love.<br>Not quite right? We’ll make it right.</p></div></div>
+        <div class="testimonial"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>A little help, loved by <strong>2,000+ happy homes.</strong></p><span class="review-count">4.9 / 5 from our community</span></div>
+      </aside>
+    </div>
+    <p class="bottom-note"><svg><use href="#i-leaf"/></svg>Kind to your home. A little kinder to the planet.</p>
+  </main>
+  <footer class="site-footer"><span>© <span id="year">2026</span> Spruce. Fresh starts, made simple.</span><span class="footer-wordmark">Good people.<span class="footer-dot">·</span>Clean homes.</span></footer>
+  <script>
+    (() => {
+      const $ = selector => document.querySelector(selector);
+      const $$ = selector => [...document.querySelectorAll(selector)];
+      let step = 0, reached = 0;
+      const home = { bedrooms: 2, bathrooms: 1 };
+      let selectedDate = null;
+      const today = new Date(); today.setHours(0, 0, 0, 0);
+      const firstAvailable = new Date(today); firstAvailable.setDate(today.getDate() + 1);
+      let month = new Date(firstAvailable.getFullYear(), firstAvailable.getMonth(), 1);
+      const lastMonth = new Date(today.getFullYear(), today.getMonth() + 3, 1);
+      const money = () => '$' + (69 + home.bedrooms * 15 + home.bathrooms * 20);
+      const plural = (n, word) => n + ' ' + word + (n === 1 ? '' : 's');
+      const homeText = () => plural(home.bedrooms, 'bedroom') + ' · ' + plural(home.bathrooms, 'bathroom');
+      const dateText = (options = { weekday: 'long', month: 'long', day: 'numeric' }) => selectedDate ? selectedDate.toLocaleDateString('en-US', options) : '';
+      function updateSummary() {
+        $('#summary-home').textContent = homeText();
+        $('#summary-price').textContent = money();
+        $('#review-total').textContent = money();
+        $('#summary-date').textContent = selectedDate ? dateText({ month: 'short', day: 'numeric' }) + ($('input[name="time"]:checked') ? ' · ' + $('input[name="time"]:checked').value : '') : 'Your perfect time, coming up';
+        $('#summary-date').classList.toggle('muted', !selectedDate);
+      }
+      function renderReview() {
+        const values = new FormData($('#booking-form'));
+        $('#review-name').textContent = values.get('firstName').trim() + ' ' + values.get('lastName').trim();
+        $('#review-contact').textContent = values.get('email') + ' · ' + values.get('phone');
+        $('#review-address').textContent = values.get('address') + (values.get('apt') ? ', ' + values.get('apt') : '') + ' · ' + values.get('zip');
+        $('#review-home').textContent = homeText() + ' · ' + values.get('pets');
+        $('#review-date').textContent = dateText({ weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+        $('#review-time').textContent = values.get('time') + ' arrival';
+      }
+      function goTo(next) {
+        step = next; reached = Math.max(reached, next);
+        $$('[data-panel]').forEach((panel, i) => { panel.hidden = i !== step; panel.classList.toggle('fade-in', i === step); });
+        $$('.step-tab').forEach((tab, i) => {
+          tab.classList.toggle('active', i === step); tab.classList.toggle('done', i < step); tab.disabled = i > reached;
+          if (i === step) tab.setAttribute('aria-current', 'step'); else tab.removeAttribute('aria-current');
+          tab.querySelector('.step-circle').innerHTML = i < step ? '<svg aria-hidden="true"><use href="#i-check"/></svg>' : i + 1;
+        });
+        $$('.step-line').forEach((line, i) => line.classList.toggle('done', i < step));
+        $('#first-step-hint').hidden = step !== 0;
+        $('#back-button').hidden = step === 0;
+        $('#continue-label').textContent = step === 3 ? 'Confirm booking' : 'Continue';
+        if (step === 3) renderReview();
+        const heading = $('[data-panel="' + step + '"] h2'); heading.focus({ preventScroll: true });
+        if (window.innerWidth <= 700) $('.booking-card').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+      }
+      function validateContact() {
+        for (const input of $$('[data-panel="0"] input')) {
+          if (input.required && !input.value.trim()) input.value = '';
+          if (!input.checkValidity()) { if (step !== 0) goTo(0); input.reportValidity(); return false; }
+        }
+        return true;
+      }
+      function validateSchedule() {
+        const valid = !!selectedDate && !!$('input[name="time"]:checked');
+        $('#schedule-error').hidden = valid;
+        if (!valid) { if (step !== 2) goTo(2); if (!selectedDate) $('#calendar-grid button:not(:disabled)')?.focus(); else $('input[name="time"]').focus(); }
+        return valid;
+      }
+      // Validate each visible step ourselves so hidden required inputs never block navigation.
+      $('#booking-form').noValidate = true;
+      $('#booking-form').addEventListener('submit', event => {
+        event.preventDefault();
+        if (step === 0 && !validateContact()) return;
+        if (step === 2 && !validateSchedule()) return;
+        if (step < 3) { goTo(step + 1); return; }
+        if (!validateContact() || !validateSchedule()) return;
+        $('#success-date').textContent = dateText({ weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+        $('#success-time').textContent = $('input[name="time"]:checked').value + ' arrival · ' + money();
+        $('#success-address').textContent = $('#review-address').textContent;
+        $('#booking-form').hidden = true; $('.progress').hidden = true; $('#success').hidden = false;
+        $('#success h2').setAttribute('tabindex', '-1'); $('#success h2').focus({ preventScroll: true });
+        if (window.innerWidth <= 700) $('.booking-card').scrollIntoView({ block: 'start' });
+      });
+      $('#back-button').addEventListener('click', () => goTo(step - 1));
+      $$('.step-tab').forEach(tab => tab.addEventListener('click', () => { const target = Number(tab.dataset.step); if (target > step && step === 0 && !validateContact()) return; if (target === 3 && !validateSchedule()) return; goTo(target); }));
+      $$('[data-edit]').forEach(button => button.addEventListener('click', () => goTo(Number(button.dataset.edit))));
+      function updateCounters() {
+        for (const key of ['bedrooms', 'bathrooms']) {
+          $('#' + key + '-count').value = home[key];
+          $$('[data-counter="' + key + '"]').forEach(button => { button.disabled = Number(button.dataset.delta) < 0 ? home[key] <= (key === 'bedrooms' ? 0 : 1) : home[key] >= 8; });
+        }
+        updateSummary();
+      }
+      $$('[data-counter]').forEach(button => button.addEventListener('click', () => { const key = button.dataset.counter; home[key] = Math.max(key === 'bedrooms' ? 0 : 1, Math.min(8, home[key] + Number(button.dataset.delta))); updateCounters(); }));
+      function renderCalendar() {
+        $('#calendar-month').textContent = month.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        $('#prev-month').disabled = month <= new Date(firstAvailable.getFullYear(), firstAvailable.getMonth(), 1);
+        $('#next-month').disabled = month >= lastMonth;
+        const grid = $('#calendar-grid'); grid.replaceChildren();
+        ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].forEach(day => { const label = document.createElement('span'); label.className = 'weekday'; label.textContent = day; grid.append(label); });
+        for (let i = 0; i < month.getDay(); i++) { const spacer = document.createElement('span'); spacer.setAttribute('aria-hidden', 'true'); grid.append(spacer); }
+        const days = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
+        for (let day = 1; day <= days; day++) {
+          const date = new Date(month.getFullYear(), month.getMonth(), day);
+          const button = document.createElement('button'); button.type = 'button'; button.className = 'calendar-day'; button.textContent = day;
+          button.disabled = date < firstAvailable;
+          button.setAttribute('aria-label', date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }));
+          const selected = selectedDate?.getTime() === date.getTime(); button.classList.toggle('selected', selected); button.setAttribute('aria-pressed', String(selected));
+          button.classList.toggle('today', date.getTime() === today.getTime());
+          button.addEventListener('click', () => { selectedDate = date; $('#schedule-error').hidden = true; renderCalendar(); updateSummary(); $('#calendar-grid .selected').focus(); });
+          grid.append(button);
+        }
+      }
+      $('#prev-month').addEventListener('click', () => { month = new Date(month.getFullYear(), month.getMonth() - 1, 1); renderCalendar(); });
+      $('#next-month').addEventListener('click', () => { month = new Date(month.getFullYear(), month.getMonth() + 1, 1); renderCalendar(); });
+      $$('input[name="time"]').forEach(input => input.addEventListener('change', () => { $('#schedule-error').hidden = true; updateSummary(); }));
+      $('#start-over').addEventListener('click', () => {
+        $('#booking-form').reset(); home.bedrooms = 2; home.bathrooms = 1; selectedDate = null; reached = 0;
+        month = new Date(firstAvailable.getFullYear(), firstAvailable.getMonth(), 1);
+        $('#success').hidden = true; $('#booking-form').hidden = false; $('.progress').hidden = false; $('#schedule-error').hidden = true;
+        updateCounters(); renderCalendar(); goTo(0);
+      });
+      $('#year').textContent = today.getFullYear(); updateCounters(); renderCalendar();
+    })();
+  </script>
+</body>
+</html>

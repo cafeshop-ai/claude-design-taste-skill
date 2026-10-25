@@ -1,0 +1,3 @@
+{"case": "landing-page", "condition": "baseline", "run": 2, "skill_ref": "",
+ "codex": "codex-cli 0.159.2", "model": "gpt-6.1-sol", "effort": "high",
+ "exit_status": 0, "seconds": 364}

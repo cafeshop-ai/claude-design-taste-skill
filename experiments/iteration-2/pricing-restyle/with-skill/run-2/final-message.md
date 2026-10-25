@@ -1,0 +1,3 @@
+Updated [index.html](index.html) with restrained blue accents, editorial typography, consistent spacing, and aligned pricing cards so plans are easier to compare. Removed gradients, emoji, and heavy shadows; added responsive layouts, keyboard focus states, working billing controls, and expandable FAQs.
+
+Existing prices and policies are preserved. HTML, contrast, and billing checks passed; visual verification was blocked by Chromium’s environment restrictions.

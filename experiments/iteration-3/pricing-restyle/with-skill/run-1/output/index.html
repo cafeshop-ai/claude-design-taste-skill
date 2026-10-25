@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Compare Marginalia plans for personal notes and shared notebooks. Start free or choose Pro and Team for more room to think.">
+<meta name="theme-color" content="#f8f7f3">
+<title>Pricing – Marginalia</title>
+<style>
+:root {
+  --paper: #f8f7f3; --surface: #fffefa; --ink: #292d29; --muted: #65685f;
+  --line: #dcded4; --control-line: #878b7e; --accent: #a3432c;
+  --accent-hover: #813520; --accent-soft: #f4e9e2; --accent-line: #d9c3b7;
+  --serif: Georgia, 'Times New Roman', serif; --sans: 'Segoe UI', Arial, sans-serif;
+  --text-sm: .875rem; --text-base: 1rem; --text-lg: 1.125rem; --text-xl: 1.5rem;
+  --text-heading: 2.5rem; --text-price: 3.5rem; --text-display: clamp(2.75rem, 5vw, 4.5rem);
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s6: 24px;
+  --s8: 32px; --s12: 48px; --s16: 64px; --s24: 96px;
+  --radius: 6px; --width: 1120px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: var(--text-base)/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+button { font: inherit; }
+a, button, summary { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.container { width: min(var(--width), calc(100% - var(--s16))); margin-inline: auto; }
+.skip-link { position: absolute; top: -80px; left: var(--s4); padding: var(--s3) var(--s4); background: var(--ink); color: var(--surface); z-index: 2; }
+.skip-link:focus { top: var(--s4); }
+.site-header { border-bottom: 1px solid var(--line); }
+.nav { min-height: 96px; display: flex; align-items: center; gap: var(--s12); }
+.brand { display: inline-flex; align-items: center; gap: var(--s3); text-decoration: none; font: 1.75rem/1 var(--serif); letter-spacing: -.04em; }
+.brand-mark { width: 28px; height: 32px; color: var(--accent); flex-shrink: 0; }
+.nav-links, .nav-actions { display: flex; align-items: center; gap: var(--s8); }
+.nav-actions { margin-left: auto; gap: var(--s6); }
+.nav-link { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--text-sm); text-decoration: none; color: var(--muted); }
+.nav-link:hover, .nav-link[aria-current] { color: var(--ink); }
+.nav-link[aria-current] { text-decoration: underline; text-underline-offset: 8px; text-decoration-color: var(--accent); }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: var(--s3); min-height: 48px; padding: var(--s3) var(--s6); border: 1px solid var(--control-line); border-radius: var(--radius); background: transparent; color: var(--ink); text-decoration: none; font-size: var(--text-sm); font-weight: 600; transition: background-color 150ms, border-color 150ms; }
+.button:hover { background: var(--line); border-color: var(--ink); }
+.button:active { background: var(--control-line); }
+.button-dark { background: var(--ink); border-color: var(--ink); color: var(--surface); }
+.button-dark:hover { background: var(--muted); border-color: var(--muted); }
+.hero { display: grid; grid-template-columns: 1fr 320px; gap: var(--s12); align-items: end; padding-block: var(--s16) var(--s12); }
+h1, h2, h3, p { margin: 0; }
+h1 { font: 400 var(--text-display)/1.08 var(--serif); letter-spacing: -.045em; text-wrap: balance; }
+.hero p { max-width: 32ch; color: var(--muted); }
+.billing-bar { display: flex; justify-content: space-between; align-items: center; gap: var(--s6); margin-bottom: var(--s6); }
+.billing-label { color: var(--muted); font-size: var(--text-sm); }
+.billing-toggle { display: inline-flex; padding: var(--s1); gap: var(--s1); border: 1px solid var(--control-line); border-radius: var(--radius); }
+.billing-toggle button { min-height: 44px; padding: var(--s2) var(--s4); border: 0; border-radius: 3px; background: transparent; color: var(--muted); cursor: pointer; font-size: var(--text-sm); transition: background-color 150ms, color 150ms; }
+.billing-toggle button:hover { background: var(--line); color: var(--ink); }
+.billing-toggle button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+.saving { color: var(--accent); margin-left: var(--s2); font-size: var(--text-sm); }
+[aria-pressed="true"] .saving { color: inherit; }
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); }
+.plan { padding: var(--s8); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); display: flex; flex-direction: column; }
+.plan.popular { border-color: var(--accent); background: var(--accent-soft); }
+.plan-heading { display: flex; align-items: center; justify-content: space-between; gap: var(--s2); min-height: 32px; }
+.plan h2 { font-size: var(--text-xl); font-weight: 500; letter-spacing: -.03em; }
+.badge { color: var(--accent); font-size: .75rem; font-weight: 600; border: 1px solid var(--accent); padding: var(--s1) var(--s2); border-radius: 3px; white-space: nowrap; }
+.description { color: var(--muted); font-size: var(--text-sm); margin-top: var(--s2); }
+.price { display: flex; align-items: baseline; gap: var(--s2); margin-top: var(--s8); font-variant-numeric: tabular-nums; }
+.amount { font-size: var(--text-price); line-height: 1.15; font-weight: 500; letter-spacing: -.065em; }
+.currency { font-size: var(--text-xl); margin-right: var(--s1); vertical-align: super; letter-spacing: 0; }
+.period { font-size: var(--text-sm); color: var(--muted); }
+.billing-note { min-height: 21px; margin-top: var(--s2); color: var(--muted); font-size: var(--text-sm); }
+.plan .button { width: 100%; margin-top: var(--s6); }
+.button-primary { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.button-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.button-primary:active { background: var(--ink); }
+.arrow { margin-left: auto; font-weight: 400; font-size: var(--text-lg); }
+.plan ul { list-style: none; padding: var(--s6) 0 0; margin: var(--s6) 0 0; border-top: 1px solid var(--line); }
+.popular ul { border-color: var(--accent-line); }
+.plan li { display: flex; align-items: baseline; gap: var(--s3); padding-block: var(--s2); font-size: var(--text-sm); }
+.plan li::before { content: '✓'; width: 16px; flex-shrink: 0; font-size: var(--text-sm); }
+.plan li.unavailable { color: var(--muted); }
+.plan li.unavailable::before { content: '−'; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.features { padding-block: var(--s24); }
+.features > h2 { font: 400 var(--text-heading)/1.2 var(--serif); letter-spacing: -.035em; margin-bottom: var(--s8); }
+.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s12); }
+.feature { border-top: 1px solid var(--line); padding-top: var(--s6); }
+.feature svg { width: 24px; height: 24px; margin-bottom: var(--s4); color: var(--muted); }
+.feature h3 { font-size: var(--text-base); font-weight: 600; }
+.feature p { color: var(--muted); font-size: var(--text-sm); margin-top: var(--s2); max-width: 32ch; }
+.faq { display: grid; grid-template-columns: 1fr 1.6fr; gap: var(--s16); padding-block: 0 var(--s24); }
+.faq h2 { font: 400 var(--text-heading)/1.2 var(--serif); letter-spacing: -.035em; max-width: 12ch; }
+details { border-top: 1px solid var(--line); }
+details:last-child { border-bottom: 1px solid var(--line); }
+summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: var(--s6); padding-block: var(--s6); cursor: pointer; font-weight: 500; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; font-size: var(--text-xl); font-weight: 400; color: var(--muted); line-height: 1; }
+details[open] summary::after { content: '−'; }
+summary:hover { color: var(--accent); }
+details p { padding: 0 var(--s8) var(--s6) 0; color: var(--muted); font-size: var(--text-sm); max-width: 65ch; }
+.site-footer { border-top: 1px solid var(--line); }
+.footer-content { display: flex; justify-content: space-between; align-items: center; gap: var(--s6); padding-block: var(--s8); }
+.footer-content .brand { font-size: var(--text-xl); }
+.copyright { color: var(--muted); font-size: .75rem; }
+@media (max-width: 1100px) {
+  .nav { gap: var(--s8); }
+  .nav-links { gap: var(--s6); }
+  .plan { padding: var(--s6); }
+  .plan-heading { flex-wrap: wrap; align-content: start; min-height: 68px; }
+  .description, .billing-note { min-height: 42px; }
+  .hero { grid-template-columns: 1fr 280px; }
+  .price { flex-direction: column; gap: 0; }
+}
+@media (max-width: 760px) {
+  .container { width: calc(100% - var(--s12)); }
+  .nav { flex-wrap: wrap; gap: 0; padding-top: var(--s4); }
+  .brand { font-size: var(--text-xl); }
+  .nav-actions { gap: var(--s4); }
+  .nav-actions .button { min-height: 44px; padding-inline: var(--s3); }
+  .nav-links { order: 3; width: 100%; gap: var(--s8); padding-block: var(--s2); }
+  .hero { grid-template-columns: 1fr; gap: var(--s6); padding-block: var(--s12) var(--s8); }
+  .hero p { max-width: 45ch; }
+  .billing-bar { align-items: flex-start; flex-direction: column; gap: var(--s3); }
+  .billing-toggle { width: 100%; }
+  .billing-toggle button { flex: 1; padding-inline: var(--s3); }
+  .plans { grid-template-columns: 1fr; }
+  .plan { padding: var(--s8); }
+  .plan-heading { min-height: 32px; }
+  .description, .billing-note { min-height: 21px; }
+  .price { flex-direction: row; gap: var(--s2); }
+  .features { padding-block: var(--s16); }
+  .features > h2, .faq h2 { font-size: 2rem; }
+  .feature-grid { grid-template-columns: 1fr; gap: var(--s8); }
+  .feature { display: grid; grid-template-columns: 24px 1fr; column-gap: var(--s4); }
+  .feature svg { grid-row: span 2; margin: 0; }
+  .feature p { max-width: 45ch; }
+  .faq { grid-template-columns: 1fr; gap: var(--s8); padding-bottom: var(--s16); }
+  .faq h2 { max-width: none; }
+  .footer-content { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="container nav" aria-label="Main navigation">
+    <a class="brand" href="#" aria-label="Marginalia home">
+      <svg class="brand-mark" viewBox="0 0 28 32" fill="none" aria-hidden="true"><path d="M5 3h19v26H5zM9 3v26M13 10h7M13 15h7M13 20h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Marginalia
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="#features">Features</a>
+      <a class="nav-link" href="#pricing" aria-current="page">Pricing</a>
+      <a class="nav-link" href="#">Blog</a>
+    </div>
+    <div class="nav-actions">
+      <a class="nav-link" href="#">Log in</a>
+      <a class="button button-dark" href="#">Sign up free <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+</header>
+<main class="container" id="main">
+  <section id="pricing" aria-labelledby="pricing-heading">
+    <div class="hero">
+      <h1 id="pricing-heading">A plan for every<br>notebook.</h1>
+      <div>
+        <p>From your first note to your team’s shared ideas. Choose the space you need.</p>
+      </div>
+    </div>
+    <div class="billing-bar">
+      <p class="billing-label">Plans and pricing</p>
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" aria-pressed="true" data-billing="monthly">Monthly</button>
+        <button type="button" aria-pressed="false" data-billing="yearly">Yearly <span class="saving">Save 20%</span></button>
+      </div>
+    </div>
+    <div class="plans">
+      <article class="plan" aria-labelledby="starter-heading">
+        <div class="plan-heading"><h2 id="starter-heading">Starter</h2></div>
+        <p class="description">For your everyday notes.</p>
+        <div class="price"><span class="amount"><span class="currency">$</span>0</span><span class="period">/ month</span></div>
+        <p class="billing-note">Free plan</p>
+        <a class="button" href="#" aria-label="Get started with Starter">Get started <span class="arrow" aria-hidden="true">→</span></a>
+        <ul>
+          <li>Up to 100 notes</li><li>Sync across 2 devices</li><li>Basic search</li>
+          <li class="unavailable"><span><span class="sr-only">Not included: </span>Offline access</span></li>
+          <li class="unavailable"><span><span class="sr-only">Not included: </span>Shared notebooks</span></li>
+        </ul>
+      </article>
+      <article class="plan popular" aria-labelledby="pro-heading">
+        <div class="plan-heading"><h2 id="pro-heading">Pro</h2><span class="badge">Most popular</span></div>
+        <p class="description">More room for deeper thinking.</p>
+        <div class="price"><span class="amount"><span class="currency">$</span><span data-price="8">8</span></span><span class="period">/ month</span></div>
+        <p class="billing-note" data-note="pro">Billed monthly</p>
+        <a class="button button-primary" href="#" aria-label="Try Pro free for 14 days">Try Pro free <span class="arrow" aria-hidden="true">→</span></a>
+        <ul>
+          <li>Unlimited notes</li><li>Unlimited devices</li><li>Full-text search inside PDFs</li><li>Offline access</li>
+          <li class="unavailable"><span><span class="sr-only">Not included: </span>Shared notebooks</span></li>
+        </ul>
+      </article>
+      <article class="plan" aria-labelledby="team-heading">
+        <div class="plan-heading"><h2 id="team-heading">Team</h2></div>
+        <p class="description">A shared space to think together.</p>
+        <div class="price"><span class="amount"><span class="currency">$</span><span data-price="14">14</span></span><span class="period">/ user / month</span></div>
+        <p class="billing-note" data-note="team">Billed monthly</p>
+        <a class="button" href="#" aria-label="Get started with Team">Get started <span class="arrow" aria-hidden="true">→</span></a>
+        <ul><li>Everything in Pro</li><li>Shared notebooks</li><li>Admin controls</li><li>Priority support</li><li>Single sign-on (SSO)</li></ul>
+      </article>
+    </div>
+    <p class="sr-only" role="status" id="billing-status"></p>
+  </section>
+  <section class="features" id="features" aria-labelledby="features-heading">
+    <h2 id="features-heading">Search, sync, and security.</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg>
+        <h3>Find it fast</h3><p>Quick search keeps your notes within reach.</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 15v2"/></svg>
+        <h3>Keep it private</h3><p>Your notes are encrypted and kept secure.</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8a8 8 0 0 0-14-2L3 9m0-5v5h5M4 16a8 8 0 0 0 14 2l3-3m0 5v-5h-5"/></svg>
+        <h3>Pick up anywhere</h3><p>Keep your notes in sync across your devices.</p>
+      </div>
+    </div>
+  </section>
+  <section class="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Questions<br>about billing.</h2>
+    <div>
+      <details><summary>Can I cancel anytime?</summary><p>Yes. You can cancel your subscription at any time, no questions asked.</p></details>
+      <details><summary>Is there a free trial for Pro?</summary><p>Yes. Pro comes with a 14-day free trial. No credit card required.</p></details>
+      <details><summary>Do you offer student discounts?</summary><p>Students get 50% off Pro with a valid school email.</p></details>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-content"><a class="brand" href="#">Marginalia</a><p class="copyright">© 2026 Marginalia Inc. All rights reserved.</p></div>
+</footer>
+<script>
+const billingButtons = document.querySelectorAll('[data-billing]');
+const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+billingButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const yearly = button.dataset.billing === 'yearly';
+    billingButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    document.querySelectorAll('[data-price]').forEach(item => {
+      const monthlyPrice = Number(item.dataset.price);
+      item.textContent = yearly ? (monthlyPrice * .8).toFixed(2) : monthlyPrice;
+    });
+    document.querySelector('[data-note="pro"]').textContent = yearly ? currency.format(8 * .8 * 12) + ' billed yearly' : 'Billed monthly';
+    document.querySelector('[data-note="team"]').textContent = yearly ? currency.format(14 * .8 * 12) + ' per user, billed yearly' : 'Billed monthly';
+    document.querySelector('#billing-status').textContent = yearly ? 'Yearly billing selected. Monthly rates include a 20% discount. Pro is $76.80 per year; Team is $134.40 per user per year.' : 'Monthly billing selected. Pro is $8 per month; Team is $14 per user per month.';
+  });
+});
+</script>
+</body>
+</html>

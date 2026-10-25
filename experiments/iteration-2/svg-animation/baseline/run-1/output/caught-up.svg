@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">You're all caught up</title>
+  <desc id="description">A gently floating envelope with a green checkmark. All your email is taken care of.</desc>
+  <style>
+    .envelope { animation: float 6s ease-in-out infinite; }
+    .shadow { transform-origin: 120px 148px; animation: shadow 6s ease-in-out infinite; }
+    .halo { animation: breathe 8s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    @keyframes shadow {
+      0%, 100% { transform: scaleX(1); opacity: .65; }
+      50% { transform: scaleX(.9); opacity: .4; }
+    }
+    @keyframes breathe {
+      0%, 100% { opacity: .75; }
+      50% { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .envelope, .shadow, .halo { animation: none; }
+    }
+  </style>
+  <circle class="halo" cx="120" cy="86" r="62" fill="#F4F2FC"/>
+  <g stroke="#D9D3EE" stroke-width="2" stroke-linecap="round">
+    <path d="M46 84h6m-3-3v6"/>
+    <path d="M185 48h6m-3-3v6"/>
+  </g>
+  <circle cx="179" cy="124" r="2.5" fill="#D9D3EE"/>
+  <circle cx="76" cy="39" r="2" fill="#D9D3EE"/>
+  <ellipse class="shadow" cx="120" cy="148" rx="42" ry="4" fill="#E6E3F0" opacity=".65"/>
+  <g class="envelope">
+    <path d="m66 82 47-34a12 12 0 0 1 14 0l47 34v43a9 9 0 0 1-9 9H75a9 9 0 0 1-9-9Z" fill="#E5DFF7" stroke="#9A8BBE" stroke-width="1.5" stroke-linejoin="round"/>
+    <rect x="80" y="60" width="80" height="62" rx="6" fill="#FFF" stroke="#C4B9DE" stroke-width="1.5"/>
+    <path d="M96 76h31m-31 10h46" stroke="#E1DBEF" stroke-width="3" stroke-linecap="round"/>
+    <path d="m66 83 48 30a11 11 0 0 0 12 0l48-30v42a9 9 0 0 1-9 9H75a9 9 0 0 1-9-9Z" fill="#F4F0FC" stroke="#9A8BBE" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="m69 130 34-25m68 25-34-25" stroke="#C4B9DE" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="164" cy="69" r="19" fill="#FFF"/>
+    <circle cx="164" cy="69" r="15.5" fill="#E0F3EB" stroke="#78B69D" stroke-width="1.5"/>
+    <path d="m157 69 4.5 4.5L171 64" stroke="#38876A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

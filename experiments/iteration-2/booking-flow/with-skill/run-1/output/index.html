@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fb">
+<title>Book a home clean · neatly</title>
+<style>
+:root{--canvas:#f7f8fb;--surface:#fff;--tint:#f0f4fc;--text:#202b40;--muted:#626d80;--accent:#315cdb;--accent-hover:#2348b9;--accent-soft:#e9efff;--line:#e2e6ef;--control:#8993a5;--danger:#b42332;--danger-soft:#fff3f4;--radius:12px;--small-radius:8px;--s1:4px;--s2:8px;--s3:12px;--s4:16px;--s6:24px;--s8:32px;--s12:48px;--s16:64px;--ease:180ms ease-out}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--text);font-family:"Avenir Next","Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+button,input,select,textarea{touch-action:manipulation}
+button{transition:background var(--ease),border-color var(--ease),color var(--ease)}
+button:disabled{cursor:default}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+button:active:not(:disabled){transform:translateY(1px)}
+svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+[hidden]{display:none!important}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance}
+button{color:inherit}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.skip{position:absolute;top:-100px;left:16px;background:var(--surface);padding:12px;z-index:5}
+.skip:focus{top:16px}
+.site-header{max-width:1184px;margin:auto;padding:32px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:8px;font-size:30px;font-weight:750;letter-spacing:-1.5px;line-height:1}
+.brand svg{width:34px;height:34px;color:var(--accent);stroke-width:2}
+.header-note{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.header-note svg{width:16px;height:16px}
+main{max-width:1120px;margin:32px auto 64px;padding:0 24px}
+.page-heading{margin-bottom:32px;display:flex;align-items:end;justify-content:space-between;gap:24px}
+h1{font-size:36px;line-height:1.2;letter-spacing:-1.4px;font-weight:650}
+.page-heading p{margin-top:12px;color:var(--muted)}
+.progress-caption{font-size:14px;color:var(--muted);white-space:nowrap;padding-bottom:4px}
+.booking-shell{border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden;box-shadow:0 12px 40px #243c6b06}
+.stepper{margin:0;padding:28px 40px;list-style:none;display:flex;align-items:center;border-bottom:1px solid var(--line);gap:16px}
+.stepper li{display:flex;align-items:center;flex:1;min-width:0;gap:16px}
+.stepper li:last-child{flex:0 0 auto}
+.stepper li:not(:last-child)::after{content:"";height:1px;flex:1;background:var(--line)}
+.step-button{padding:0;min-height:44px;border:0;background:transparent;display:flex;align-items:center;gap:12px;color:var(--muted);font-size:14px;font-weight:500;white-space:nowrap}
+.step-button:disabled{opacity:1}
+.step-circle{width:32px;height:32px;border:1px solid var(--control);border-radius:50%;display:grid;place-items:center;font-size:13px;background:var(--surface);flex-shrink:0}
+.step-circle svg{width:16px;height:16px}
+.step-button[aria-current="step"]{color:var(--accent);font-weight:650}
+.step-button[aria-current="step"] .step-circle{background:var(--accent);border-color:var(--accent);color:var(--surface);box-shadow:0 0 0 5px var(--accent-soft)}
+.step-button.complete{color:var(--text)}
+.step-button.complete .step-circle{background:var(--accent-soft);border-color:var(--accent-soft);color:var(--accent)}
+.booking-body{display:grid;grid-template-columns:minmax(0,1fr) 320px}
+.form-area{min-width:0;padding:40px 48px 32px;display:flex;flex-direction:column;min-height:570px}
+.panel{flex:1;animation:appear var(--ease)}
+.step-kicker{font-size:12px;font-weight:650;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.panel h2{font-size:28px;line-height:1.25;letter-spacing:-.8px;font-weight:650;outline:none}
+.intro{margin-top:12px;color:var(--muted);font-size:15px}
+.fields{display:grid;gap:24px;margin-top:32px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.field{min-width:0}
+.field>label,.field-label,legend{display:block;font-weight:600;font-size:14px;margin-bottom:8px}
+.optional{color:var(--muted);font-weight:400}
+input:not([type=radio]),select,textarea{width:100%;border:1px solid var(--control);border-radius:var(--small-radius);padding:13px 16px;min-height:50px;background:var(--surface);color:var(--text);transition:border-color var(--ease),box-shadow var(--ease)}
+input::placeholder,textarea::placeholder{color:var(--muted);opacity:1}
+input:hover,select:hover,textarea:hover{border-color:var(--text)}
+input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);outline:none}
+input[aria-invalid=true],select[aria-invalid=true]{border-color:var(--danger);background:var(--danger-soft)}
+.hint{font-size:13px;color:var(--muted);margin-top:8px}
+.error{font-size:13px;color:var(--danger);margin-top:8px}
+.error:empty{display:none}
+.actions{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.primary{background:var(--accent);color:var(--surface);border:1px solid var(--accent);border-radius:var(--small-radius);padding:14px 20px;font-size:14px;font-weight:600;min-height:50px;display:flex;align-items:center;justify-content:center;gap:16px;margin-left:auto}
+.primary svg{width:18px;height:18px}
+.primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.back,.text-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;border:0;background:transparent;color:var(--muted);padding:8px 0;font-size:14px}
+.back svg{width:16px;height:16px}
+.back:hover,.text-button:hover{color:var(--accent)}
+.back:disabled{visibility:hidden}
+.summary-panel{background:var(--tint);border-left:1px solid var(--line);padding:40px 32px;display:flex;flex-direction:column}
+.summary-content{display:flex;flex-direction:column;flex:1}
+.summary-heading{display:flex;align-items:center;gap:12px;margin-bottom:32px}
+.summary-heading svg{color:var(--accent);width:24px;height:24px}
+.summary-heading h2{font-size:18px;letter-spacing:-.3px;font-weight:650}
+.summary-item{padding:24px 0;border-bottom:1px solid #dce3f0;display:flex;gap:12px}
+.summary-heading+.summary-item{padding-top:0}
+.summary-item:last-of-type{border:0}
+.summary-item>svg{margin-top:2px;width:20px;height:20px;color:var(--muted)}
+.summary-item h3{font-size:13px;font-weight:500;color:var(--muted);margin-bottom:6px}
+.summary-value{font-size:14px;font-weight:500;overflow-wrap:anywhere;white-space:pre-line}
+.summary-value.empty{color:var(--muted);font-weight:400}
+.summary-note{margin-top:auto;padding-top:40px;display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--muted)}
+.summary-note svg{width:16px;height:16px;margin-top:1px}
+.page-footer{display:flex;gap:8px;align-items:center;justify-content:center;font-size:12px;color:var(--muted);margin-top:24px}
+.page-footer svg{width:14px;height:14px}
+.counter-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.counter-row:first-child{padding-top:0}
+.counter-label{font-size:15px;font-weight:600}
+.counter-label span{display:block;color:var(--muted);font-size:13px;font-weight:400;margin-top:4px}
+.counter{display:flex;align-items:center;gap:12px}
+.counter button{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--control);border-radius:var(--small-radius);background:var(--surface)}
+.counter button:hover:not(:disabled){background:var(--accent-soft);border-color:var(--accent)}
+.counter button:disabled{opacity:.4}
+.counter svg{width:16px;height:16px}
+.counter output{min-width:24px;text-align:center;font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}
+.pet-group{border:0;padding:0;margin:24px 0 0}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.choice{position:relative;cursor:pointer}
+.choice input{position:absolute;opacity:0;width:1px;height:1px}
+.choice span{border:1px solid var(--control);border-radius:var(--small-radius);padding:12px 16px;min-height:48px;display:flex;align-items:center;justify-content:center;font-size:14px;gap:8px}
+.choice input:checked+span{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);font-weight:600}
+.choice input:checked+span::after{content:'✓';font-size:14px}
+.choice input:focus-visible+span{outline:3px solid var(--accent);outline-offset:4px}
+.choice:hover span{border-color:var(--accent)}
+.pet-notes{margin-top:16px}
+.calendar{margin-top:28px}
+.month-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.month-header h3{font-size:16px;font-weight:600}
+.month-buttons{display:flex;gap:8px}
+.icon-button{border:1px solid var(--control);border-radius:var(--small-radius);background:var(--surface);width:44px;height:44px;display:grid;place-items:center}
+.icon-button svg{width:18px;height:18px}
+.icon-button:hover:not(:disabled){background:var(--accent-soft);border-color:var(--accent)}
+.icon-button:disabled{opacity:.35}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.weekday{text-align:center;color:var(--muted);font-size:12px;padding:4px 0 8px}
+.day{min-height:44px;border:1px solid transparent;background:transparent;border-radius:var(--small-radius);font-size:14px;font-variant-numeric:tabular-nums}
+.day:hover:not(:disabled){background:var(--accent-soft);border-color:var(--accent)}
+.day:disabled{color:var(--muted);opacity:.45}
+.day.today{border-color:var(--control)}
+.day.selected{background:var(--accent);color:var(--surface);font-weight:650}
+.day.selected:hover{background:var(--accent-hover)}
+.time-fieldset{padding:0;border:0;margin:24px 0 0}
+.time-fieldset .choices{grid-template-columns:repeat(3,1fr);gap:8px}
+.time-fieldset .choice span{padding:12px 8px;font-size:13px}
+.time-note{display:flex;align-items:center;gap:6px}
+.time-note svg{height:14px;width:14px}
+.review-section{padding:20px 0;border-bottom:1px solid var(--line)}
+.review-section:last-of-type{border-bottom:0}
+.review-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:16px}
+.review-header h3{font-size:14px;font-weight:600}
+.review-header button{color:var(--accent);font-size:13px;min-height:44px;padding:0 4px;border:0;background:transparent;text-decoration:underline;text-underline-offset:3px}
+.review-content{font-size:14px;color:var(--muted);overflow-wrap:anywhere;white-space:pre-line}
+.demo-note{background:var(--tint);padding:12px 16px;border-radius:var(--small-radius);font-size:13px;color:var(--muted);margin-top:24px}
+.success{padding:40px 0}
+.success-icon{width:64px;height:64px;background:var(--accent-soft);border-radius:50%;color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
+.success-icon svg{width:32px;height:32px}
+.success .intro{max-width:36ch}
+.success-details{margin-top:32px;padding:24px;background:var(--tint);border-radius:var(--radius);font-size:15px;white-space:pre-line}
+.success .text-button{margin-top:24px;color:var(--accent);text-decoration:underline;text-underline-offset:4px}
+.summary-disclosure{display:none}
+.summary-topline{display:none}
+body.finished .stepper{display:none}
+@keyframes appear{from{opacity:0;transform:translateY(5px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+@media(min-width:1200px){main{margin-top:40px}
+.page-heading{margin-bottom:40px}
+.form-area{min-height:596px}
+}
+
+@media(max-width:950px){.booking-body{grid-template-columns:minmax(0,1fr) 270px}
+.form-area{padding:32px}
+.summary-panel{padding:32px 24px}
+.stepper{padding:24px 32px;gap:12px}
+.stepper li{gap:12px}
+.step-button{gap:8px}
+.time-fieldset .choices{grid-template-columns:1fr}
+.page-heading h1{font-size:32px}
+}
+
+@media(max-width:760px){.site-header{padding:24px}
+.brand{font-size:28px}
+.brand svg{width:30px;height:30px}
+.header-note{font-size:12px}
+.header-note svg{display:none}
+main{margin:24px auto 32px;max-width:620px}
+.page-heading{margin-bottom:24px}
+.page-heading h1{font-size:28px;letter-spacing:-.8px}
+.page-heading p{font-size:14px;margin-top:8px}
+.progress-caption{display:none}
+.stepper{padding:20px 24px;gap:8px;align-items:flex-start}
+.stepper li{position:relative;display:block;text-align:center;flex:1!important}
+.stepper li:not(:last-child)::after{position:absolute;left:calc(50% + 24px);right:calc(-50% + 16px);top:16px}
+.step-button{width:100%;display:flex;flex-direction:column;gap:8px;font-size:11px;white-space:normal;line-height:1.3}
+.step-circle{width:32px;height:32px}
+.booking-body{display:flex;flex-direction:column}
+.form-area{padding:32px 24px 24px;min-height:0}
+.panel h2{font-size:25px}
+.intro{font-size:14px}
+.fields{gap:24px;margin-top:28px}
+.row{gap:12px}
+.actions{margin-top:32px;padding-top:24px}
+.primary{font-size:13px;padding:14px 16px;gap:12px}
+.summary-panel{padding:0;border-left:0;border-top:1px solid var(--line)}
+.summary-topline{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;width:100%;border:0;background:var(--tint);font-size:14px;font-weight:600;min-height:56px}
+.summary-topline>span{display:flex;gap:8px;align-items:center}
+.summary-topline svg{width:18px;height:18px;color:var(--accent)}
+.summary-topline>svg{transition:transform var(--ease)}
+.summary-topline[aria-expanded=true]>svg{transform:rotate(180deg)}
+.summary-content{display:none;padding:8px 24px 24px}
+.summary-panel.expanded .summary-content{display:block}
+.summary-heading{display:none}
+.summary-item{padding:16px 0}
+.summary-note{padding-top:16px}
+.time-fieldset .choices{grid-template-columns:repeat(3,1fr)}
+.time-fieldset .choice span{font-size:12px;padding:12px 4px}
+.page-footer{font-size:11px;margin-top:20px}
+.step-kicker{font-size:11px}
+.success{padding:8px 0 24px}
+}
+
+@media(max-width:374px){main{padding:0 16px}
+.site-header{padding:24px 16px}
+.form-area{padding:28px 20px 24px}
+.row{grid-template-columns:1fr}
+.stepper{padding:20px 12px}
+.time-fieldset .choices{grid-template-columns:1fr}
+.primary{gap:8px;padding:14px 12px}
+.actions{gap:8px}
+.day{min-height:44px}
+}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to booking</a>
+<svg style="display:none" aria-hidden="true"><defs>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 9v11h14V9M9 20v-7h6v7"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-13 5h2m4 0h2"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.01"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+</defs></svg>
+<header class="site-header">
+<div class="brand" aria-label="neatly"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3c0 10-5 15-15 15 10 0 15 5 15 15 0-10 5-15 15-15C23 18 18 13 18 3Z"/><path d="m28 3 1 3 3 1-3 1-1 3-1-3-3-1 3-1Z" fill="currentColor" stroke="none"/></svg>neatly<span style="color:var(--accent)">.</span></div>
+<div class="header-note"><svg aria-hidden="true"><use href="#i-home"/></svg>Home cleaning</div>
+</header>
+<main id="main">
+<div class="page-heading"><div><h1>Book a home clean</h1><p>Tell us about your home and choose a visit.</p></div><span class="progress-caption" id="progress-caption">Step 1 of 4</span></div>
+<div class="booking-shell">
+<nav aria-label="Booking progress"><ol class="stepper">
+<li><button type="button" class="step-button" data-step="0" aria-current="step"><span class="step-circle">1</span><span>Contact details</span></button></li>
+<li><button type="button" class="step-button" data-step="1" disabled><span class="step-circle">2</span><span>Home details</span></button></li>
+<li><button type="button" class="step-button" data-step="2" disabled><span class="step-circle">3</span><span>Date &amp; time</span></button></li>
+<li><button type="button" class="step-button" data-step="3" disabled><span class="step-circle">4</span><span>Review</span></button></li>
+</ol></nav>
+<div class="booking-body">
+<form class="form-area" id="booking-form" novalidate>
+<section class="panel" data-panel="0" aria-labelledby="contact-title">
+<p class="step-kicker">The introduction</p><h2 id="contact-title" tabindex="-1">Let’s start with you.</h2><p class="intro">How can we reach you about your clean?</p>
+<div class="fields">
+<div class="row"><div class="field"><label for="first-name">First name</label><input id="first-name" name="firstName" autocomplete="given-name" placeholder="First name" required maxlength="80" aria-describedby="first-name-error"><p class="error" id="first-name-error"></p></div><div class="field"><label for="last-name">Last name</label><input id="last-name" name="lastName" autocomplete="family-name" placeholder="Last name" required maxlength="80" aria-describedby="last-name-error"><p class="error" id="last-name-error"></p></div></div>
+<div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="254" aria-describedby="email-error"><p class="error" id="email-error"></p></div>
+<div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number" required maxlength="30" aria-describedby="phone-hint phone-error"><p class="hint" id="phone-hint">For any questions about your visit.</p><p class="error" id="phone-error"></p></div>
+</div>
+</section>
+<section class="panel" data-panel="1" aria-labelledby="home-title" hidden>
+<p class="step-kicker">Your space</p><h2 id="home-title" tabindex="-1">Tell us about your home.</h2><p class="intro">The details that help us plan your clean.</p>
+<div class="fields">
+<div class="field"><label for="address">Street address</label><input id="address" name="address" autocomplete="address-line1" placeholder="Street name and house number" required maxlength="200" aria-describedby="address-error"><p class="error" id="address-error"></p></div>
+<div class="field"><label for="apartment">Apartment or unit <span class="optional">(optional)</span></label><input id="apartment" name="apartment" autocomplete="address-line2" placeholder="Apartment, floor, or unit" maxlength="100"></div>
+<div class="row"><div class="field"><label for="city">City</label><input id="city" name="city" autocomplete="address-level2" required maxlength="100" aria-describedby="city-error"><p class="error" id="city-error"></p></div><div class="field"><label for="postcode">Postal code</label><input id="postcode" name="postcode" autocomplete="postal-code" required maxlength="20" aria-describedby="postcode-error"><p class="error" id="postcode-error"></p></div></div>
+<div><div class="counter-row"><div class="counter-label" id="bed-label">Bedrooms<span>Include rooms you’d like cleaned.</span></div><div class="counter"><button type="button" data-counter="bedrooms" data-change="-1" aria-label="Remove a bedroom"><svg aria-hidden="true"><use href="#i-minus"/></svg></button><output id="bedrooms" aria-labelledby="bed-label" aria-live="polite">1</output><button type="button" data-counter="bedrooms" data-change="1" aria-label="Add a bedroom"><svg aria-hidden="true"><use href="#i-plus"/></svg></button></div></div>
+<div class="counter-row"><div class="counter-label" id="bath-label">Bathrooms<span>Include half bathrooms.</span></div><div class="counter"><button type="button" data-counter="bathrooms" data-change="-1" aria-label="Remove a bathroom"><svg aria-hidden="true"><use href="#i-minus"/></svg></button><output id="bathrooms" aria-labelledby="bath-label" aria-live="polite">1</output><button type="button" data-counter="bathrooms" data-change="1" aria-label="Add a bathroom"><svg aria-hidden="true"><use href="#i-plus"/></svg></button></div></div>
+<fieldset class="pet-group"><legend>Are there pets at home?</legend><div class="choices"><label class="choice"><input type="radio" name="pets" value="No pets" required aria-describedby="pets-error"><span>No pets</span></label><label class="choice"><input type="radio" name="pets" value="Pets at home" required aria-describedby="pets-error"><span>Yes, I have pets</span></label></div><p class="error" id="pets-error"></p></fieldset>
+<div class="field pet-notes" id="pet-notes-field" hidden><label for="pet-notes">What pets do you have? <span class="optional">(optional)</span></label><input id="pet-notes" name="petNotes" placeholder="e.g. One friendly cat" maxlength="200"></div>
+</div></div>
+</section>
+<section class="panel" data-panel="2" aria-labelledby="date-title" hidden>
+<p class="step-kicker">Make some time</p><h2 id="date-title" tabindex="-1">When works for you?</h2><p class="intro">Choose a date and a preferred arrival time.</p>
+<div class="calendar"><div class="month-header"><h3 id="month-label" aria-live="polite"></h3><div class="month-buttons"><button type="button" class="icon-button" id="previous-month" aria-label="Previous month"><svg aria-hidden="true"><use href="#i-back"/></svg></button><button type="button" class="icon-button" id="next-month" aria-label="Next month"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div></div><div class="calendar-grid" id="calendar-days" role="group" aria-label="Choose a date" aria-describedby="date-error"></div><p class="error" id="date-error"></p></div>
+<fieldset class="time-fieldset"><legend>Arrival time</legend><div class="choices"><label class="choice"><input type="radio" name="time" value="8:00–10:00 am" required aria-describedby="time-error"><span>8–10 am</span></label><label class="choice"><input type="radio" name="time" value="10:00 am–12:00 pm" required aria-describedby="time-error"><span>10 am–12 pm</span></label><label class="choice"><input type="radio" name="time" value="1:00–3:00 pm" required aria-describedby="time-error"><span>1–3 pm</span></label></div><p class="error" id="time-error"></p><p class="hint time-note"><svg aria-hidden="true"><use href="#i-info"/></svg>Sample slots for this booking preview.</p></fieldset>
+</section>
+<section class="panel" data-panel="3" aria-labelledby="review-title" hidden>
+<p class="step-kicker">One last look</p><h2 id="review-title" tabindex="-1">Everything look right?</h2><p class="intro">Check your details before you finish.</p>
+<div class="review-section"><div class="review-header"><h3>Contact details</h3><button type="button" data-edit="0" aria-label="Edit contact details">Edit</button></div><p class="review-content" id="review-contact"></p></div>
+<div class="review-section"><div class="review-header"><h3>Your home</h3><button type="button" data-edit="1" aria-label="Edit home details">Edit</button></div><p class="review-content" id="review-home"></p></div>
+<div class="review-section"><div class="review-header"><h3>Date &amp; time</h3><button type="button" data-edit="2" aria-label="Edit date and time">Edit</button></div><p class="review-content" id="review-date"></p></div>
+<p class="demo-note">This is a booking preview. No appointment will be scheduled and your details won’t be sent.</p>
+</section>
+<section class="panel success" id="success-panel" aria-labelledby="success-title" hidden><div class="success-icon"><svg aria-hidden="true"><use href="#i-check"/></svg></div><p class="step-kicker">All details complete</p><h2 id="success-title" tabindex="-1">Your clean, all planned.</h2><p class="intro">Your booking preview is ready. No appointment has been scheduled.</p><div class="success-details" id="success-details"></div><button type="button" class="text-button" id="return-review">Back to your details</button></section>
+<div class="actions" id="form-actions"><button type="button" class="back" id="back-button" disabled><svg aria-hidden="true"><use href="#i-back"/></svg>Back</button><button type="submit" class="primary" id="continue-button"><span>Continue to home details</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+</form>
+<aside class="summary-panel" aria-label="Booking summary"><button type="button" class="summary-topline" aria-expanded="false" aria-controls="summary-content"><span><svg aria-hidden="true"><use href="#i-home"/></svg>Your cleaning summary</span><svg aria-hidden="true"><use href="#i-down"/></svg></button><div class="summary-content" id="summary-content"><div class="summary-heading"><svg aria-hidden="true"><use href="#i-home"/></svg><h2>Your cleaning</h2></div>
+<div class="summary-item"><svg aria-hidden="true"><use href="#i-pin"/></svg><div><h3>Location</h3><p class="summary-value empty" id="summary-address">Your home address</p></div></div>
+<div class="summary-item"><svg aria-hidden="true"><use href="#i-home"/></svg><div><h3>Home details</h3><p class="summary-value empty" id="summary-home">A little about your space</p></div></div>
+<div class="summary-item"><svg aria-hidden="true"><use href="#i-calendar"/></svg><div><h3>Date &amp; time</h3><p class="summary-value empty" id="summary-date">Your preferred visit</p></div></div>
+<div class="summary-item"><svg aria-hidden="true"><use href="#i-person"/></svg><div><h3>Contact</h3><p class="summary-value empty" id="summary-contact">Your contact details</p></div></div>
+<p class="summary-note"><svg aria-hidden="true"><use href="#i-info"/></svg>You can edit your details at the review step.</p>
+</div></aside>
+</div></div>
+<p class="page-footer">Booking preview<span aria-hidden="true">·</span>No appointment is scheduled</p>
+<div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+</main>
+<script>
+(()=>{
+'use strict';
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const form=$('#booking-form');
+const state={step:0,furthest:0,bedrooms:1,bathrooms:1,date:'',finished:false};
+const today=new Date();today.setHours(0,0,0,0);
+let viewMonth=new Date(today.getFullYear(),today.getMonth(),1);
+const dateKey=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const parseDate=s=>new Date(`${s}T12:00:00`);
+const formatDate=s=>parseDate(s).toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+const value=name=>(new FormData(form).get(name)||'').trim();
+const names=['Contact details','Home details','Date & time','Review'];
+const labels=['Continue to home details','Choose date & time','Review your clean','Finish booking preview'];
+function setText(id,text,placeholder){const el=$(id);el.textContent=text||placeholder;el.classList.toggle('empty',!text)}
+function homeDescription(){return `${state.bedrooms===0?'Studio':state.bedrooms+' bedroom'+(state.bedrooms===1?'':'s')} · ${state.bathrooms} bathroom${state.bathrooms===1?'':'s'}`}
+function fullAddress(){return [value('address'),value('apartment'),[value('city'),value('postcode')].filter(Boolean).join(', ')].filter(Boolean).join('\n')}
+function updateSummary(){
+const name=[value('firstName'),value('lastName')].filter(Boolean).join(' ');
+setText('#summary-contact',[name,value('email')].filter(Boolean).join('\n'),'Your contact details');
+setText('#summary-address',fullAddress(),'Your home address');
+setText('#summary-home',state.furthest>=1||state.step>=1?homeDescription()+(value('pets')?'\n'+value('pets'):''):'','A little about your space');
+setText('#summary-date',[state.date?formatDate(state.date):'',value('time')].filter(Boolean).join('\n'),'Your preferred visit');
+$('#review-contact').textContent=[name,value('email'),value('phone')].join('\n');
+$('#review-home').textContent=[fullAddress(),homeDescription(),value('pets')+(value('pets')==='Pets at home'&&value('petNotes')?' · '+value('petNotes'):'')].filter(Boolean).join('\n');
+$('#review-date').textContent=[state.date?formatDate(state.date):'',value('time')].join('\n');
+}
+function showStep(step,focus=true){
+state.step=step;state.furthest=Math.max(state.furthest,step);state.finished=false;
+document.body.classList.remove('finished');
+$$('[data-panel]').forEach(el=>el.hidden=Number(el.dataset.panel)!==step);
+$('#success-panel').hidden=true;$('#form-actions').hidden=false;
+$$('.step-button').forEach((button,i)=>{button.disabled=i>state.furthest;button.classList.toggle('complete',i<step);button.querySelector('.step-circle').innerHTML=i<step?'<svg aria-hidden="true"><use href="#i-check"/></svg>':String(i+1);if(i===step)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current')});
+$('#progress-caption').textContent=`Step ${step+1} of 4`;
+$('#back-button').disabled=step===0;
+$('#continue-button span').textContent=labels[step];
+document.title=`${names[step]} · Book a clean · neatly`;
+updateSummary();
+if(step===2)renderCalendar();
+if(focus){$(`[data-panel="${step}"] h2`).focus({preventScroll:true});form.scrollIntoView({behavior:'instant',block:'start'});}
+}
+function validateField(input){
+if(!input.required)return true;
+let message='';const v=input.value.trim();
+if(!v){const map={'first-name':'Enter your first name.','last-name':'Enter your last name.',email:'Enter your email address.',phone:'Enter your phone number.',address:'Enter your street address.',city:'Enter your city.',postcode:'Enter your postal code.'};message=map[input.id]||'Complete this field.'}
+else if(input.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))message='Enter an email like you@example.com.';
+else if(input.id==='phone'&&(!/^\+?[\d\s().-]{7,30}$/.test(v)||v.replace(/\D/g,'').length<7))message='Enter a phone number with at least 7 digits.';
+input.setAttribute('aria-invalid',message?'true':'false');
+const error=$(`#${input.id}-error`);if(error)error.textContent=message;
+return !message;
+}
+function validateStep(step){
+let firstInvalid=null;
+const inputs=$$(`[data-panel="${step}"] input[required]:not([type="radio"])`);
+inputs.forEach(input=>{if(!validateField(input)&&!firstInvalid)firstInvalid=input});
+if(step===1){const pets=value('pets');$('#pets-error').textContent=pets?'':'Choose whether you have pets at home.';$$('[name="pets"]').forEach(el=>el.setAttribute('aria-invalid',pets?'false':'true'));if(!pets&&!firstInvalid)firstInvalid=$('[name="pets"]')}
+if(step===2){const validDate=state.date&&parseDate(state.date)>=today;$('#date-error').textContent=validDate?'':'Choose a date from today onward.';if(!validDate&&!firstInvalid)firstInvalid=$('#calendar-days button:not(:disabled)');const time=value('time');$('#time-error').textContent=time?'':'Choose a preferred arrival time.';$$('[name="time"]').forEach(el=>el.setAttribute('aria-invalid',time?'false':'true'));if(!time&&!firstInvalid)firstInvalid=$('[name="time"]')}
+if(firstInvalid){firstInvalid.focus();$('#announcement').textContent='Check the highlighted fields before continuing.';return false}return true;
+}
+function renderCalendar(){
+$('#month-label').textContent=viewMonth.toLocaleDateString('en-GB',{month:'long',year:'numeric'});
+$('#previous-month').disabled=viewMonth.getFullYear()===today.getFullYear()&&viewMonth.getMonth()===today.getMonth();
+const grid=$('#calendar-days');grid.replaceChildren();
+['M','T','W','T','F','S','S'].forEach((name,i)=>{const el=document.createElement('span');el.className='weekday';el.textContent=name;el.setAttribute('aria-label',['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][i]);grid.append(el)});
+const blanks=(viewMonth.getDay()+6)%7;for(let i=0;i<blanks;i++){const empty=document.createElement('span');empty.setAttribute('aria-hidden','true');grid.append(empty)}
+const days=new Date(viewMonth.getFullYear(),viewMonth.getMonth()+1,0).getDate();
+for(let day=1;day<=days;day++){
+const d=new Date(viewMonth.getFullYear(),viewMonth.getMonth(),day),key=dateKey(d),button=document.createElement('button');button.type='button';button.className='day';button.textContent=day;button.dataset.date=key;button.disabled=d<today;button.setAttribute('aria-label',formatDate(key));button.setAttribute('aria-pressed',String(state.date===key));if(key===dateKey(today)){button.classList.add('today');button.setAttribute('aria-label',formatDate(key)+', today')}if(state.date===key)button.classList.add('selected');
+button.addEventListener('click',()=>{state.date=key;$('#date-error').textContent='';renderCalendar();$(`[data-date="${key}"]`).focus();updateSummary()});grid.append(button);
+}
+}
+form.addEventListener('submit',e=>{e.preventDefault();if(state.step<3){if(validateStep(state.step))showStep(state.step+1);return}for(let i=0;i<3;i++){if(!validateStep(i)){showStep(i);validateStep(i);return}}finish()});
+function finish(){
+state.finished=true;$$('[data-panel]').forEach(el=>el.hidden=true);$('#form-actions').hidden=true;$('#success-panel').hidden=false;document.body.classList.add('finished');$('#success-details').textContent=[state.date?formatDate(state.date):'',value('time'),'\n'+fullAddress()].join('\n');$('#progress-caption').textContent='Preview complete';document.title='Booking preview complete · neatly';$('#success-title').focus({preventScroll:true});form.scrollIntoView({behavior:'instant',block:'start'});$('#announcement').textContent='Your booking preview is complete. No appointment has been scheduled.';
+}
+$('#back-button').addEventListener('click',()=>showStep(state.step-1));
+$$('.step-button').forEach(el=>el.addEventListener('click',()=>showStep(Number(el.dataset.step))));
+$$('[data-edit]').forEach(el=>el.addEventListener('click',()=>showStep(Number(el.dataset.edit))));
+$('#return-review').addEventListener('click',()=>showStep(3));
+$$('input:not([type="radio"])').forEach(input=>{input.addEventListener('blur',()=>{if(!input.closest('[hidden]'))validateField(input)});input.addEventListener('input',()=>{if(input.getAttribute('aria-invalid')==='true')validateField(input);updateSummary()})});
+$$('[name="pets"]').forEach(input=>input.addEventListener('change',()=>{$('#pet-notes-field').hidden=value('pets')!=='Pets at home';$('#pets-error').textContent='';$$('[name="pets"]').forEach(el=>el.setAttribute('aria-invalid','false'));updateSummary()}));
+$$('[name="time"]').forEach(input=>input.addEventListener('change',()=>{$('#time-error').textContent='';$$('[name="time"]').forEach(el=>el.setAttribute('aria-invalid','false'));updateSummary()}));
+function updateCounters(){$$('[data-counter]').forEach(button=>{const v=state[button.dataset.counter];button.disabled=Number(button.dataset.change)<0?v<=0:v>=20});$('#bedrooms').value=state.bedrooms;$('#bathrooms').value=state.bathrooms}
+$$('[data-counter]').forEach(button=>button.addEventListener('click',()=>{const key=button.dataset.counter;state[key]=Math.max(0,Math.min(20,state[key]+Number(button.dataset.change)));updateCounters();updateSummary()}));
+$('#previous-month').addEventListener('click',()=>{viewMonth=new Date(viewMonth.getFullYear(),viewMonth.getMonth()-1,1);renderCalendar()});
+$('#next-month').addEventListener('click',()=>{viewMonth=new Date(viewMonth.getFullYear(),viewMonth.getMonth()+1,1);renderCalendar()});
+$('.summary-topline').addEventListener('click',()=>{const expanded=$('.summary-panel').classList.toggle('expanded');$('.summary-topline').setAttribute('aria-expanded',String(expanded))});
+updateCounters();renderCalendar();showStep(0,false);
+})();
+</script>
+</body>
+</html>

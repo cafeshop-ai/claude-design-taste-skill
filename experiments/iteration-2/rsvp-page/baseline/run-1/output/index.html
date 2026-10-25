@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f5ed">
+  <title>Sam & Priya — A day to remember</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;450;500;550;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f8f5ed;--ink:#393e32;--muted:#858477;--rust:#a54f36;--line:#deded0;--green:#6e775b;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;-webkit-font-smoothing:antialiased}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--rust);outline-offset:5px}button:disabled{cursor:default}a{color:inherit}::selection{background:#e5d5c5}
+    .site-header{max-width:1320px;margin:auto;padding:29px 58px 25px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.monogram{text-decoration:none;font:500 30px var(--serif);letter-spacing:-2px}.monogram span{font-style:italic;font-size:24px;color:var(--rust);padding:0 4px}.header-note,.header-place{font-size:10px;letter-spacing:2px;text-transform:uppercase}.header-note{margin-left:52px}.header-place{display:flex;gap:9px;align-items:center;color:#707361}.header-place svg{width:13px;height:15px}
+    main{max-width:1216px;padding:65px 48px 52px;margin:auto;display:grid;grid-template-columns:1fr 470px;gap:83px;align-items:start}.invitation{position:relative;padding-top:22px}.eyebrow{display:flex;align-items:center;gap:13px;font-size:10px;font-weight:500;letter-spacing:2.4px;text-transform:uppercase;color:var(--green)}.eyebrow:before{content:'';width:29px;height:1px;background:#9a9f87}.invitation h1{font:400 111px/.9 var(--serif);letter-spacing:-4px;color:var(--rust);margin:32px 0 25px}.invitation h1 .second-line{display:block;margin-top:5px}.ampersand{font-size:84px;font-style:italic;font-weight:400;color:#788064;margin-right:9px;letter-spacing:-7px}.intro{font:400 23px/1.45 var(--serif);max-width:330px;margin:0;color:#626653}.event-details{margin-top:31px;display:flex;gap:25px;align-items:stretch}.detail{padding-right:25px}.detail+.detail{padding:0 0 0 25px;border-left:1px solid #d9dacb}.detail-label{font-size:9px;font-weight:500;letter-spacing:1.9px;text-transform:uppercase;color:var(--muted);margin:0 0 10px}.detail-value{font:500 21px/1.25 var(--serif);margin:0 0 4px;white-space:nowrap}.detail-sub{font-size:11px;line-height:1.7;color:#777b6a;margin:0}.botanical{height:205px;width:300px;display:block;margin:17px 0 -6px 33px;overflow:visible}.little-note{font:italic 18px var(--serif);color:#81866f;margin:3px 0 0 5px}
+    .rsvp-card{position:relative;background:#fdfbf6;border:1px solid #d9dbcb;padding:36px 35px 26px;box-shadow:0 5px 15px #484d2c03}.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.card-kicker{font-size:9px;letter-spacing:1.9px;text-transform:uppercase;color:var(--green)}.tiny-flower{width:23px;height:23px;color:#8b9476}.rsvp-card h2{font:400 43px/1.12 var(--serif);letter-spacing:-.9px;margin:0 0 9px}.card-intro{font-size:11px;line-height:1.7;color:#838477;margin:0 0 27px}.field{margin-bottom:21px}.field-label{display:block;font-size:11px;font-weight:500;margin-bottom:10px}.optional{font-size:10px;color:#929285;font-weight:400;margin-left:4px}input[type=text],textarea{display:block;width:100%;border:1px solid #dedfd4;border-radius:2px;background:#fffefa;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}input[type=text]{height:44px;padding:0 13px;font-size:11px}input::placeholder,textarea::placeholder{color:#aaa99d}input:focus,textarea:focus{border-color:#8f977b;box-shadow:0 0 0 2px #8f977b15}.attendance{border:0;padding:0;margin:0 0 21px}.attendance legend{padding:0;margin-bottom:10px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:9px}.choice{position:relative;cursor:pointer}.choice input{position:absolute;opacity:0;width:1px;height:1px}.choice-inner{border:1px solid #dedfd4;border-radius:2px;padding:13px 10px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;transition:all .2s;white-space:nowrap;background:#fffefa}.radio-dot{width:12px;height:12px;border:1px solid #a9ad9a;border-radius:50%;display:inline-grid;place-items:center;flex-shrink:0}.radio-dot:after{content:'';height:5px;width:5px;border-radius:50%;background:transparent}.choice input:checked+.choice-inner{border-color:#7d8766;background:#eef0e6;color:#536044}.choice input:checked+.choice-inner .radio-dot{border-color:#7d8766}.choice input:checked+.choice-inner .radio-dot:after{background:#7d8766}.choice input:focus-visible+.choice-inner{outline:2px solid var(--rust);outline-offset:3px}.choice:hover .choice-inner{border-color:#9ba388}.guest-row{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:21px}.guest-row .field-label{margin:0 0 5px}.help-text{font-size:10px;color:#969689;margin:0;line-height:1.5}.stepper{display:flex;align-items:center;height:39px;border:1px solid #dedfd4;border-radius:2px;background:#fffefa;flex-shrink:0}.stepper button{border:0;background:transparent;color:#778069;font-size:17px;width:34px;height:37px;font-weight:400}.stepper button:hover{background:#eff0e7}.stepper button:disabled{color:#c7c9bd;background:transparent}.stepper input{width:29px;text-align:center;border:0;background:transparent;outline:none;color:var(--ink);font-size:12px;padding:0;-moz-appearance:textfield;appearance:textfield}.stepper input::-webkit-inner-spin-button{appearance:none}.guest-row.is-disabled{opacity:.45}textarea{resize:vertical;min-height:77px;padding:12px 13px;line-height:1.6;font-size:11px}.dietary-field{margin-bottom:22px}.submit{width:100%;height:45px;border:1px solid var(--rust);border-radius:2px;background:var(--rust);color:#fffaf0;display:flex;align-items:center;justify-content:center;gap:17px;font-size:11px;letter-spacing:.4px;transition:background .2s,transform .2s}.submit:hover{background:#8e412d;transform:translateY(-1px)}.submit svg{width:17px;height:13px}.card-signoff{text-align:center;margin:16px 0 0;color:#959587;font-size:9px;letter-spacing:.3px}.card-signoff svg{width:10px;height:10px;vertical-align:-1px;margin:0 4px;color:#8f9879}.success{padding:18px 0 9px;text-align:center}.success-icon{width:55px;height:55px;margin:0 auto 22px;display:grid;place-items:center;border:1px solid #bdc3a9;border-radius:50%;color:#75805c;background:#f0f2e9}.success h3{font:400 35px var(--serif);margin:0 0 14px}.success p{font-size:12px;line-height:1.9;color:#777e6a}.success .saved-note{font-size:10px;margin-top:25px}.edit-response{background:transparent;border:0;color:var(--rust);text-decoration:underline;text-underline-offset:4px;padding:12px;font-size:11px}.hidden{display:none!important}
+    .site-footer{max-width:1204px;margin:0 auto;padding:22px 0 28px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;color:#8b8d7b}.footer-message{font:italic 17px var(--serif);margin:0}.footer-center{width:17px;height:20px;margin-right:88px;color:#949c80}.footer-date{font-size:9px;letter-spacing:1.8px;text-transform:uppercase;margin:0}
+    @media(min-width:1500px){main{padding-top:86px;padding-bottom:70px}.site-header{max-width:1420px}.site-footer{max-width:1304px}.botanical{margin-top:28px;height:220px}}
+    @media(max-width:1050px){.site-header{margin:0 30px;padding-left:10px;padding-right:10px}main{gap:40px;grid-template-columns:1fr 420px;padding:48px 40px}.invitation h1{font-size:95px}.ampersand{font-size:75px}.detail{padding-right:10px}.detail+.detail{padding-left:15px}.event-details{gap:10px}.detail-value{font-size:19px}.site-footer{margin:0 40px}.rsvp-card{padding:30px 27px}.botanical{margin-left:5px;width:270px}}
+    @media(max-width:800px){.site-header{margin:0 24px;padding:20px 0}.header-note{margin-left:0;font-size:9px;letter-spacing:1.5px}.header-place{display:none}main{grid-template-columns:1fr;max-width:550px;padding:40px 25px 36px;gap:33px}.invitation{padding-top:0;text-align:center}.eyebrow{justify-content:center;font-size:9px}.eyebrow:after{content:'';width:29px;height:1px;background:#9a9f87}.invitation h1{font-size:99px;line-height:.95;margin-top:25px;margin-bottom:20px}.invitation h1 .second-line{display:inline}.ampersand{display:block;font-size:62px;line-height:.9;margin:1px 0 2px;letter-spacing:0}.intro{margin:0 auto;font-size:21px;max-width:310px}.event-details{justify-content:center;margin-top:24px;gap:20px}.detail{padding-right:20px}.detail+.detail{padding-left:20px;text-align:left}.detail:first-child{text-align:right}.detail-value{font-size:21px}.botanical{width:220px;height:142px;margin:12px auto -13px}.little-note{font-size:17px}.rsvp-card{padding:29px 27px 25px}.card-intro{font-size:12px}.field-label,.choice-inner,input[type=text],textarea,.submit{font-size:12px}input[type=text],textarea{font-size:16px}.card-kicker{font-size:9px}.site-footer{margin:0 25px;gap:15px;padding-top:20px;flex-direction:column}.footer-center{display:none}.footer-message{font-size:17px}.footer-date{font-size:8px}.rsvp-card h2{font-size:41px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="monogram" href="#" aria-label="Sam and Priya home">S<span>&</span>P</a>
+    <span class="header-note">A little celebration. A lifetime of love.</span>
+    <span class="header-place"><svg viewBox="0 0 16 20" fill="none" aria-hidden="true"><path d="M14 7c0 5-6 11-6 11S2 12 2 7a6 6 0 1 1 12 0Z" stroke="currentColor"/><circle cx="8" cy="7" r="2" stroke="currentColor"/></svg> Hudson, New York</span>
+  </header>
+  <main>
+    <section class="invitation" aria-labelledby="couple-names">
+      <div class="eyebrow">Together with our families</div>
+      <h1 id="couple-names">Sam <span class="second-line"><span class="ampersand">&</span> Priya</span></h1>
+      <p class="intro">Joyfully invite you to a day of love,<br>laughter, and happily ever after.</p>
+      <div class="event-details">
+        <div class="detail"><p class="detail-label">The day</p><p class="detail-value">June 14, 2027</p><p class="detail-sub">Saturday · 4:00 in the afternoon</p></div>
+        <div class="detail"><p class="detail-label">The place</p><p class="detail-value">Hollow Oak Farm</p><p class="detail-sub">Hudson, New York</p></div>
+      </div>
+      <svg class="botanical" viewBox="0 0 320 230" fill="none" aria-hidden="true">
+        <g stroke="#818c67" stroke-width="1.25" stroke-linecap="round">
+          <path d="M149 219C154 178 170 127 175 43M150 215C134 178 119 131 83 87M153 210C183 176 220 147 245 97M150 212C120 194 89 172 64 145M154 201C161 164 152 128 134 102M166 145C191 116 207 86 213 61M175 86C163 65 157 46 158 25M196 167C219 167 244 157 261 146"/>
+          <path d="M169 117C148 114 142 97 142 88C159 90 170 102 169 117Z" fill="#a4ad8b"/><path d="M174 90C187 87 198 72 193 59C178 64 173 76 174 90Z" fill="#bdc3a7"/><path d="M176 61C165 51 166 35 174 25C184 39 183 53 176 61Z" fill="#939f79"/>
+          <path d="M163 155C174 153 186 142 186 130C170 131 163 140 163 155Z" fill="#9ca883"/><path d="M158 178C145 168 141 156 144 143C159 149 162 162 158 178Z" fill="#bcc3a6"/>
+          <path d="M129 167C109 168 97 156 95 144C114 145 125 154 129 167Z" fill="#a1ac87"/><path d="M115 140C116 127 109 113 98 110C96 123 102 134 115 140Z" fill="#bec5a9"/><path d="M98 107C83 112 69 103 65 93C79 89 91 96 98 107Z" fill="#98a67f"/>
+          <path d="M103 183C103 168 91 157 78 157C79 172 90 180 103 183Z" fill="#b8c0a2"/><path d="M86 171C69 175 55 167 49 158C63 152 78 158 86 171Z" fill="#9ca986"/>
+          <path d="M190 175C192 157 203 147 218 145C215 162 204 172 190 175Z" fill="#aab596"/><path d="M214 145C210 130 215 116 226 111C232 125 225 139 214 145Z" fill="#bcc4a6"/><path d="M234 119C236 104 248 95 259 97C257 110 248 119 234 119Z" fill="#98a681"/><path d="M226 162C235 148 252 147 263 151C253 165 238 167 226 162Z" fill="#b7bfa0"/>
+          <path d="M197 109C189 96 191 81 200 72C208 86 205 99 197 109Z" fill="#a3af8b"/><path d="M206 86C221 86 232 77 234 66C219 65 210 73 206 86Z" fill="#bcc3a7"/>
+        </g>
+        <g fill="#bd7457" stroke="#aa654d" stroke-width=".65"><path d="M81 91C63 98 54 87 62 79C48 74 53 62 64 64C62 50 76 49 81 61C91 51 103 60 95 70C109 74 104 86 91 85C91 97 82 101 81 91Z"/><path d="M214 61C202 65 196 57 202 51C192 47 196 39 204 41C204 31 213 31 216 40C224 33 233 40 226 47C236 52 230 59 222 57C222 66 216 68 214 61Z"/></g>
+        <g fill="#e0b87b"><circle cx="78" cy="76" r="6"/><circle cx="214" cy="49" r="4"/></g>
+        <g stroke="#979f80" stroke-width="1.1"><path d="M64 145C61 133 56 127 50 121M63 143C48 143 41 137 37 129M158 28L153 17M261 146L275 138"/><path d="M51 123C42 120 42 110 46 105C54 111 54 117 51 123Z" fill="#c1c6ad"/><path d="M38 131C29 132 24 125 25 119C34 119 38 125 38 131Z" fill="#a5af8c"/></g>
+      </svg>
+      <p class="little-note">Our favorite day, with our favorite people.</p>
+    </section>
+    <section class="rsvp-card" aria-labelledby="rsvp-title">
+      <div class="card-top"><span class="card-kicker">Please reply by May 14, 2027</span><svg class="tiny-flower" viewBox="0 0 30 30" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1"><path d="M15 12C5-1 1 13 12 15C-1 25 13 29 15 18C25 31 29 17 18 15C31 5 17 1 15 12Z"/><circle cx="15" cy="15" r="2.5"/></g></svg></div>
+      <h2 id="rsvp-title">Will you join us?</h2>
+      <p class="card-intro">We’ve saved you a seat. Let us know if you can make it.</p>
+      <form id="rsvp-form">
+        <div class="field"><label class="field-label" for="guest-name">Your full name</label><input id="guest-name" name="name" type="text" placeholder="First and last name" autocomplete="name" maxlength="150" required></div>
+        <fieldset class="attendance"><legend class="field-label">Will you be attending?</legend><div class="choices">
+          <label class="choice"><input type="radio" name="attending" value="yes" required checked><span class="choice-inner"><span class="radio-dot"></span>Joyfully accepts</span></label>
+          <label class="choice"><input type="radio" name="attending" value="no" required><span class="choice-inner"><span class="radio-dot"></span>Regretfully declines</span></label>
+        </div></fieldset>
+        <div class="guest-row" id="guest-row"><div><label class="field-label" for="guest-count">Number of guests</label><p class="help-text">Including yourself</p></div><div class="stepper"><button type="button" id="decrease" aria-label="Remove one guest" disabled>−</button><input id="guest-count" name="guests" type="number" value="1" min="1" max="20" required aria-label="Number of guests, including yourself"><button type="button" id="increase" aria-label="Add one guest">+</button></div></div>
+        <div class="field dietary-field"><label class="field-label" for="dietary">Any dietary needs? <span class="optional">(optional)</span></label><textarea id="dietary" name="dietary" placeholder="Allergies, dietary preferences, or anything we should know…" maxlength="1500"></textarea></div>
+        <button class="submit" type="submit">Send my RSVP <svg viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M1 7h17M12 1l6 6-6 6" stroke="currentColor" stroke-width="1.2"/></svg></button>
+        <p class="card-signoff">A day made sweeter with you in it <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m8 13-5.5-5.3C-1 3.8 4.7-.1 8 4c3.3-4.1 9-.2 5.5 3.7L8 13Z" stroke="currentColor" stroke-width="1.3"/></svg></p>
+      </form>
+      <div id="confirmation" class="success hidden" role="status" aria-live="polite" tabindex="-1"><div class="success-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.5"/></svg></div><h3 id="thank-you"></h3><p id="response-summary"></p><p class="saved-note" id="save-status"></p><button type="button" class="edit-response" id="edit-response">Edit your response</button></div>
+    </section>
+  </main>
+  <footer class="site-footer"><p class="footer-message">Good food. Great company. A whole lot of love.</p><svg class="footer-center" viewBox="0 0 20 24" fill="none" aria-hidden="true"><path d="M10 23V5M10 17C2 18 1 11 1 11s8-2 9 6ZM10 12c8 1 9-6 9-6s-8-2-9 6ZM10 7C5 4 10 1 10 1s5 3 0 6Z" stroke="currentColor"/></svg><p class="footer-date">Sam & Priya · 06.14.27</p></footer>
+  <script>
+    const form = document.getElementById('rsvp-form');
+    const count = document.getElementById('guest-count');
+    const decrease = document.getElementById('decrease');
+    const increase = document.getElementById('increase');
+    const dietary = document.getElementById('dietary');
+    const confirmation = document.getElementById('confirmation');
+    const storageKey = 'sam-priya-wedding-rsvp';
+    function updateGuests() {
+      const attending = form.elements.attending.value === 'yes';
+      count.disabled = !attending;
+      decrease.disabled = !attending || Number(count.value) <= 1;
+      increase.disabled = !attending || Number(count.value) >= 20;
+      document.getElementById('guest-row').classList.toggle('is-disabled', !attending);
+      dietary.disabled = !attending;
+      document.querySelector('.dietary-field').classList.toggle('is-disabled', !attending);
+    }
+    decrease.addEventListener('click', () => { count.stepDown(); updateGuests(); });
+    increase.addEventListener('click', () => { count.stepUp(); updateGuests(); });
+    count.addEventListener('input', updateGuests);
+    form.querySelectorAll('[name="attending"]').forEach(radio => radio.addEventListener('change', updateGuests));
+    document.getElementById('guest-name').addEventListener('input', event => event.target.setCustomValidity(''));
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const nameInput = document.getElementById('guest-name');
+      if (!nameInput.value.trim()) { nameInput.setCustomValidity('Please enter your name.'); nameInput.reportValidity(); return; }
+      const response = { name: nameInput.value.trim(), attending: form.elements.attending.value, guests: form.elements.attending.value === 'yes' ? Number(count.value) : 0, dietary: form.elements.attending.value === 'yes' ? dietary.value.trim() : '' };
+      let saved = false;
+      try { localStorage.setItem(storageKey, JSON.stringify(response)); saved = true; } catch (_) {}
+      document.getElementById('thank-you').textContent = 'Thank you, ' + response.name + '!';
+      document.getElementById('response-summary').textContent = response.attending === 'yes' ? 'Your response: joyfully accepts, with ' + response.guests + (response.guests === 1 ? ' guest' : ' guests') + ' including yourself. We can’t wait to celebrate together.' : 'Your response: regretfully declines. You’ll be with us in spirit. Sending you all our love.';
+      document.getElementById('save-status').textContent = saved ? 'Saved on this device. Please share your response with Sam & Priya to complete your RSVP.' : 'Please share your response with Sam & Priya to complete your RSVP.';
+      form.classList.add('hidden');
+      confirmation.classList.remove('hidden');
+      confirmation.focus({preventScroll:true});
+    });
+    document.getElementById('edit-response').addEventListener('click', () => { confirmation.classList.add('hidden'); form.classList.remove('hidden'); document.getElementById('guest-name').focus({preventScroll:true}); });
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey));
+      if (saved && typeof saved.name === 'string' && ['yes', 'no'].includes(saved.attending)) {
+        document.getElementById('guest-name').value = saved.name;
+        form.elements.attending.value = saved.attending;
+        count.value = Number.isInteger(saved.guests) && saved.guests >= 1 && saved.guests <= 20 ? saved.guests : 1;
+        dietary.value = typeof saved.dietary === 'string' ? saved.dietary : '';
+      }
+    } catch (_) {}
+    updateGuests();
+  </script>
+</body>
+</html>

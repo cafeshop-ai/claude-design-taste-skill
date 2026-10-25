@@ -1,0 +1,39 @@
+{
+  "kind": "logo",
+  "logo": {
+    "file": "logo.svg",
+    "bytes": 24635,
+    "elements": 4,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+      "keyframes": 0,
+      "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+  },
+  "mark": {
+    "file": "mark.svg",
+    "bytes": 511,
+    "elements": 1,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+      "keyframes": 0,
+      "reducedMotion": false
+    },
+    "smil": 0,
+    "script": false,
+    "durations": []
+  }
+}

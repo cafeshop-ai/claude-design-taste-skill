@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Blind pairwise judging.
 
-    python3 blind.py make   ../iteration-1 [--b with-skill] [--a-from DIR]
-    python3 blind.py reveal ../iteration-1
+    python3 blind.py make   ../iteration-2 [--b with-skill] [--a-from ../iteration-1] [--a-cond baseline] [--out blind]
+    python3 blind.py reveal ../iteration-2 [--out blind]
 
 make: for each case and run number, pairs the baseline run with the
 with-skill run, assigns them to X/Y at random, and copies their screenshots
@@ -20,16 +20,16 @@ import sys
 from pathlib import Path
 
 
-def make(iteration, b_cond="with-skill", a_from=None):
+def make(iteration, b_cond="with-skill", a_from=None, a_cond="baseline", out="blind"):
     iteration = Path(iteration)
     a_root = Path(a_from) if a_from else iteration
-    blind = iteration / "blind"
+    blind = iteration / out
     blind.mkdir(exist_ok=True)
     mapping = {}
     rng = random.SystemRandom()
     for b_run in sorted(iteration.glob(f"*/{b_cond}/run-*")):
         case, run = b_run.parent.parent.name, b_run.name
-        a_run = a_root / case / "baseline" / run
+        a_run = a_root / case / a_cond / run
         if not (a_run / "shots").exists() or not (b_run / "shots").exists():
             continue
         pair = f"{case}-{run}"
@@ -45,12 +45,14 @@ def make(iteration, b_cond="with-skill", a_from=None):
     print(f"{len(mapping)} pairs in {blind}")
 
 
-def reveal(iteration):
+def reveal(iteration, out="blind", judge=None):
     iteration = Path(iteration)
-    blind = iteration / "blind"
+    blind = iteration / out
     mapping = json.loads((blind / "mapping.json").read_text())
-    judgments = json.loads((blind / "judgments.json").read_text())
-    cond = lambda path: Path(path).parent.name
+    judgments = [j for j in json.loads((blind / (f"judgments-{judge}.json" if judge else "judgments.json")).read_text()) if "error" not in j]
+    # Label by condition, or by iteration/condition when comparing across iterations.
+    iters = {Path(v).parts[0] for m in mapping.values() for v in m.values()}
+    cond = (lambda path: f"{Path(path).parts[0]}/{Path(path).parent.name}") if len(iters) > 1 else (lambda path: Path(path).parent.name)
     wins, lines = {}, []
     dims = sorted({d for j in judgments for side in j["scores"].values() for d in side})
     totals = {}
@@ -71,21 +73,24 @@ def reveal(iteration):
     summary = ["| condition | " + " | ".join(dims) + " |", "|---|" + "---|" * len(dims)]
     for c, ds in sorted(totals.items()):
         summary.append(f"| {c} | " + " | ".join(f"{sum(ds[d]) / len(ds[d]):.2f}" for d in dims) + " |")
-    md = [f"# Blind judgments: {iteration.name}\n",
+    who = ("Judge: Codex (`gpt-6.1-sol`, via `harness/judge.py`), an independent judge that saw only the brief, the two "
+           "screenshot sets, and the rubric; it was not told about the skill. It may favor its own house style."
+           if judge == "codex" else
+           "Judge: Claude (the skill's author), so read these as one informed but interested opinion.")
+    md = [f"# Blind judgments: {iteration.name}{' (' + out + ')' if out != 'blind' else ''}{', judge ' + judge if judge else ''}\n",
           "Judged from screenshots with conditions hidden behind random X/Y labels; the mapping was opened only after "
-          "all judgments below were written. Scores are 1–5. Judge: Claude (the skill's author), so read these as one "
-          "informed but interested opinion; the screenshots are in each run's `shots/` folder for anyone to check.\n",
+          f"all judgments below were written. Scores are 1–5. {who} The screenshots are in each run's `shots/` folder for anyone to check.\n",
           "## Preferences\n", "\n".join(f"- **{k}**: {v}" for k, v in sorted(wins.items())) + "\n",
           "## Mean scores\n", "\n".join(summary) + "\n", "## Pairs\n", "\n".join(lines)]
-    (iteration / "judgments.md").write_text("\n".join(md))
+    name = "judgments" + ("" if out == "blind" else f"-{out}") + (f"-{judge}" if judge else "") + ".md"
+    (iteration / name).write_text("\n".join(md))
     print("\n".join(md[:6]))
 
 
 if __name__ == "__main__":
     cmd, it = sys.argv[1], sys.argv[2]
+    opt = lambda name, default: sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
     if cmd == "make":
-        b = sys.argv[sys.argv.index("--b") + 1] if "--b" in sys.argv else "with-skill"
-        a_from = sys.argv[sys.argv.index("--a-from") + 1] if "--a-from" in sys.argv else None
-        make(it, b, a_from)
+        make(it, opt("--b", "with-skill"), opt("--a-from", None), opt("--a-cond", "baseline"), opt("--out", "blind"))
     else:
-        reveal(it)
+        reveal(it, opt("--out", "blind"), opt("--judge", None))

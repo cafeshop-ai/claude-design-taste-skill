@@ -1,0 +1,55 @@
+<!doctype html><meta charset="utf-8"><style>
+  body{margin:0;font:13px/1.4 system-ui,sans-serif;color:#555;background:#fff}
+  .sheet{display:grid;gap:24px;padding:32px;width:1100px}
+  .row{display:flex;gap:24px;align-items:stretch}
+  .panel{flex:1;display:grid;place-items:center;gap:12px;padding:40px;border:1px solid #e5e5e5;border-radius:8px;min-height:180px}
+  .dark{background:#151515;border-color:#151515;color:#aaa}
+  .sizes{display:flex;gap:28px;align-items:end}
+  .sizes figure{margin:0;display:grid;justify-items:center;gap:6px}
+  .tab{display:flex;align-items:center;gap:8px;width:220px;padding:8px 12px;border-radius:8px 8px 0 0;background:#f1f1f1;color:#222}
+  .tab.d{background:#2a2a2a;color:#eee}
+  img{display:block}
+#art svg{width:100%;height:auto;max-height:240px}</style><div class="sheet"><div class="row">
+        <div class="panel" id="stage" style="flex:none;width:420px;height:320px"><div id="art" style="width:240px"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="128" viewBox="0 0 160 128" role="img" aria-labelledby="caught-up-title caught-up-desc">
+  <title id="caught-up-title">You're all caught up</title>
+  <desc id="caught-up-desc">An envelope with a check mark gently floats, then settles.</desc>
+  <style>
+    svg {
+      --paper: #f2f6f9;
+      --outline: #687e90;
+      --accent: #326f9b;
+      --badge: #e8f2fa;
+      --ground: #dce5ec;
+    }
+    .mail {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: caught-up-float 7s ease-in-out infinite;
+    }
+    @keyframes caught-up-float {
+      0%, 20%, 80%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    @media (prefers-color-scheme: dark) {
+      svg {
+        --paper: #263541;
+        --outline: #9eb3c4;
+        --accent: #9bcaf0;
+        --badge: #253f53;
+        --ground: #405261;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+  <path d="M64 112h32" fill="none" stroke="var(--ground)" stroke-width="2" stroke-linecap="round"/>
+  <g class="mail" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="32" y="44" width="88" height="56" rx="8" fill="var(--paper)" stroke="var(--outline)"/>
+    <path d="m35 96 27-23m55 23L90 73" fill="none" stroke="var(--ground)"/>
+    <path d="m35 48 35 27a10 10 0 0 0 12 0l35-27" fill="none" stroke="var(--outline)"/>
+    <circle cx="116" cy="44" r="16" fill="var(--badge)" stroke="var(--accent)"/>
+    <path d="m109 44 5 5 9-10" fill="none" stroke="var(--accent)" stroke-width="3"/>
+  </g>
+</svg>
+</div></div></div></div>

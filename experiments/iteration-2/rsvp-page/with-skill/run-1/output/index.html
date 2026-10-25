@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2e9e7">
+  <meta name="description" content="RSVP to the wedding of Sam and Priya at Hollow Oak Farm in Hudson, New York, on June 14, 2027.">
+  <title>Sam &amp; Priya — Wedding RSVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: #f2e9e7;
+      --paper: #fffcf8;
+      --ink: #432f34;
+      --muted: #78676a;
+      --wine: #713e4b;
+      --wine-hover: #5c303b;
+      --tint: #f4e9e9;
+      --line: #dfd3ce;
+      --control: #9e8989;
+      --error: #a02f36;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+      --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px;
+      --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+      --small: 13px; --body: 15px; --large: 18px;
+      --radius: 4px;
+      --motion: 180ms ease-out;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink); font: var(--body)/1.6 var(--sans); }
+    button, input, textarea { font: inherit; }
+    button, input, textarea, label { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+    ::selection { background: var(--tint); color: var(--wine); }
+    .invitation { width: min(100% - 48px, 680px); margin: var(--s7) auto; padding: var(--s7) var(--s8); background: var(--paper); border: 1px solid var(--line); }
+    .intro { text-align: center; }
+    .oak { width: 124px; height: 76px; color: var(--wine); margin-bottom: var(--s5); }
+    .occasion { margin: 0 0 var(--s3); color: var(--wine); font-size: 11px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; }
+    h1 { margin: 0; font: 400 clamp(60px, 7vw, 80px)/1.05 var(--serif); letter-spacing: -.045em; text-wrap: balance; }
+    h1 span { color: var(--wine); font-weight: 400; }
+    .date { margin: var(--s5) 0 0; font-size: var(--body); }
+    .time { white-space: nowrap; }
+    .venue { margin: var(--s4) 0 0; font: 500 24px/1.2 var(--serif); }
+    .location { margin: var(--s1) 0 0; font-size: var(--small); color: var(--muted); }
+    .divider { display: flex; align-items: center; gap: var(--s4); margin: var(--s6) 0; color: var(--wine); }
+    .divider::before, .divider::after { content: ''; height: 1px; flex: 1; background: var(--line); }
+    .divider svg { width: 16px; height: 20px; }
+    h2 { margin: 0 0 var(--s5); font: 500 36px/1.15 var(--serif); letter-spacing: -.02em; }
+    .field { margin-bottom: var(--s5); }
+    label, legend { display: block; padding: 0; margin-bottom: var(--s2); font-weight: 500; font-size: var(--small); }
+    .optional { font-weight: 400; color: var(--muted); margin-left: var(--s1); }
+    input[type="text"], input[type="number"], textarea { display: block; width: 100%; min-height: 48px; border: 1px solid var(--control); border-radius: var(--radius); padding: var(--s3) var(--s4); background: transparent; color: var(--ink); transition: border-color var(--motion), background var(--motion); }
+    input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
+    input:hover, textarea:hover { border-color: var(--wine); }
+    textarea { resize: vertical; min-height: 96px; }
+    :focus-visible { outline: 2px solid var(--wine); outline-offset: 4px; }
+    input[type="text"]:focus, input[type="number"]:focus, textarea:focus { outline: 2px solid var(--wine); outline-offset: 2px; border-color: var(--wine); }
+    fieldset { margin: 0 0 var(--s5); border: 0; padding: 0; min-width: 0; }
+    .choices { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+    .choice { position: relative; display: flex; align-items: center; gap: var(--s3); min-height: 52px; margin: 0; padding: var(--s3) var(--s4); border: 1px solid var(--control); border-radius: var(--radius); font-size: var(--small); font-weight: 400; cursor: pointer; transition: background var(--motion), border-color var(--motion); }
+    .choice:hover { border-color: var(--wine); background: var(--tint); }
+    .choice:has(input:checked) { border-color: var(--wine); background: var(--tint); color: var(--wine); }
+    .choice input { appearance: none; flex: 0 0 16px; width: 16px; height: 16px; margin: 0; border: 1px solid var(--control); border-radius: 50%; background: var(--paper); cursor: pointer; }
+    .choice input:checked { border: 5px solid var(--wine); }
+    .choice:has(input:focus-visible) { outline: 2px solid var(--wine); outline-offset: 4px; }
+    .choice input:focus-visible { outline: 0; }
+    .guest-label { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s3); }
+    .guest-label .optional { font-size: var(--small); }
+    .error { color: var(--error); margin: var(--s2) 0 0; font-size: var(--small); }
+    [aria-invalid="true"] { border-color: var(--error) !important; }
+    .primary { display: flex; align-items: center; justify-content: center; gap: var(--s3); width: 100%; min-height: 52px; padding: var(--s3) var(--s5); border: 1px solid var(--wine); border-radius: var(--radius); background: var(--wine); color: var(--paper); font-weight: 500; transition: background var(--motion); }
+    .primary:hover { background: var(--wine-hover); }
+    .primary:active { background: var(--ink); }
+    .primary svg { width: 18px; height: 18px; }
+    .local-note { margin: var(--s3) 0 0; text-align: center; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .confirmation { padding: var(--s4) 0; }
+    .confirmation h2 { margin-bottom: var(--s3); }
+    .confirmation p { margin: 0 0 var(--s5); }
+    .summary { margin: var(--s5) 0; padding: var(--s4) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .summary div { margin: var(--s2) 0; }
+    .summary dt { color: var(--muted); font-size: var(--small); }
+    .summary dd { margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+    .secondary { min-height: 44px; padding: var(--s2) 0; border: 0; color: var(--wine); background: transparent; text-decoration: underline; text-underline-offset: 4px; }
+    .secondary:hover { color: var(--ink); }
+    .page-note { text-align: center; margin: 0 0 var(--s6); color: var(--muted); font: 400 18px/1.4 var(--serif); }
+    @media (max-width: 600px) {
+      .invitation { width: calc(100% - 32px); margin: var(--s4) auto; padding: var(--s6) var(--s5); }
+      .oak { margin-bottom: var(--s4); height: 64px; }
+      h1 { font-size: clamp(52px, 13vw, 72px); }
+      .date { max-width: 260px; margin-left: auto; margin-right: auto; }
+      .choices { grid-template-columns: 1fr; gap: var(--s2); }
+      .choice { min-height: 48px; }
+      input[type="text"], input[type="number"], textarea { font-size: 16px; }
+      .guest-label { flex-wrap: wrap; gap: 0; }
+      .guest-label .optional { margin: 0 0 var(--s2); }
+      .divider { margin: var(--s5) 0; }
+      .page-note { margin: var(--s5) 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <main class="invitation">
+    <header class="intro">
+      <svg class="oak" viewBox="0 0 140 84" fill="none" aria-hidden="true">
+        <g stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M44 77C49 63 66 50 79 34M62 58C75 54 88 55 101 49M57 64C47 53 39 46 27 38M74 40C68 30 67 20 70 10"/>
+          <path d="M79 34C72 30 75 25 79 26C76 20 81 16 84 20C84 14 90 13 91 18C96 13 101 16 98 22C104 22 106 28 100 30C105 35 101 40 96 37C95 43 89 44 87 39C84 44 78 41 79 34Z"/>
+          <path d="M70 10C64 11 60 7 63 4C58 1 60-3 65-1M70 10C76 7 80 2 77-1" transform="translate(0 5)"/>
+          <path d="M51 57C43 60 39 56 42 52C35 54 32 49 36 46C28 46 26 40 32 38C28 34 31 29 36 31C37 25 43 25 45 30C49 26 54 29 52 35C59 33 62 39 57 42C64 44 61 50 56 50C59 55 56 60 51 57Z"/>
+          <path d="M101 49C99 43 103 40 107 43C106 36 111 33 114 38C117 31 123 33 122 38C128 36 132 41 127 45C134 47 133 53 127 53C131 59 126 63 122 59C121 66 115 66 113 60C109 64 103 61 106 56C100 57 97 52 101 49Z"/>
+          <path d="M34 40L22 31M25 34C17 35 12 29 15 25C8 24 8 18 13 17C9 11 13 7 18 10C18 4 24 4 26 9C30 4 35 7 32 12C39 11 40 17 35 20C42 22 39 27 34 27C37 33 31 37 25 34ZM88 54L91 62M87 65C88 59 98 58 100 64L87 65ZM89 65C88 78 99 78 99 64M93 59L92 56M81 33L91 23M109 53L122 43M43 44L49 53"/>
+        </g>
+      </svg>
+      <p class="occasion">The wedding of</p>
+      <h1>Sam <span>&amp;</span> Priya</h1>
+      <p class="date">Saturday, June 14, 2027 <span class="time">&nbsp;·&nbsp; 4 pm</span></p>
+      <p class="venue">Hollow Oak Farm</p>
+      <p class="location">Hudson, NY</p>
+    </header>
+
+    <div class="divider" aria-hidden="true"><svg viewBox="0 0 16 20" fill="none"><path d="M8 2C8 6 6 8 3 10C6 12 8 14 8 18C8 14 10 12 13 10C10 8 8 6 8 2Z" stroke="currentColor"/></svg></div>
+
+    <section aria-labelledby="reply-title" id="reply">
+      <h2 id="reply-title">Kindly reply</h2>
+      <form id="rsvp-form" novalidate>
+        <div class="field">
+          <label for="guest-name">Your full name</label>
+          <input type="text" id="guest-name" name="name" placeholder="First and last name" autocomplete="name" maxlength="200" required aria-describedby="name-error">
+          <p class="error" id="name-error" hidden>Enter your full name.</p>
+        </div>
+        <fieldset id="attendance-group" aria-describedby="attendance-error">
+          <legend>Will you be joining us?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="attendance" value="yes" required><span>Joyfully accepts</span></label>
+            <label class="choice"><input type="radio" name="attendance" value="no" required><span>Regretfully declines</span></label>
+          </div>
+          <p class="error" id="attendance-error" hidden>Please choose whether you’ll be attending.</p>
+        </fieldset>
+        <div id="attending-fields">
+          <div class="field">
+            <div class="guest-label"><label for="guest-count">Number of guests</label><span class="optional" id="guest-hint">Including yourself</span></div>
+            <input type="number" id="guest-count" name="guests" min="1" step="1" placeholder="e.g. 2" inputmode="numeric" required aria-describedby="guest-hint guests-error">
+            <p class="error" id="guests-error" hidden>Enter a whole number of at least 1, including yourself.</p>
+          </div>
+          <div class="field">
+            <label for="dietary-needs">Dietary needs <span class="optional">(optional)</span></label>
+            <textarea id="dietary-needs" name="dietary" maxlength="2000" rows="3" placeholder="Any allergies or dietary requirements for your party"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="primary">Save RSVP <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+        <p class="local-note">Saved on this device only. Responses aren’t sent to Sam &amp; Priya.</p>
+        <p class="error" id="save-error" role="alert" hidden>Your browser couldn’t save this RSVP. Allow local storage and try again.</p>
+      </form>
+    </section>
+
+    <section class="confirmation" id="confirmation" aria-labelledby="confirmation-title" hidden>
+      <h2 id="confirmation-title" tabindex="-1">Your RSVP is saved.</h2>
+      <p id="confirmation-message"></p>
+      <dl class="summary" id="summary"></dl>
+      <p class="local-note">This response is saved on this device only and hasn’t been sent to Sam &amp; Priya.</p>
+      <button type="button" class="secondary" id="edit-response">Edit your response</button>
+    </section>
+    <noscript><p class="error">Enable JavaScript in your browser to save your response on this device.</p></noscript>
+  </main>
+  <script>
+    (() => {
+      const storageKey = 'sam-priya-wedding-rsvp-2027';
+      const form = document.getElementById('rsvp-form');
+      const name = document.getElementById('guest-name');
+      const guests = document.getElementById('guest-count');
+      const dietary = document.getElementById('dietary-needs');
+      const attendance = [...form.querySelectorAll('[name="attendance"]')];
+      const fields = document.getElementById('attending-fields');
+      const reply = document.getElementById('reply');
+      const confirmation = document.getElementById('confirmation');
+      const choice = () => attendance.find(input => input.checked)?.value;
+
+      function setError(control, errorId, invalid) {
+        control.setAttribute('aria-invalid', String(invalid));
+        document.getElementById(errorId).hidden = !invalid;
+        return !invalid;
+      }
+      function validateName() { return setError(name, 'name-error', !name.value.trim()); }
+      function validateGuests() { return setError(guests, 'guests-error', choice() !== 'no' && (!guests.value || !guests.validity.valid || !Number.isSafeInteger(Number(guests.value)))); }
+      function validateAttendance() {
+        const valid = Boolean(choice());
+        document.getElementById('attendance-error').hidden = valid;
+        attendance.forEach(input => input.setAttribute('aria-invalid', String(!valid)));
+        return valid;
+      }
+      function updateAttendance() {
+        const declined = choice() === 'no';
+        fields.hidden = declined;
+        guests.disabled = declined;
+        dietary.disabled = declined;
+        guests.required = !declined;
+        if (declined) setError(guests, 'guests-error', false);
+        validateAttendance();
+      }
+      function showConfirmation(response, focus = true) {
+        document.getElementById('confirmation-message').textContent = response.attendance === 'yes'
+          ? `Thank you, ${response.name}. Your response is “Joyfully accepts”.`
+          : `Thank you, ${response.name}. Your response is “Regretfully declines”.`;
+        const summary = document.getElementById('summary');
+        summary.replaceChildren();
+        const rows = [['Name', response.name], ['Attendance', response.attendance === 'yes' ? 'Attending' : 'Not attending']];
+        if (response.attendance === 'yes') rows.push(['Number of guests', String(response.guests)], ['Dietary needs', response.dietary || 'None specified']);
+        for (const [label, value] of rows) {
+          const row = document.createElement('div');
+          const term = document.createElement('dt');
+          const description = document.createElement('dd');
+          term.textContent = label;
+          description.textContent = value;
+          row.append(term, description);
+          summary.append(row);
+        }
+        reply.hidden = true;
+        confirmation.hidden = false;
+        if (focus) document.getElementById('confirmation-title').focus();
+      }
+
+      name.addEventListener('blur', validateName);
+      guests.addEventListener('blur', validateGuests);
+      name.addEventListener('input', () => { if (name.getAttribute('aria-invalid') === 'true') validateName(); });
+      guests.addEventListener('input', () => { if (guests.getAttribute('aria-invalid') === 'true') validateGuests(); });
+      attendance.forEach(input => input.addEventListener('change', updateAttendance));
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const validName = validateName();
+        const validAttendance = validateAttendance();
+        const validGuests = validateGuests();
+        if (!validName || !validAttendance || !validGuests) {
+          (!validName ? name : !validAttendance ? attendance[0] : guests).focus();
+          return;
+        }
+        const response = {
+          name: name.value.trim(), attendance: choice(),
+          guests: choice() === 'yes' ? Number(guests.value) : 0,
+          dietary: choice() === 'yes' ? dietary.value.trim() : ''
+        };
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(response));
+          document.getElementById('save-error').hidden = true;
+          showConfirmation(response);
+        } catch { document.getElementById('save-error').hidden = false; }
+      });
+      document.getElementById('edit-response').addEventListener('click', () => {
+        confirmation.hidden = true;
+        reply.hidden = false;
+        name.focus();
+      });
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey));
+        if (saved && typeof saved.name === 'string' && saved.name.trim() && ['yes', 'no'].includes(saved.attendance) && (saved.attendance === 'no' || (Number.isSafeInteger(saved.guests) && saved.guests >= 1)) && typeof saved.dietary === 'string') {
+          name.value = saved.name;
+          attendance.find(input => input.value === saved.attendance).checked = true;
+          guests.value = saved.attendance === 'yes' ? saved.guests : '';
+          dietary.value = saved.dietary;
+          updateAttendance();
+          showConfirmation(saved, false);
+        }
+      } catch { /* A new response is still available if saved data cannot be read. */ }
+    })();
+  </script>
+</body>
+</html>

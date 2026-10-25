@@ -92,7 +92,7 @@ Skill triggered (agent opened SKILL.md) in **14/14** with-skill runs.
 
 | condition | run | skill files read | bytes | elements | colors | technique | reduced-motion in source | stops under reduced motion | changed pixels (6s) |
 |---|---|---|---|---|---|---|---|---|---|
-| baseline | run-1 |  | 1944 | 15 | 10 | css | yes | yes | 0.0108 |
-| baseline | run-2 |  | 2154 | 14 | 13 | css | yes | yes | 0.0071 |
-| with-skill | run-1 | SKILL.md, motion.md | 1780 | 8 | 8 | css | yes | yes | 0.0127 |
+| baseline | run-1 |  | 1944 | 15 | 10 | css | yes | yes | 0.0112 |
+| baseline | run-2 |  | 2154 | 14 | 13 | css | yes | yes | 0.0069 |
+| with-skill | run-1 | SKILL.md, motion.md | 1780 | 8 | 8 | css | yes | yes | 0.0126 |
 | with-skill | run-2 | SKILL.md, motion.md | 1761 | 11 | 8 | css | yes | yes | 0 |

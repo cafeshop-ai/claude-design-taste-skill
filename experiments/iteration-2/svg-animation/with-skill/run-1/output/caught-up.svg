@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="128" viewBox="0 0 160 128" role="img" aria-labelledby="caught-up-title">
+  <title id="caught-up-title">You're all caught up</title>
+  <style>
+    :root {
+      --envelope-fill: #f1f5f9;
+      --envelope-stroke: #64748b;
+      --check-fill: #e8f2fc;
+      --check-stroke: #3674ad;
+    }
+    .mail {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: caught-up-float 7s ease-in-out infinite;
+    }
+    @keyframes caught-up-float {
+      0%, 35%, 100% { transform: translateY(0); }
+      67.5% { transform: translateY(-4px); }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --envelope-fill: #202d3d;
+        --envelope-stroke: #a3b3c6;
+        --check-fill: #203b54;
+        --check-stroke: #9acbfa;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+  <g class="mail" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="34" y="38" width="88" height="56" rx="8" fill="var(--envelope-fill)" stroke="var(--envelope-stroke)"/>
+    <path d="m37 42 35 26a10 10 0 0 0 12 0l35-26" fill="none" stroke="var(--envelope-stroke)"/>
+    <circle cx="114" cy="86" r="17" fill="var(--check-fill)" stroke="var(--check-stroke)"/>
+    <path d="m106 86 5 5 11-11" fill="none" stroke="var(--check-stroke)" stroke-width="2.5"/>
+  </g>
+</svg>

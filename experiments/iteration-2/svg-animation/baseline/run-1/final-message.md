@@ -1,0 +1,1 @@
+Created [caught-up.svg](caught-up.svg): a 240 × 180 envelope with a green checkmark, gentle floating animation, and reduced-motion support.

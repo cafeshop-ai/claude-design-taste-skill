@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="200" viewBox="0 0 240 200" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">You're all caught up</title>
+  <desc id="desc">A floating lavender envelope with a mint green checkmark. All your email is taken care of.</desc>
+  <style>
+    .envelope { animation: drift 6s ease-in-out infinite; }
+    .shadow { transform-origin: 120px 164px; animation: breathe 6s ease-in-out infinite; }
+    .halo { animation: glow 6s ease-in-out infinite; }
+    .spark { animation: twinkle 6s ease-in-out infinite; }
+    @keyframes drift {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    @keyframes breathe {
+      0%, 100% { transform: scaleX(1); opacity: .55; }
+      50% { transform: scaleX(.9); opacity: .35; }
+    }
+    @keyframes glow {
+      0%, 100% { opacity: .5; }
+      50% { opacity: .85; }
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: .45; }
+      50% { opacity: .8; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .envelope, .shadow, .halo, .spark { animation: none; }
+    }
+  </style>
+
+  <circle cx="120" cy="99" r="70" fill="#F6F5FB"/>
+  <ellipse class="shadow" cx="120" cy="164" rx="43" ry="5" fill="#DAD7EA" opacity=".55"/>
+
+  <g class="spark" stroke="#B9B2D7" stroke-width="2" stroke-linecap="round">
+    <path d="M44 91v8m-4-4h8"/>
+    <path d="M195 123v6m-3-3h6"/>
+  </g>
+  <circle cx="184" cy="45" r="2.5" fill="#B9D8CD"/>
+  <circle cx="65" cy="143" r="2" fill="#C9C3DF"/>
+
+  <g class="envelope" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 91 114 53a10 10 0 0 1 12 0l54 38v48a9 9 0 0 1-9 9H69a9 9 0 0 1-9-9Z" fill="#E5E0F3" stroke="#8C82AD" stroke-width="2"/>
+    <rect x="81" y="63" width="78" height="68" rx="7" fill="#FFFEFF" stroke="#B3AACD" stroke-width="2"/>
+    <path d="M97 81h31m-31 11h45m-45 11h27" stroke="#DDD8EA" stroke-width="3"/>
+    <path d="m61 92 53 36a11 11 0 0 0 12 0l53-36v47a9 9 0 0 1-9 9H70a9 9 0 0 1-9-9Z" fill="#EEEAF8"/>
+    <path d="m61 145 40-31m78 31-40-31" stroke="#C0B7D8" stroke-width="2"/>
+    <path d="m61 92 53 36a11 11 0 0 0 12 0l53-36" stroke="#8C82AD" stroke-width="2"/>
+    <path d="M60 92v47a9 9 0 0 0 9 9h102a9 9 0 0 0 9-9V92" stroke="#8C82AD" stroke-width="2"/>
+
+    <circle class="halo" cx="165" cy="65" r="26" fill="#DDF2E8" opacity=".5"/>
+    <circle cx="165" cy="65" r="19" fill="#D8EFE4" stroke="#6D9F89" stroke-width="2"/>
+    <path d="m157 65 5.5 5.5L174 59" stroke="#487E66" stroke-width="3"/>
+  </g>
+</svg>

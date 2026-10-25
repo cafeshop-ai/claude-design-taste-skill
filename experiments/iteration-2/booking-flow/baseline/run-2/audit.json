@@ -1,0 +1,72 @@
+{
+  "url": "../iteration-2/booking-flow/baseline/run-2",
+  "consoleErrors": [],
+  "axeDesktopLight": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 17
+    }
+  ],
+  "content": {
+    "words": 172,
+    "headings": 3,
+    "sections": 3,
+    "claims": [],
+    "testimonials": 0
+  },
+  "tells": {
+    "gradientText": 0,
+    "emoji": 1,
+    "buzzwords": [],
+    "centeredParagraphs": "1/5",
+    "titleCaseLabels": "0/10",
+    "dominantHue": 162,
+    "violetDominant": false
+  },
+  "system": {
+    "fontSizes": 9,
+    "fontFamilies": [
+      "Manrope",
+      "DM Sans"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 4,
+    "elementsWithShadow": 2
+  },
+  "numbers": {
+    "numericCells": 1,
+    "tabular": 0
+  },
+  "forms": {
+    "fields": 8,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+  },
+  "motion": {
+    "motionRules": 3,
+    "reducedMotionHandled": true
+  },
+  "luminanceLight": 0.964,
+  "focus": {
+    "stops": 10,
+    "visible": 10
+  },
+  "luminanceDark": 0.964,
+  "axeDesktopDark": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 17
+    }
+  ],
+  "darkMode": "light only",
+  "overflow390": 0,
+  "axeMobile": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 13
+    }
+  ]
+}

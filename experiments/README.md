@@ -44,15 +44,23 @@ The runner is [`harness/run.sh`](harness/run.sh) (one trial) and [`harness/run-i
 
    These are proxies. They catch failures; they can't recognize quality.
 2. **Blind pairwise judgment** ([`harness/blind.py`](harness/blind.py)). For each case and run, the baseline and with-skill screenshots are shown as X and Y in random order. Each is scored 1–5 on hierarchy, typography, color, content, craft, and distinctiveness, and one is preferred. Logos and animations use their own criteria: concept, simplicity, small-size legibility and craft for logos; restraint, motion quality and craft for animation. The mapping is opened only after all judgments are written, then [`blind.py reveal`](harness/blind.py) produces `judgments.md`.
-3. **Flow walkthrough** ([`harness/interact.mjs`](harness/interact.mjs)), for the booking and RSVP cases on a 390px screen. It presses the primary button with nothing filled in (are errors shown inline, by the browser's native bubble, or not at all?), then fills each step with plausible values and continues until a confirmation appears, screenshotting every step (`shots/flow-NN.jpg`). It's heuristic: it finds the forward button the way a person would (filled, not "Back", not an option chip) and ticks only required consent boxes.
-4. **Skill usage.** From each run's event log: whether Codex opened `SKILL.md`, and which reference files it read.
+3. **Independent blind judge** ([`harness/judge.py`](harness/judge.py)). The same blinded pairs and the same rubric, judged by Codex (`gpt-6.1-sol`) in a fresh read-only session per pair. It sees only the brief and the two screenshot sets, and is told it's comparing two designers. It's independent of the skill's author, but it may favor its own house style. From iteration 2 on, it's the primary blind measure (see "Blinding" below).
+4. **Flow walkthrough** ([`harness/interact.mjs`](harness/interact.mjs)), for the booking and RSVP cases on a 390px screen. It presses the primary button with nothing filled in (are errors shown inline, by the browser's native bubble, or not at all?), then fills each step with plausible values and continues until a confirmation appears, screenshotting every step (`shots/flow-NN.jpg`). It's heuristic: it finds the forward button the way a person would (filled, not "Back", not an option chip) and ticks only required consent boxes.
+5. **Skill usage.** From each run's event log: whether Codex opened `SKILL.md`, and which reference files it read.
 
 Everything for a run is committed under `iteration-N/<case>/<condition>/run-K/`: the agent's output files, its final message, its event log, screenshots, `audit.json`, and `interaction.json` where relevant. Event logs keep the agent's messages, commands, and file changes, but raw command output is removed before publishing ([`harness/sanitize-events.py`](harness/sanitize-events.py)), because agents exploring the machine can list directories and environment variable names on the host.
+
+## Blinding
+
+Claude's iteration-1 judgments were blind except for one pair. After that, Claude had seen and unblinded the iteration-1 outputs, so any later comparison against them can't be blind for Claude. It also read the independent judge's notes on v2 before it could judge v2. So from iteration 2:
+- Each iteration gets **fresh baseline runs** (iteration 2 reruns all 14), so baseline comparisons use outputs no judge has seen.
+- **The independent Codex judge is the primary blind measure.** Every call is a fresh session, so it can't recognize anything.
+- Claude's review of later iterations is reported as a **non-blind critique**, not as scores.
 
 ## Limitations
 
 - **Small samples.** 7 cases × 2 runs per condition per iteration. Treat differences as directional unless they're large and consistent.
-- **The judge is interested.** Claude wrote the skill and judges the pairs. Blinding helps, but a skill that shapes style can make outputs recognizable. All screenshots are committed so others can judge for themselves.
+- **The judges have tastes.** Claude wrote the skill and prefers restraint; the Codex judge prefers visual richness and may favor its own house style. They agreed on 8 of 14 iteration-1 pairs. Both are reported, and all screenshots are committed so others can judge for themselves.
 - **One agent, one model.** Results say something about Codex with `gpt-6.1-sol`, not about every agent.
 - **No teaching to the test.** Skill changes must not use the test briefs (Tidepool, Fernway, the RSVP, the caught-up animation, and so on) as examples; new references use unrelated briefs (a neighborhood clean-up sign-up, a coffee roaster called Millrace, a sync-complete animation). Some generic overlap predates the cases: the skill's specimen has an invoice table, and its empty-state guidance mentions "You're all caught up" as sample copy.
 - **First screen only.** Screenshots show each page's initial state. Interactions (later steps of the booking flow, dialogs, hover) are covered by the audit and the code, not the pictures.
@@ -106,6 +114,8 @@ The skill as first written, plus two exemplar pages. It barely covered logos, SV
 | RSVP empty-submit feedback | native browser bubble (2/2) | inline errors (2/2) |
 | Booking flows completed by the walkthrough | 2/2 | 2/2 |
 
+**Second opinion: the independent judge** ([`iteration-1/judgments-codex.md`](iteration-1/judgments-codex.md)) preferred with-skill **9**, baseline **5**. It agreed with Claude on 8 of 14 pairs. It saw the same gains in color (3.4 → 4.0), typography (3.5 → 4.0), and logo legibility at 16px (2.5 → 4.0). It saw only a small content gain (3.3 → 3.6) and no distinctiveness gain (3.6 both). Where the judges disagreed, the Codex judge rewarded richer identity (photos, illustrations, a dark "Pro" card, a literal book-and-leaf logo), while Claude rewarded restraint and penalized invented facts. The Codex judge also caught real flaws Claude underweighted: one with-skill RSVP page puts a tall photo before the form on phones, and one with-skill pricing page strands price units on their own lines on mobile.
+
 **What the skill changed.** Accessibility most of all (contrast, focus, reduced motion), plus fewer generic tells, a tighter type scale, and much better logo concepts. The with-skill logos were letterform-and-leaf marks that survive 16px; the baselines were a fern growing out of an open book. Baseline Codex was already competent at mechanics: every flow worked and validated, and every SVG respected reduced motion.
 
 **What it didn't fix.** In with-skill outputs:
@@ -116,6 +126,46 @@ The skill as first written, plus two exemplar pages. It barely covered logos, SV
 5. **Animation:** one with-skill animation barely moves.
 6. **A dashboard table** that overflows on phones.
 
-**Changes for iteration 2.** Commit `see below`:
+**Changes for iteration 2** (commit `008e1ca`):
 - New references: `content-design.md` (scope, no invented facts, filler patterns, sample data), `logo-design.md`, and `svg-animation.md`, all written with briefs unrelated to the test cases.
 - In `SKILL.md`: a core "Content" section, an updated list of generic tells (the house-style patterns above), a step to name your default look and then depart from it, and checklist items for invented facts, filler, dark-background logos, visible but small motion, and tables on phones.
+
+### Iteration 2: skill v2 at `008e1ca`
+
+With-skill runs on v2, compared against **14 fresh baseline runs**, plus a direct v1-vs-v2 comparison. Judged by the independent Codex judge, the primary blind measure from here on (see "Blinding"). Data: [`iteration-2/results-auto.md`](iteration-2/results-auto.md), [`iteration-2/judgments-codex.md`](iteration-2/judgments-codex.md) (v2 vs baseline), [`iteration-2/judgments-blind-v1-codex.md`](iteration-2/judgments-blind-v1-codex.md) (v1 vs v2).
+
+**Routing worked.** The skill triggered in 14/14 runs. Each new reference was read exactly where it should be: `logo-design.md` by both logo runs, `svg-animation.md` by both animation runs, and `content-design.md` by all four landing and RSVP runs.
+
+**v2 vs fresh baseline:** with-skill **8**, baseline **6**.
+
+| Independent judge, mean (1–5) | baseline | v2 |
+|---|---|---|
+| Content | 2.8 | **4.0** |
+| Distinctiveness | **3.9** | 2.8 |
+| Color / typography / hierarchy / craft | 3.5 / 3.5 / 3.7 / 3.4 | 4.0 / 3.7 / 4.0 / 3.7 |
+| Logo small-size legibility / versatility | 3.0 / 2.0 | 4.0 / 2.5 |
+
+| Automated (10 web runs each) | baseline | v2 |
+|---|---|---|
+| axe violations, mean affected elements | 26.1 | 2.2 |
+| Runs with zero axe violations | 0/10 | 7/10 |
+| Visible words per page | 264 | 171 |
+| Unsupplied claims ("10,000+", "4.9/5", "trusted by"…) | 8 | 0 |
+| Emoji | 38 | 10 |
+| Distinct font sizes per page | 15.0 | 10.4 |
+| Horizontal overflow on a phone | 1/10 | 2/10 |
+
+**v1 vs v2, head to head:** v1 **10**, v2 **3** (13 pairs). Content rose (3.33 → 3.89), but distinctiveness fell from 4.00 to 2.67.
+
+**What happened.** The content rules worked: pages got shorter (−35% words), stopped inventing prices, policies, and statistics, and got more focused on phones. But v2 also told the agent to name its default look (cream, forest green, an italic serif) and leave it. The agent dutifully avoided those and landed on the *next* default, generic blue SaaS. The judge's notes say it repeatedly: "blue accents and card treatment feel generic", "navy card and blue CTA … feel conventional". The pricing restyle even reverted the brand's headline to "Simple, transparent pricing." A ban without a positive source of direction just selects the runner-up default. And the house-style list penalized warmth that the judge read as coherent identity.
+
+Two more findings:
+- **Every with-skill phone overflow so far had the same cause.** A visually hidden `.sr-only` label inside a wide table is `position: absolute`. Its scroll wrapper wasn't positioned, so the label escaped the wrapper and widened the whole page. The skill's own accessibility advice produced the bug, and an agent that can't render will never see it. A fresh baseline dashboard overflowed too, by 318px, for a different reason.
+- **Codex looks for a browser to render its work** (the skill's step 6) and finds none in this environment, so it can't catch visual bugs itself.
+
+**Changes for iteration 3** (commit `bdd290b`):
+- Replace the ban with a positive source: derive palette, type, and one signature element from three concrete things in the product's world, and name blue SaaS as a default too.
+- Make "memorable somewhere" a requirement, with a checklist item.
+- State that content discipline cuts words, claims, sections, and features, not identity ("cut the slogan, keep the illustration").
+- Narrow the house-style tells to structural tics.
+- Scroll wrappers need `position: relative`.

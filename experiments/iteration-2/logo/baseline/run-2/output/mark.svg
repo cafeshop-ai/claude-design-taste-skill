@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Fernway</title>
+  <desc id="desc">An open book growing a fern sprig.</desc>
+  <path fill="#183F35" d="M30 58L30 19L34 19L34 58Z
+M32 25C25 19 26 10 32 5C38 10 39 19 32 25Z
+M32 35C22 35 15 27 15 19C24 19 31 25 32 35Z
+M32 29C32 20 41 13 50 13C49 22 43 29 32 29Z
+M7 34C15 33 23 36 28 41L28 58C22 54 15 52 7 53Z
+M36 41C41 36 49 33 57 34L57 53C49 52 42 54 36 58Z"/>
+</svg>

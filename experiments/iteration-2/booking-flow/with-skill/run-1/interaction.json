@@ -1,0 +1,32 @@
+{
+  "steps": [
+    {
+      "button": "Continue to home details",
+      "advanced": true,
+      "errorsAfter": 0
+    },
+    {
+      "button": "Choose date & time",
+      "advanced": true,
+      "errorsAfter": 0
+    },
+    {
+      "button": "Review your clean",
+      "advanced": true,
+      "errorsAfter": 0
+    },
+    {
+      "button": "Finish booking preview",
+      "advanced": true,
+      "errorsAfter": 0
+    }
+  ],
+  "emptySubmit": {
+    "button": "Continue to home details",
+    "errorsShown": "custom",
+    "advanced": false
+  },
+  "completed": true,
+  "stepsTaken": 4,
+  "pageErrors": []
+}

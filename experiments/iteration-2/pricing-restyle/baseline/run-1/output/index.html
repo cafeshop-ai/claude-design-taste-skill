@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A little space for your next big idea. Compare Marginalia's Starter, Pro, and Team note-taking plans.">
+<title>Pricing — Marginalia</title>
+<style>
+:root { --paper: #faf9f6; --ink: #292d28; --muted: #71746b; --line: #dedfd6; --accent: #b64b30; --peach: #f6eee5; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+a, button, summary { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+.container { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+.nav { height: 92px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); gap: 30px; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-family: Georgia, "Times New Roman", serif; font-size: 25px; font-weight: 600; letter-spacing: -1px; }
+.logo svg { width: 27px; height: 30px; color: var(--accent); }
+.nav-links, .nav-actions { display: flex; align-items: center; gap: 30px; }
+.nav-links a { color: #66695f; font-size: 13px; }
+.nav-links a[aria-current="page"] { color: var(--ink); }
+.nav-links a:hover, .login:hover, .footer a:hover { color: var(--accent); }
+.nav-actions { gap: 25px; font-size: 13px; }
+.signup { padding: 9px 17px; background: var(--ink); color: #fff; border: 1px solid var(--ink); border-radius: 5px; }
+.signup:hover { background: #42483f; }
+.hero { text-align: center; padding: 64px 0 31px; }
+.eyebrow { margin: 0 0 16px; color: var(--accent); font-size: 10px; font-weight: 650; letter-spacing: 2px; text-transform: uppercase; }
+h1, .section-heading { font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -2.2px; }
+h1 { margin: 0; font-size: clamp(42px, 5.2vw, 66px); line-height: 1.12; }
+h1 em { color: var(--accent); font-weight: 400; }
+.hero-copy { margin: 19px auto 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.billing { margin-top: 30px; display: flex; justify-content: center; align-items: center; gap: 13px; }
+.toggle { display: inline-flex; padding: 4px; border: 1px solid var(--line); border-radius: 7px; background: #eeeee8; gap: 3px; }
+.toggle button { border: 0; border-radius: 4px; padding: 7px 20px; background: transparent; color: #65695e; font-size: 12px; }
+.toggle button[aria-pressed="true"] { background: #fff; color: var(--ink); box-shadow: 0 1px 3px #292d2815; }
+.savings { color: var(--accent); font-size: 11px; font-weight: 550; }
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; padding-top: 12px; }
+.plan { display: flex; flex-direction: column; padding: 27px 28px 26px; border: 1px solid var(--line); border-radius: 9px; background: #fffefa; }
+.plan.popular { background: var(--peach); border-color: #bd8066; position: relative; }
+.plan-heading { display: flex; align-items: center; justify-content: space-between; min-height: 30px; gap: 8px; }
+.plan h2 { margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -.4px; }
+.badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border: 1px solid #d8b5a2; border-radius: 4px; color: #9c442e; font-size: 9px; font-weight: 600; letter-spacing: .3px; white-space: nowrap; }
+.badge svg { width: 11px; height: 11px; }
+.desc { margin: 7px 0 0; color: var(--muted); font-size: 12px; }
+.price-block { margin-top: 25px; }
+.price { display: flex; align-items: baseline; gap: 8px; min-height: 63px; }
+.amount { font-size: 49px; line-height: 1.2; letter-spacing: -2.5px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.price small { font-size: 12px; color: var(--muted); }
+.billing-note { min-height: 20px; margin: 1px 0 22px; font-size: 11px; color: var(--muted); }
+.btn { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 43px; padding: 10px 15px; border: 1px solid #cdd0c4; border-radius: 5px; font-size: 12px; font-weight: 600; transition: background .15s, border-color .15s; }
+.btn:hover { background: #efefe7; border-color: #929987; }
+.popular .btn { background: var(--accent); color: #fff; border-color: var(--accent); }
+.popular .btn:hover { background: #9c3e27; border-color: #9c3e27; }
+.btn svg { width: 14px; height: 14px; }
+.feature-label { margin: 24px 0 13px; padding-top: 21px; border-top: 1px solid var(--line); font-size: 10px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase; }
+.popular .feature-label { border-color: #e0d2c4; }
+.plan ul { list-style: none; padding: 0; margin: 0; }
+.plan li { display: flex; align-items: baseline; gap: 10px; padding: 6px 0; font-size: 12px; }
+.plan li::before { content: "✓"; color: #65775c; font-size: 13px; flex: 0 0 13px; }
+.plan li.unavailable { color: #74776d; }
+.plan li.unavailable::before { content: "−"; color: #92958b; }
+.reassurance { text-align: center; color: var(--muted); margin: 22px 0 0; font-size: 11px; }
+.reassurance span { margin-inline: 9px; color: #b1b4a6; }
+.features { margin-top: 66px; padding: 35px 0 40px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.features-title { margin: 0 0 28px; text-align: center; font-size: 10px; font-weight: 500; letter-spacing: 1.8px; text-transform: uppercase; color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 42px; }
+.feature { display: flex; align-items: flex-start; gap: 15px; }
+.feature-icon { flex: 0 0 33px; height: 35px; display: grid; place-items: center; color: #6c785e; }
+.feature-icon svg { width: 25px; height: 25px; }
+.feature h3 { margin: 0 0 5px; font-size: 13px; font-weight: 600; }
+.feature p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.faq { display: grid; grid-template-columns: 1fr 1.55fr; gap: 80px; padding: 70px 0 75px; }
+.faq .eyebrow { margin-bottom: 13px; }
+.section-heading { margin: 0; font-size: 38px; line-height: 1.17; letter-spacing: -1.3px; }
+.faq-intro > p:last-child { color: var(--muted); font-size: 12px; margin: 16px 0 0; }
+details { border-bottom: 1px solid var(--line); }
+details:first-child { border-top: 1px solid var(--line); }
+summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; font-size: 13px; font-weight: 500; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--muted); font-size: 20px; font-weight: 300; line-height: 1; }
+details[open] summary::after { content: "−"; }
+details p { color: var(--muted); font-size: 12px; line-height: 1.8; margin: -5px 35px 21px 0; }
+.footer { display: flex; justify-content: space-between; align-items: center; gap: 25px; padding: 25px 0 30px; border-top: 1px solid var(--line); }
+.footer .logo { font-size: 20px; gap: 8px; }
+.footer .logo svg { width: 20px; height: 23px; }
+.footer p { color: var(--muted); font-size: 10px; margin: 0; }
+.footer-note { display: flex; align-items: center; gap: 5px; }
+.footer-note svg { width: 12px; height: 12px; color: var(--accent); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (min-width: 1600px) { .hero { padding-top: 80px; } }
+@media (max-width: 1000px) { .desc { min-height: 39px; } .plan { padding: 23px 20px; } .grid { gap: 25px; } .nav-links { gap: 22px; } .faq { gap: 45px; } }
+@media (max-width: 760px) {
+  .container { width: min(560px, calc(100% - 40px)); }
+  .nav { height: 78px; gap: 15px; } .nav-links { display: none; } .nav-actions { gap: 16px; } .logo { font-size: 23px; }
+  .hero { padding-top: 47px; } h1 { font-size: 47px; } .hero-copy { font-size: 14px; max-width: 340px; } .hero-copy br { display: none; }
+  .plans { grid-template-columns: 1fr; gap: 17px; } .plan { padding: 25px; } .amount { font-size: 48px; }
+  .plan li, .desc, .btn { font-size: 13px; } .desc { min-height: 0; } .billing-note { margin-bottom: 18px; } .price-block { margin-top: 20px; }
+  .features { margin-top: 44px; padding: 30px 0; } .grid { grid-template-columns: 1fr; gap: 26px; } .feature p { max-width: 330px; } .features-title { text-align: left; }
+  .faq { grid-template-columns: 1fr; padding: 45px 0; gap: 27px; } .section-heading { font-size: 35px; } .section-heading br { display: none; }
+  .footer { flex-wrap: wrap; gap: 14px; } .footer-note { display: none; }
+}
+@media (max-width: 380px) { .container { width: calc(100% - 32px); } .login { display: none; } h1 { font-size: 41px; } .billing { gap: 10px; } .toggle button { padding-inline: 15px; } .reassurance span { margin-inline: 4px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" class="sr-only" aria-hidden="true"><defs>
+  <symbol id="mark" viewBox="0 0 28 32"><path d="M5 28V7h17v21H5Z M9 3h17v21 M10 12h7 M10 17h7 M10 22h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="spark" viewBox="0 0 24 24"><path d="m12 3 2.3 6.7L21 12l-6.7 2.3L12 21l-2.3-6.7L3 12l6.7-2.3L12 3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+</defs></svg>
+<header class="container">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="logo" href="#" aria-label="Marginalia home"><svg aria-hidden="true"><use href="#mark"/></svg>Marginalia</a>
+    <div class="nav-links"><a href="#features">Features</a><a href="#pricing" aria-current="page">Pricing</a><a href="#faq">FAQs</a></div>
+    <div class="nav-actions"><a class="login" href="#">Log in</a><a class="signup" href="#">Sign up free <span aria-hidden="true">↗</span></a></div>
+  </nav>
+</header>
+<main class="container">
+  <section class="hero" id="pricing" aria-labelledby="pricing-title">
+    <p class="eyebrow">Less noise. More room to think.</p>
+    <h1 id="pricing-title">Your ideas, with<br>room to <em>grow.</em></h1>
+    <p class="hero-copy">A space for your notes, your next project, and everything in between.<br>Choose the plan that feels right. Make it your own.</p>
+    <div class="billing">
+      <div class="toggle" role="group" aria-label="Billing frequency">
+        <button type="button" data-billing="monthly" aria-pressed="true">Monthly</button>
+        <button type="button" data-billing="yearly" aria-pressed="false">Yearly</button>
+      </div>
+      <span class="savings">Save 20% with yearly</span>
+    </div>
+  </section>
+  <section class="plans" aria-label="Compare pricing plans">
+    <article class="plan">
+      <div class="plan-heading"><h2>Starter</h2></div>
+      <p class="desc">A home for your everyday thoughts.</p>
+      <div class="price-block"><div class="price"><span class="amount">$0</span><small>/ month</small></div><p class="billing-note">Free forever. No strings attached.</p></div>
+      <a class="btn" href="#" aria-label="Get started with Starter">Start for free <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      <p class="feature-label">A little space to get started</p>
+      <ul>
+        <li>Up to 100 notes</li><li>Sync across 2 devices</li><li>Basic search</li><li class="unavailable"><span>Offline access<span class="sr-only"> not included</span></span></li><li class="unavailable"><span>Shared notebooks<span class="sr-only"> not included</span></span></li>
+      </ul>
+    </article>
+    <article class="plan popular">
+      <div class="plan-heading"><h2>Pro</h2><span class="badge"><svg aria-hidden="true"><use href="#spark"/></svg> MOST POPULAR</span></div>
+      <p class="desc">For ideas that won’t fit in the margins.</p>
+      <div class="price-block" aria-live="polite" aria-atomic="true"><div class="price"><span class="amount" data-monthly="8" data-yearly="6.40">$8</span><small>/ month</small></div><p class="billing-note" data-annual="76.80">Billed monthly.</p></div>
+      <a class="btn" href="#" aria-label="Start a free Pro trial">Try Pro free <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      <p class="feature-label">More room. Fewer limits.</p>
+      <ul>
+        <li>Unlimited notes</li><li>Sync across unlimited devices</li><li>Full-text search inside PDFs</li><li>Offline access</li><li class="unavailable"><span>Shared notebooks<span class="sr-only"> not included</span></span></li>
+      </ul>
+    </article>
+    <article class="plan">
+      <div class="plan-heading"><h2>Team</h2></div>
+      <p class="desc">A shared space for your next big thing.</p>
+      <div class="price-block" aria-live="polite" aria-atomic="true"><div class="price"><span class="amount" data-monthly="14" data-yearly="11.20">$14</span><small>/ user / month</small></div><p class="billing-note" data-annual="134.40">Per user, billed monthly.</p></div>
+      <a class="btn" href="#" aria-label="Get started with Team">Get started with Team <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      <p class="feature-label">Built for working together</p>
+      <ul>
+        <li>Everything in Pro</li><li>Shared notebooks</li><li>Admin controls</li><li>Priority support</li><li>Single sign-on (SSO)</li>
+      </ul>
+    </article>
+  </section>
+  <p class="reassurance">14-day free trial on Pro <span aria-hidden="true">·</span> No credit card required <span aria-hidden="true">·</span> Cancel anytime</p>
+  <section class="features" id="features" aria-labelledby="features-title">
+    <h2 class="features-title" id="features-title">Thoughtfully made. Whichever plan you choose.</h2>
+    <div class="grid">
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 9-13h-7l1-7Z"/></svg></div><div><h3>Find your train of thought</h3><p>Fast, intuitive search. Less time looking,<br>more time connecting the dots.</p></div></div>
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></div><div><h3>Your thoughts stay yours</h3><p>Encrypted and secure, so your notes<br>are always in safe hands.</p></div></div>
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17H6a4 4 0 0 1-.5-8 6.5 6.5 0 0 1 12.7-1A4.5 4.5 0 0 1 18 17h-1M9 16l3-3 3 3m-3-3v8"/></svg></div><div><h3>Pick up where you left off</h3><p>Your notes, in sync across your devices.<br>Ready when inspiration strikes.</p></div></div>
+    </div>
+  </section>
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="faq-intro"><p class="eyebrow">A few more things</p><h2 class="section-heading" id="faq-title">Good questions.<br>Simple answers.</h2><p>A little clarity before you get started.</p></div>
+    <div>
+      <details open><summary>Can I cancel anytime?</summary><p>Of course. You can cancel your subscription at any time, no questions asked.</p></details>
+      <details><summary>Is there a free trial for Pro?</summary><p>Yes. Pro comes with a 14-day free trial, so you can make yourself at home. No credit card required.</p></details>
+      <details><summary>Do you offer student discounts?</summary><p>Yes! Students get 50% off Pro with a valid school email.</p></details>
+    </div>
+  </section>
+</main>
+<footer class="footer container">
+  <a class="logo" href="#" aria-label="Marginalia home"><svg aria-hidden="true"><use href="#mark"/></svg>Marginalia</a>
+  <p>© 2026 Marginalia Inc. All rights reserved.</p>
+  <p class="footer-note">Made for a more thoughtful day. <svg aria-hidden="true"><use href="#spark"/></svg></p>
+</footer>
+<script>
+const billingButtons = document.querySelectorAll('[data-billing]');
+billingButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const yearly = button.dataset.billing === 'yearly';
+    billingButtons.forEach(option => option.setAttribute('aria-pressed', String(option === button)));
+    document.querySelectorAll('[data-monthly]').forEach(price => {
+      price.textContent = '$' + (yearly ? price.dataset.yearly : price.dataset.monthly);
+    });
+    document.querySelectorAll('[data-annual]').forEach((note, index) => {
+      note.textContent = yearly
+        ? '$' + note.dataset.annual + (index === 1 ? ' per user, billed yearly.' : ' billed yearly.')
+        : (index === 1 ? 'Per user, billed monthly.' : 'Billed monthly.');
+    });
+  });
+});
+</script>
+</body>
+</html>

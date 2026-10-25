@@ -1,0 +1,1 @@
+Created [caught-up.svg](caught-up.svg): a 160×128 envelope with a gentle seven-second loop, dark-mode colors, and reduced-motion support. SVG validation passed; browser preview was blocked by the sandbox.

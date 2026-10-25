@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-labelledby="fernway-mark-title">
+  <title id="fernway-mark-title">Fernway fern F</title>
+  <style>.fernway-frond { fill: #204C3A; } @media (prefers-color-scheme: dark) { .fernway-frond { fill: #F5F1E7; } }</style>
+  <path class="fernway-frond" fill="#204C3A" d="M5 15C6 13 6 11 6 10C3 10 1 7 1 5C4 5 6 7 6 9L7 5C7 2 10 1 15 1C14 4 11 6 8 5L8 8C10 6 12 6 14 7C13 10 10 11 8 10C8 12 7 14 7 15Z"/>
+</svg>

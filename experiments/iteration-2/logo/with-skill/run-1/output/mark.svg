@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-labelledby="title">
+  <title id="title">Fernway</title>
+  <style>path{fill:#713f35}@media(prefers-color-scheme:dark){path{fill:#f2d8c7}}</style>
+  <path d="M5 15V9C2.5 9 1 6.5 1 3C3.1 3 4.8 4.2 5 6V5C5 2.5 8 1 11 1H15C14.5 4.8 11 7 7 7V10C8.5 7.8 11 7 14 7C13.5 10.5 10.8 12 7 12V15Z"/>
+</svg>

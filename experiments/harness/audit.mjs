@@ -107,11 +107,13 @@ const pageFacts = () => {
   for (const el of all) {
     const s = getComputedStyle(el);
     for (const c of [s.backgroundColor, ...(textEls.includes(el) ? [s.color] : [])]) {
-      const o = oklch(c); if (o && o.C > 0.06) { const k = Math.round(o.H / 30) * 30 % 360; chromatic.set(k, (chromatic.get(k) || 0) + 1); }
+      const o = oklch(c); if (o && o.C > 0.06) { const k = Math.round(o.H / 30) * 30 % 360; const b = chromatic.get(k) || { n: 0, h: 0 }; b.n++; b.h += o.H; chromatic.set(k, b); }
     }
   }
-  const hues = [...chromatic.entries()].sort((a, b) => b[1] - a[1]);
-  const dominant = hues[0]?.[0] ?? null;
+  // Dominant hue = mean hue of the most-used 30-degree bucket (not the bucket's center,
+  // which would file a 264-degree blue under 270).
+  const hues = [...chromatic.entries()].sort((a, b) => b[1].n - a[1].n);
+  const dominant = hues[0] ? Math.round(hues[0][1].h / hues[0][1].n) : null;
 
   const gradientText = all.filter(el => { const s = getComputedStyle(el); return (s.webkitBackgroundClip === "text" || s.backgroundClip === "text") && s.backgroundImage.includes("gradient"); }).length;
   const emoji = (text.match(/\p{Extended_Pictographic}/gu) || []).length;
@@ -146,7 +148,7 @@ const pageFacts = () => {
   return {
     content,
     tells: { gradientText, emoji, buzzwords: buzz, centeredParagraphs: `${centered}/${paras.length}`, titleCaseLabels: `${titleCase}/${labels.length}`,
-             dominantHue: dominant, violetDominant: dominant !== null && dominant >= 270 && dominant <= 315 },
+             dominantHue: dominant, violetDominant: dominant !== null && dominant >= 275 && dominant <= 320 },
     system: { fontSizes: fontSizes.size, fontFamilies: [...families], chromaticHueBuckets: hues.length, radii: radii.size, elementsWithShadow: shadows },
     numbers: { numericCells: numeric.length, tabular },
     forms: { fields: fields.length, unlabeled: unlabeled.length, placeholderOnly: unlabeled.filter(f => f.placeholder).length },

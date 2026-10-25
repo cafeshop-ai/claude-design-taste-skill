@@ -1,0 +1,1 @@
+Created [caught-up.svg](caught-up.svg): a lavender envelope with a mint checkmark, a gentle six-second loop, and reduced-motion support.

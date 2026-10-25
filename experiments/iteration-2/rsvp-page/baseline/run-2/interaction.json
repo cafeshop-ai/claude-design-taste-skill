@@ -1,0 +1,17 @@
+{
+  "steps": [
+    {
+      "button": "Confirm my RSVP",
+      "advanced": true,
+      "errorsAfter": 0
+    }
+  ],
+  "emptySubmit": {
+    "button": "Confirm my RSVP",
+    "errorsShown": "native browser bubble",
+    "advanced": false
+  },
+  "completed": true,
+  "stepsTaken": 1,
+  "pageErrors": []
+}
