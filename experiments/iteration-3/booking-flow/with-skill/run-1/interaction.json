@@ -1,0 +1,32 @@
+{
+  "steps": [
+    {
+      "button": "Continue",
+      "advanced": true,
+      "errorsAfter": 0
+    },
+    {
+      "button": "Continue",
+      "advanced": true,
+      "errorsAfter": 0
+    },
+    {
+      "button": "Continue",
+      "advanced": true,
+      "errorsAfter": 0
+    },
+    {
+      "button": "Confirm details",
+      "advanced": true,
+      "errorsAfter": 0
+    }
+  ],
+  "emptySubmit": {
+    "button": "Continue",
+    "errorsShown": "custom",
+    "advanced": false
+  },
+  "completed": true,
+  "stepsTaken": 4,
+  "pageErrors": []
+}

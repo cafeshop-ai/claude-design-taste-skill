@@ -169,3 +169,42 @@ Two more findings:
 - State that content discipline cuts words, claims, sections, and features, not identity ("cut the slogan, keep the illustration").
 - Narrow the house-style tells to structural tics.
 - Scroll wrappers need `position: relative`.
+
+### Iteration 3: skill v3 at `bdd290b`
+
+With-skill runs on v3, judged by the independent judge against the iteration-2 fresh baselines, v1, and v2. Data: [`iteration-3/results-auto.md`](iteration-3/results-auto.md); judgments [vs baseline](iteration-3/judgments-codex.md), [vs v1](iteration-3/judgments-blind-v1-codex.md), and [vs v2](iteration-3/judgments-blind-v2-codex.md).
+
+| Independent judge | result |
+|---|---|
+| v3 vs fresh baseline | v3 **10**, baseline 4. The best result against baseline so far (v1 9–5, v2 8–6) |
+| v3 vs v2 | v3 **8**, v2 6. Distinctiveness recovers from 3.3 to 3.7 |
+| v3 vs v1 | v1 **10**, v3 4. v1 still leads on identity (4.0 vs 2.8); v3 leads on content (3.8 vs 3.3) |
+
+| v3 vs baseline, mean (1–5) | baseline | v3 |
+|---|---|---|
+| Content | 2.7 | 3.8 |
+| Typography / hierarchy / color | 3.2 / 3.6 / 3.5 | 4.0 / 4.0 / 4.0 |
+| Craft | 3.4 | 3.4 |
+| Distinctiveness | 4.0 | 3.2 |
+
+Automated, 10 web runs each:
+- axe violations fell from 26.1 to 3.4 affected elements per page.
+- Words per page fell from 264 to 187.
+- Invented claims went from 8 to 0, and emoji from 38 to 10.
+- No invoice dashboard overflowed on a phone. The scroll-wrapper fix worked; the one overflow was a landing page, by 5px.
+
+**What v3 fixed.** The palette swing is gone. v3 pages draw their palettes from the brief again (the forest green and cream came back where they fit), with v2's honesty intact: fictional sample clients, no invented prices or logos, and pages that tell you what saving actually does ("Save my RSVP · not sent to Sam & Priya").
+
+**What still loses to v1, in the judge's words:**
+1. **Mobile craft.** A fixed action bar "visibly cuts across the phone field". A dashboard table "crops amounts and leaves status and due date offscreen" on a phone (v1 had reflowed rows into stacked cards). On one landing page, icons and labels overlap on phones.
+2. **Thinner content.** The v3 dashboards dropped v1's actionable overdue panel. "Build only what was asked" was read as "build the minimum", cutting depth *within* the requested jobs, not just breadth beyond them.
+3. **Identity.** "Uniformly pale cards feel generic." v1's pages had illustrations and expressive serif type.
+
+**A caution about the judge.** v1's look is close to Codex's own house style, and the judge is Codex. It scored the fresh baselines (pure house style) 4.0 on distinctiveness, the highest of any condition. Some of v1's identity lead may be the judge recognizing its own taste. Claude's non-blind read: the v3 pages are more honest and better organized than v1, a little plainer, and have real mobile bugs that v1 didn't.
+
+**Changes for iteration 4:**
+- Scope means building what was asked fully: depth on the requested jobs, cuts only to breadth and padding.
+- Phone tables keep their key fields visible as stacked rows.
+- Fixed bars reserve their own space.
+- A page made only of type and pale cards counts as under-designed.
+- A restyle replaces a generic line with a specific one instead of deleting the voice.

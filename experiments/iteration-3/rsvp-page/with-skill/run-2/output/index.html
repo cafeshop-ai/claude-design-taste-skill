@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f7f0">
+  <meta name="description" content="Celebrate the wedding of Sam and Priya at Hollow Oak Farm in Hudson, New York. June 14, 2027 at 4 pm. Leave your RSVP here.">
+  <title>Sam &amp; Priya · Wedding RSVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: #e9ece5;
+      --paper: #f9f7f0;
+      --ink: #293c30;
+      --muted: #64695e;
+      --accent: #354e3d;
+      --accent-hover: #253d2d;
+      --selected: #edf0e6;
+      --rule: #d5d7c9;
+      --control: #8a8f7d;
+      --field: #fdfbf6;
+      --danger: #9a392d;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+      --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px;
+      --s6: 24px; --s8: 32px; --s12: 48px; --s16: 64px;
+      --small: 13px; --label: 14px; --body: 16px;
+      --radius: 3px;
+      --motion: 160ms ease-out;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: var(--s12) var(--s6); background: var(--canvas); color: var(--ink); font: 400 var(--body)/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; }
+    button, input, textarea, .choice { transition: background var(--motion), border-color var(--motion), color var(--motion); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    [hidden] { display: none !important; }
+    .invitation { position: relative; max-width: 800px; margin: 0 auto; padding: var(--s12) var(--s16) var(--s8); background: var(--paper); border: 1px solid var(--rule); }
+    .invitation::before { content: ''; position: absolute; inset: var(--s3); border: 1px solid var(--rule); pointer-events: none; }
+    .hero { text-align: center; }
+    .oak { display: block; width: 192px; height: 88px; margin: 0 auto var(--s4); color: var(--accent); }
+    .intro { margin: 0 0 var(--s2); color: var(--muted); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; }
+    h1 { margin: 0; font: 400 clamp(60px, 8vw, 88px)/1.05 var(--serif); letter-spacing: -.045em; }
+    h1 span { display: inline-block; padding: 0 var(--s1); color: #667356; font-style: italic; font-weight: 400; }
+    .date { margin: var(--s6) 0 var(--s2); font-size: var(--label); letter-spacing: .025em; }
+    .dot { padding: 0 var(--s2); color: var(--muted); }
+    .venue { margin: 0; font: 500 25px/1.2 var(--serif); }
+    .location { margin: var(--s1) 0 0; font-size: var(--small); color: var(--muted); }
+    .divider { display: flex; align-items: center; gap: var(--s4); max-width: 480px; margin: var(--s8) auto; color: var(--control); }
+    .divider::before, .divider::after { content: ''; height: 1px; flex: 1; background: var(--rule); }
+    .divider svg { width: 12px; height: 16px; }
+    .response { max-width: 480px; margin: 0 auto; }
+    h2 { margin: 0 0 var(--s6); font: 500 36px/1.15 var(--serif); text-align: center; letter-spacing: -.02em; }
+    .field { margin: 0 0 var(--s6); }
+    label, legend { display: block; margin-bottom: var(--s2); font-size: var(--label); font-weight: 500; }
+    input[type="text"], textarea { display: block; width: 100%; border: 1px solid var(--control); border-radius: var(--radius); background: var(--field); color: var(--ink); padding: var(--s3) var(--s4); }
+    input[type="text"] { height: 48px; }
+    input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
+    textarea { min-height: 88px; resize: vertical; }
+    input:hover, textarea:hover { border-color: var(--accent); }
+    input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--danger); }
+    fieldset { padding: 0; border: 0; min-width: 0; }
+    legend { padding: 0; }
+    .choices { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+    .choice { display: flex; align-items: center; gap: var(--s3); position: relative; min-height: 56px; margin: 0; padding: var(--s3) var(--s4); border: 1px solid var(--control); border-radius: var(--radius); cursor: pointer; background: var(--field); font-size: var(--label); font-weight: 400; }
+    .choice:hover { background: var(--selected); border-color: var(--accent); }
+    .choice:has(input:checked) { background: var(--selected); border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+    .choice:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .choice input { width: 18px; height: 18px; margin: 0; accent-color: var(--accent); flex-shrink: 0; }
+    .choice input:focus-visible { outline: none; }
+    .guest-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s4); }
+    .guest-row label { margin: 0; }
+    .hint { display: block; margin-top: var(--s1); font-size: var(--small); color: var(--muted); font-weight: 400; }
+    .stepper { display: flex; flex-shrink: 0; height: 44px; border: 1px solid var(--control); border-radius: var(--radius); background: var(--field); }
+    .stepper button { width: 44px; padding: 0; border: 0; background: transparent; color: var(--ink); font-size: 22px; }
+    .stepper button:hover:not(:disabled) { background: var(--selected); }
+    .stepper button:disabled { color: var(--control); cursor: default; }
+    .stepper input { width: 48px; min-width: 0; border: 0; border-right: 1px solid var(--rule); border-left: 1px solid var(--rule); border-radius: 0; padding: 0; text-align: center; font-size: var(--label); color: var(--ink); background: transparent; appearance: textfield; -moz-appearance: textfield; }
+    .stepper input::-webkit-inner-spin-button, .stepper input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    .optional { font-weight: 400; color: var(--muted); font-size: var(--small); }
+    .primary { display: flex; align-items: center; justify-content: center; gap: var(--s3); width: 100%; min-height: 52px; padding: var(--s3) var(--s6); border: 1px solid var(--accent); border-radius: var(--radius); background: var(--accent); color: var(--paper); font-size: var(--label); font-weight: 500; letter-spacing: .025em; }
+    .primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    .primary:active { transform: translateY(1px); }
+    .primary svg { width: 18px; height: 18px; }
+    .storage-note { text-align: center; color: var(--muted); font-size: 12px; margin: var(--s3) 0 0; }
+    .error { margin: var(--s2) 0 0; color: var(--danger); font-size: var(--small); }
+    .error:empty { display: none; }
+    .signature { margin: var(--s8) 0 0; text-align: center; font: italic 400 21px/1.5 var(--serif); color: var(--muted); }
+    .confirmation { text-align: center; padding: var(--s6) 0; }
+    .confirmation > svg { width: 40px; height: 40px; margin-bottom: var(--s4); }
+    .confirmation h2 { margin-bottom: var(--s4); }
+    .confirmation p { margin: 0 0 var(--s4); overflow-wrap: anywhere; }
+    .confirmation .hint { font-size: var(--label); }
+    .edit { min-height: 44px; padding: var(--s2) var(--s4); margin-top: var(--s2); border: 1px solid var(--control); border-radius: var(--radius); background: transparent; color: var(--ink); font-size: var(--label); }
+    .edit:hover { background: var(--selected); }
+    @media (max-width: 600px) {
+      body { padding: var(--s4) var(--s3); }
+      .invitation { padding: var(--s8) var(--s6); }
+      .invitation::before { inset: var(--s2); }
+      .oak { width: 160px; height: 72px; }
+      h1 { font-size: clamp(52px, 11.8vw, 68px); }
+      .date { font-size: var(--small); }
+      .dot { padding: 0 var(--s1); }
+      .choice { gap: var(--s2); padding: var(--s3); font-size: var(--small); }
+      .choices { gap: var(--s2); }
+      h2 { font-size: 32px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <main class="invitation">
+    <header class="hero">
+      <!-- An oak sprig, drawn in the spirit of a botanical wedding invitation. -->
+      <svg class="oak" viewBox="0 0 240 110" fill="none" aria-hidden="true">
+        <defs>
+          <path id="leaf" d="M0 0C-7-2-13-7-11-11C-10-14-6-11-7-15C-15-21-13-27-8-26C-6-25-6-26-7-30C-10-38-5-40-2-36C0-33 1-36 1-40C2-47 6-49 8-52C12-47 17-44 14-37C12-33 14-32 17-34C23-38 25-33 20-27C17-23 19-24 22-24C29-24 27-17 20-14C16-12 19-11 21-10C24-5 13-1 0 0Z"/>
+        </defs>
+        <g stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M47 95C79 77 103 59 126 31M88 71C111 68 139 63 163 48M110 49L92 28M127 32L140 18M69 83L60 63"/>
+          <use href="#leaf" transform="translate(92 30) rotate(-58) scale(.7)" fill="#e3e7d8"/>
+          <path d="M91 29L67 13M84 25L76 24M80 21L79 14"/>
+          <use href="#leaf" transform="translate(126 33) rotate(15) scale(.68)" fill="#e3e7d8"/>
+          <path d="M126 31L138 1M130 21L139 17M133 14L131 9"/>
+          <use href="#leaf" transform="translate(146 59) rotate(63) scale(.8)" fill="#e3e7d8"/>
+          <path d="M147 58L183 42M157 54L165 55M165 50L169 43"/>
+          <use href="#leaf" transform="translate(82 75) rotate(-84) scale(.65)" fill="#e3e7d8"/>
+          <path d="M81 74L52 70M70 73L65 65"/>
+          <use href="#leaf" transform="translate(104 68) rotate(110) scale(.64)" fill="#e3e7d8"/>
+          <path d="M105 69L131 83M116 75L120 74"/>
+          <path d="M152 55C161 61 163 65 160 69M155 69C154 79 164 82 168 73L169 70M154 68C157 65 165 66 170 70L168 73C162 72 158 72 154 70Z" fill="#e3e7d8"/>
+        </g>
+      </svg>
+      <p class="intro">You're invited to the wedding of</p>
+      <h1>Sam <span>&amp;</span> Priya</h1>
+      <p class="date"><time datetime="2027-06-14T16:00:00-04:00">June 14, 2027 <span class="dot" aria-hidden="true">·</span> 4:00 pm</time></p>
+      <p class="venue">Hollow Oak Farm</p>
+      <p class="location">Hudson, New York</p>
+    </header>
+
+    <div class="divider" aria-hidden="true"><svg viewBox="0 0 12 16" fill="none"><path d="M6 1L10 8L6 15L2 8Z" stroke="currentColor"/></svg></div>
+
+    <section class="response" aria-labelledby="rsvp-heading">
+      <form id="rsvp-form" novalidate>
+        <h2 id="rsvp-heading">Will you join us?</h2>
+        <div class="field">
+          <label for="guest-name">Your full name</label>
+          <input id="guest-name" name="name" type="text" autocomplete="name" placeholder="First and last name" maxlength="200" required aria-describedby="name-error">
+          <p id="name-error" class="error" aria-live="polite"></p>
+        </div>
+        <fieldset class="field" aria-describedby="attendance-error">
+          <legend>Will you be attending?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="attendance" value="yes" required> Joyfully accept</label>
+            <label class="choice"><input type="radio" name="attendance" value="no" required> Regretfully decline</label>
+          </div>
+          <p id="attendance-error" class="error" aria-live="polite"></p>
+        </fieldset>
+        <div id="attending-fields">
+          <div class="field">
+            <div class="guest-row">
+              <label for="guest-count">Number of guests<span class="hint" id="count-hint">Including yourself</span></label>
+              <div class="stepper">
+                <button type="button" id="decrease" aria-label="Decrease number of guests" disabled>−</button>
+                <input id="guest-count" name="guests" type="number" min="1" step="1" value="1" inputmode="numeric" required aria-describedby="count-hint count-error">
+                <button type="button" id="increase" aria-label="Increase number of guests">+</button>
+              </div>
+            </div>
+            <p id="count-error" class="error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="dietary">Dietary needs <span class="optional">(optional)</span></label>
+            <textarea id="dietary" name="dietary" rows="2" maxlength="2000" placeholder="Any allergies or dietary requirements for your party"></textarea>
+          </div>
+        </div>
+        <button class="primary" type="submit">Save RSVP <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12H20M14 6L20 12L14 18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <p class="storage-note">Your response is saved in this browser only.</p>
+        <p id="save-error" class="error" role="alert"></p>
+        <noscript><p class="error">Enable JavaScript in your browser to save your RSVP.</p></noscript>
+      </form>
+      <div id="confirmation" class="confirmation" hidden tabindex="-1" aria-labelledby="confirmation-heading">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="18" stroke="currentColor"/><path d="M12 20L18 26L28 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h2 id="confirmation-heading">Your RSVP is saved.</h2>
+        <p id="response-summary"></p>
+        <p class="hint">Saved in this browser only.<br>Your response has not been sent to Sam &amp; Priya.</p>
+        <button id="edit-response" class="edit" type="button">Edit your response</button>
+      </div>
+    </section>
+    <p class="signature">With love, Sam &amp; Priya</p>
+  </main>
+  <script>
+    (() => {
+      'use strict';
+      const storageKey = 'sam-priya-wedding-rsvp-2027';
+      const form = document.getElementById('rsvp-form');
+      const guestName = document.getElementById('guest-name');
+      const guestCount = document.getElementById('guest-count');
+      const dietary = document.getElementById('dietary');
+      const radios = [...form.querySelectorAll('[name="attendance"]')];
+      const attendingFields = document.getElementById('attending-fields');
+      const confirmation = document.getElementById('confirmation');
+      const decrease = document.getElementById('decrease');
+      const increase = document.getElementById('increase');
+      const error = (id, message) => { document.getElementById(id).textContent = message; };
+      const attendance = () => form.querySelector('[name="attendance"]:checked')?.value;
+
+      function validateName() {
+        const valid = guestName.value.trim().length > 0;
+        error('name-error', valid ? '' : 'Please enter your name.');
+        guestName.setAttribute('aria-invalid', String(!valid));
+        return valid;
+      }
+      function validateAttendance() {
+        const valid = Boolean(attendance());
+        error('attendance-error', valid ? '' : 'Please let us know whether you can attend.');
+        radios.forEach(radio => radio.setAttribute('aria-invalid', String(!valid)));
+        return valid;
+      }
+      function validateCount() {
+        const valid = attendance() === 'no' || (Number.isSafeInteger(guestCount.valueAsNumber) && guestCount.valueAsNumber >= 1);
+        error('count-error', valid ? '' : 'Enter a whole number of guests, including yourself.');
+        guestCount.setAttribute('aria-invalid', String(!valid));
+        return valid;
+      }
+      function syncCount() {
+        decrease.disabled = !Number.isFinite(guestCount.valueAsNumber) || guestCount.valueAsNumber <= 1;
+      }
+      function syncAttendance() {
+        const declining = attendance() === 'no';
+        attendingFields.hidden = declining;
+        guestCount.disabled = declining;
+        dietary.disabled = declining;
+        if (declining) error('count-error', '');
+        syncCount();
+      }
+      function showConfirmation(response, focus = true) {
+        document.getElementById('response-summary').textContent = response.attendance === 'yes'
+          ? `${response.name} · Attending · ${response.guests} ${response.guests === 1 ? 'guest' : 'guests'}`
+          : `${response.name} · Unable to attend`;
+        form.hidden = true;
+        confirmation.hidden = false;
+        if (focus) confirmation.focus();
+      }
+      guestName.addEventListener('blur', validateName);
+      guestName.addEventListener('input', () => { if (guestName.getAttribute('aria-invalid') === 'true') validateName(); });
+      guestCount.addEventListener('blur', validateCount);
+      guestCount.addEventListener('input', () => { syncCount(); if (guestCount.getAttribute('aria-invalid') === 'true') validateCount(); });
+      radios.forEach(radio => radio.addEventListener('change', () => { syncAttendance(); validateAttendance(); }));
+      decrease.addEventListener('click', () => { guestCount.stepDown(); syncCount(); validateCount(); });
+      increase.addEventListener('click', () => {
+        if (!Number.isFinite(guestCount.valueAsNumber) || guestCount.valueAsNumber < 1) guestCount.value = '1';
+        else if (guestCount.valueAsNumber < Number.MAX_SAFE_INTEGER) guestCount.stepUp();
+        syncCount(); validateCount();
+      });
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const validName = validateName();
+        const validAttendance = validateAttendance();
+        const validCount = validateCount();
+        if (!validName || !validAttendance || !validCount) {
+          (!validName ? guestName : !validAttendance ? radios[0] : guestCount).focus();
+          return;
+        }
+        const response = {
+          name: guestName.value.trim(),
+          attendance: attendance(),
+          guests: attendance() === 'yes' ? guestCount.valueAsNumber : 0,
+          dietary: attendance() === 'yes' ? dietary.value.trim() : ''
+        };
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(response));
+          error('save-error', '');
+          showConfirmation(response);
+        } catch {
+          error('save-error', 'Your browser could not save this response. Allow site storage and try again.');
+        }
+      });
+      document.getElementById('edit-response').addEventListener('click', () => {
+        confirmation.hidden = true;
+        form.hidden = false;
+        guestName.focus();
+      });
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey));
+        if (saved && typeof saved.name === 'string' && saved.name.trim() && ['yes', 'no'].includes(saved.attendance) &&
+            (saved.attendance === 'no' || (Number.isSafeInteger(saved.guests) && saved.guests >= 1))) {
+          guestName.value = saved.name;
+          radios.find(radio => radio.value === saved.attendance).checked = true;
+          guestCount.value = saved.attendance === 'yes' ? saved.guests : 1;
+          dietary.value = typeof saved.dietary === 'string' ? saved.dietary : '';
+          syncAttendance();
+          showConfirmation(saved, false);
+        }
+      } catch { /* Keep the blank form available when browser storage is unavailable. */ }
+    })();
+  </script>
+</body>
+</html>

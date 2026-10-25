@@ -1,0 +1,312 @@
+[
+ {
+  "pair": "booking-flow-run-1",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 4,
+    "craft": 2,
+    "distinctiveness": 3
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 3,
+    "color": 3,
+    "content": 2,
+    "craft": 4,
+    "distinctiveness": 4
+   }
+  },
+  "notes": "Y wins on responsive craft: its mobile form remains unobstructed, and the summary becomes a compact horizontal card. X has clearer, larger text, but its mobile Continue footer overlaps the phone field and leaves substantial empty space below. Y\u2019s distinctive branding and photography feel more finished, though faint microcopy and unsupported claims such as \u201c$119\u201d and \u201c2,000+ happy homes\u201d weaken accessibility and content credibility."
+ },
+ {
+  "pair": "booking-flow-run-2",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "hierarchy": 3,
+    "typography": 3,
+    "color": 3,
+    "content": 3,
+    "craft": 3,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 3,
+    "craft": 4,
+    "distinctiveness": 3
+   }
+  },
+  "notes": "Y wins on readability and phone usability: larger labels, stronger input borders, full-width email and phone fields, and a prominent full-width Continue button. X has more distinctive branding and a charming illustrated sidebar, but its faint supporting text and narrow paired fields weaken the mobile experience. Both contain unnecessary content: X adds generic reassurance claims, while Y gives substantial mobile space to an empty booking summary and a demo disclaimer."
+ },
+ {
+  "pair": "invoice-dashboard-run-1",
+  "preference": "X",
+  "scores": {
+   "X": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 4,
+    "craft": 3,
+    "distinctiveness": 3
+   },
+   "Y": {
+    "hierarchy": 3,
+    "typography": 3,
+    "color": 3,
+    "content": 3,
+    "craft": 2,
+    "distinctiveness": 4
+   }
+  },
+  "notes": "X makes outstanding money and the labeled New invoice action immediately obvious, with clearer contrast and more focused content. Y\u2019s serif headlines and brand details add personality, but its promotional copy, extra panels, and faint secondary text weaken scanning. Both phone tables obscure essential invoice fields; Y also sacrifices width to a persistent navigation rail and has an unexplained green element overlapping invoice rows."
+ },
+ {
+  "pair": "invoice-dashboard-run-2",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "hierarchy": 3,
+    "typography": 3,
+    "color": 3,
+    "content": 3,
+    "craft": 2,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 4,
+    "craft": 3,
+    "distinctiveness": 3
+   }
+  },
+  "notes": "Y makes invoice tracking easier to scan through larger financial figures, clearer supporting text, and a client-first table with useful project descriptions. X has more personality in its cash-flow chart and reminder illustration, but faint labels and extra motivational copy weaken clarity. Y\u2019s stacked phone summary cards are more readable than X\u2019s compressed three-column cards; both phone tables leave essential amounts and due dates outside the visible area."
+ },
+ {
+  "pair": "landing-page-run-1",
+  "preference": "X",
+  "scores": {
+   "X": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 3,
+    "craft": 4,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 4,
+    "craft": 2,
+    "distinctiveness": 4
+   }
+  },
+  "notes": "X wins on responsive execution: its illustrated feature cards stack cleanly, while Y\u2019s mobile feature icons collide with headings and its numbered labels overlap body copy. Y has a more cohesive visual identity and a larger, more informative dashboard preview; X\u2019s climbing photograph and feature illustrations give it stronger sport-specific context. X loses content points for the $99 pricing and named customer logos, which introduce unsupported claims beyond the brief."
+ },
+ {
+  "pair": "landing-page-run-2",
+  "preference": "X",
+  "scores": {
+   "X": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 4,
+    "craft": 4,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 3,
+    "color": 4,
+    "content": 2,
+    "craft": 4,
+    "distinctiveness": 4
+   }
+  },
+  "notes": "X connects the promise directly to a useful dashboard and three clearly explained features, with more readable supporting text on mobile. Y\u2019s climbing photograph, orange accents, and overlapping dashboard create a memorable hero, but its smaller text weakens the phone experience. Its named gym logos, $99 pricing, and migration promises also introduce unsupported claims beyond the brief, while X stays focused."
+ },
+ {
+  "pair": "logo-run-1",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "concept": 3,
+    "simplicity": 4,
+    "small-size legibility": 4,
+    "craft": 3,
+    "versatility": 2
+   },
+   "Y": {
+    "concept": 4,
+    "simplicity": 4,
+    "small-size legibility": 3,
+    "craft": 4,
+    "versatility": 2
+   }
+  },
+  "notes": "Y\u2019s open-book base growing into leaves connects the bookshop and Fernway name more specifically than X\u2019s generic sprig. Its balanced geometry and refined serif wordmark give it a more distinctive identity, though the narrow internal gaps crowd at 16px and the tagline is barely readable. X\u2019s simpler silhouette survives reduction better. Both lose substantial contrast on the dark backgrounds shown."
+ },
+ {
+  "pair": "logo-run-2",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "concept": 4,
+    "simplicity": 3,
+    "small-size legibility": 3,
+    "craft": 4,
+    "versatility": 2
+   },
+   "Y": {
+    "concept": 3,
+    "simplicity": 4,
+    "small-size legibility": 4,
+    "craft": 4,
+    "versatility": 2
+   }
+  },
+  "notes": "Y\u2019s leaf-shaped F has a simpler, more memorable silhouette and retains clearer internal space at favicon sizes. X\u2019s sprout emerging from an open book communicates the business more specifically, but its narrow stem and page divisions become crowded at 16px. Both have polished serif wordmarks and work in one color, but the dark green nearly disappears against the dark backgrounds shown."
+ },
+ {
+  "pair": "pricing-restyle-run-1",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "hierarchy": 4,
+    "typography": 3,
+    "color": 4,
+    "content": 3,
+    "craft": 3,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 4,
+    "craft": 4,
+    "distinctiveness": 3
+   }
+  },
+  "notes": "Y feels more professional through larger, more readable card text, consistent spacing, and a clear pricing-focused headline. Its phone layout preserves navigation and handles section headings cleanly; X visibly runs \u201cGood questions.Simple answers.\u201d together. X has more brand character through its italic accent and warmer copy, but its extra slogans and small supporting text make the page feel busier."
+ },
+ {
+  "pair": "pricing-restyle-run-2",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "hierarchy": 4,
+    "typography": 3,
+    "color": 4,
+    "content": 3,
+    "craft": 3,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 4,
+    "craft": 4,
+    "distinctiveness": 3
+   }
+  },
+  "notes": "Y is more direct: its headline and 100-note introduction explain the offer, while larger plan names and clearer text sizing make comparison easier. Its restrained red accents consistently emphasize Pro and interactive elements. X has more personality through its green palette and literary typography, but adds vague copy and shows missing spaces on mobile in \u201cbetween.Choose\u201d and \u201cquestions.Simple\u201d; its explicit 14-day trial messaging is a strength."
+ },
+ {
+  "pair": "rsvp-page-run-1",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "hierarchy": 3,
+    "typography": 4,
+    "color": 4,
+    "content": 2,
+    "craft": 4,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 3,
+    "craft": 4,
+    "distinctiveness": 3
+   }
+  },
+  "notes": "Y keeps the event details and form in a compact, readable sequence across both sizes; X\u2019s oversized stacked names push the mobile form roughly 800px down the page. X has more personality through its terracotta accents and botanical illustration, but adds an unsupported reply deadline and several repetitive sentimental lines. Y\u2019s device-only saving disclaimer is clear, though it reveals a limitation for guests intending to submit an RSVP."
+ },
+ {
+  "pair": "rsvp-page-run-2",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "hierarchy": 4,
+    "typography": 3,
+    "color": 3,
+    "content": 3,
+    "craft": 4,
+    "distinctiveness": 4
+   },
+   "Y": {
+    "hierarchy": 4,
+    "typography": 4,
+    "color": 4,
+    "content": 4,
+    "craft": 4,
+    "distinctiveness": 3
+   }
+  },
+  "notes": "Y wins on readability and focus: larger form labels, stronger contrast, and concise event details make the RSVP easier to scan on both screens. X\u2019s arched countryside photograph and asymmetric desktop composition give it more character, but faint supporting text and extra sentimental copy weaken usability and lengthen the phone page. Y\u2019s botanical stationery treatment is more conventional, yet its consistent spacing and clearer controls make it the stronger overall design."
+ },
+ {
+  "pair": "svg-animation-run-1",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "restraint": 4,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 4
+   },
+   "Y": {
+    "restraint": 5,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 5
+   }
+  },
+  "notes": "Y\u2019s clearer envelope outline and solid green check badge communicate completion immediately at this small size. X\u2019s lavender halo, sparkles, and letter add charm, but its faint strokes reduce legibility and introduce extra decoration. Both show restrained vertical movement across the sampled frames; neither demonstrates particularly distinctive motion."
+ },
+ {
+  "pair": "svg-animation-run-2",
+  "preference": "X",
+  "scores": {
+   "X": {
+    "restraint": 4,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 4
+   },
+   "Y": {
+    "restraint": 5,
+    "motion quality": 3,
+    "illustration craft": 3,
+    "fit for context": 4
+   }
+  },
+  "notes": "X\u2019s emerging letter, mint check badge, and soft shadow create a more polished, welcoming empty-state illustration. Y\u2019s consistent outlines and simpler silhouette offer excellent restraint, but feel more like a generic status icon. Both show gentle vertical movement; the sampled frames provide limited evidence of distinctive timing or easing."
+ }
+]

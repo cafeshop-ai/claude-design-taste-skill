@@ -1,0 +1,54 @@
+{
+  "url": "../iteration-3/rsvp-page/with-skill/run-1",
+  "consoleErrors": [],
+  "axeDesktopLight": [],
+  "content": {
+    "words": 67,
+    "headings": 2,
+    "sections": 1,
+    "claims": [],
+    "testimonials": 0
+  },
+  "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "1/1",
+    "titleCaseLabels": "1/2",
+    "dominantHue": null,
+    "violetDominant": false
+  },
+  "system": {
+    "fontSizes": 8,
+    "fontFamilies": [
+      "DM Sans",
+      "Cormorant Garamond"
+    ],
+    "chromaticHueBuckets": 0,
+    "radii": 2,
+    "elementsWithShadow": 0
+  },
+  "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+  },
+  "forms": {
+    "fields": 3,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+  },
+  "motion": {
+    "motionRules": 0,
+    "reducedMotionHandled": true
+  },
+  "luminanceLight": 0.948,
+  "focus": {
+    "stops": 9,
+    "visible": 9
+  },
+  "luminanceDark": 0.948,
+  "axeDesktopDark": [],
+  "darkMode": "light only",
+  "overflow390": 0,
+  "axeMobile": []
+}

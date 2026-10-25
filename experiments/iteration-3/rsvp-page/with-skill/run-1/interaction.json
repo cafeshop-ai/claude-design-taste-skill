@@ -1,0 +1,17 @@
+{
+  "steps": [
+    {
+      "button": "Save my RSVP",
+      "advanced": true,
+      "errorsAfter": 0
+    }
+  ],
+  "emptySubmit": {
+    "button": "Save my RSVP",
+    "errorsShown": "custom",
+    "advanced": false
+  },
+  "completed": true,
+  "stepsTaken": 1,
+  "pageErrors": []
+}

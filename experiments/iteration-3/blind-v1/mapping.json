@@ -1,0 +1,58 @@
+{
+ "booking-flow-run-1": {
+  "X": "iteration-1/booking-flow/with-skill/run-1",
+  "Y": "iteration-3/booking-flow/with-skill/run-1"
+ },
+ "booking-flow-run-2": {
+  "X": "iteration-1/booking-flow/with-skill/run-2",
+  "Y": "iteration-3/booking-flow/with-skill/run-2"
+ },
+ "invoice-dashboard-run-1": {
+  "X": "iteration-1/invoice-dashboard/with-skill/run-1",
+  "Y": "iteration-3/invoice-dashboard/with-skill/run-1"
+ },
+ "invoice-dashboard-run-2": {
+  "X": "iteration-3/invoice-dashboard/with-skill/run-2",
+  "Y": "iteration-1/invoice-dashboard/with-skill/run-2"
+ },
+ "landing-page-run-1": {
+  "X": "iteration-3/landing-page/with-skill/run-1",
+  "Y": "iteration-1/landing-page/with-skill/run-1"
+ },
+ "landing-page-run-2": {
+  "X": "iteration-3/landing-page/with-skill/run-2",
+  "Y": "iteration-1/landing-page/with-skill/run-2"
+ },
+ "logo-run-1": {
+  "X": "iteration-1/logo/with-skill/run-1",
+  "Y": "iteration-3/logo/with-skill/run-1"
+ },
+ "logo-run-2": {
+  "X": "iteration-1/logo/with-skill/run-2",
+  "Y": "iteration-3/logo/with-skill/run-2"
+ },
+ "pricing-restyle-run-1": {
+  "X": "iteration-3/pricing-restyle/with-skill/run-1",
+  "Y": "iteration-1/pricing-restyle/with-skill/run-1"
+ },
+ "pricing-restyle-run-2": {
+  "X": "iteration-3/pricing-restyle/with-skill/run-2",
+  "Y": "iteration-1/pricing-restyle/with-skill/run-2"
+ },
+ "rsvp-page-run-1": {
+  "X": "iteration-1/rsvp-page/with-skill/run-1",
+  "Y": "iteration-3/rsvp-page/with-skill/run-1"
+ },
+ "rsvp-page-run-2": {
+  "X": "iteration-1/rsvp-page/with-skill/run-2",
+  "Y": "iteration-3/rsvp-page/with-skill/run-2"
+ },
+ "svg-animation-run-1": {
+  "X": "iteration-3/svg-animation/with-skill/run-1",
+  "Y": "iteration-1/svg-animation/with-skill/run-1"
+ },
+ "svg-animation-run-2": {
+  "X": "iteration-3/svg-animation/with-skill/run-2",
+  "Y": "iteration-1/svg-animation/with-skill/run-2"
+ }
+}
