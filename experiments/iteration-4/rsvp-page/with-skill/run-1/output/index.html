@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f2">
+  <meta name="description" content="Celebrate the wedding of Sam and Priya at Hollow Oak Farm in Hudson, New York, on June 14, 2027.">
+  <title>Sam & Priya — Wedding RSVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f8f7f2;
+      --ink: #303e30;
+      --muted: #62685b;
+      --accent: #3e5139;
+      --accent-hover: #2d3e29;
+      --sage: #e8eadd;
+      --field: #fdfcf8;
+      --border: #909383;
+      --rule: #d9dbce;
+      --selected: #edf0e5;
+      --error: #9e3831;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+      --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px;
+      --s6: 24px; --s8: 32px; --s12: 48px; --s16: 64px; --s24: 96px;
+      --small: 12px; --body: 14px; --input: 16px; --heading: 48px;
+      --radius: 4px; --ease: 180ms ease-out;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: var(--body); line-height: 1.6; }
+    button, input, textarea { font: inherit; }
+    button, label.choice { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    button, input, textarea { border-radius: var(--radius); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    [hidden] { display: none !important; }
+    .page { max-width: 1248px; margin: 0 auto; padding: 0 var(--s16); }
+    .masthead { min-height: 104px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--rule); }
+    .monogram { font-family: var(--serif); font-size: 32px; letter-spacing: -.05em; line-height: 1; }
+    .monogram span { font-style: italic; font-size: 24px; padding: 0 var(--s1); }
+    .masthead-note { font-size: 11px; text-transform: uppercase; letter-spacing: .18em; }
+    main { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: var(--s24); padding: var(--s12) 0 var(--s16); }
+    .invitation { position: relative; isolation: isolate; text-align: center; padding: var(--s12) var(--s6) var(--s8); min-height: 690px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .invitation::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--sage); border-radius: 260px 260px var(--radius) var(--radius); }
+    .invitation-kicker { margin: var(--s4) 0 var(--s3); font-size: 10px; text-transform: uppercase; letter-spacing: .24em; }
+    h1 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(64px, 6.2vw, 88px); line-height: .95; letter-spacing: -.055em; }
+    h1 .ampersand { display: block; font-size: 44px; line-height: 1.05; font-style: italic; letter-spacing: 0; }
+    .oak { width: 290px; max-width: 100%; height: 226px; color: var(--accent); margin: var(--s4) 0 var(--s3); }
+    .event-date { margin: 0 0 var(--s3); font-size: 11px; text-transform: uppercase; letter-spacing: .15em; }
+    .event-date .dot { padding: 0 var(--s2); }
+    .venue { margin: 0; font-family: var(--serif); font-size: 28px; line-height: 1.2; }
+    .location { margin: var(--s1) 0 0; font-size: var(--small); color: var(--muted); }
+    .form-section { width: 100%; max-width: 448px; padding: var(--s4) 0; }
+    h2 { font-family: var(--serif); font-size: var(--heading); font-weight: 400; letter-spacing: -.035em; line-height: 1.1; margin: 0 0 var(--s3); text-wrap: balance; }
+    .intro { margin: 0 0 var(--s8); color: var(--muted); }
+    .field { margin: 0 0 var(--s6); }
+    .field-label, legend { display: block; font-weight: 500; padding: 0; margin: 0 0 var(--s2); }
+    .optional { font-weight: 400; color: var(--muted); font-size: var(--small); margin-left: var(--s1); }
+    input[type=text], textarea { display: block; width: 100%; padding: var(--s3) var(--s4); border: 1px solid var(--border); background: var(--field); color: var(--ink); font-size: var(--input); transition: border-color var(--ease), background var(--ease); }
+    input[type=text] { height: 52px; }
+    input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; font-size: var(--body); }
+    input:hover, textarea:hover { border-color: var(--accent); }
+    textarea { min-height: 96px; resize: vertical; line-height: 1.6; }
+    fieldset { border: 0; padding: 0; min-width: 0; }
+    .choices { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+    .choice { position: relative; display: flex; align-items: center; gap: var(--s3); min-height: 56px; padding: var(--s3); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; background: var(--field); transition: background var(--ease), border-color var(--ease); }
+    .choice:hover { background: var(--selected); border-color: var(--accent); }
+    .choice:has(input:checked) { border-color: var(--accent); background: var(--selected); box-shadow: inset 0 0 0 1px var(--accent); }
+    .choice input { flex: 0 0 auto; width: 18px; height: 18px; margin: 0; accent-color: var(--accent); cursor: pointer; }
+    .choice span { line-height: 1.4; font-size: var(--small); }
+    .guest-row { display: flex; align-items: center; gap: var(--s4); }
+    .stepper { display: flex; align-items: center; border: 1px solid var(--border); border-radius: var(--radius); background: var(--field); }
+    .stepper button { border: 0; width: 44px; height: 48px; background: transparent; color: var(--ink); font-size: 24px; line-height: 1; transition: background var(--ease); }
+    .stepper button:hover:enabled { background: var(--selected); }
+    .stepper button:disabled { opacity: .35; cursor: default; }
+    .stepper input { width: 48px; height: 48px; padding: 0; border: 0; background: transparent; color: var(--ink); text-align: center; font-size: var(--input); appearance: textfield; -moz-appearance: textfield; font-variant-numeric: tabular-nums; }
+    .stepper input::-webkit-inner-spin-button, .stepper input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    .helper { font-size: var(--small); color: var(--muted); }
+    .error { color: var(--error); margin: var(--s2) 0 0; font-size: var(--small); }
+    [aria-invalid=true] { border-color: var(--error) !important; }
+    .decline-note { padding: var(--s4); border-left: 2px solid var(--accent); background: var(--sage); margin-bottom: var(--s6); }
+    .primary { width: 100%; display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: var(--s3) var(--s6); border: 1px solid var(--accent); background: var(--accent); color: var(--paper); font-weight: 500; transition: background var(--ease), transform var(--ease); }
+    .primary svg { width: 20px; height: 20px; }
+    .primary:hover { background: var(--accent-hover); }
+    .primary:active { transform: translateY(1px); }
+    .save-note { margin: var(--s3) 0 0; color: var(--muted); font-size: 11px; text-align: center; }
+    footer { border-top: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; padding: var(--s6) 0; color: var(--muted); font-size: 11px; }
+    .footer-signature { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--ink); }
+    .success-mark { width: 48px; height: 48px; margin-bottom: var(--s6); color: var(--accent); }
+    .confirmation p { color: var(--muted); }
+    .summary { border-block: 1px solid var(--rule); margin: var(--s6) 0; padding: var(--s4) 0; }
+    .summary div { display: grid; grid-template-columns: 100px 1fr; gap: var(--s4); padding: var(--s2) 0; }
+    dt { color: var(--muted); font-size: var(--small); }
+    dd { margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+    .secondary { min-height: 44px; padding: var(--s2) var(--s4); border: 1px solid var(--border); color: var(--ink); background: transparent; }
+    .secondary:hover { background: var(--sage); }
+    @media (min-width: 1400px) { main { padding-block: var(--s16); } }
+    @media (max-width: 1050px) { .page { padding-inline: var(--s8); } main { gap: var(--s12); } h1 { font-size: 72px; } .choice { gap: var(--s2); } }
+    @media (max-width: 700px) { .page { padding-inline: var(--s6); } .masthead { min-height: 80px; } .masthead-note { font-size: 9px; letter-spacing: .12em; } main { grid-template-columns: 1fr; gap: var(--s12); padding-block: var(--s8) var(--s12); } .invitation { width: 100%; max-width: 448px; min-height: 0; margin-inline: auto; padding: var(--s8) var(--s4); } h1 { font-size: 72px; } .invitation-kicker { margin-top: var(--s2); } .oak { height: 180px; width: 250px; margin-block: var(--s3); } .form-section { margin: auto; padding: 0; } h2 { font-size: 44px; } footer { gap: var(--s4); } }
+    @media (prefers-color-scheme: dark) {
+      :root { color-scheme: dark; --paper: #20271f; --ink: #e9eadf; --muted: #b5bcaa; --accent: #bac7a9; --accent-hover: #cbd5bd; --sage: #303b2d; --field: #262e24; --border: #7d8874; --rule: #414c3b; --selected: #36422f; --error: #f3a29a; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="monogram" aria-label="Sam and Priya">S<span>&</span>P</div>
+      <div class="masthead-note">June 14, 2027 <span aria-hidden="true">&nbsp; / &nbsp;</span> Hudson, New York</div>
+    </header>
+    <main>
+      <section class="invitation" aria-labelledby="couple-names">
+        <p class="invitation-kicker">We're getting married</p>
+        <h1 id="couple-names">Sam <span class="ampersand">&</span> Priya</h1>
+        <svg class="oak" viewBox="0 0 340 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <g id="leaf" stroke="currentColor" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M0 0C-5-3-9-6-6-9C-12-10-12-15-7-16C-10-20-7-24-3-22C-4-27-1-31 1-32C5-29 6-25 4-22C10-23 12-19 8-16C14-13 12-9 7-9C11-4 5-2 0 0Z" fill="currentColor" fill-opacity=".035"/>
+              <path d="M0 0L1-26M1-7L-4-12M1-13L6-18"/>
+            </g>
+            <g id="sprig">
+              <use href="#leaf" transform="rotate(-35) scale(.8)"/>
+              <use href="#leaf" transform="translate(3 -17) rotate(35) scale(.75)"/>
+              <use href="#leaf" transform="translate(-5 -27) rotate(-20) scale(.72)"/>
+              <use href="#leaf" transform="translate(1 -42) rotate(8) scale(.68)"/>
+            </g>
+          </defs>
+          <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M151 239C166 221 163 201 163 176C161 156 149 146 132 138C114 131 94 122 82 104M184 239C173 216 176 194 177 178C178 157 192 147 213 136C237 123 253 111 263 95" stroke-width="2"/>
+            <path d="M163 190C159 171 138 167 120 162C98 154 80 139 69 125M174 192C186 170 211 170 232 155C250 143 262 130 273 114M163 168C169 147 165 125 159 104C154 84 159 64 168 47M176 166C179 141 183 119 194 99C204 80 205 59 204 46M148 148C145 123 136 107 119 92C108 81 104 64 105 51" stroke-width="1.5"/>
+            <path d="M135 139C117 138 96 136 76 120M116 127C108 111 96 105 78 96M120 161C114 147 106 140 94 136M148 125C132 120 125 109 123 94M161 111C176 96 178 76 174 60M185 115C178 95 185 76 189 65M204 141C205 122 223 108 238 103M223 132C240 132 254 127 264 118M239 114C244 96 239 84 239 76M193 101C216 97 228 84 231 68M103 81L85 70M163 215C170 203 167 186 169 173M172 239C167 230 170 221 169 210" stroke-width="1"/>
+            <path d="M132 242C144 239 151 243 159 241C174 237 186 242 197 241M111 248C139 246 164 249 185 247C202 247 214 246 224 248" stroke-width=".8"/>
+          </g>
+          <g>
+            <use href="#sprig" transform="translate(85 111) rotate(-57)"/>
+            <use href="#sprig" transform="translate(105 124) rotate(-25)"/>
+            <use href="#sprig" transform="translate(74 131) rotate(-74) scale(.8)"/>
+            <use href="#sprig" transform="translate(112 87) rotate(-38)"/>
+            <use href="#sprig" transform="translate(117 65) rotate(0) scale(.85)"/>
+            <use href="#sprig" transform="translate(144 107) rotate(-15)"/>
+            <use href="#sprig" transform="translate(160 71) rotate(-17) scale(.85)"/>
+            <use href="#sprig" transform="translate(177 63) rotate(10) scale(.75)"/>
+            <use href="#sprig" transform="translate(191 75) rotate(8) scale(.85)"/>
+            <use href="#sprig" transform="translate(206 57) rotate(26) scale(.75)"/>
+            <use href="#sprig" transform="translate(213 97) rotate(45) scale(.85)"/>
+            <use href="#sprig" transform="translate(237 80) rotate(21) scale(.78)"/>
+            <use href="#sprig" transform="translate(242 110) rotate(58)"/>
+            <use href="#sprig" transform="translate(261 119) rotate(75) scale(.85)"/>
+            <use href="#sprig" transform="translate(228 147) rotate(53) scale(.85)"/>
+            <use href="#sprig" transform="translate(203 147) rotate(24) scale(.8)"/>
+            <use href="#sprig" transform="translate(124 156) rotate(-56) scale(.8)"/>
+            <use href="#leaf" transform="translate(89 145) rotate(-90) scale(.8)"/>
+            <use href="#leaf" transform="translate(247 141) rotate(85) scale(.8)"/>
+            <use href="#leaf" transform="translate(145 96) rotate(-60) scale(.7)"/>
+            <use href="#leaf" transform="translate(181 124) rotate(30) scale(.7)"/>
+            <use href="#leaf" transform="translate(131 81) rotate(28) scale(.65)"/>
+          </g>
+        </svg>
+        <p class="event-date"><time datetime="2027-06-14T16:00:00-04:00">June 14, 2027 <span class="dot" aria-hidden="true">·</span> 4 pm</time></p>
+        <p class="venue">Hollow Oak Farm</p>
+        <p class="location">Hudson, New York</p>
+      </section>
+      <section class="form-section" aria-labelledby="rsvp-heading">
+        <div id="form-view">
+          <h2 id="rsvp-heading">Will you join us?</h2>
+          <p class="intro">We’d love to celebrate with you.</p>
+          <form id="rsvp-form" novalidate>
+            <div class="field">
+              <label class="field-label" for="guest-name">Your full name</label>
+              <input id="guest-name" name="name" type="text" autocomplete="name" placeholder="First and last name" required maxlength="150" aria-describedby="name-error">
+              <p class="error" id="name-error" hidden>Enter your name so we know who’s replying.</p>
+            </div>
+            <fieldset class="field" aria-describedby="attendance-error">
+              <legend>Will you be attending?</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="attendance" value="yes" required><span>Joyfully accept</span></label>
+                <label class="choice"><input type="radio" name="attendance" value="no" required><span>Regretfully decline</span></label>
+              </div>
+              <p class="error" id="attendance-error" hidden>Let us know whether you’ll be joining us.</p>
+            </fieldset>
+            <div id="attending-fields">
+              <div class="field">
+                <label class="field-label" for="guest-count">Number of guests</label>
+                <div class="guest-row">
+                  <div class="stepper">
+                    <button type="button" id="minus" aria-label="One fewer guest" disabled>−</button>
+                    <input type="number" id="guest-count" name="guests" value="1" min="1" step="1" inputmode="numeric" required aria-describedby="guest-help guests-error">
+                    <button type="button" id="plus" aria-label="One more guest">+</button>
+                  </div>
+                  <span class="helper" id="guest-help">Including you</span>
+                </div>
+                <p class="error" id="guests-error" hidden>Enter a whole number of at least 1.</p>
+              </div>
+              <div class="field">
+                <label class="field-label" for="dietary">Dietary needs <span class="optional">(optional)</span></label>
+                <textarea id="dietary" name="dietary" rows="3" maxlength="2000" placeholder="Any allergies or dietary preferences?" aria-label="Dietary needs (optional)"></textarea>
+              </div>
+            </div>
+            <p class="decline-note" id="decline-note" hidden>You’ll be missed. Thank you for letting us know.</p>
+            <p class="error" id="save-error" role="alert" hidden>Your browser couldn’t save your response. Allow local storage and try again.</p>
+            <button class="primary" type="submit"><span>Save RSVP</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+            <p class="save-note">Saved on this device only. Not sent to Sam & Priya.</p>
+          </form>
+        </div>
+        <div class="confirmation" id="confirmation" hidden>
+          <svg class="success-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="24" cy="24" r="21"/><path d="m14 24 7 7 14-15"/></svg>
+          <h2 id="confirmation-heading" tabindex="-1">Your RSVP is saved.</h2>
+          <p id="confirmation-message"></p>
+          <dl class="summary" id="summary"></dl>
+          <p class="helper">This response is saved on this device only and hasn’t been sent to Sam & Priya.</p>
+          <button class="secondary" id="edit-response" type="button">Edit your response</button>
+        </div>
+        <noscript><p class="error">Enable JavaScript to save your RSVP on this device.</p></noscript>
+      </section>
+    </main>
+    <footer><span class="footer-signature">Sam & Priya</span><span>14.06.2027 <span aria-hidden="true">&nbsp; · &nbsp;</span> Hudson, NY</span></footer>
+  </div>
+  <script>
+    (() => {
+      const form = document.getElementById('rsvp-form');
+      const name = document.getElementById('guest-name');
+      const count = document.getElementById('guest-count');
+      const dietary = document.getElementById('dietary');
+      const radios = [...form.querySelectorAll('[name="attendance"]')];
+      const minus = document.getElementById('minus');
+      const plus = document.getElementById('plus');
+      const storageKey = 'sam-priya-rsvp-2027-06-14';
+      const attendance = () => form.querySelector('[name="attendance"]:checked')?.value;
+      function error(input, id, invalid) {
+        document.getElementById(id).hidden = !invalid;
+        input.setAttribute('aria-invalid', String(invalid));
+        return !invalid;
+      }
+      const validateName = () => error(name, 'name-error', !name.value.trim());
+      function validateAttendance() {
+        const invalid = !attendance();
+        document.getElementById('attendance-error').hidden = !invalid;
+        radios.forEach(radio => radio.setAttribute('aria-invalid', String(invalid)));
+        return !invalid;
+      }
+      const validateCount = () => error(count, 'guests-error', attendance() !== 'no' && (!Number.isSafeInteger(count.valueAsNumber) || count.valueAsNumber < 1));
+      function updateCount() { minus.disabled = count.disabled || !(count.valueAsNumber > 1); }
+      function updateAttendance() {
+        const declined = attendance() === 'no';
+        document.getElementById('attending-fields').hidden = declined;
+        document.getElementById('decline-note').hidden = !declined;
+        count.disabled = declined;
+        dietary.disabled = declined;
+        plus.disabled = declined;
+        updateCount();
+      }
+      function showConfirmation(response, focus = true) {
+        document.getElementById('form-view').hidden = true;
+        document.getElementById('confirmation').hidden = false;
+        document.querySelector('.form-section').setAttribute('aria-labelledby', 'confirmation-heading');
+        document.getElementById('confirmation-message').textContent = 'Thank you for replying, ' + response.name + '.';
+        const summary = document.getElementById('summary');
+        summary.replaceChildren();
+        const rows = [['Name', response.name], ['Attendance', response.attendance === 'yes' ? 'Joyfully accept' : 'Regretfully decline']];
+        if (response.attendance === 'yes') {
+          rows.push(['Guests', String(response.guests)]);
+          if (response.dietary) rows.push(['Dietary needs', response.dietary]);
+        }
+        rows.forEach(([label, value]) => {
+          const row = document.createElement('div');
+          const term = document.createElement('dt');
+          const description = document.createElement('dd');
+          term.textContent = label;
+          description.textContent = value;
+          row.append(term, description);
+          summary.append(row);
+        });
+        if (focus) document.getElementById('confirmation-heading').focus();
+      }
+      name.addEventListener('blur', validateName);
+      name.addEventListener('input', () => { if (name.getAttribute('aria-invalid') === 'true') validateName(); });
+      count.addEventListener('blur', validateCount);
+      count.addEventListener('input', () => { updateCount(); if (count.getAttribute('aria-invalid') === 'true') validateCount(); });
+      radios.forEach(radio => radio.addEventListener('change', () => { updateAttendance(); validateAttendance(); }));
+      minus.addEventListener('click', () => { count.value = Math.max(1, (count.valueAsNumber || 1) - 1); updateCount(); validateCount(); });
+      plus.addEventListener('click', () => { count.value = Math.max(1, (count.valueAsNumber || 0) + 1); updateCount(); validateCount(); });
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const valid = [validateName(), validateAttendance(), validateCount()].every(Boolean);
+        if (!valid) { form.querySelector('[aria-invalid="true"]')?.focus(); return; }
+        const response = { name: name.value.trim(), attendance: attendance(), guests: attendance() === 'yes' ? count.valueAsNumber : 0, dietary: attendance() === 'yes' ? dietary.value.trim() : '' };
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(response));
+          document.getElementById('save-error').hidden = true;
+          showConfirmation(response);
+        } catch { document.getElementById('save-error').hidden = false; }
+      });
+      document.getElementById('edit-response').addEventListener('click', () => {
+        document.getElementById('confirmation').hidden = true;
+        document.getElementById('form-view').hidden = false;
+        document.querySelector('.form-section').setAttribute('aria-labelledby', 'rsvp-heading');
+        name.focus();
+      });
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey));
+        if (saved && typeof saved.name === 'string' && saved.name.trim() && ['yes', 'no'].includes(saved.attendance) && (saved.attendance === 'no' || Number.isSafeInteger(saved.guests) && saved.guests >= 1) && typeof saved.dietary === 'string') {
+          name.value = saved.name;
+          radios.find(radio => radio.value === saved.attendance).checked = true;
+          count.value = saved.guests || 1;
+          dietary.value = saved.dietary;
+          updateAttendance();
+          showConfirmation(saved, false);
+        }
+      } catch { /* The form remains usable when saved data is unavailable. */ }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html><meta charset="utf-8"><style>
+  body{margin:0;font:13px/1.4 system-ui,sans-serif;color:#555;background:#fff}
+  .sheet{display:grid;gap:24px;padding:32px;width:1100px}
+  .row{display:flex;gap:24px;align-items:stretch}
+  .panel{flex:1;display:grid;place-items:center;gap:12px;padding:40px;border:1px solid #e5e5e5;border-radius:8px;min-height:180px}
+  .dark{background:#151515;border-color:#151515;color:#aaa}
+  .sizes{display:flex;gap:28px;align-items:end}
+  .sizes figure{margin:0;display:grid;justify-items:center;gap:6px}
+  .tab{display:flex;align-items:center;gap:8px;width:220px;padding:8px 12px;border-radius:8px 8px 0 0;background:#f1f1f1;color:#222}
+  .tab.d{background:#2a2a2a;color:#eee}
+  img{display:block}
+#art svg{width:100%;height:auto;max-height:240px}</style><div class="sheet"><div class="row">
+        <div class="panel" id="stage" style="flex:none;width:420px;height:320px"><div id="art" style="width:240px"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="128" viewBox="0 0 160 128" role="img" aria-labelledby="caught-up-title caught-up-desc">
+  <title id="caught-up-title">You're all caught up</title>
+  <desc id="caught-up-desc">An envelope with a check mark floats gently, then rests.</desc>
+  <style>
+    :root {
+      --mail-paper: #f5f8f6;
+      --mail-flap: #e9efeb;
+      --mail-outline: #63766e;
+      --mail-success: #2f6c52;
+      --mail-check: #ffffff;
+    }
+    .mail {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: caught-up-float 8s ease-in-out infinite;
+    }
+    @keyframes caught-up-float {
+      0%, 35%, 100% { transform: translateY(0); }
+      67% { transform: translateY(-4px); }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --mail-paper: #202e27;
+        --mail-flap: #293a30;
+        --mail-outline: #a8bdb2;
+        --mail-success: #8bc9a5;
+        --mail-check: #172a20;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+  <g class="mail" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="32" y="36" width="92" height="60" rx="8" fill="var(--mail-paper)" stroke="var(--mail-outline)"/>
+    <path d="m35 92 32-26m54 26L89 66" fill="none" stroke="var(--mail-outline)"/>
+    <path d="m34 41 38 28a10 10 0 0 0 12 0l38-28" fill="var(--mail-flap)" stroke="var(--mail-outline)"/>
+    <circle cx="118" cy="90" r="16" fill="var(--mail-success)" stroke="var(--mail-paper)" stroke-width="4"/>
+    <path d="m111 90 5 5 9-10" fill="none" stroke="var(--mail-check)" stroke-width="2.5"/>
+  </g>
+</svg>
+</div></div></div></div>

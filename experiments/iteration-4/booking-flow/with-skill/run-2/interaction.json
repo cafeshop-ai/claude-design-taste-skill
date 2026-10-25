@@ -1,0 +1,22 @@
+{
+  "steps": [
+    {
+      "button": "Continue",
+      "advanced": true,
+      "errorsAfter": 0
+    },
+    {
+      "button": "Continue",
+      "advanced": true,
+      "errorsAfter": 0
+    }
+  ],
+  "emptySubmit": {
+    "button": "Continue",
+    "errorsShown": "custom",
+    "advanced": false
+  },
+  "completed": true,
+  "stepsTaken": 2,
+  "pageErrors": []
+}

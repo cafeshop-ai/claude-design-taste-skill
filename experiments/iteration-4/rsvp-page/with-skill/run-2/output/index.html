@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6ef">
+  <meta name="description" content="Join Sam & Priya for their wedding on June 14, 2027 at Hollow Oak Farm in Hudson, New York. Kindly RSVP here.">
+  <title>Sam & Priya — Wedding RSVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: #eaece3;
+      --paper: #f7f6ef;
+      --ink: #334631;
+      --muted: #626957;
+      --accent: #40583b;
+      --accent-hover: #30462c;
+      --tint: #eaf0e3;
+      --rule: #ccd0bf;
+      --field-border: #89917b;
+      --error: #9a352c;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --radius: 3px;
+      --ease: 180ms ease;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink); font: 14px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; }
+    button, input, textarea, .choice { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    [hidden] { display: none !important; }
+    .invitation { position: relative; width: min(800px, calc(100% - 64px)); margin: 40px auto; padding: 48px 80px 32px; background: var(--paper); }
+    .invitation::before { content: ''; pointer-events: none; position: absolute; inset: 12px; border: 1px solid var(--rule); }
+    .masthead { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
+    .monogram { font: italic 24px/1 var(--serif); letter-spacing: -.04em; color: var(--ink); text-transform: none; }
+    .hero { text-align: center; padding-top: 16px; }
+    .oak { display: block; width: 176px; height: 132px; margin: 0 auto 16px; color: var(--accent); }
+    .eyebrow { margin: 0 0 8px; font-size: 10px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; }
+    h1 { margin: 0; font: 400 clamp(64px, 8vw, 88px)/1.12 var(--serif); letter-spacing: -.045em; text-wrap: balance; }
+    h1 span { display: inline-block; margin: 0 4px; font-weight: 400; font-style: italic; font-size: .78em; }
+    .invitation-line { margin: 12px 0 24px; color: var(--muted); font: italic 21px/1.4 var(--serif); }
+    .event-details { display: grid; grid-template-columns: 1fr 1fr; max-width: 440px; margin: 0 auto; }
+    .event-details p { margin: 0; }
+    .event-details > div { padding: 0 16px; }
+    .event-details > div + div { border-left: 1px solid var(--rule); }
+    .detail-title { font: 500 22px/1.4 var(--serif); }
+    .detail-sub { margin-top: 4px !important; color: var(--muted); font-size: 12px; }
+    .divider { display: flex; align-items: center; gap: 16px; margin: 32px 0 24px; }
+    .divider::before, .divider::after { content: ''; height: 1px; background: var(--rule); flex: 1; }
+    .divider svg { width: 32px; height: 24px; color: var(--muted); }
+    .rsvp { max-width: 480px; margin: 0 auto; }
+    .form-heading { text-align: center; margin-bottom: 24px; }
+    h2 { margin: 0; font: 500 36px/1.2 var(--serif); letter-spacing: -.02em; }
+    .form-heading p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+    .field { margin-bottom: 24px; }
+    label, legend { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 500; }
+    .optional { margin-left: 4px; color: var(--muted); font-weight: 400; }
+    input[type="text"], input[type="number"], textarea { width: 100%; border: 1px solid var(--field-border); border-radius: var(--radius); background: transparent; color: var(--ink); padding: 12px 16px; transition: border-color var(--ease), background var(--ease); }
+    input[type="text"], input[type="number"] { min-height: 48px; }
+    input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
+    input:hover, textarea:hover { border-color: var(--accent); }
+    input:focus, textarea:focus { border-color: var(--accent); background: var(--paper); }
+    fieldset { border: 0; margin: 0 0 24px; padding: 0; min-width: 0; }
+    legend { padding: 0; }
+    .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .choice { position: relative; display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 12px 16px; margin: 0; border: 1px solid var(--field-border); border-radius: var(--radius); font-size: 13px; font-weight: 400; cursor: pointer; transition: background var(--ease), border-color var(--ease); }
+    .choice:hover { border-color: var(--accent); background: var(--tint); }
+    .choice:has(input:checked) { border-color: var(--accent); background: var(--tint); }
+    .choice input { appearance: none; flex: 0 0 16px; width: 16px; height: 16px; margin: 0; border: 1px solid var(--field-border); border-radius: 50%; background: var(--paper); }
+    .choice input:checked { border: 5px solid var(--accent); }
+    .guest-row { display: flex; align-items: center; gap: 16px; }
+    .stepper { display: flex; flex-shrink: 0; border: 1px solid var(--field-border); border-radius: var(--radius); overflow: hidden; }
+    .stepper button { width: 44px; min-height: 46px; padding: 0; border: 0; background: transparent; color: var(--ink); font-size: 21px; transition: background var(--ease); }
+    .stepper button:hover:not(:disabled) { background: var(--tint); }
+    .stepper button:disabled { opacity: .35; cursor: default; }
+    .stepper button:focus-visible { outline-offset: -4px; }
+    .stepper input { width: 48px; min-height: 46px; padding: 8px 0; border-width: 0 1px; border-color: var(--rule); border-radius: 0; text-align: center; appearance: textfield; font-variant-numeric: tabular-nums; }
+    .stepper input::-webkit-inner-spin-button, .stepper input::-webkit-outer-spin-button { appearance: none; margin: 0; }
+    .hint { color: var(--muted); font-size: 12px; }
+    textarea { min-height: 88px; resize: vertical; display: block; }
+    .error { color: var(--error); font-size: 12px; margin: 8px 0 0; }
+    [aria-invalid="true"] { border-color: var(--error) !important; }
+    .primary { display: flex; align-items: center; justify-content: center; gap: 16px; width: 100%; min-height: 50px; border: 1px solid var(--accent); border-radius: var(--radius); background: var(--accent); color: var(--paper); font-size: 13px; font-weight: 500; letter-spacing: .02em; transition: background var(--ease); }
+    .primary:hover { background: var(--accent-hover); }
+    .primary:active { transform: translateY(1px); }
+    .primary svg { width: 18px; height: 18px; }
+    .storage-note { margin: 12px 0 0; text-align: center; color: var(--muted); font-size: 10px; }
+    .sign-off { text-align: center; margin: 32px 0 0; font: italic 20px/1.4 var(--serif); }
+    .confirmation { text-align: center; padding: 24px 0 32px; }
+    .confirmation-mark { width: 48px; height: 48px; margin: 0 auto 16px; border: 1px solid var(--rule); border-radius: 50%; display: grid; place-items: center; }
+    .confirmation-mark svg { width: 24px; height: 24px; }
+    .confirmation p { color: var(--muted); margin: 16px 0; overflow-wrap: anywhere; }
+    .confirmation .local-notice { font-size: 12px; }
+    .edit-button { min-height: 44px; padding: 8px 16px; border: 0; background: transparent; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+    @media (min-width: 1200px) { .invitation { margin-top: 48px; margin-bottom: 48px; } }
+    @media (max-width: 600px) {
+      body { background: var(--paper); }
+      .invitation { width: 100%; margin: 0; padding: 32px 28px; }
+      .invitation::before { inset: 8px; }
+      .masthead { font-size: 9px; letter-spacing: .15em; }
+      .hero { padding-top: 24px; }
+      .oak { width: 152px; height: 112px; }
+      h1 { font-size: clamp(52px, 12.8vw, 72px); }
+      .invitation-line { font-size: 20px; margin-bottom: 24px; }
+      .event-details > div { padding: 0 8px; }
+      .detail-title { font-size: 20px; }
+      .detail-sub { font-size: 11px; }
+      .divider { margin-top: 24px; }
+      .choices { gap: 8px; }
+      .choice { padding: 12px; gap: 8px; font-size: 12px; }
+      input[type="text"], input[type="number"], textarea { font-size: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <main class="invitation">
+    <div class="masthead" aria-hidden="true"><span class="monogram">S & P</span><span>Hudson, New York</span></div>
+    <header class="hero">
+      <!-- An oak drawn in the style of an engraved wedding invitation. -->
+      <svg class="oak" viewBox="0 0 220 165" fill="none" aria-hidden="true">
+        <defs>
+          <path id="leaf" d="M0 0C-5-2-9-6-6-9C-11-10-10-15-6-15C-8-20-3-22 0-19C3-23 8-20 6-16C12-17 13-11 8-9C12-5 6-1 0 0Z"/>
+          <g id="twig" stroke="currentColor" stroke-width=".8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M0 12C0 0-3-15 2-30M-1-2-12-13M0-12 12-24"/>
+            <use href="#leaf" transform="translate(-12 -12) rotate(-42) scale(.65)"/>
+            <use href="#leaf" transform="translate(12 -23) rotate(48) scale(.7)"/>
+            <use href="#leaf" transform="translate(2 -28) rotate(10) scale(.72)"/>
+          </g>
+        </defs>
+        <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke-width="1.3" d="M95 148C104 136 102 117 103 102L96 85M124 148C115 128 116 113 115 97L124 80M103 104C89 92 75 85 65 68M105 94C107 76 105 62 103 49M114 108C127 94 147 88 156 68M110 88C118 73 126 58 123 43"/>
+          <path stroke-width=".8" d="m101 129 6-20 3-25m5 54-3-27m-9-14L84 76 79 52m9 31-25-7-12-15m68 38 12-26 19-15m-24 34 22-8 18-18m-56 7-19-14-5-16m15 30 8-24 17-16M89 149c12-4 31-5 44 0m-57 3c23-4 49-4 68 0"/>
+          <g stroke-width=".8">
+            <use href="#twig" transform="translate(52 76) rotate(-55)"/>
+            <use href="#twig" transform="translate(49 55) rotate(-65)"/>
+            <use href="#twig" transform="translate(68 49) rotate(-35)"/>
+            <use href="#twig" transform="translate(84 49) rotate(-20)"/>
+            <use href="#twig" transform="translate(98 35) rotate(-15)"/>
+            <use href="#twig" transform="translate(118 32) rotate(15)"/>
+            <use href="#twig" transform="translate(138 43) rotate(35)"/>
+            <use href="#twig" transform="translate(158 48) rotate(35)"/>
+            <use href="#twig" transform="translate(176 64) rotate(65)"/>
+            <use href="#twig" transform="translate(157 80) rotate(75)"/>
+            <use href="#twig" transform="translate(132 76) rotate(25) scale(.8)"/>
+            <use href="#twig" transform="translate(76 80) rotate(-65) scale(.75)"/>
+            <use href="#twig" transform="translate(105 65) rotate(-8) scale(.8)"/>
+            <use href="#twig" transform="translate(127 54) rotate(25) scale(.8)"/>
+          </g>
+          <path stroke-width=".7" d="m73 148 5-5m68 6-5-6m-65 1-4-2m74 3 5-3"/>
+        </g>
+      </svg>
+      <p class="eyebrow">We’re getting married</p>
+      <h1>Sam <span>&</span> Priya</h1>
+      <p class="invitation-line">invite you to celebrate their wedding</p>
+      <div class="event-details">
+        <div>
+          <p class="detail-title"><time datetime="2027-06-14T16:00:00-04:00">June 14, 2027</time></p>
+          <p class="detail-sub">4:00 in the afternoon</p>
+        </div>
+        <div>
+          <p class="detail-title">Hollow Oak Farm</p>
+          <p class="detail-sub">Hudson, New York</p>
+        </div>
+      </div>
+    </header>
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 40 28" fill="none" stroke="currentColor" stroke-width="1"><path d="M8 23 31 5M15 17C4 19 5 10 6 8c7 0 11 3 9 9ZM22 12C12 12 16 4 18 2c6 3 7 6 4 10ZM22 12c1-9 8-8 12-7-1 6-5 9-12 7ZM15 18c4-8 10-4 12-1-4 5-8 4-12 1Z"/></svg>
+    </div>
+    <section class="rsvp" aria-labelledby="rsvp-heading">
+      <div id="form-view">
+        <div class="form-heading">
+          <h2 id="rsvp-heading">Kindly RSVP</h2>
+          <p>We’d love to know if you can join us.</p>
+        </div>
+        <form id="rsvp-form" novalidate>
+          <div class="field">
+            <label for="guest-name">Your full name</label>
+            <input id="guest-name" name="name" type="text" autocomplete="name" placeholder="First and last name" maxlength="120" required aria-describedby="name-error">
+            <p class="error" id="name-error" hidden>Please enter your full name.</p>
+          </div>
+          <fieldset aria-describedby="attendance-error">
+            <legend>Will you be joining us?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="attendance" value="yes" required><span>Joyfully accepts</span></label>
+              <label class="choice"><input type="radio" name="attendance" value="no"><span>Regretfully declines</span></label>
+            </div>
+            <p class="error" id="attendance-error" hidden>Please choose whether you’ll be attending.</p>
+          </fieldset>
+          <div id="attending-fields">
+            <div class="field">
+              <label for="guest-count">Number of guests</label>
+              <div class="guest-row">
+                <div class="stepper">
+                  <button type="button" id="decrease" aria-label="Remove one guest" disabled>−</button>
+                  <input id="guest-count" name="guests" type="number" min="1" step="1" value="1" required aria-describedby="guest-hint count-error">
+                  <button type="button" id="increase" aria-label="Add one guest">+</button>
+                </div>
+                <span class="hint" id="guest-hint">Including yourself</span>
+              </div>
+              <p class="error" id="count-error" hidden>Please enter a whole number of at least 1.</p>
+            </div>
+            <div class="field">
+              <label for="dietary">Dietary needs <span class="optional">(optional)</span></label>
+              <textarea id="dietary" name="dietary" rows="2" maxlength="2000" placeholder="Any allergies or dietary requirements?"></textarea>
+            </div>
+          </div>
+          <button class="primary" type="submit">Save RSVP <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h15m-5-5 5 5-5 5"/></svg></button>
+          <p class="storage-note">Saved on this device only. Your response is not sent to the couple.</p>
+          <p id="save-error" class="error" role="alert" hidden>Your browser couldn’t save your RSVP. Please allow local storage and try again.</p>
+        </form>
+      </div>
+      <div class="confirmation" id="confirmation" hidden>
+        <div class="confirmation-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 12 4 4L19 6"/></svg></div>
+        <h2 id="confirmation-heading" tabindex="-1">Your RSVP is saved</h2>
+        <p id="response-summary"></p>
+        <p class="local-notice">Saved on this device only.<br>Your response has not been sent to Sam & Priya.</p>
+        <button class="edit-button" id="edit-response" type="button">Edit your response</button>
+      </div>
+    </section>
+    <p class="sign-off">With love, Sam & Priya</p>
+  </main>
+  <script>
+    (() => {
+      const form = document.getElementById('rsvp-form');
+      const name = document.getElementById('guest-name');
+      const count = document.getElementById('guest-count');
+      const dietary = document.getElementById('dietary');
+      const attendance = [...form.querySelectorAll('[name="attendance"]')];
+      const attendingFields = document.getElementById('attending-fields');
+      const decrease = document.getElementById('decrease');
+      const increase = document.getElementById('increase');
+      const formView = document.getElementById('form-view');
+      const confirmation = document.getElementById('confirmation');
+      const storageKey = 'sam-priya-wedding-rsvp-2027';
+
+      function showError(control, id, invalid) {
+        document.getElementById(id).hidden = !invalid;
+        if (invalid) control.setAttribute('aria-invalid', 'true');
+        else control.removeAttribute('aria-invalid');
+        return !invalid;
+      }
+      function validateName() { return showError(name, 'name-error', !name.value.trim()); }
+      function validateCount() {
+        return showError(count, 'count-error', !Number.isSafeInteger(count.valueAsNumber) || count.valueAsNumber < 1);
+      }
+      function updateStepper() { decrease.disabled = !Number.isFinite(count.valueAsNumber) || count.valueAsNumber <= 1; }
+      function updateAttendance() {
+        const declined = form.elements.attendance.value === 'no';
+        attendingFields.hidden = declined;
+        count.disabled = declined;
+        dietary.disabled = declined;
+        decrease.disabled = declined || count.valueAsNumber <= 1;
+        increase.disabled = declined;
+        document.getElementById('attendance-error').hidden = true;
+        attendance.forEach(input => input.removeAttribute('aria-invalid'));
+      }
+      function showConfirmation(response, focus = true) {
+        document.getElementById('response-summary').textContent = response.attendance === 'yes'
+          ? `${response.name}, your response is “Joyfully accepts” for ${response.guests} ${response.guests === 1 ? 'guest' : 'guests'}.`
+          : `${response.name}, your response is “Regretfully declines”.`;
+        formView.hidden = true;
+        confirmation.hidden = false;
+        if (focus) document.getElementById('confirmation-heading').focus();
+      }
+      attendance.forEach(input => input.addEventListener('change', updateAttendance));
+      name.addEventListener('blur', validateName);
+      name.addEventListener('input', () => { if (name.hasAttribute('aria-invalid')) validateName(); });
+      count.addEventListener('blur', validateCount);
+      count.addEventListener('input', () => { updateStepper(); if (count.hasAttribute('aria-invalid')) validateCount(); });
+      decrease.addEventListener('click', () => { count.value = Math.max(1, (count.valueAsNumber || 1) - 1); updateStepper(); validateCount(); });
+      increase.addEventListener('click', () => { count.value = Math.max(1, (count.valueAsNumber || 0) + 1); updateStepper(); validateCount(); });
+
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const nameValid = validateName();
+        const choice = form.elements.attendance.value;
+        document.getElementById('attendance-error').hidden = !!choice;
+        attendance.forEach(input => { if (!choice) input.setAttribute('aria-invalid', 'true'); });
+        const countValid = choice === 'no' || validateCount();
+        if (!nameValid || !choice || !countValid) {
+          (!nameValid ? name : !choice ? attendance[0] : count).focus();
+          return;
+        }
+        const response = { name: name.value.trim(), attendance: choice, guests: choice === 'yes' ? count.valueAsNumber : 0, dietary: choice === 'yes' ? dietary.value.trim() : '' };
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(response));
+          document.getElementById('save-error').hidden = true;
+          showConfirmation(response);
+        } catch { document.getElementById('save-error').hidden = false; }
+      });
+      document.getElementById('edit-response').addEventListener('click', () => {
+        confirmation.hidden = true;
+        formView.hidden = false;
+        name.focus();
+      });
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey));
+        if (saved && typeof saved.name === 'string' && saved.name.trim() && ['yes', 'no'].includes(saved.attendance) && (saved.attendance === 'no' || (Number.isSafeInteger(saved.guests) && saved.guests >= 1))) {
+          name.value = saved.name;
+          attendance.find(input => input.value === saved.attendance).checked = true;
+          count.value = saved.guests || 1;
+          dietary.value = typeof saved.dietary === 'string' ? saved.dietary : '';
+          updateAttendance();
+          showConfirmation(saved, false);
+        }
+      } catch { /* The form remains available when browser storage is unavailable. */ }
+    })();
+  </script>
+</body>
+</html>

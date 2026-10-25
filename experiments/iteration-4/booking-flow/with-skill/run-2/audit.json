@@ -1,0 +1,54 @@
+{
+  "url": "../iteration-4/booking-flow/with-skill/run-2",
+  "consoleErrors": [],
+  "axeDesktopLight": [],
+  "content": {
+    "words": 62,
+    "headings": 2,
+    "sections": 3,
+    "claims": [],
+    "testimonials": 0
+  },
+  "tells": {
+    "gradientText": 0,
+    "emoji": 0,
+    "buzzwords": [],
+    "centeredParagraphs": "1/1",
+    "titleCaseLabels": "0/5",
+    "dominantHue": 159,
+    "violetDominant": false
+  },
+  "system": {
+    "fontSizes": 7,
+    "fontFamilies": [
+      "-apple-system",
+      "Georgia"
+    ],
+    "chromaticHueBuckets": 1,
+    "radii": 5,
+    "elementsWithShadow": 2
+  },
+  "numbers": {
+    "numericCells": 0,
+    "tabular": 0
+  },
+  "forms": {
+    "fields": 8,
+    "unlabeled": 0,
+    "placeholderOnly": 0
+  },
+  "motion": {
+    "motionRules": 2,
+    "reducedMotionHandled": true
+  },
+  "luminanceLight": 0.962,
+  "focus": {
+    "stops": 9,
+    "visible": 9
+  },
+  "luminanceDark": 0.962,
+  "axeDesktopDark": [],
+  "darkMode": "light only",
+  "overflow390": 0,
+  "axeMobile": []
+}

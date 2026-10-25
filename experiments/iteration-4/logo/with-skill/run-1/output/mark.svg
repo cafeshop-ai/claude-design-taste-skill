@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-labelledby="title desc">
+  <title id="title">Fernway</title>
+  <desc id="desc">A fern-shaped letter F.</desc>
+  <style>path { fill: #214B3C; } @media (prefers-color-scheme: dark) { path { fill: #F4EFE3; } }</style>
+  <path d="M5 14V11C2.4 11 1 9.2 1 6.5C3.1 6.5 4.5 7.6 5 9V5C5 2.5 8 1 14 1C13.3 4 10.8 5.5 7 5.5V7.5C8.5 5.8 10.5 5.3 13 5.5C12.4 8.2 10.4 9.5 7 9.5V14Z"/>
+</svg>

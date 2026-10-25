@@ -208,3 +208,24 @@ Automated, 10 web runs each:
 - Fixed bars reserve their own space.
 - A page made only of type and pale cards counts as under-designed.
 - A restyle replaces a generic line with a specific one instead of deleting the voice.
+
+### Iteration 4: skill v4 at `6e3c38e`
+
+Data: [`iteration-4/results-auto.md`](iteration-4/results-auto.md); independent judgments [vs baseline](iteration-4/judgments-codex.md), [vs v1](iteration-4/judgments-blind-v1-codex.md), and [vs v3](iteration-4/judgments-blind-v3-codex.md). Every comparison so far is in [`SCOREBOARD.md`](SCOREBOARD.md).
+
+| Independent judge | result | where the gain came from |
+|---|---|---|
+| v4 vs fresh baseline | v4 **12**, baseline 2 | Content 2.7 → 3.9, craft 3.5 → 4.0, typography 3.4 → 4.0. Distinctiveness 3.8 → 3.3, a narrower gap than v2 and v3 |
+| v4 vs v1 | **7–7** | v4 leads on content (4.0 vs 3.1) and craft (4.0 vs 3.7); v1 on distinctiveness (4.0 vs 3.1) |
+| v4 vs v3 | v4 **9**, v3 5 | Craft 3.2 → 3.9: the phone fixes landed |
+
+Automated, 10 web runs each:
+- axe violations fell from 26.1 to 2.4 affected elements per page, with zero violations in 7/10 runs.
+- No phone overflow in any run (baseline: 1/10).
+- Words per page fell from 264 to 170, and invented claims went from 8 to 0.
+
+The dashboards' phone layouts now show stacked invoice cards with client, amount, status and due date visible. That's the decisive point in both invoice pairs ("X's clipped table hides essential information").
+
+**Remaining gaps.** The independent judge still rates baseline identity higher. v1 keeps winning on identity in the pricing restyles and on illustration finish in both animations: v1's soft fills and grounding shadow beat v4's bolder, plainer line art, which follows the skill's "few shapes, no shadows unless the product uses them" too literally. Some of the identity gap may be the judge's preference for its own house style (see iteration 3). The judge shows no position bias: across 83 judgments it picked X 46% of the time.
+
+**Next: generalization.** Rather than keep tuning against the same 7 cases and one judge's taste, the next step tests v4 on **5 held-out cases** it was never tuned on, one per scope area.

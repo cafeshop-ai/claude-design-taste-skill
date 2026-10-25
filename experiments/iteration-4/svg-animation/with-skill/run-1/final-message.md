@@ -1,0 +1,1 @@
+Created [caught-up.svg](caught-up.svg): a small envelope and check mark with a gentle 8-second loop, dark-mode colors, and a reduced-motion fallback.

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare Marginalia plans for personal notes, offline access, and shared notebooks. Start free or choose Pro or Team.">
+  <meta name="theme-color" content="#f7f5f0">
+  <title>Pricing — Marginalia</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f5f0;
+      --surface: #ffffff;
+      --ink: #282d29;
+      --muted: #62665f;
+      --line: #d9dcd3;
+      --control-line: #858a80;
+      --accent: #a3452f;
+      --accent-hover: #843622;
+      --accent-soft: #f1e5de;
+      --on-ink: #faf9f5;
+      --on-ink-muted: #c1c8bf;
+      --on-ink-line: #51594f;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --text-sm: .875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.5rem;
+      --text-heading: 2.5rem;
+      --text-price: 3.5rem;
+      --text-display: clamp(2.75rem, 5.2vw, 4.5rem);
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-24: 96px;
+      --radius: 8px;
+      --radius-sm: 4px;
+      --content: 1120px;
+      --motion: 160ms ease-out;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: var(--text-base); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { text-wrap: balance; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    a, button, summary { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .container { width: min(var(--content), calc(100% - var(--space-16))); margin-inline: auto; }
+    .skip-link { position: absolute; top: -80px; left: var(--space-4); padding: var(--space-3) var(--space-4); background: var(--surface); z-index: 2; }
+    .skip-link:focus { top: var(--space-4); }
+    .site-header { border-bottom: 1px solid var(--line); }
+    .header-inner { min-height: 88px; display: flex; align-items: center; gap: var(--space-12); }
+    .wordmark { display: inline-flex; align-items: center; gap: var(--space-3); font-family: var(--serif); font-size: 1.75rem; letter-spacing: -.045em; line-height: 1; }
+    .brand-mark { width: 24px; height: 28px; color: var(--accent); flex-shrink: 0; }
+    .navigation { display: flex; align-items: center; gap: var(--space-8); margin-left: auto; font-size: var(--text-sm); }
+    .navigation > a, .account-link { min-height: 44px; display: inline-flex; align-items: center; }
+    .navigation > a { color: var(--muted); }
+    .navigation > a:hover, .account-link:hover { color: var(--accent); }
+    .navigation > a[aria-current] { color: var(--ink); text-decoration: underline; text-underline-offset: 8px; text-decoration-color: var(--accent); }
+    .account { display: flex; align-items: center; gap: var(--space-6); font-size: var(--text-sm); }
+    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: var(--space-3); padding: var(--space-3) var(--space-6); border: 1px solid var(--control-line); border-radius: var(--radius-sm); font-size: var(--text-sm); font-weight: 600; line-height: 1.4; background: transparent; cursor: pointer; transition: background var(--motion), color var(--motion), border-color var(--motion); }
+    .button:hover { background: var(--paper); border-color: var(--ink); }
+    .button:active { background: var(--line); }
+    .header-button { color: var(--on-ink); background: var(--ink); border-color: var(--ink); min-height: 44px; padding: var(--space-3) var(--space-4); }
+    .header-button:hover { background: var(--on-ink-line); color: var(--on-ink); }
+    .hero { padding: var(--space-16) 0 var(--space-12); }
+    .page-label { display: flex; align-items: center; gap: var(--space-3); color: var(--accent); font-size: var(--text-sm); margin-bottom: var(--space-6); }
+    .page-label::before { content: ''; width: 24px; height: 1px; background: currentColor; }
+    h1 { font-family: var(--serif); font-size: var(--text-display); font-weight: 400; letter-spacing: -.045em; line-height: 1.08; }
+    .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-8); margin-top: var(--space-6); }
+    .hero-copy { max-width: 46ch; color: var(--muted); font-size: var(--text-lg); line-height: 1.6; }
+    .billing { display: flex; flex-shrink: 0; align-items: center; gap: var(--space-3); }
+    .billing-switch { display: inline-flex; padding: var(--space-1); border: 1px solid var(--control-line); border-radius: var(--radius); }
+    .billing-switch button { min-height: 40px; min-width: 88px; padding: var(--space-2) var(--space-4); border: 0; border-radius: var(--radius-sm); background: transparent; color: var(--muted); font-size: var(--text-sm); cursor: pointer; transition: background var(--motion), color var(--motion); }
+    .billing-switch button:hover { color: var(--ink); background: var(--line); }
+    .billing-switch button[aria-pressed="true"] { color: var(--on-ink); background: var(--ink); }
+    .saving { font-size: var(--text-sm); color: var(--accent); white-space: nowrap; }
+    .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+    .plan { display: flex; flex-direction: column; padding: var(--space-8); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .plan-title { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); min-height: 36px; }
+    .plan h2 { font-size: var(--text-xl); line-height: 1.2; font-weight: 500; letter-spacing: -.025em; }
+    .badge { color: var(--on-ink); border: 1px solid var(--on-ink-line); border-radius: var(--radius-sm); font-size: .75rem; padding: var(--space-1) var(--space-2); white-space: nowrap; }
+    .description { min-height: 42px; color: var(--muted); font-size: var(--text-sm); margin-top: var(--space-2); }
+    .price-block { margin-top: var(--space-8); }
+    .price { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2); line-height: 1.1; }
+    .amount { font-size: var(--text-price); font-weight: 400; letter-spacing: -.055em; font-variant-numeric: tabular-nums; }
+    .currency { font-size: .55em; vertical-align: .4em; margin-right: var(--space-1); letter-spacing: -.03em; }
+    .period { white-space: nowrap; color: var(--muted); font-size: var(--text-sm); }
+    .billing-note { color: var(--muted); font-size: .75rem; margin-top: var(--space-2); min-height: 18px; }
+    .plan .button { width: 100%; margin-top: var(--space-6); }
+    .button-arrow { margin-left: auto; font-size: var(--text-lg); font-weight: 400; }
+    .plan .button { justify-content: flex-start; }
+    .plan ul { list-style: none; padding: var(--space-6) 0 0; margin: var(--space-8) 0 0; border-top: 1px solid var(--line); }
+    .plan li { display: flex; align-items: baseline; gap: var(--space-3); font-size: var(--text-sm); padding: var(--space-2) 0; }
+    .plan li::before { content: '✓'; color: var(--accent); font-size: var(--text-sm); font-weight: 600; flex: 0 0 16px; }
+    .plan li.unavailable { color: var(--muted); }
+    .plan li.unavailable::before { content: '−'; color: var(--muted); font-weight: 400; }
+    .plan.popular { color: var(--on-ink); background: var(--ink); border-color: var(--ink); }
+    .popular .description, .popular .period, .popular .billing-note, .popular li.unavailable { color: var(--on-ink-muted); }
+    .popular ul { border-color: var(--on-ink-line); }
+    .popular li::before, .popular li.unavailable::before { color: var(--on-ink-muted); }
+    .popular .button { color: var(--ink); background: var(--on-ink); border-color: var(--on-ink); }
+    .popular .button:hover { background: var(--accent-soft); border-color: var(--accent-soft); }
+    .popular .button:active { background: var(--on-ink-muted); }
+    .popular a:focus-visible { outline-color: var(--on-ink); }
+    .features { padding: var(--space-24) 0; }
+    .section-heading { font-family: var(--serif); font-size: var(--text-heading); font-weight: 400; letter-spacing: -.035em; line-height: 1.15; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-16); padding-top: var(--space-8); margin-top: var(--space-8); border-top: 1px solid var(--line); }
+    .feature-icon { display: block; width: 24px; height: 24px; margin-bottom: var(--space-6); color: var(--accent); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .feature h3 { font-size: var(--text-base); font-weight: 600; margin-bottom: var(--space-2); }
+    .feature p { color: var(--muted); font-size: var(--text-sm); max-width: 32ch; line-height: 1.7; }
+    .faq { display: grid; grid-template-columns: 1fr 1.6fr; gap: var(--space-16); border-top: 1px solid var(--line); padding: var(--space-16) 0 var(--space-24); }
+    .faq .section-heading { max-width: 10ch; }
+    details { border-bottom: 1px solid var(--line); }
+    details:first-child { border-top: 1px solid var(--line); }
+    summary { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); padding: var(--space-6) 0; cursor: pointer; list-style: none; font-size: var(--text-base); }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; font-size: var(--text-xl); color: var(--muted); font-weight: 400; line-height: 1; }
+    details[open] summary::after { content: '−'; }
+    summary:hover { color: var(--accent); }
+    details p { padding: 0 var(--space-8) var(--space-6) 0; color: var(--muted); font-size: var(--text-sm); max-width: 60ch; line-height: 1.7; }
+    .site-footer { border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: var(--space-6); padding-block: var(--space-8); }
+    .footer-inner .wordmark { font-size: var(--text-xl); }
+    .copyright { font-size: .75rem; color: var(--muted); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    @media (max-width: 1000px) {
+      .header-inner { gap: var(--space-6); }
+      .navigation { gap: var(--space-6); }
+      .hero-bottom { align-items: flex-start; flex-direction: column; gap: var(--space-6); }
+      .plan { padding: var(--space-6); }
+      .plan-title { align-items: flex-start; flex-direction: column; min-height: 64px; }
+      .price { flex-direction: column; align-items: flex-start; }
+      .feature-grid { gap: var(--space-8); }
+      .faq { gap: var(--space-8); }
+    }
+    @media (max-width: 700px) {
+      .container { width: calc(100% - var(--space-12)); }
+      .header-inner { flex-wrap: wrap; justify-content: space-between; gap: 0; padding-top: var(--space-6); }
+      .wordmark { font-size: var(--text-xl); gap: var(--space-2); }
+      .account { gap: var(--space-4); }
+      .account-link { font-size: var(--text-sm); }
+      .header-button { padding: var(--space-2) var(--space-3); }
+      .navigation { order: 3; width: 100%; margin: var(--space-3) 0 0; gap: var(--space-6); }
+      .hero { padding: var(--space-12) 0 var(--space-8); }
+      .page-label { margin-bottom: var(--space-4); }
+      .hero-copy { font-size: var(--text-base); }
+      .plans { grid-template-columns: 1fr; gap: var(--space-4); }
+      .plan { padding: var(--space-8); }
+      .plan-title { flex-direction: row; align-items: center; min-height: 36px; }
+      .description { min-height: 0; }
+      .price { flex-direction: row; align-items: baseline; }
+      .price-block { margin-top: var(--space-6); }
+      .features { padding: var(--space-16) 0; }
+      .section-heading { font-size: 2rem; }
+      .feature-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+      .feature { display: grid; grid-template-columns: 24px 1fr; column-gap: var(--space-4); }
+      .feature-icon { grid-row: span 2; margin: 0; }
+      .feature p { max-width: 40ch; }
+      .faq { grid-template-columns: 1fr; padding: var(--space-12) 0 var(--space-16); gap: var(--space-8); }
+      .faq .section-heading { max-width: none; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 374px) {
+      .container { width: calc(100% - var(--space-8)); }
+      .account { gap: var(--space-2); }
+      .account-link { font-size: .75rem; }
+      .brand-mark { width: 20px; }
+      .plan { padding: var(--space-6); }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="#" aria-label="Marginalia home">
+        <svg class="brand-mark" viewBox="0 0 24 28" fill="none" aria-hidden="true"><path d="M5 3v22M10 7h11M10 13h8M10 19h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Marginalia
+      </a>
+      <nav class="navigation" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#pricing" aria-current="page">Pricing</a>
+        <a href="#">Blog</a>
+      </nav>
+      <div class="account">
+        <a class="account-link" href="#">Log in</a>
+        <a class="button header-button" href="#">Sign up free</a>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <section class="hero" id="pricing" aria-labelledby="pricing-heading">
+      <p class="page-label">Pricing</p>
+      <h1 id="pricing-heading">Room for your next idea.</h1>
+      <div class="hero-bottom">
+        <p class="hero-copy">From your first note to a shared notebook.<br>Choose the space you need.</p>
+        <div class="billing">
+          <div class="billing-switch" role="group" aria-label="Billing period">
+            <button type="button" data-period="monthly" aria-pressed="true">Monthly</button>
+            <button type="button" data-period="yearly" aria-pressed="false">Yearly</button>
+          </div>
+          <span class="saving">Save 20% yearly</span>
+        </div>
+      </div>
+    </section>
+    <section class="plans" aria-label="Compare plans">
+      <article class="plan" aria-labelledby="starter-heading">
+        <div class="plan-title"><h2 id="starter-heading">Starter</h2></div>
+        <p class="description">A place to start collecting your thoughts.</p>
+        <div class="price-block">
+          <p class="price"><span class="amount"><span class="currency">$</span>0</span><span class="period">/ month</span></p>
+          <p class="billing-note">Free</p>
+        </div>
+        <a class="button" href="#" aria-label="Get started with Starter">Start for free <span class="button-arrow" aria-hidden="true">↗</span></a>
+        <ul>
+          <li>Up to 100 notes</li>
+          <li>2 devices</li>
+          <li>Basic search</li>
+          <li class="unavailable"><span><span class="sr-only">Not included: </span>Offline access</span></li>
+          <li class="unavailable"><span><span class="sr-only">Not included: </span>Shared notebooks</span></li>
+        </ul>
+      </article>
+      <article class="plan popular" aria-labelledby="pro-heading">
+        <div class="plan-title"><h2 id="pro-heading">Pro</h2><span class="badge">Most popular</span></div>
+        <p class="description">For a growing collection of ideas.</p>
+        <div class="price-block">
+          <p class="price"><span class="amount"><span class="currency">$</span><span data-price="pro">8</span></span><span class="period">/ month</span></p>
+          <p class="billing-note" data-billing="pro">Billed monthly</p>
+        </div>
+        <a class="button" href="#" aria-label="Get started with Pro">Get Pro <span class="button-arrow" aria-hidden="true">↗</span></a>
+        <ul>
+          <li>Unlimited notes</li>
+          <li>Unlimited devices</li>
+          <li>Full-text search inside PDFs</li>
+          <li>Offline access</li>
+          <li class="unavailable"><span><span class="sr-only">Not included: </span>Shared notebooks</span></li>
+        </ul>
+      </article>
+      <article class="plan" aria-labelledby="team-heading">
+        <div class="plan-title"><h2 id="team-heading">Team</h2></div>
+        <p class="description">A shared space to think together.</p>
+        <div class="price-block">
+          <p class="price"><span class="amount"><span class="currency">$</span><span data-price="team">14</span></span><span class="period">/ user / month</span></p>
+          <p class="billing-note" data-billing="team">Billed monthly</p>
+        </div>
+        <a class="button" href="#" aria-label="Get started with Team">Get Team <span class="button-arrow" aria-hidden="true">↗</span></a>
+        <ul>
+          <li>Everything in Pro</li>
+          <li>Shared notebooks</li>
+          <li>Admin controls</li>
+          <li>Priority support</li>
+          <li>SSO</li>
+        </ul>
+      </article>
+    </section>
+    <p class="sr-only" role="status" id="billing-status"></p>
+    <section class="features" id="features" aria-labelledby="features-heading">
+      <h2 class="section-heading" id="features-heading">Your notes, in good order.</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M8 10.5h5"/></svg>
+          <h3>Find the thought</h3><p>Fast search brings the note you're looking for back into view.</p>
+        </div>
+        <div class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg>
+          <h3>Keep it safe</h3><p>Your notes are encrypted, so your ideas stay protected.</p>
+        </div>
+        <div class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8a8 8 0 0 0-13-3L3 9m0-5v5h5M4 16a8 8 0 0 0 13 3l4-4m0 5v-5h-5"/></svg>
+          <h3>Pick up anywhere</h3><p>Sync your notes across your devices and keep your ideas close.</p>
+        </div>
+      </div>
+    </section>
+    <section class="faq" aria-labelledby="faq-heading">
+      <h2 class="section-heading" id="faq-heading">A few good questions.</h2>
+      <div>
+        <details open><summary>Can I cancel anytime?</summary><p>Yes. You can cancel your subscription at any time, no questions asked.</p></details>
+        <details><summary>Is there a free trial for Pro?</summary><p>Yes, Pro comes with a 14-day free trial. No credit card required.</p></details>
+        <details><summary>Do you offer student discounts?</summary><p>Students get 50% off Pro with a valid school email.</p></details>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="wordmark">Marginalia</span>
+      <p class="copyright">© 2026 Marginalia Inc. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    // Annual prices use the existing 20% yearly discount.
+    const monthlyPrices = { pro: 8, team: 14 };
+    const billingButtons = document.querySelectorAll('[data-period]');
+    billingButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const yearly = button.dataset.period === 'yearly';
+        billingButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        Object.entries(monthlyPrices).forEach(([plan, monthly]) => {
+          const price = yearly ? monthly * 0.8 : monthly;
+          document.querySelector(`[data-price="${plan}"]`).textContent = yearly ? price.toFixed(2) : String(price);
+          document.querySelector(`[data-billing="${plan}"]`).textContent = yearly
+            ? `$${(price * 12).toFixed(2)}${plan === 'team' ? ' per user' : ''}, billed yearly`
+            : 'Billed monthly';
+        });
+        document.getElementById('billing-status').textContent = yearly
+          ? 'Yearly billing selected. Pro: $6.40 per month, $76.80 billed yearly. Team: $11.20 per user per month, $134.40 per user billed yearly.'
+          : 'Monthly billing selected. Pro: $8 per month. Team: $14 per user per month.';
+      });
+    });
+  </script>
+</body>
+</html>
