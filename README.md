@@ -89,3 +89,9 @@ Can Claude teach another agent its design taste? [`experiments/`](experiments/RE
 - **Logos:** better concepts, legible at 16px, with dark-background versions.
 
 What doesn't transfer yet is visual personality: the judge still rates baseline Codex more distinctive. Animation is mixed. v5's loader guidance won all 4 pairs on new animation briefs, but finer illustration judgments are within noise. Details: [results](experiments/README.md) · [scoreboard](experiments/SCOREBOARD.md) · [gallery](experiments/GALLERY.md).
+
+## Releasing a new version
+
+1. Commit the change to `interface-design/`.
+2. Bump `version` in [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json). Plugin users receive updates only when this changes.
+3. Run `tools/package-release.sh` and attach `dist/interface-design.zip` to a new GitHub release (`gh release create vX.Y.Z dist/interface-design.zip`). `install.sh` and the claude.ai link always fetch the latest release.
