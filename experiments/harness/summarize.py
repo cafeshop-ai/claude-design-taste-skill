@@ -15,7 +15,7 @@ from statistics import mean
 
 WEB = ["landing-page", "invoice-dashboard", "booking-flow", "pricing-restyle", "rsvp-page",
        "holdout-recipe-page", "holdout-water-app", "holdout-closed-notice"]
-SVG = ("logo", "svg-animation", "holdout-logo", "holdout-loader")
+SVG = ("logo", "svg-animation", "holdout-logo", "holdout-loader", "holdout2-buffering", "holdout2-payment-sent")
 
 
 def load(path, default=None):

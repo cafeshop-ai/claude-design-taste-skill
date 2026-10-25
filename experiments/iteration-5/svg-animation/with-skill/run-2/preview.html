@@ -1,0 +1,68 @@
+<!doctype html><meta charset="utf-8"><style>
+  body{margin:0;font:13px/1.4 system-ui,sans-serif;color:#555;background:#fff}
+  .sheet{display:grid;gap:24px;padding:32px;width:1100px}
+  .row{display:flex;gap:24px;align-items:stretch}
+  .panel{flex:1;display:grid;place-items:center;gap:12px;padding:40px;border:1px solid #e5e5e5;border-radius:8px;min-height:180px}
+  .dark{background:#151515;border-color:#151515;color:#aaa}
+  .sizes{display:flex;gap:28px;align-items:end}
+  .sizes figure{margin:0;display:grid;justify-items:center;gap:6px}
+  .tab{display:flex;align-items:center;gap:8px;width:220px;padding:8px 12px;border-radius:8px 8px 0 0;background:#f1f1f1;color:#222}
+  .tab.d{background:#2a2a2a;color:#eee}
+  img{display:block}
+#art svg{width:100%;height:auto;max-height:240px}</style><div class="sheet"><div class="row">
+        <div class="panel" id="stage" style="flex:none;width:420px;height:320px"><div id="art" style="width:240px"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="144" viewBox="0 0 160 144" class="cu-illustration" role="img" aria-labelledby="cu-title cu-desc">
+  <title id="cu-title">You're all caught up</title>
+  <desc id="cu-desc">An envelope with a check mark floats gently, then rests.</desc>
+  <style>
+    .cu-illustration {
+      --cu-backdrop: #edf3ef;
+      --cu-ground: #d7e3da;
+      --cu-paper: #fbfcfa;
+      --cu-flap: #e1ece5;
+      --cu-ink: #596b60;
+      --cu-accent: #397454;
+      --cu-check: #ffffff;
+    }
+    .cu-backdrop { fill: var(--cu-backdrop); }
+    .cu-ground { fill: var(--cu-ground); }
+    .cu-envelope { fill: var(--cu-paper); stroke: var(--cu-ink); }
+    .cu-flap { fill: var(--cu-flap); stroke: var(--cu-ink); }
+    .cu-seams { fill: none; stroke: var(--cu-ink); }
+    .cu-seal { fill: var(--cu-accent); }
+    .cu-check { fill: none; stroke: var(--cu-check); stroke-width: 2.5; }
+    .cu-float {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: cu-drift 7s ease-in-out infinite;
+    }
+    /* A small lift and return, followed by a quiet pause. */
+    @keyframes cu-drift {
+      0%, 15%, 75%, 100% { transform: translateY(0); }
+      45% { transform: translateY(-4px); }
+    }
+    @media (prefers-color-scheme: dark) {
+      .cu-illustration {
+        --cu-backdrop: #252f2a;
+        --cu-ground: #33473a;
+        --cu-paper: #303e35;
+        --cu-flap: #3b4e41;
+        --cu-ink: #afc3b5;
+        --cu-accent: #9bc8aa;
+        --cu-check: #203c2b;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cu-illustration * { animation: none !important; }
+    }
+  </style>
+  <circle class="cu-backdrop" cx="80" cy="68" r="48"/>
+  <ellipse class="cu-ground" cx="80" cy="120" rx="36" ry="3"/>
+  <g class="cu-float" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect class="cu-envelope" x="36" y="50" width="88" height="60" rx="8"/>
+    <path class="cu-seams" d="m39 106 28-26m54 26L93 80"/>
+    <path class="cu-flap" d="M37 55a7 7 0 0 1 7-5h72a7 7 0 0 1 7 5L85 83a8 8 0 0 1-10 0Z"/>
+    <circle class="cu-seal" cx="113" cy="49" r="16"/>
+    <path class="cu-check" d="m106 49 4.5 4.5L120 44"/>
+  </g>
+</svg>
+</div></div></div></div>

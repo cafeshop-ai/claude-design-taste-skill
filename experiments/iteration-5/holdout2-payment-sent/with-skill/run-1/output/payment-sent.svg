@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-labelledby="payment-sent-title">
+  <title id="payment-sent-title">Payment sent</title>
+  <style>
+    svg {
+      --payment-ink: #17634e;
+      --payment-halo: #edf6f1;
+      --payment-note: #d5ecdf;
+      --payment-paper: #f7fbf8;
+      --payment-success: #17634e;
+      --payment-check: #ffffff;
+    }
+    .halo { fill: var(--payment-halo); }
+    .note {
+      fill: var(--payment-note);
+      stroke: var(--payment-ink);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .note-details { fill: none; }
+    .seal { fill: var(--payment-paper); }
+    .badge { fill: var(--payment-success); }
+    .check {
+      fill: none;
+      stroke: var(--payment-check);
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 0;
+    }
+    @media (prefers-color-scheme: dark) {
+      svg {
+        --payment-ink: #9ad9bc;
+        --payment-halo: #172b24;
+        --payment-note: #254b3b;
+        --payment-paper: #18382a;
+        --payment-success: #9ad9bc;
+        --payment-check: #123b2b;
+      }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .send {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: payment-send 440ms cubic-bezier(.22, 1, .36, 1) both;
+      }
+      .confirmation {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: payment-confirm 280ms cubic-bezier(.22, 1, .36, 1) 300ms both;
+      }
+      .check { animation: payment-check 400ms cubic-bezier(.22, 1, .36, 1) 420ms both; }
+    }
+    @keyframes payment-send {
+      from { opacity: 0; transform: translate(-8px, 8px); }
+      to { opacity: 1; transform: translate(0, 0); }
+    }
+    @keyframes payment-confirm {
+      from { opacity: 0; transform: scale(.84); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes payment-check {
+      from { opacity: 0; stroke-dashoffset: 1; }
+      1% { opacity: 1; }
+      to { opacity: 1; stroke-dashoffset: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+  <circle class="halo" cx="80" cy="80" r="58"/>
+  <g class="send">
+    <rect class="note" x="32" y="48" width="88" height="56" rx="10"/>
+    <g class="note note-details">
+      <path d="M44 68v-8h8m48 0h8v8M44 84v8h8m48 0h8v-8"/>
+      <circle cx="76" cy="76" r="12"/>
+      <path d="M54 76h2m40 0h2"/>
+    </g>
+  </g>
+  <g class="confirmation">
+    <circle class="seal" cx="112" cy="104" r="24"/>
+    <circle class="badge" cx="112" cy="104" r="20"/>
+    <path class="check" pathLength="1" d="m103 104 6 6 12-13"/>
+  </g>
+</svg>

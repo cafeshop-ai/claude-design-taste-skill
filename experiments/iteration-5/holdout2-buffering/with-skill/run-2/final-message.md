@@ -1,0 +1,1 @@
+Created [buffering.svg](buffering.svg): a compact animated waveform with dark-mode colors and reduced-motion support.

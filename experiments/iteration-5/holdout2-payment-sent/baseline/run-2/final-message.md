@@ -1,0 +1,1 @@
+Created [payment-sent.svg](payment-sent.svg): a 144×144 animation with a sending arrow, checkmark reveal, and soft ripple. Plays once in 1.1 seconds and supports reduced motion.

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none" role="img" aria-labelledby="payment-sent-title">
+  <title id="payment-sent-title">Payment sent</title>
+  <style>
+    svg {
+      --receipt: #f6faf8;
+      --ink: #537368;
+      --tint: #e7f2ec;
+      --success: #187451;
+      --check: #ffffff;
+    }
+    .backdrop { fill: var(--tint); }
+    .receipt {
+      animation: receipt-in 360ms cubic-bezier(.22, 1, .36, 1) both;
+    }
+    .paper { fill: var(--receipt); stroke: var(--ink); }
+    .details { stroke: var(--ink); }
+    .badge {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: badge-in 280ms cubic-bezier(.22, 1, .36, 1) 180ms both;
+    }
+    .seal { fill: var(--success); }
+    .check {
+      stroke: var(--check);
+      stroke-dasharray: 1;
+      stroke-dashoffset: 0;
+      animation: check-in 400ms cubic-bezier(.22, 1, .36, 1) 320ms both;
+    }
+    @keyframes receipt-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes badge-in {
+      from { opacity: 0; transform: scale(.88); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes check-in {
+      from { stroke-dashoffset: 1; opacity: 0; }
+      1% { opacity: 1; }
+      to { stroke-dashoffset: 0; opacity: 1; }
+    }
+    @media (prefers-color-scheme: dark) {
+      svg {
+        --receipt: #202f29;
+        --ink: #a9c4b8;
+        --tint: #182a22;
+        --success: #7bd4aa;
+        --check: #153b2a;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+  <circle class="backdrop" cx="64" cy="64" r="48"/>
+  <g class="receipt" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path class="paper" d="M39 30h42a4 4 0 0 1 4 4v62l-6-4-6 4-6-4-6 4-6-4-6 4-6-4-8 4V34a4 4 0 0 1 4-4Z"/>
+    <path class="details" d="M47 46h14m-14 9h8m-8 17h22m-22 9h14"/>
+    <path class="details" d="m69 55 8-8m-8 0h8v8"/>
+  </g>
+  <g class="badge">
+    <circle class="seal" cx="85" cy="84" r="19"/>
+    <path class="check" d="m76 84 6 6 12-13" pathLength="1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

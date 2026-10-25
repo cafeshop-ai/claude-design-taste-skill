@@ -1,0 +1,18 @@
+{
+ "holdout2-buffering-run-1": {
+  "X": "iteration-5/holdout2-buffering/baseline/run-1",
+  "Y": "iteration-5/holdout2-buffering/with-skill/run-1"
+ },
+ "holdout2-buffering-run-2": {
+  "X": "iteration-5/holdout2-buffering/baseline/run-2",
+  "Y": "iteration-5/holdout2-buffering/with-skill/run-2"
+ },
+ "holdout2-payment-sent-run-1": {
+  "X": "iteration-5/holdout2-payment-sent/baseline/run-1",
+  "Y": "iteration-5/holdout2-payment-sent/with-skill/run-1"
+ },
+ "holdout2-payment-sent-run-2": {
+  "X": "iteration-5/holdout2-payment-sent/with-skill/run-2",
+  "Y": "iteration-5/holdout2-payment-sent/baseline/run-2"
+ }
+}

@@ -1,0 +1,78 @@
+[
+ {
+  "pair": "holdout2-buffering-run-1",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "restraint": 4,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 4
+   },
+   "Y": {
+    "restraint": 4,
+    "motion quality": 4,
+    "illustration craft": 4,
+    "fit for context": 4
+   }
+  },
+  "notes": "Y\u2019s staggered bar heights suggest a gentle traveling waveform, giving the buffering state a clearer sense of ongoing activity. X\u2019s more symmetrical expansion and changing purple intensity feel slightly more attention-seeking. Both use clean, consistently rounded bars that suit a podcast app."
+ },
+ {
+  "pair": "holdout2-buffering-run-2",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "restraint": 3,
+    "motion quality": 4,
+    "illustration craft": 4,
+    "fit for context": 4
+   },
+   "Y": {
+    "restraint": 4,
+    "motion quality": 4,
+    "illustration craft": 4,
+    "fit for context": 4
+   }
+  },
+  "notes": "Y\u2019s teal bars maintain a smaller height range, making the visible wave progression feel calmer during buffering. X\u2019s taller purple peaks and stronger changes in emphasis attract more attention. Both use clean, evenly spaced bars that clearly connect to the podcast context, but Y better balances activity with restraint."
+ },
+ {
+  "pair": "holdout2-payment-sent-run-1",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "restraint": 4,
+    "motion quality": 3,
+    "illustration craft": 3,
+    "fit for context": 3
+   },
+   "Y": {
+    "restraint": 4,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 4
+   }
+  },
+  "notes": "Y keeps the banknote visible and adds a compact confirmation badge, making the completed payment more specific than X\u2019s generic checkmark. Its consistent green linework feels more cohesive than X\u2019s transition from a tiny shaded gold coin to a large green disc. Both settle quickly into a calm hold; the sampled frames provide limited evidence of easing or transition smoothness."
+ },
+ {
+  "pair": "holdout2-payment-sent-run-2",
+  "preference": "X",
+  "scores": {
+   "X": {
+    "restraint": 4,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 4
+   },
+   "Y": {
+    "restraint": 4,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 3
+   }
+  },
+  "notes": "X\u2019s receipt, outbound arrow, and green confirmation badge communicate a completed payment more specifically than Y\u2019s generic success circle. Y\u2019s arrow-to-check transition is clear and economical, though its expanding halo adds a little decoration. Both settle quickly and remain still in the later frames, appropriate for the requested one-time confirmation; the sampling provides limited evidence of easing."
+ }
+]

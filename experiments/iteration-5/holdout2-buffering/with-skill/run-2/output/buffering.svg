@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" role="img" aria-labelledby="buffering-title">
+  <title id="buffering-title">Buffering episode…</title>
+  <style>
+    svg { color: var(--buffering-color, #147d73); }
+    .bar {
+      fill: currentColor;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: buffering-wave 1.2s ease-in-out infinite;
+    }
+    .bar:nth-child(1) { transform: scaleY(.4); animation-delay: -.48s; }
+    .bar:nth-child(2) { transform: scaleY(.7); animation-delay: -.36s; }
+    .bar:nth-child(3) { animation-delay: -.24s; }
+    .bar:nth-child(4) { transform: scaleY(.7); animation-delay: -.12s; }
+    .bar:nth-child(5) { transform: scaleY(.4); }
+    @keyframes buffering-wave {
+      0%, 100% { transform: scaleY(.3); opacity: .65; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+    @media (prefers-color-scheme: dark) {
+      svg { color: var(--buffering-color, #5cd6bd); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bar { animation: none; }
+    }
+  </style>
+  <g>
+    <rect class="bar" x="6" y="6" width="4" height="20" rx="2"/>
+    <rect class="bar" x="14" y="6" width="4" height="20" rx="2"/>
+    <rect class="bar" x="22" y="6" width="4" height="20" rx="2"/>
+    <rect class="bar" x="30" y="6" width="4" height="20" rx="2"/>
+    <rect class="bar" x="38" y="6" width="4" height="20" rx="2"/>
+  </g>
+</svg>

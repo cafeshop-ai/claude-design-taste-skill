@@ -1,0 +1,66 @@
+<!doctype html><meta charset="utf-8"><style>
+  body{margin:0;font:13px/1.4 system-ui,sans-serif;color:#555;background:#fff}
+  .sheet{display:grid;gap:24px;padding:32px;width:1100px}
+  .row{display:flex;gap:24px;align-items:stretch}
+  .panel{flex:1;display:grid;place-items:center;gap:12px;padding:40px;border:1px solid #e5e5e5;border-radius:8px;min-height:180px}
+  .dark{background:#151515;border-color:#151515;color:#aaa}
+  .sizes{display:flex;gap:28px;align-items:end}
+  .sizes figure{margin:0;display:grid;justify-items:center;gap:6px}
+  .tab{display:flex;align-items:center;gap:8px;width:220px;padding:8px 12px;border-radius:8px 8px 0 0;background:#f1f1f1;color:#222}
+  .tab.d{background:#2a2a2a;color:#eee}
+  img{display:block}
+#art svg{width:100%;height:auto;max-height:240px}</style><div class="sheet"><div class="row">
+        <div class="panel" id="stage" style="flex:none;width:420px;height:320px"><div id="art" style="width:240px"><svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" role="img" aria-labelledby="title desc">
+  <title id="title">Payment sent</title>
+  <desc id="desc">An arrow lifts away, then a checkmark appears in a mint green circle. The animation plays once.</desc>
+  <style>
+    .badge { transform-origin: 72px 72px; animation: arrive 600ms ease-out both; }
+    .ripple { opacity: 0; transform-origin: 72px 72px; animation: ripple 850ms 280ms ease-out both; }
+    .arrow { opacity: 0; animation: send 460ms 80ms ease-in both; }
+    .check { stroke-dasharray: 48; stroke-dashoffset: 0; animation: check 420ms 440ms cubic-bezier(.22,1,.36,1) both; }
+    .spark { opacity: 0; transform-box: fill-box; transform-origin: center; animation: spark 500ms 520ms ease-out both; }
+    .spark-late { animation-delay: 600ms; }
+    @keyframes arrive {
+      0% { opacity: 0; transform: scale(.82); }
+      65% { opacity: 1; transform: scale(1.035); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes ripple {
+      0% { opacity: 0; transform: scale(.95); }
+      20% { opacity: .55; }
+      100% { opacity: 0; transform: scale(1.38); }
+    }
+    @keyframes send {
+      0% { opacity: 0; transform: translate(-5px,5px); }
+      25% { opacity: 1; }
+      65% { opacity: 1; }
+      100% { opacity: 0; transform: translate(13px,-13px); }
+    }
+    @keyframes check {
+      0% { opacity: 0; stroke-dashoffset: 48; }
+      1% { opacity: 1; }
+      100% { opacity: 1; stroke-dashoffset: 0; }
+    }
+    @keyframes spark {
+      0% { opacity: 0; transform: scale(.5); }
+      35% { opacity: .85; transform: scale(1); }
+      100% { opacity: 0; transform: scale(.75); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .badge, .ripple, .arrow, .check, .spark { animation: none; }
+    }
+  </style>
+  <circle class="ripple" cx="72" cy="72" r="43" fill="none" stroke="#42b992" stroke-width="1.5"/>
+  <g class="badge">
+    <circle cx="72" cy="72" r="42" fill="#e2f7ee"/>
+    <circle cx="72" cy="72" r="34" fill="#c9efdf"/>
+    <path class="arrow" d="M61 83 81 63M63 63h18v18" fill="none" stroke="#12805c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="check" d="m56 73 11 11 22-24" pathLength="48" fill="none" stroke="#12805c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g fill="none" stroke="#42b992" stroke-width="2" stroke-linecap="round">
+    <path class="spark" d="M112 30v8m-4-4h8"/>
+    <path class="spark spark-late" d="m29 103-4 4m-3-7 4 4"/>
+  </g>
+  <circle class="spark spark-late" cx="28" cy="38" r="2.5" fill="#78cdb0"/>
+</svg>
+</div></div></div></div>

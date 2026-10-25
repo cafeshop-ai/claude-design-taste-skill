@@ -1,0 +1,1 @@
+Created [buffering.svg](buffering.svg): a compact 48×48 animated purple waveform with reduced-motion support.

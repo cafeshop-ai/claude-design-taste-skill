@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="144" viewBox="0 0 160 144" class="cu-illustration" role="img" aria-labelledby="cu-title cu-desc">
+  <title id="cu-title">You're all caught up</title>
+  <desc id="cu-desc">An envelope with a check mark floats gently, then rests.</desc>
+  <style>
+    .cu-illustration {
+      --cu-backdrop: #edf3ef;
+      --cu-ground: #d7e3da;
+      --cu-paper: #fbfcfa;
+      --cu-flap: #e1ece5;
+      --cu-ink: #596b60;
+      --cu-accent: #397454;
+      --cu-check: #ffffff;
+    }
+    .cu-backdrop { fill: var(--cu-backdrop); }
+    .cu-ground { fill: var(--cu-ground); }
+    .cu-envelope { fill: var(--cu-paper); stroke: var(--cu-ink); }
+    .cu-flap { fill: var(--cu-flap); stroke: var(--cu-ink); }
+    .cu-seams { fill: none; stroke: var(--cu-ink); }
+    .cu-seal { fill: var(--cu-accent); }
+    .cu-check { fill: none; stroke: var(--cu-check); stroke-width: 2.5; }
+    .cu-float {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: cu-drift 7s ease-in-out infinite;
+    }
+    /* A small lift and return, followed by a quiet pause. */
+    @keyframes cu-drift {
+      0%, 15%, 75%, 100% { transform: translateY(0); }
+      45% { transform: translateY(-4px); }
+    }
+    @media (prefers-color-scheme: dark) {
+      .cu-illustration {
+        --cu-backdrop: #252f2a;
+        --cu-ground: #33473a;
+        --cu-paper: #303e35;
+        --cu-flap: #3b4e41;
+        --cu-ink: #afc3b5;
+        --cu-accent: #9bc8aa;
+        --cu-check: #203c2b;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cu-illustration * { animation: none !important; }
+    }
+  </style>
+  <circle class="cu-backdrop" cx="80" cy="68" r="48"/>
+  <ellipse class="cu-ground" cx="80" cy="120" rx="36" ry="3"/>
+  <g class="cu-float" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect class="cu-envelope" x="36" y="50" width="88" height="60" rx="8"/>
+    <path class="cu-seams" d="m39 106 28-26m54 26L93 80"/>
+    <path class="cu-flap" d="M37 55a7 7 0 0 1 7-5h72a7 7 0 0 1 7 5L85 83a8 8 0 0 1-10 0Z"/>
+    <circle class="cu-seal" cx="113" cy="49" r="16"/>
+    <path class="cu-check" d="m106 49 4.5 4.5L120 44"/>
+  </g>
+</svg>

@@ -14,4 +14,8 @@ Every blind pairwise comparison in the experiment. "Wins" counts preferred outpu
 | iteration-4 | Codex | baseline (it. 2) | skill v4 | 2–12 | 3.7→4.0 / 3.4→4.0 / 3.4→4.0 / 2.7→3.9 / 3.3→4.0 / 3.8→3.3 |
 | iteration-4 | Codex | skill v1 | skill v4 | 7–7 | 3.8→4.0 / 4.0→3.9 / 4.0→4.0 / 3.1→4.0 / 3.7→4.0 / 4.0→3.1 |
 | iteration-4 | Codex | skill v3 | skill v4 | 5–9 | 3.9→3.9 / 3.7→3.8 / 4.0→4.0 / 3.7→3.9 / 3.2→3.9 / 3.3→3.5 |
+| iteration-5 | Codex | baseline (it. 2) | skill v5 | 0–2 | animation only: fit for context 4.0→5.0 / illustration craft 4.0→4.0 / motion quality 3.5→3.5 / restraint 4.0→5.0 |
+| iteration-5 | Codex | baseline (it. 5) | skill v5 | 0–4 | animation only: fit for context 3.5→4.0 / illustration craft 3.8→4.0 / motion quality 3.2→3.5 / restraint 3.8→4.0 |
+| iteration-5 | Codex | skill v1 | skill v5 | 1–1 | animation only: fit for context 4.0→4.0 / illustration craft 3.5→4.0 / motion quality 3.0→3.5 / restraint 4.0→4.0 |
+| iteration-5 | Codex | skill v4 | skill v5 | 2–0 | animation only: fit for context 4.0→4.0 / illustration craft 4.0→4.0 / motion quality 3.0→3.0 / restraint 5.0→4.0 |
 | iteration-holdout | Codex | baseline (holdout) | skill v4 (holdout) | 2–8 | 3.2→4.3 / 3.3→4.0 / 3.7→4.0 / 3.0→4.5 / 3.4→4.0 / 4.0→3.0 |

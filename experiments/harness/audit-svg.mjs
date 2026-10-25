@@ -87,7 +87,7 @@ try {
   }
 
   if (kind === "svg-animation") {
-    const anim = find("caught-up.svg", /caught|empty|inbox|done|loader|loading|spinner|\.svg$/i);
+    const anim = find("caught-up.svg", /caught|empty|inbox|done|loader|loading|spinner|buffer|payment|sent|\.svg$/i);
     result.animation = anim && svgFacts(anim);
     if (anim) {
       // Inline the SVG so CSS, SMIL, and scripted animation all run.

@@ -1,0 +1,1 @@
+Created [payment-sent.svg](payment-sent.svg): a compact receipt and checkmark animation that plays once in 720 ms, then rests. Includes dark mode and a static reduced-motion state.

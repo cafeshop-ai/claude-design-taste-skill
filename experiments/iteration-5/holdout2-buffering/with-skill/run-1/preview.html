@@ -1,0 +1,46 @@
+<!doctype html><meta charset="utf-8"><style>
+  body{margin:0;font:13px/1.4 system-ui,sans-serif;color:#555;background:#fff}
+  .sheet{display:grid;gap:24px;padding:32px;width:1100px}
+  .row{display:flex;gap:24px;align-items:stretch}
+  .panel{flex:1;display:grid;place-items:center;gap:12px;padding:40px;border:1px solid #e5e5e5;border-radius:8px;min-height:180px}
+  .dark{background:#151515;border-color:#151515;color:#aaa}
+  .sizes{display:flex;gap:28px;align-items:end}
+  .sizes figure{margin:0;display:grid;justify-items:center;gap:6px}
+  .tab{display:flex;align-items:center;gap:8px;width:220px;padding:8px 12px;border-radius:8px 8px 0 0;background:#f1f1f1;color:#222}
+  .tab.d{background:#2a2a2a;color:#eee}
+  img{display:block}
+#art svg{width:100%;height:auto;max-height:240px}</style><div class="sheet"><div class="row">
+        <div class="panel" id="stage" style="flex:none;width:420px;height:320px"><div id="art" style="width:240px"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" role="img" aria-labelledby="buffering-title">
+  <title id="buffering-title">Buffering episode…</title>
+  <style>
+    :root { color: #087f8c; }
+    .buffering-bar {
+      fill: var(--buffering-color, currentColor);
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: buffering-wave 1.2s ease-in-out infinite;
+    }
+    .buffering-bar:nth-of-type(1) { animation-delay: -0.48s; }
+    .buffering-bar:nth-of-type(2) { animation-delay: -0.36s; }
+    .buffering-bar:nth-of-type(3) { animation-delay: -0.24s; }
+    .buffering-bar:nth-of-type(4) { animation-delay: -0.12s; }
+    @keyframes buffering-wave {
+      0%, 100% { transform: scaleY(0.35); }
+      50% { transform: scaleY(1); }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { color: #65d6ce; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .buffering-bar { animation: none; }
+    }
+  </style>
+  <g>
+    <rect class="buffering-bar" x="8" y="10" width="4" height="12" rx="2"/>
+    <rect class="buffering-bar" x="15" y="6" width="4" height="20" rx="2"/>
+    <rect class="buffering-bar" x="22" y="4" width="4" height="24" rx="2"/>
+    <rect class="buffering-bar" x="29" y="6" width="4" height="20" rx="2"/>
+    <rect class="buffering-bar" x="36" y="10" width="4" height="12" rx="2"/>
+  </g>
+</svg>
+</div></div></div></div>

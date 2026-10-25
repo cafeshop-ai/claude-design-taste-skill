@@ -46,4 +46,4 @@ Can Claude teach another agent its design taste? [`experiments/`](experiments/RE
 - **Accessibility:** about 26 violations per page down to 2 (0 on unseen cases).
 - **Logos:** better concepts, legible at 16px, with dark-background versions.
 
-What doesn't transfer yet is visual personality, where the judge still rates baseline Codex more distinctive, and animation finesse. Details: [results](experiments/README.md) · [scoreboard](experiments/SCOREBOARD.md) · [gallery](experiments/GALLERY.md).
+What doesn't transfer yet is visual personality: the judge still rates baseline Codex more distinctive. Animation is mixed. v5's loader guidance won all 4 pairs on new animation briefs, but finer illustration judgments are within noise. Details: [results](experiments/README.md) · [scoreboard](experiments/SCOREBOARD.md) · [gallery](experiments/GALLERY.md).

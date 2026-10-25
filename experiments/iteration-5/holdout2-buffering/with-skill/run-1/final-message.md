@@ -1,0 +1,1 @@
+Created [buffering.svg](buffering.svg): a compact, looping audio wave with dark-mode colors and reduced-motion support.

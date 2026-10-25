@@ -1,0 +1,40 @@
+[
+ {
+  "pair": "svg-animation-run-1",
+  "preference": "X",
+  "scores": {
+   "X": {
+    "restraint": 5,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 5
+   },
+   "Y": {
+    "restraint": 4,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 4
+   }
+  },
+  "notes": "X\u2019s closed envelope and prominent green check communicate completion clearly, with a restrained palette and readable strokes. Y\u2019s open letter adds detail, but its pale lavender lines and surrounding sparkles feel fussier at this size. Both show subtle vertical movement across the sampled frames; the motion looks calm, though neither demonstrates especially distinctive timing or easing."
+ },
+ {
+  "pair": "svg-animation-run-2",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "restraint": 4,
+    "motion quality": 4,
+    "illustration craft": 4,
+    "fit for context": 4
+   },
+   "Y": {
+    "restraint": 5,
+    "motion quality": 4,
+    "illustration craft": 4,
+    "fit for context": 5
+   }
+  },
+  "notes": "Y\u2019s simple envelope and solid green check communicate completion clearly at a small size, with fewer competing details. X\u2019s lavender palette is pleasant, but the protruding letter, sparkles, and outlined badge make it slightly busier and less legible. Both show a restrained vertical float across the sampled frames; Y\u2019s quieter composition better suits a recurring email empty state."
+ }
+]

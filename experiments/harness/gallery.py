@@ -14,7 +14,7 @@ SHOT = {"logo": "sheet.jpg", "svg-animation": "filmstrip.jpg"}
 
 
 # Skill commits tested, in order (see README "Log").
-VERSIONS = {"0b52da1": "v1", "008e1ca": "v2", "bdd290b": "v3", "6e3c38e": "v4"}
+VERSIONS = {"0b52da1": "v1", "008e1ca": "v2", "bdd290b": "v3", "6e3c38e": "v4", "3a1bd7f": "v5"}
 
 
 def iterations():
@@ -51,7 +51,7 @@ def main():
         prompt = (EXP / "cases" / case / "prompt.md").read_text().strip()
         md += [f"## {case}", "", f"> {prompt}", ""]
         shot = SHOT.get(case.replace("holdout-", ""), "desktop-light.jpg")
-        if case == "holdout-loader":
+        if case in ("holdout-loader", "holdout2-buffering", "holdout2-payment-sent"):
             shot = "filmstrip.jpg"
         cols = columns(case)
         if not cols:

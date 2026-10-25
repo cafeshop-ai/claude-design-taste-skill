@@ -14,7 +14,7 @@ EXP = Path(__file__).resolve().parent.parent
 WEB = ["hierarchy", "typography", "color", "content", "craft", "distinctiveness"]
 
 
-VERSIONS = {"0b52da1": "v1", "008e1ca": "v2", "bdd290b": "v3", "6e3c38e": "v4"}
+VERSIONS = {"0b52da1": "v1", "008e1ca": "v2", "bdd290b": "v3", "6e3c38e": "v4", "3a1bd7f": "v5"}
 
 
 def label(path):
@@ -53,8 +53,18 @@ def main():
                                 web[label(m[x])][d].append(j["scores"][x][d])
                 a, b = sides
                 mean = lambda s, d: f"{sum(web[s][d]) / len(web[s][d]):.1f}" if web[s][d] else "–"
-                rows.append((it.name, judge, a, b, wins[a], wins[b], ties,
-                             " / ".join(f"{mean(a, d)}→{mean(b, d)}" for d in WEB), len(js)))
+                scores = " / ".join(f"{mean(a, d)}→{mean(b, d)}" for d in WEB)
+                if not any(web[a][d] for d in WEB):
+                    anim = {s_: {} for s_ in sides}
+                    for j in js:
+                        m = mapping[j["pair"]]
+                        for x in ("X", "Y"):
+                            for d, v in j["scores"][x].items():
+                                anim[label(m[x])].setdefault(d, []).append(v)
+                    dims = sorted({d for s_ in sides for d in anim[s_]})
+                    scores = "animation only: " + " / ".join(
+                        f"{d} {sum(anim[a][d]) / len(anim[a][d]):.1f}→{sum(anim[b][d]) / len(anim[b][d]):.1f}" for d in dims)
+                rows.append((it.name, judge, a, b, wins[a], wins[b], ties, scores, len(js)))
     md = ["# Scoreboard",
           "",
           "Every blind pairwise comparison in the experiment. \"Wins\" counts preferred outputs across the 7 cases × 2 runs. "

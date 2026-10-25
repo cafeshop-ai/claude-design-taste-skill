@@ -1,0 +1,1 @@
+Created [payment-sent.svg](payment-sent.svg): a 160×160 animation that plays once for 1.65 seconds, ending on a green checkmark. Includes reduced-motion support.

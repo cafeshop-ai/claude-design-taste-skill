@@ -1,0 +1,40 @@
+[
+ {
+  "pair": "svg-animation-run-1",
+  "preference": "Y",
+  "scores": {
+   "X": {
+    "restraint": 4,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 4
+   },
+   "Y": {
+    "restraint": 5,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 4
+   }
+  },
+  "notes": "Y\u2019s simpler envelope and solid green check badge communicate completion clearly at a small size. X\u2019s background circle, ground shadow, and layered fills add some unnecessary decoration. Both show only a slight vertical bob across the sampled frames, with no decisive motion advantage."
+ },
+ {
+  "pair": "svg-animation-run-2",
+  "preference": "X",
+  "scores": {
+   "X": {
+    "restraint": 5,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 4
+   },
+   "Y": {
+    "restraint": 4,
+    "motion quality": 3,
+    "illustration craft": 4,
+    "fit for context": 4
+   }
+  },
+  "notes": "X\u2019s simple envelope and clearly separated lower-right check badge communicate completion with excellent restraint. Y\u2019s pale circle, ground shadow, and additional envelope seams make a polished illustration, but add visual weight to a small empty state. Both show a restrained vertical bob across the sampled frames; neither demonstrates notably richer motion."
+ }
+]

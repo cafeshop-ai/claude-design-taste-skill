@@ -1,0 +1,34 @@
+{
+  "kind": "svg-animation",
+  "animation": {
+    "file": "payment-sent.svg",
+    "bytes": 2636,
+    "elements": 10,
+    "distinctColors": 5,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+      "keyframes": 5,
+      "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+      "600ms",
+      "850ms",
+      "280ms",
+      "460ms",
+      "80ms",
+      "420ms",
+      "440ms",
+      "500ms",
+      "520ms"
+    ]
+  },
+  "changedPixels": 0.0074,
+  "changedPixelsReduced": 0,
+  "stopsUnderReducedMotion": true
+}

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="128" viewBox="0 0 160 128" role="img" aria-labelledby="caught-up-title caught-up-desc">
+  <title id="caught-up-title">You're all caught up</title>
+  <desc id="caught-up-desc">An envelope with a check mark floats gently, then rests.</desc>
+  <style>
+    :root {
+      --backdrop: #f0f5f3;
+      --paper: #ffffff;
+      --fold: #edf4f1;
+      --ink: #627b72;
+      --accent: #28775b;
+      --badge: #dceee4;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --backdrop: #222e29;
+        --paper: #303e37;
+        --fold: #28362f;
+        --ink: #a0b6aa;
+        --accent: #a0dcba;
+        --badge: #294f3d;
+      }
+    }
+    .mail {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: drift 8s ease-in-out infinite;
+    }
+    @keyframes drift {
+      0%, 40%, 100% { transform: translateY(0); }
+      70% { transform: translateY(-4px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+  <circle cx="80" cy="62" r="44" fill="var(--backdrop)"/>
+  <ellipse cx="80" cy="108" rx="32" ry="3" fill="var(--ink)" opacity=".12"/>
+  <g class="mail" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="40" y="40" width="80" height="56" rx="8" fill="var(--paper)" stroke="var(--ink)"/>
+    <path d="m43 92 27-24h20l27 24" fill="var(--fold)"/>
+    <path d="m43 44 32 25a8 8 0 0 0 10 0l32-25" fill="var(--fold)" stroke="var(--ink)"/>
+    <circle cx="112" cy="88" r="16" fill="var(--badge)" stroke="var(--accent)"/>
+    <path d="m105 88 5 5 9-10" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+  </g>
+</svg>

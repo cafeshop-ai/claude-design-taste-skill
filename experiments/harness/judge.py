@@ -47,7 +47,7 @@ ANIM_DIMS = {
 
 
 def kind(case):
-    return "logo" if case in ("logo", "holdout-logo") else "anim" if case in ("svg-animation", "holdout-loader") else "web"
+    return "logo" if case in ("logo", "holdout-logo") else "anim" if case in ("svg-animation", "holdout-loader", "holdout2-buffering", "holdout2-payment-sent") else "web"
 
 
 def build(pair_dir):

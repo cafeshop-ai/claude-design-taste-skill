@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" role="img" aria-labelledby="title" color="#8b5cf6">
+  <title id="title">Buffering episode</title>
+  <style>
+    .bar {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scaleY(.3); opacity: .5; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bar { animation: none; }
+    }
+  </style>
+  <g fill="currentColor">
+    <rect class="bar" x="10" y="17" width="4" height="14" rx="2" style="animation-delay: -.4s"/>
+    <rect class="bar" x="16" y="13" width="4" height="22" rx="2" style="animation-delay: -.2s"/>
+    <rect class="bar" x="22" y="10" width="4" height="28" rx="2"/>
+    <rect class="bar" x="28" y="13" width="4" height="22" rx="2" style="animation-delay: -.2s"/>
+    <rect class="bar" x="34" y="17" width="4" height="14" rx="2" style="animation-delay: -.4s"/>
+  </g>
+</svg>

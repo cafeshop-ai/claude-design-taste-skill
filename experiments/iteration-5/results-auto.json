@@ -1,0 +1,522 @@
+[
+ {
+  "case": "holdout2-buffering",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout2-buffering",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 33
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "buffering.svg",
+    "bytes": 1043,
+    "elements": 6,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 1,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "1.2s",
+     "4s",
+     "2s"
+    ]
+   },
+   "changedPixels": 0.0389,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 47927,
+  "tokens_out": 1089,
+  "commands": 3
+ },
+ {
+  "case": "holdout2-buffering",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout2-buffering",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 41
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "buffering.svg",
+    "bytes": 1149,
+    "elements": 6,
+    "distinctColors": 1,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 1,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "1.1s",
+     "8s",
+     "65s",
+     "5s",
+     "35s",
+     "2s"
+    ]
+   },
+   "changedPixels": 0.0246,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 48242,
+  "tokens_out": 1237,
+  "commands": 3
+ },
+ {
+  "case": "holdout2-buffering",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout2-buffering",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "3a1bd7f",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 40
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "buffering.svg",
+    "bytes": 1383,
+    "elements": 6,
+    "distinctColors": 2,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 1,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "1.2s",
+     "48s",
+     "36s",
+     "24s",
+     "12s"
+    ]
+   },
+   "changedPixels": 0.0146,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/svg-animation.md"
+  ],
+  "tokens_in": 71132,
+  "tokens_out": 1502,
+  "commands": 5
+ },
+ {
+  "case": "holdout2-buffering",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout2-buffering",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "3a1bd7f",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 33
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "buffering.svg",
+    "bytes": 1421,
+    "elements": 6,
+    "distinctColors": 2,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 1,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "1.2s",
+     "48s",
+     "36s",
+     "24s",
+     "12s"
+    ]
+   },
+   "changedPixels": 0.0357,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/svg-animation.md"
+  ],
+  "tokens_in": 70990,
+  "tokens_out": 1353,
+  "commands": 5
+ },
+ {
+  "case": "holdout2-payment-sent",
+  "condition": "baseline",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout2-payment-sent",
+   "condition": "baseline",
+   "run": 1,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 54
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "payment-sent.svg",
+    "bytes": 3583,
+    "elements": 19,
+    "distinctColors": 12,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 6,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "1.65s"
+    ]
+   },
+   "changedPixels": 0.1164,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 50500,
+  "tokens_out": 2368,
+  "commands": 3
+ },
+ {
+  "case": "holdout2-payment-sent",
+  "condition": "baseline",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout2-payment-sent",
+   "condition": "baseline",
+   "run": 2,
+   "skill_ref": "",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 45
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "payment-sent.svg",
+    "bytes": 2636,
+    "elements": 10,
+    "distinctColors": 5,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 5,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "600ms",
+     "850ms",
+     "280ms",
+     "460ms",
+     "80ms",
+     "420ms",
+     "440ms",
+     "500ms",
+     "520ms"
+    ]
+   },
+   "changedPixels": 0.0074,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [],
+  "tokens_in": 49595,
+  "tokens_out": 1919,
+  "commands": 3
+ },
+ {
+  "case": "holdout2-payment-sent",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "holdout2-payment-sent",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "3a1bd7f",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 87
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "payment-sent.svg",
+    "bytes": 2782,
+    "elements": 11,
+    "distinctColors": 10,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 3,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "440ms",
+     "280ms",
+     "300ms",
+     "400ms",
+     "420ms"
+    ]
+   },
+   "changedPixels": 0.0245,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/svg-animation.md"
+  ],
+  "tokens_in": 229186,
+  "tokens_out": 3310,
+  "commands": 11
+ },
+ {
+  "case": "holdout2-payment-sent",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "holdout2-payment-sent",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "3a1bd7f",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 72
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "payment-sent.svg",
+    "bytes": 2246,
+    "elements": 8,
+    "distinctColors": 10,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 3,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "360ms",
+     "280ms",
+     "180ms",
+     "400ms",
+     "320ms"
+    ]
+   },
+   "changedPixels": 0.0185,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/svg-animation.md",
+   "scripts/color.py"
+  ],
+  "tokens_in": 166923,
+  "tokens_out": 2388,
+  "commands": 9
+ },
+ {
+  "case": "svg-animation",
+  "condition": "with-skill",
+  "run": "run-1",
+  "meta": {
+   "case": "svg-animation",
+   "condition": "with-skill",
+   "run": 1,
+   "skill_ref": "3a1bd7f",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 68
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "caught-up.svg",
+    "bytes": 1695,
+    "elements": 8,
+    "distinctColors": 12,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 1,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "8s"
+    ]
+   },
+   "changedPixels": 0.0165,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/svg-animation.md"
+  ],
+  "tokens_in": 175373,
+  "tokens_out": 2130,
+  "commands": 10
+ },
+ {
+  "case": "svg-animation",
+  "condition": "with-skill",
+  "run": "run-2",
+  "meta": {
+   "case": "svg-animation",
+   "condition": "with-skill",
+   "run": 2,
+   "skill_ref": "3a1bd7f",
+   "codex": "codex-cli 0.159.2",
+   "model": "gpt-6.1-sol",
+   "effort": "high",
+   "exit_status": 0,
+   "seconds": 70
+  },
+  "audit": {
+   "kind": "svg-animation",
+   "animation": {
+    "file": "caught-up.svg",
+    "bytes": 2202,
+    "elements": 8,
+    "distinctColors": 14,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+     "keyframes": 1,
+     "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+     "7s"
+    ]
+   },
+   "changedPixels": 0,
+   "changedPixelsReduced": 0,
+   "stopsUnderReducedMotion": true
+  },
+  "interaction": null,
+  "skill_files": [
+   "SKILL.md",
+   "references/svg-animation.md"
+  ],
+  "tokens_in": 259177,
+  "tokens_out": 2819,
+  "commands": 13
+ }
+]

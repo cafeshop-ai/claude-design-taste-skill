@@ -1,0 +1,47 @@
+<!doctype html><meta charset="utf-8"><style>
+  body{margin:0;font:13px/1.4 system-ui,sans-serif;color:#555;background:#fff}
+  .sheet{display:grid;gap:24px;padding:32px;width:1100px}
+  .row{display:flex;gap:24px;align-items:stretch}
+  .panel{flex:1;display:grid;place-items:center;gap:12px;padding:40px;border:1px solid #e5e5e5;border-radius:8px;min-height:180px}
+  .dark{background:#151515;border-color:#151515;color:#aaa}
+  .sizes{display:flex;gap:28px;align-items:end}
+  .sizes figure{margin:0;display:grid;justify-items:center;gap:6px}
+  .tab{display:flex;align-items:center;gap:8px;width:220px;padding:8px 12px;border-radius:8px 8px 0 0;background:#f1f1f1;color:#222}
+  .tab.d{background:#2a2a2a;color:#eee}
+  img{display:block}
+#art svg{width:100%;height:auto;max-height:240px}</style><div class="sheet"><div class="row">
+        <div class="panel" id="stage" style="flex:none;width:420px;height:320px"><div id="art" style="width:240px"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" role="img" aria-labelledby="buffering-title">
+  <title id="buffering-title">Buffering episode…</title>
+  <style>
+    svg { color: var(--buffering-color, #147d73); }
+    .bar {
+      fill: currentColor;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: buffering-wave 1.2s ease-in-out infinite;
+    }
+    .bar:nth-child(1) { transform: scaleY(.4); animation-delay: -.48s; }
+    .bar:nth-child(2) { transform: scaleY(.7); animation-delay: -.36s; }
+    .bar:nth-child(3) { animation-delay: -.24s; }
+    .bar:nth-child(4) { transform: scaleY(.7); animation-delay: -.12s; }
+    .bar:nth-child(5) { transform: scaleY(.4); }
+    @keyframes buffering-wave {
+      0%, 100% { transform: scaleY(.3); opacity: .65; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+    @media (prefers-color-scheme: dark) {
+      svg { color: var(--buffering-color, #5cd6bd); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bar { animation: none; }
+    }
+  </style>
+  <g>
+    <rect class="bar" x="6" y="6" width="4" height="20" rx="2"/>
+    <rect class="bar" x="14" y="6" width="4" height="20" rx="2"/>
+    <rect class="bar" x="22" y="6" width="4" height="20" rx="2"/>
+    <rect class="bar" x="30" y="6" width="4" height="20" rx="2"/>
+    <rect class="bar" x="38" y="6" width="4" height="20" rx="2"/>
+  </g>
+</svg>
+</div></div></div></div>

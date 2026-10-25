@@ -4,7 +4,7 @@
 
 **Scope.** Web UI design, interaction design, logo design, SVG animation, and content design. Content design gets particular attention because a common failure of coding agents is clutter: unrequested sections, filler copy, invented facts and testimonials, and decoration that adds noise.
 
-**Status.** Four skill versions, five rounds (104 Codex design runs, about 150 blind judge calls), two judges. Results and every skill change are logged below, iteration by iteration; every blind comparison is in [`SCOREBOARD.md`](SCOREBOARD.md), and every output side by side in [`GALLERY.md`](GALLERY.md).
+**Status.** Five skill versions, six rounds (114 Codex design runs, about 160 blind judge calls), two judges. Results and every skill change are logged below, iteration by iteration; every blind comparison is in [`SCOREBOARD.md`](SCOREBOARD.md), and every output side by side in [`GALLERY.md`](GALLERY.md).
 
 ## Answer so far
 
@@ -18,7 +18,7 @@ What transfers reliably, on tuned and unseen briefs alike:
 
 What doesn't, yet:
 - **Visual personality.** The independent judge rated baseline Codex more distinctive in every round (v4: 3.3 vs 3.8; held-out: 3.0 vs 4.0). Part of this is a real cost of restraint. Part is likely the judge, which is Codex, preferring its own house style; Claude's blind judgment in round 1 went the other way.
-- **Illustration and animation.** Animations didn't improve, and the held-out loaders were worse than baseline.
+- **Illustration and animation finesse.** Through v4, animations didn't improve, and the held-out weather loaders lost to baseline. v5 fixed the loader guidance and won all 4 pairs on two new animation briefs. On the tuned case, though, the judge flip-flopped on illustration finish between rounds, so animation results are within noise at two pairs per comparison.
 
 **What we learned about teaching taste:**
 - **Bans backfire.** v2 told the agent to avoid its default palette, and it picked the next default, blue SaaS; v3 replaced the ban with "derive the palette from the product's world".
@@ -295,3 +295,21 @@ The judge's notes follow one pattern on every web pair: v4 makes the essential t
 **Where the baseline won: both loaders.** v4's loaders were "exceptionally restrained", with motion confined to sun rays, while the baselines' bobbing clouds and dots read clearly as "loading". The skill's animation reference was written around ambient empty-state art ("rest in the cycle", "consider stopping"); a loader is different, because its motion is the message. This is a finding for the next version, not something to tune against the held-out set.
 
 **Correction: logo sheets.** Every with-skill logo from v2 on shipped a dark-background version (`logo-reversed.svg`); no baseline did. The presentation sheet, though, always showed the main `logo.svg` on the dark panel, so the judge scored "versatility" against artwork never meant for dark backgrounds. The sheet now uses the designer's dark version when one exists (captioned with its file name). All logo pairs in iterations 2–4 were re-judged in place under their original blind mappings, and the tallies above are corrected; the original judgments are in git history. Versatility for with-skill logos rose from 2.0–2.5 to 3–4, against 2 for baseline.
+
+### Iteration 5: skill v5 at `3a1bd7f` (animation only)
+
+The held-out loaders were the one case the baseline won, for a clear design reason: the animation reference was written around ambient empty-state art, and a loader is different. v5 changes only the animation guidance:
+- Loaders and progress indicators are their own kind of motion: continuous, perceptible, 0.8–1.6s cycles, no rest phase, paired with text.
+- "Rest in the cycle" and "consider stopping" are scoped to ambient art.
+- Spot illustrations get finish from soft, flat tints (a pale fill, a backdrop disc, a ground-shadow ellipse) instead of bare outlines.
+
+The weather loader informed this fix, so it can't test it. v5 was therefore tested on the tuned animation case and on **two new held-out animation briefs**: a podcast buffering loader and a one-shot "payment sent" moment in a banking app, with fresh baselines. Data: [`iteration-5/`](iteration-5/).
+
+| Independent judge (animation pairs) | result |
+|---|---|
+| New held-out briefs: v5 vs baseline | v5 **4**, baseline 0. Buffering bars read as "a gentle traveling waveform … a clearer sense of ongoing activity"; payment animations are "more specific than a generic checkmark" (a banknote or receipt with a confirmation badge) |
+| Tuned case: v5 vs baseline | v5 **2**, baseline 0 |
+| Tuned case: v5 vs v1 | 1–1 |
+| Tuned case: v5 vs v4 | v4 **2**, v5 0. "Background circle, ground shadow, and layered fills add some unnecessary decoration" |
+
+The v5-vs-v4 result contradicts iteration 4, where the same judge preferred v1's "soft grounding shadow, pale circular backdrop" over v4's plain line art. With two pairs per comparison, animation preferences are within judge noise. What does hold: the loader guidance produced loaders that read as loading, and on all four new animation briefs the skill-guided version won.

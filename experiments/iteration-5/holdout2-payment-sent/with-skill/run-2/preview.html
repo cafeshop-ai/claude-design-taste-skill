@@ -1,0 +1,78 @@
+<!doctype html><meta charset="utf-8"><style>
+  body{margin:0;font:13px/1.4 system-ui,sans-serif;color:#555;background:#fff}
+  .sheet{display:grid;gap:24px;padding:32px;width:1100px}
+  .row{display:flex;gap:24px;align-items:stretch}
+  .panel{flex:1;display:grid;place-items:center;gap:12px;padding:40px;border:1px solid #e5e5e5;border-radius:8px;min-height:180px}
+  .dark{background:#151515;border-color:#151515;color:#aaa}
+  .sizes{display:flex;gap:28px;align-items:end}
+  .sizes figure{margin:0;display:grid;justify-items:center;gap:6px}
+  .tab{display:flex;align-items:center;gap:8px;width:220px;padding:8px 12px;border-radius:8px 8px 0 0;background:#f1f1f1;color:#222}
+  .tab.d{background:#2a2a2a;color:#eee}
+  img{display:block}
+#art svg{width:100%;height:auto;max-height:240px}</style><div class="sheet"><div class="row">
+        <div class="panel" id="stage" style="flex:none;width:420px;height:320px"><div id="art" style="width:240px"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none" role="img" aria-labelledby="payment-sent-title">
+  <title id="payment-sent-title">Payment sent</title>
+  <style>
+    svg {
+      --receipt: #f6faf8;
+      --ink: #537368;
+      --tint: #e7f2ec;
+      --success: #187451;
+      --check: #ffffff;
+    }
+    .backdrop { fill: var(--tint); }
+    .receipt {
+      animation: receipt-in 360ms cubic-bezier(.22, 1, .36, 1) both;
+    }
+    .paper { fill: var(--receipt); stroke: var(--ink); }
+    .details { stroke: var(--ink); }
+    .badge {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: badge-in 280ms cubic-bezier(.22, 1, .36, 1) 180ms both;
+    }
+    .seal { fill: var(--success); }
+    .check {
+      stroke: var(--check);
+      stroke-dasharray: 1;
+      stroke-dashoffset: 0;
+      animation: check-in 400ms cubic-bezier(.22, 1, .36, 1) 320ms both;
+    }
+    @keyframes receipt-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes badge-in {
+      from { opacity: 0; transform: scale(.88); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes check-in {
+      from { stroke-dashoffset: 1; opacity: 0; }
+      1% { opacity: 1; }
+      to { stroke-dashoffset: 0; opacity: 1; }
+    }
+    @media (prefers-color-scheme: dark) {
+      svg {
+        --receipt: #202f29;
+        --ink: #a9c4b8;
+        --tint: #182a22;
+        --success: #7bd4aa;
+        --check: #153b2a;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+  <circle class="backdrop" cx="64" cy="64" r="48"/>
+  <g class="receipt" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path class="paper" d="M39 30h42a4 4 0 0 1 4 4v62l-6-4-6 4-6-4-6 4-6-4-6 4-6-4-8 4V34a4 4 0 0 1 4-4Z"/>
+    <path class="details" d="M47 46h14m-14 9h8m-8 17h22m-22 9h14"/>
+    <path class="details" d="m69 55 8-8m-8 0h8v8"/>
+  </g>
+  <g class="badge">
+    <circle class="seal" cx="85" cy="84" r="19"/>
+    <path class="check" d="m76 84 6 6 12-13" pathLength="1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
+</div></div></div></div>

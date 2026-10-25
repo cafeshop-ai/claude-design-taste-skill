@@ -1,0 +1,30 @@
+{
+  "kind": "svg-animation",
+  "animation": {
+    "file": "buffering.svg",
+    "bytes": 1421,
+    "elements": 6,
+    "distinctColors": 2,
+    "usesText": false,
+    "usesWebFont": false,
+    "embedsRaster": false,
+    "hasViewBox": true,
+    "hasTitle": true,
+    "css": {
+      "keyframes": 1,
+      "reducedMotion": true
+    },
+    "smil": 0,
+    "script": false,
+    "durations": [
+      "1.2s",
+      "48s",
+      "36s",
+      "24s",
+      "12s"
+    ]
+  },
+  "changedPixels": 0.0357,
+  "changedPixelsReduced": 0,
+  "stopsUnderReducedMotion": true
+}

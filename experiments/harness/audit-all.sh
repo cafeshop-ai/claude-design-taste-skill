@@ -12,6 +12,6 @@ done | xargs -P "$PAR" -I{} sh -c '
   d={}; case $d in
     */holdout-logo/*) node "'"$HERE"'/audit-svg.mjs" "$d" logo "Halyard Sailing" ;;
     */logo/*) node "'"$HERE"'/audit-svg.mjs" "$d" logo "Fernway Books" ;;
-    */svg-animation/*|*/holdout-loader/*) node "'"$HERE"'/audit-svg.mjs" "$d" svg-animation ;;
+    */svg-animation/*|*/holdout-loader/*|*/holdout2-buffering/*|*/holdout2-payment-sent/*) node "'"$HERE"'/audit-svg.mjs" "$d" svg-animation ;;
     *) node "'"$HERE"'/audit.mjs" "$d" ;;
   esac'

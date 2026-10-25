@@ -1,0 +1,1 @@
+Created [payment-sent.svg](payment-sent.svg): a compact banknote-and-check animation that plays once in 820ms. Includes dark mode and a static reduced-motion state.

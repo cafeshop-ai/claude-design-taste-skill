@@ -1,0 +1,1 @@
+Created [buffering.svg](buffering.svg): a 40×32 animated violet waveform with a transparent background and reduced-motion support.
